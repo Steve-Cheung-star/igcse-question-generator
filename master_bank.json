@@ -1,0 +1,100 @@
+[
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_1.png"
+        ],
+        "ms_paths": [
+            "images/ms_1.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_2.png"
+        ],
+        "ms_paths": [
+            "images/ms_2.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_3.png"
+        ],
+        "ms_paths": [
+            "images/ms_3.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_4.png"
+        ],
+        "ms_paths": [
+            "images/ms_4.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_5.png"
+        ],
+        "ms_paths": [
+            "images/ms_5.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Core Angle Properties of Circles"
+            ],
+            "marks": 8,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_6.png"
+        ],
+        "ms_paths": [
+            "images/ms_6.png"
+        ],
+        "question_code": "The diagram shows a circle with centre $O$ and diameter $AB = 10\\text{ cm}$. Points $C$ and $D$ lie on the circumference of the circle. The chords $AC$ and $BD$ are extended to intersect at the point $E$. The chords $AD$ and $BC$ intersect inside the circle at the point $F$. It is given that $\\angle CAB = 55^\\circ$ and $\\angle DBA = 60^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8, >=Stealth]\n\\coordinate (O) at (0,0);\n\\draw[thick] (O) circle (2.5);\n\\coordinate (A) at (-2.5,0);\n\\coordinate (B) at (2.5,0);\n\\coordinate (C) at (110:2.5);\n\\coordinate (D) at (60:2.5);\n\\draw[thick] (A) -- (B);\n\\coordinate (E) at (intersection of A--C and B--D);\n\\coordinate (F) at (intersection of A--D and B--C);\n\\draw[thick] (A) -- (E);\n\\draw[thick] (B) -- (E);\n\\draw[thick] (A) -- (D);\n\\draw[thick] (B) -- (C);\n\\node[below left] at (A) {$A$};\n\\node[below right] at (B) {$B$};\n\\node[above left] at (C) {$C$};\n\\node[above right] at (D) {$D$};\n\\node[above] at (E) {$E$};\n\\node[below] at (F) {$F$};\n\\fill (O) circle (1.5pt);\n\\node[below] at (O) {$O$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate $\\angle AEB$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate $\\angle AFB$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the length of $EF$.\n\\examanswerslot{2cm}{0.25}{4}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $65^\\circ$ & 2 & M1 for $180^\\circ - 55^\\circ - 60^\\circ$ \\\\\n(b) & $115^\\circ$ & 3 & M1 for $\\angle ACB = 90^\\circ \\implies \\angle CBA = 35^\\circ$ \\\\ \n & & & M1 for $\\angle ADB = 90^\\circ \\implies \\angle DAB = 30^\\circ$ \\\\ \n & & & A1 for $180^\\circ - 30^\\circ - 35^\\circ = 115^\\circ$ \\\\\n(c) & $4.66\\text{ cm}$ & 4 & M1 for $AE = \\frac{10\\sin(60^\\circ)}{\\sin(65^\\circ)} = 9.555\\text{ cm}$ \\\\ \n & & & M1 for $AG = 9.555\\cos(55^\\circ) = 5.481\\text{ cm}$ and $EG = 9.555\\sin(55^\\circ) = 7.827\\text{ cm}$ \\\\ \n & & & M1 for $FG = 5.481\\tan(30^\\circ) = 3.164\\text{ cm} \\implies EF = 7.827 - 3.164$ \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 9,
+            "difficulty": "Easy"
+        }
+    }
+]

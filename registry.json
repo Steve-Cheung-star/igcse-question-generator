@@ -1,0 +1,699 @@
+{
+  "E1.1_types_of_number": {
+    "syllabus_ref": "E1.1",
+    "skill_name": "Types of Number, Prime Factorisation, HCF and LCM",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Identify and use: natural numbers, integers, prime numbers, square numbers, cube numbers, triangle numbers, common factors, common multiples, rational and irrational numbers, and reciprocals.",
+      "Tasks must include converting between numbers and words (e.g., six billion or 10007).",
+      "Include requirements to express a given integer (e.g., 72) as a product of its prime factors.",
+      "Incorporate explicit evaluations to find the Highest Common Factor (HCF) and Lowest Common Multiple (LCM) of two numbers. Include variables for higher diffculty."
+    ]
+  },
+  "E1.2_sets_notation_venn": {
+    "syllabus_ref": "E1.2",
+    "skill_name": "Set Notation and Venn Diagrams",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Understand and use set language, notation, and Venn diagrams to describe sets and represent relationships.",
+      "Venn diagrams must be strictly limited to a maximum of two or three sets.",
+      "Utilise standard notation: n(A), element of, not an element of, complement A', empty set varnothing, universal set U, subset, not a subset, union, and intersection.",
+      "Definitions of sets must use proper conditional builder syntax, e.g., A = {x | x is a natural number} or B = {(x,y) | y = mx + c}."
+    ]
+  },
+  "E1.3_powers_and_roots": {
+    "syllabus_ref": "E1.3",
+    "skill_name": "Powers and Roots Calculations",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Calculate with squares, square roots, cubes, cube roots, and other specified powers and roots of numbers.",
+      "Requires active recall of squares and corresponding roots from 1 to 15.",
+      "Requires active recall of cubes and corresponding roots of 1, 2, 3, 4, 5, and 10 (e.g., evaluate 5^2 * cuberoot(8))."
+    ]
+  },
+  "E1.4_fractions_decimals_percentages": {
+    "syllabus_ref": "E1.4",
+    "skill_name": "Fractions, Decimals, and Percentages Equivalence",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Use appropriate language and notation for proper fractions, improper fractions, mixed numbers, decimals, and percentages.",
+      "Recognise structural equivalence and convert fluidly between these numeric forms.",
+      "Enforce rules requiring candidates to write all fractions in their simplest form."
+    ]
+  },
+  "E1.5_ordering_magnitude": {
+    "syllabus_ref": "E1.5",
+    "skill_name": "Ordering Quantities by Magnitude",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Order a list of diverse rational numbers or expressions by magnitude.",
+      "Demonstrate absolute familiarity with inequalities and relational symbols (=, !=, >, <, >=, <=)."
+    ]
+  },
+  "E1.6_four_operations": {
+    "syllabus_ref": "E1.6",
+    "skill_name": "The Four Operations with Integers, Fractions, and Decimals",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Apply the four basic operations for calculations with integers, fractions, and decimals.",
+      "Enforce correct ordering of operations (BODMAS/BIDMAS) and the tactical use of brackets.",
+      "Calculations must explicitly include negative numbers, improper fractions, mixed numbers, or practical scenarios like temperature changes."
+    ]
+  },
+  "E1.7_indices_i_rules": {
+    "syllabus_ref": "E1.7",
+    "skill_name": "Arithmetic Indices and Power Rules",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Understand and calculate with positive, zero, negative, and fractional indices (e.g., 6^(1/2) = sqrt(6), 16^(1/4) = 2).",
+      "Apply basic arithmetic rules of indices to simplify operational strings (e.g., evaluate 2^-3 * 2^4, (2^3)^2, or 2^3 / 2^4)."
+    ]
+  },
+  "E1.8_standard_form": {
+    "syllabus_ref": "E1.8",
+    "skill_name": "Standard Form Notation and Calculation",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Use standard form notation A * 10^n, where n is a positive or negative integer and 1 <= A < 10.",
+      "Convert numbers into and out of standard scientific form.",
+      "Calculate directly with multiple values expressed in standard form."
+    ]
+  },
+  "E1.9_estimation_accuracy": {
+    "syllabus_ref": "E1.9",
+    "skill_name": "Estimation and Specified Accuracy Rounding",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Round values to a specified degree of accuracy, explicitly including decimal places and significant figures.",
+      "Make structural estimates for complex arithmetic calculations by writing each initial number correct to 1 significant figure.",
+      "Round final answers to a reasonable degree of accuracy based on the context of the given problem."
+    ]
+  },
+  "E1.10_ratio_proportion": {
+    "syllabus_ref": "E1.10",
+    "skill_name": "Ratio, Proportional Sharing, and Scale Problems",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Express given ratios in their simplest constituent form (e.g., 20:30:40 simplifies to 2:3:4).",
+      "Divide a specific total financial or physical quantity into a given ratio.",
+      "Apply proportional reasoning and scaling in real-world contexts, such as adapting recipes or analyzing map scales to determine best value."
+    ]
+  },
+  "E1.11_rates_speed_formula": {
+    "syllabus_ref": "E1.11",
+    "skill_name": "Common Rates and Average Speed Problems",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Solve practical problems utilizing common measures of rate, such as hourly pay rates, foreign currency exchange, flow rates, or fuel consumption.",
+      "Incorporate mandatory application of the speed/distance/time formula to resolve average speeds (e.g., 45 km traveled in 3 hours 45 minutes).",
+      "Strictly format metrics using standard syntax notation, specifically m/s (metres per second) or g/cm^3 (grams per cubic centimetre)."
+    ]
+  },
+  "E1.12_percentages_interest_reverse": {
+    "syllabus_ref": "E1.12",
+    "skill_name": "Percentage Changes, Simple/Compound Interest, and Reverse Problems",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Calculate a given percentage of a quantity or express one quantity as a percentage of another, including values over 100%.",
+      "Calculate explicit percentage increases, percentage decreases, or structures with repeated percentage changes.",
+      "Execute arithmetic for financial constructs: simple interest, compound interest (without relying on provided formulas), deposits, discounts, earnings, and profit/loss amounts.",
+      "Incorporate reverse percentage problems (e.g., find the original cost price given the final selling price and percentage profit)."
+    ]
+  },
+  "E1.13_calculator_efficiency": {
+    "syllabus_ref": "E1.13",
+    "skill_name": "Calculator Utilization and Multi-Step Interpretations",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Demonstrate efficient calculator usage, avoiding rounding values mid-calculation to isolate errors to the final step.",
+      "Enter non-decimal values appropriately (e.g., inputting 2 hours 30 minutes as 2.5 hours or utilizing degree/minute/second commands).",
+      "Interpret formatting strings from displays accurately (e.g., understanding 4.8 as $4.80 in financial context, or 3.25 as 3 hours 15 minutes)."
+    ]
+  },
+  "E1.14_time_zones_clocks": {
+    "syllabus_ref": "E1.14",
+    "skill_name": "Time Calculations, 24-Hour Clock, and Time Zones",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Calculate durations using relationships between seconds, minutes, hours, days, weeks, months, and years (defining 1 year = 365 days).",
+      "Convert and calculate in terms of 12-hour and 24-hour clocks (e.g., 3:15 a.m. as 03 15 and 3:15 p.m. as 15 15).",
+      "Incorporate the reading of physical clocks and transport timetables, explicitly including problems with time zones, local times, and international time differences."
+    ]
+  },
+  "E1.15_money_currency": {
+    "syllabus_ref": "E1.15",
+    "skill_name": "Money and Currency Conversions",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Carry out arithmetic calculations involving monetary values.",
+      "Convert capital sums from one international currency denomination directly to another using given exchange rates."
+    ]
+  },
+  "E1.16_exponential_growth_decay": {
+    "syllabus_ref": "E1.16",
+    "skill_name": "Exponential Growth and Decay Models",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Apply exponential tracking models to determine values for assets or groups.",
+      "Scenarios must involve physical asset financial depreciation or human/animal population changes.",
+      "Advanced calculus or structural knowledge of the mathematical constant 'e' is strictly not required."
+    ]
+  },
+  "E1.17_surds_rationalisation": {
+    "syllabus_ref": "E1.17",
+    "skill_name": "Surds Simplification and Denominator Rationalisation",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Understand and manipulate surds, including simplifying complex expressions (e.g., converting sqrt(20) to 2*sqrt(5) or evaluating sqrt(200) - sqrt(32)).",
+      "Rationalise algebraic or numeric denominators, including single surds or binomial expressions (e.g., 10/sqrt(5) or 1 / (-1 + sqrt(3)))."
+    ]
+  },
+  "E2.1_intro_algebra_substitution": {
+    "syllabus_ref": "E2.1",
+    "skill_name": "Algebraic Representation and Value Substitution",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Use alphanumeric letters to represent generalized numbers systematically.",
+      "Substitute numerical values directly into abstract algebraic expressions and given geometric/physical formulas."
+    ]
+  },
+  "E2.2_algebraic_manipulation": {
+    "syllabus_ref": "E2.2",
+    "skill_name": "Expansion, Simplification, and Multi-Type Factorisation",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Simplify long expressions by systematically collecting like terms.",
+      "Expand products of algebraic expressions, including double brackets or sets of more than two brackets (e.g., expand (x-2)(x+3)(2x+1)).",
+      "Factorise fully by extracting common factors (e.g., 9x^2 + 15xy = 3x(3x + 5y)).",
+      "Factorise expressions across specific advanced structural identities: grouping (ax+bx+kay+kby), difference of two squares (a^2x^2 - b^2y^2), perfect squares (a^2 + 2ab + b^2), trinomial quadratics (ax^2 + bx + c), and cubic expansions with a common x factor (ax^3 + bx^2 + cx)."
+    ]
+  },
+  "E2.3_algebraic_fractions": {
+    "syllabus_ref": "E2.3",
+    "skill_name": "Algebraic Fractions Operations and Simplification",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Manipulate algebraic fractions through addition, subtraction, multiplication, and division (e.g., evaluate items like x/3 + (x-4)/2 or formulas with variable denominators).",
+      "Factorise and fully simplify rational expressions by cancelling shared binomial components (e.g., simplify (x^2 - 2x) / (x^2 - 5x + 6))."
+    ]
+  },
+  "E2.4_indices_ii_algebraic": {
+    "syllabus_ref": "E2.4",
+    "skill_name": "Algebraic Indices and Power Laws",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Apply rules of positive, zero, negative, and fractional indices to variable algebraic strings.",
+      "Simplify variable products, quotients, or powers containing parameters (e.g., evaluate 3x^-4 * (2/3)x^(1/2), compound divisions, or nested structures like ((2x^5)/3)^3)."
+    ]
+  },
+  "E2.5_equations_linear_quadratic_simultaneous": {
+    "syllabus_ref": "E2.5",
+    "skill_name": "Constructing and Solving Equations and Changing Subjects",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Construct expressions, equations, and formulas from words (e.g., consecutive even numbers).",
+      "Solve linear equations in one unknown, fractional equations with numerical and linear algebraic denominators, and simultaneous linear equations in two unknowns.",
+      "Solve quadratic equations by factorisation, GDC, or the quadratic formula (which is given), presenting solutions in exact surd form if required.",
+      "Change the subject of a formula, explicitly including cases where the target subject appears twice or is bound within a power or root.",
+      "Solve exponential equations where bases can be balanced or processed (e.g., 32^x = 2 or 5^(x+1) = 25^x), and solve equations using a GDC (e.g., 2x - 1 = 1 / x^3)."
+    ]
+  },
+  "E2.6_inequalities_graphical": {
+    "syllabus_ref": "E2.6",
+    "skill_name": "Linear Inequalities and Graphical Regions",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Represent and interpret inequalities on a standard horizontal number line.",
+      "Enforce conventions: open circles for strict inequalities (<, >) and closed circles for inclusive inequalities (<=, >=).",
+      "Construct, solve, and interpret linear inequalities in one variable (including compound statements like -3 <= 3x - 2 < 7), and solve inequalities via a GDC.",
+      "Represent and interpret linear inequalities in two variables graphically: use broken lines for strict bounds, solid lines for inclusive bounds, and apply shading to unwanted regions."
+    ]
+  },
+  "E2.7_sequences_nth_term": {
+    "syllabus_ref": "E2.7",
+    "skill_name": "Sequence Continuation and General nth-Term Rules",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Continue a given number sequence or pattern, using subscript notation (Tn) to denote the nth term.",
+      "Recognise patterns and establish the term-to-term rule or mathematical relationships between distinct sequences.",
+      "Find and use the nth term of linear, quadratic, cubic, and exponential sequences, utilizing a difference method to derive rules for quadratic or cubic sequences."
+    ]
+  },
+  "E2.8_proportion_variation": {
+    "syllabus_ref": "E2.8",
+    "skill_name": "Direct and Inverse Algebraic Proportion Models",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Express direct and inverse proportion in formal algebraic equations to find unknown quantities, requiring knowledge of the proportional variation symbol.",
+      "Must include linear, square, square root, or cube proportion variations.",
+      "Incorporate data evaluation tasks to identify the best variation model for given numerical coordinates."
+    ]
+  },
+  "E3.1_graphs_of_functions": {
+    "syllabus_ref": "E3.1",
+    "skill_name": "Function Types and Graph Symmetry Properties",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Recognise standard function types from their graphs: linear (ax+b), quadratic (ax^2+bx+c), cubic (ax^3+bx^2+cx+d), reciprocal (a/x), exponential (a^x where 0<a<1 or a>1), and trigonometric (a sin(bx), a cos(bx), tan x).",
+      "Determine one or two constant parameters (a, b, c, or d) or specific outputs from given coordinate graphs.",
+      "Identify line or rotational symmetry properties, including writing down the period and amplitude for trigonometric sketches."
+    ]
+  },
+  "E3.2_sketching_graphs_gdc": {
+    "syllabus_ref": "E3.2",
+    "skill_name": "Calculator-Aided Function Plotting and Key Coordinates",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Utilise a Graphic Display Calculator (GDC) to sketch the graph of a function, produce tables of values, or plot coordinate points.",
+      "Find key structural coordinates using a GDC: zeros (x-intercepts), local maxima, local minima, intersection points of two graphs, or the vertex of a quadratic.",
+      "Problems can include unfamiliar functions not mentioned explicitly in other parts of the syllabus."
+    ]
+  },
+  "E3.3_functions_inverse_composite": {
+    "syllabus_ref": "E3.3",
+    "skill_name": "Function Notation, Domains, Inverses, and Composites",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Understand mapping diagrams, functional domain, functional range, and standard function notation syntax.",
+      "Calculate algebraic inverse functions f^-1(x).",
+      "Form composite functions as defined by gf(x) = g(f(x)) (e.g., find fg(x) given fractions or squared terms, simplifying into a fraction in its simplest form).",
+      "Candidates are explicitly not expected to find the domain and range of composite functions."
+    ]
+  },
+  "E3.4_finding_quadratic_function": {
+    "syllabus_ref": "E3.4",
+    "skill_name": "Deriving Quadratic Equations from Coordinates",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Find a quadratic function given the vertex coordinates and one additional coordinate point, utilizing the vertex equation framework y = a(x - h)^2 + k.",
+      "Find a quadratic function given the x-intercept points and one additional coordinate point.",
+      "Derive a quadratic function from the vertex or x-intercepts in the simplified case where the leading coefficient a = 1."
+    ]
+  },
+  "E3.5_asymptotes": {
+    "syllabus_ref": "E3.5",
+    "skill_name": "Identifying Graph Asymptotes",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Understand the conceptual behavior of asymptotes.",
+      "Identify simple examples parallel to the Cartesian axes on a graph (e.g., f(x) = tan x has asymptotes at 90°, 270°, etc.).",
+      "The algebraic derivation of asymptotes is explicitly excluded from assessment tasks."
+    ]
+  },
+  "E3.6_transforming_graphs": {
+    "syllabus_ref": "E3.6",
+    "skill_name": "Function Graph Translations",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Describe and identify transformations to a graph of y = f(x) when mapped to y = f(x) + k or y = f(x + k), where k is a rigid integer.",
+      "Express mapping results in terms of explicit translation vectors.",
+      "Find the resulting function equation g(x) in terms of x after a translation has occurred."
+    ]
+  },
+  "E3.7_logarithmic_function": {
+    "syllabus_ref": "E3.7",
+    "skill_name": "Logarithmic Laws and Exponential Equation Solving",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Understand and use the logarithmic function as the direct inverse of the exponential function, treating y = a^x as equivalent to x = log_a(y).",
+      "Treat the algebraic solution to a^x = b as x = log(b) / log(a), using base 10 logarithms unless otherwise explicitly stated.",
+      "Solve logarithmic equations in real-world contexts, such as compound interest problems, exponential growth, decay systems, or direct graph intersections."
+    ]
+  },
+  "E4.1_coordinates_2d": {
+    "syllabus_ref": "E4.1",
+    "skill_name": "Cartesian Coordinates in Two Dimensions",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Use and interpret basic Cartesian coordinate pairs (x, y) across all four quadrants in two dimensions."
+    ]
+  },
+  "E4.2_gradient_linear": {
+    "syllabus_ref": "E4.2",
+    "skill_name": "Straight Line Gradient Calculations",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Find the gradient of a straight line from a visual graph or diagram.",
+      "Calculate the numerical gradient of a straight line directly from the coordinate values of two given points on it."
+    ]
+  },
+  "E4.3_length_midpoint": {
+    "syllabus_ref": "E4.3",
+    "skill_name": "Line Segment Length and Midpoint Coordinates",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Calculate the absolute length of a specific 2D line segment between coordinates.",
+      "Find the exact coordinates of the midpoint of a line segment."
+    ]
+  },
+  "E4.4_equations_linear_graphs": {
+    "syllabus_ref": "E4.4",
+    "skill_name": "Obtaining and Simplifying Linear Equations",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Interpret and obtain the equation of a straight-line graph from charts, slope descriptions, or target points.",
+      "Use, manipulate, and request equations across three structural forms: ax + by = c, y = mx + c, and x = k.",
+      "Extract the gradient or y-intercept of a graph from its rearranged equation (e.g., find the parameters for 5x + 4y = 8).",
+      "Candidates must express all final linear equations in a fully simplified form."
+    ]
+  },
+  "E4.5_parallel_lines": {
+    "syllabus_ref": "E4.5",
+    "skill_name": "Equations of Parallel Straight Lines",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Find the gradient and equation of a straight line parallel to a given line.",
+      "The derived line must pass through a specified coordinate point (e.g., find the line parallel to y = 4x - 1 that passes through (1, -3))."
+    ]
+  },
+  "E4.6_perpendicular_lines": {
+    "syllabus_ref": "E4.6",
+    "skill_name": "Equations of Perpendicular Lines and Bisectors",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Find the gradient and equation of a straight line perpendicular to a given reference line (e.g., find the gradient of a line perpendicular to 2y = 3x + 1).",
+      "Construct and find the explicit linear equation of the perpendicular bisector joining two coordinate points (e.g., joining (-3, 8) and (9, -2)).",
+      "Follow up and find the x-, y-int intercepts, shortest distance between point and line, area of triangle."
+    ]
+  },
+  "E5.1_geometrical_terms": {
+    "syllabus_ref": "E5.1",
+    "skill_name": "Geometric Vocabulary for Shapes, Polygons, Solids, and Circles",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Use and interpret terminology: point, vertex, line, plane, parallel, perpendicular, perpendicular bisector, bearing, right angle, angles (acute, obtuse, reflex, interior, exterior), similar, congruent, and scale factor (formal proofs of congruence are excluded).",
+      "Classify and interpret vocabulary for triangles (equilateral, isosceles, scalene, right-angled), quadrilaterals (square, rectangle, kite, rhombus, parallelogram, trapezium), and regular/irregular polygons (pentagon, hexagon, octagon, decagon).",
+      "Classify vocabulary for solids (cube, cuboid, prism, cylinder, pyramid, tetrahedron, cone, sphere, hemisphere, frustum, face, surface, edge).",
+      "Classify structural vocabulary of a circle: centre, radius/radii, diameter, circumference, semicircle, chord, tangent, major/minor arc, sector, and segment."
+    ]
+  },
+  "E5.2_angle_measurement_bearings": {
+    "syllabus_ref": "E5.2",
+    "skill_name": "Angle Construction and Three-Figure Bearings",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Measure and draw lines and angles accurately.",
+      "Use and interpret three-figure navigation bearings, ensuring all bearings are measured clockwise from North (from 000° to 360°).",
+      "Include back-bearing calculations (e.g., find the bearing of A from B if the bearing of B from A is 025°), incorporating cardinal directional terms (North, East, South, West)."
+    ]
+  },
+  "E5.3_similarity_scaling": {
+    "syllabus_ref": "E5.3",
+    "skill_name": "Lengths, Areas, and Volumes of Similar Shapes",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Calculate missing lengths in structurally similar 2D shapes.",
+      "Apply scale factor relationships between lengths and areas of similar shapes, and lengths, surface areas, and volumes of similar solids (utilizing length ratios cubed for volume scaling).",
+      "Solve scaling problems and provide geometric reasoning, including showing that two triangles are similar using formal angle or side arguments."
+    ]
+  },
+  "E5.4_symmetry_properties": {
+    "syllabus_ref": "E5.4",
+    "skill_name": "Line, Rotational, and 3D Solid Symmetry",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Recognise and state line symmetry and the order of rotational symmetry for 2D shapes.",
+      "Identify lines, planes, and axes of symmetry for standard geometric shapes and regular polygons.",
+      "Recognise and apply symmetry properties of 3D solids, explicitly including prisms, cylinders, pyramids, and cones."
+    ]
+  },
+  "E5.5_angles_theorems_lines_polygons": {
+    "syllabus_ref": "E5.5",
+    "skill_name": "Angle Calculations for Points, Parallel Lines, and Polygons",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Calculate unknown angles and provide short geometric explanations using properties: sum at a point (360°), straight line sum (180°), vertically opposite angles, angle sum of a triangle (180°), and angle sum of a quadrilateral (360°).",
+      "Calculate intersections within parallel lines, giving reasons using correct terminology: corresponding angles, alternate angles, or co-interior/supplementary angles (summing to 180°).",
+      "Know and apply angle properties of regular and irregular polygons, including interior, exterior, and total angle sums, utilizing standard three-letter notation (e.g., angle ABC).",
+      "Provide a diagram in tikzpicture preferably not to scale. Label NOT TO SCALE on the right of diagram."
+    ]
+  },
+  "E5.6_circle_theorems_i": {
+    "syllabus_ref": "E5.6",
+    "skill_name": "Core Angle Properties of Circles",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Calculate unknown angles in circle configurations, providing step-by-step geometric explanations for each deduction.",
+      "Apply core theorems: angle in a semicircle is 90°, angle between a tangent and radius is 90°, and the angle subtended at the centre is twice the angle at the circumference.",
+      "Apply advanced cyclic properties: angles subtended in the same segment are equal, opposite angles of a cyclic quadrilateral sum to 180° (supplementary), and the alternate segment theorem.",
+      "Apply other angle theorems such as isosceles triangle, angles between parallel lines.",
+      "Include a diagram in tikz, preferably not to scale, include NOT TO SCALE to the far right of the diagram. Ensure that vertices and angles are labelled and oriented properly using pic in tikz."
+    ]
+  },
+  "E5.7_circle_theorems_ii": {
+    "syllabus_ref": "E5.7",
+    "skill_name": "Symmetry Chords and Tangents of Circles",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Calculate measurements utilizing the underlying symmetry properties of circles.",
+      "Apply properties: equal chords are equidistant from the circle centre, and the perpendicular bisector of any chord passes through the centre.",
+      "Apply boundary properties: tangents drawn to a circle from an external point are equal in length."
+    ]
+  },
+  "E6.1_units_of_measure": {
+    "syllabus_ref": "E6.1",
+    "skill_name": "Metric Conversions for Length, Area, Volume, and Capacity",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Use metric units of mass, length, area, volume, and capacity in practical situations.",
+      "Convert measurements into larger or smaller units across units: mm, cm, m, km; mm2, cm2, m2, km2; mm3, cm3, m3; ml, l; and g, kg.",
+      "Include non-linear conversions between different dimensional units of area (e.g., cm2 to m2) and between units of volume and fluid capacity (e.g., m3 to litres)."
+    ]
+  },
+  "E6.2_area_perimeter": {
+    "syllabus_ref": "E6.2",
+    "skill_name": "Perimeter and Area of Polygons",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Carry out calculations to find the perimeter and total area of rectangles, triangles, parallelograms, and trapezia.",
+      "Formulas for rectangles, parallelograms, and trapezia are explicitly not given in assessment papers; the area of a triangle formula is given."
+    ]
+  },
+  "E6.3_circles_arcs_sectors": {
+    "syllabus_ref": "E6.3",
+    "skill_name": "Circumference, Area, Arc Length, and Sector Area",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Calculate the total perimeter, circumference, and area of a circle using standard formulas which are provided.",
+      "Calculate fractional arc lengths and sector areas as proportional divisions of a circle, evaluating both minor and major sectors.",
+      "Structure problem outputs to allow answers to be requested as decimals or in exact terms of pi (π)."
+    ]
+  },
+  "E6.4_surface_area_volume": {
+    "syllabus_ref": "E6.4",
+    "skill_name": "Surface Area and Volume of 3D Solids",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Calculate the total surface area and internal volume of 3D solids: cuboids, prisms, cylinders, spheres, pyramids, and cones.",
+      "Utilise provided formulas: curved surface area of a cylinder/cone, surface area of a sphere, and volumes of prisms, pyramids, cylinders, cones, and spheres.",
+      "Apply the definition of a prism to solids with any uniform cross-section, such as a cylindrical sector, and format answers in exact terms of pi (π) if requested."
+    ]
+  },
+  "E6.5_compound_shapes_solids": {
+    "syllabus_ref": "E6.5",
+    "skill_name": "Perimeter, Area, and Volume of Compound Shapes and Frustums",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Solve practical problems involving the composite perimeters and total surface areas of compound 2D shapes or sliced parts of shapes.",
+      "Calculate total surface areas and volumes of compound solids or parts of solids.",
+      "Incorporate explicit geometric calculations to find the surface area and volume of a frustum, allowing final answers to be written in terms of pi (π)."
+    ]
+  },
+  "E7.1_pythagoras_theorem": {
+    "syllabus_ref": "E7.1",
+    "skill_name": "Pythagoras’ Theorem Applications",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Know and apply Pythagoras' theorem (a^2 + b^2 = c^2) to find missing lengths in right-angled configurations.",
+      "Applications must include geometric situations: finding the length of a chord, calculating the perpendicular distance of a chord from the centre of a circle, or determining the absolute distance between two coordinates on a grid."
+    ]
+  },
+  "E7.2_right_angled_trigonometry": {
+    "syllabus_ref": "E7.2",
+    "skill_name": "Right-Angled Triangle Trigonometry and Elevation Angles",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Know and apply sine, cosine, and tangent ratios for acute angles to calculate missing sides and angles in right-angled triangles.",
+      "Solve problems in two dimensions combining Pythagoras' theorem and right-angled trigonometry.",
+      "Apply the geometric principle that the perpendicular distance from a point to a line represents the shortest distance.",
+      "Incorporate calculations involving the angle of elevation and the angle of depression, ensuring decimal angles and answers are handled to one decimal place."
+    ]
+  },
+  "E7.3_exact_trig_values": {
+    "syllabus_ref": "E7.3",
+    "skill_name": "Exact Trigonometric Values Recall",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Incorporate tasks requiring non-calculator recall of the exact values of sin x and cos x for angles x = 0°, 30°, 45°, 60°, and 90°.",
+      "Require exact value recall of tan x for angles x = 0°, 30°, 45°, and 60°."
+    ]
+  },
+  "E7.4_trig_functions_graphs": {
+    "syllabus_ref": "E7.4",
+    "skill_name": "Trigonometric Graphs and Equation Solving",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Recognise, sketch, and interpret the periodic graphs of y = sin x, y = cos x, and y = tan x for the domain boundary 0° <= x <= 360°.",
+      "Solve trigonometric equations involving sin x, cos x, or tan x within the domain from 0° to 360° (e.g., solve sin x = 2/3 or 2 cos x + 1 = 0)."
+    ]
+  },
+  "E7.5_non_right_triangles": {
+    "syllabus_ref": "E7.5",
+    "skill_name": "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Apply the Sine Rule (a/sinA = b/sinB) and the Cosine Rule (a^2 = b^2 + c^2 - 2bccosA) to calculate lengths and angles in any non-right-angled triangle.",
+      "Calculate areas of triangles using the provided formula Area = 0.5 * a * b * sin C.",
+      "Problems must include complex geometric configurations, explicitly handling obtuse angles and cases involving the ambiguous case of the sine rule.",
+      "Include a diagram with vertices and sides labelled."
+    ]
+  },
+  "E7.6_pythagoras_trig_3d": {
+    "syllabus_ref": "E7.6",
+    "skill_name": "3D Pythagoras and Trigonometry",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Carry out calculations and solve multi-step problems in three dimensions using Pythagoras' theorem and trigonometry.",
+      "Calculations must require candidates to find the length of internal diagonals across 3D shapes or calculate the true angle formed between a line and a plane.",
+      "Include a diagram with vertices and sides labelled."
+    ]
+  },
+  "E8.1_transformations_geometry": {
+    "syllabus_ref": "E8.1",
+    "skill_name": "Reflection, Rotation, Enlargement, and Translation Maps",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Recognise, describe, and draw four geometric transformations: reflections in a straight line, rotations about a defined coordinate centre through multiples of 90°, enlargements from a centre using scale factors, and translations by a vector.",
+      "Enlargement operations must include positive, fractional, and negative scale factors.",
+      "Problems must involve combinations of multiple sequential transformations or require finding the descriptive parameters of a reverse transformation map."
+    ]
+  },
+  "E8.2_vectors_2d": {
+    "syllabus_ref": "E8.2",
+    "skill_name": "Vector Addition, Subtraction, and Scalar Multiplication",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Describe a translation transformation using a 2D column vector [x; y], vector line notation AB, or bold scalar letter notation a.",
+      "Add and subtract vectors algebraically and graphically.",
+      "Multiply a vector expression directly by a scalar factor."
+    ]
+  },
+  "E8.3_magnitude_vector": {
+    "syllabus_ref": "E8.3",
+    "skill_name": "Magnitude of a Column Vector",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Calculate the absolute magnitude of a 2D column vector [x; y] using the algebraic distance formula sqrt(x^2 + y^2).",
+      "Format vector magnitudes correctly in the prompt or outputs using standard modulus vertical bars (e.g., |a| or |AB|)."
+    ]
+  },
+  "E9.1_intro_probability": {
+    "syllabus_ref": "E9.1",
+    "skill_name": "Probability Scale, Single Events, and Complements",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Understand and apply the metric probability scale from 0 (impossible) to 1 (certain).",
+      "Calculate the probability of a single isolated event, expressing probabilities as fractions, decimals, or percentages.",
+      "Use notation P(A) and its complement P(A'), applying the law that the probability of an event not occurring is 1 - P(A) (e.g., given P(B) = 0.8, find P(B')).",
+      "Incorporate information extraction from tables, charts, graphs, or two/three-set Venn diagrams."
+    ]
+  },
+  "E9.2_frequencies_expected": {
+    "syllabus_ref": "E9.2",
+    "skill_name": "Relative Frequency and Expected Value Estimations",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Understand and calculate relative frequency as an experimental estimate of probability (e.g., using empirical results from a physical spinner).",
+      "Calculate expected frequencies and values from a population given a baseline event probability.",
+      "Incorporate conceptual questions assessing understanding of terms: fair, bias, and random."
+    ]
+  },
+  "E9.3_combined_events_probability": {
+    "syllabus_ref": "E9.3",
+    "skill_name": "Probability Diagrams, Mutually Exclusive, and Independent Events",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Calculate probabilities of combined events using sample space diagrams, Venn diagrams, or tree diagrams.",
+      "Tree diagrams must follow strict formatting: outcomes written at the end of branches and probabilities written by the side of the branches.",
+      "Address combined event scenarios both with replacement and without replacement.",
+      "Apply probability notation and formulas: intersection P(A ∩ B) and union P(A ∪ B), addition rule P(A or B) = P(A) + P(B) for mutually exclusive events, and multiplication rule P(A and B) = P(A) * P(B) for independent events."
+    ]
+  },
+  "E10.1_classifying_data": {
+    "syllabus_ref": "E10.1",
+    "skill_name": "Classifying and Tabulating Statistical Data",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Classify raw data and arrange elements into structured data tables, explicitly using tally tables or two-way statistical arrays."
+    ]
+  },
+  "E10.2_interpreting_data": {
+    "syllabus_ref": "E10.2",
+    "skill_name": "Interpreting Statistical Charts and Comparing Data Sets",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Read, interpret, and draw logical inferences from tables and statistical diagrams.",
+      "Compare two distinct sets of data using side-by-side tables, graphs, or statistical measures (explicitly comparing averages and measures of spread).",
+      "Incorporate evaluative questions requiring candidates to appreciate and explain restrictions on drawing conclusions from a given data sample."
+    ]
+  },
+  "E10.3_discrete_continuous": {
+    "syllabus_ref": "E10.3",
+    "skill_name": "Discrete vs. Continuous Data Classification",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Distinguish between discrete numeric elements and continuous experimental data sets."
+    ]
+  },
+  "E10.4_averages_spread_grouped": {
+    "syllabus_ref": "E10.4",
+    "skill_name": "Mean, Median, Mode, Quartiles, and Estimated Grouped Mean",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Calculate the mean, median, mode, quartiles, range, and interquartile range (IQR) for individual un-grouped data sets.",
+      "Distinguish clearly between the statistical purposes for which these individual averages are used.",
+      "Calculate a numerical estimate of the mean for grouped discrete or grouped continuous frequency distributions.",
+      "Identify the exact modal class from a grouped frequency distribution table."
+    ]
+  },
+  "E10.5_averages_calculator_gdc": {
+    "syllabus_ref": "E10.5",
+    "skill_name": "GDC-Driven Statistical Averages",
+    "difficulty": "Easy",
+    "technical_constraints": [
+      "Utilise a Graphic Display Calculator (GDC) to find the mean, median, and quartiles for a set of discrete data.",
+      "Utilise GDC processing to calculate the estimated mean of grouped continuous frequency data."
+    ]
+  },
+  "E10.6_statistical_charts": {
+    "syllabus_ref": "E10.6",
+    "skill_name": "Drawing and Interpreting Charts and Stem-and-Leaf Diagrams",
+    "difficulty": "Medium",
+    "technical_constraints": [
+      "Draw and interpret diagrams: bar charts, pie charts, pictograms, and simple frequency distributions.",
+      "Bar charts must include composite (stacked) or dual (side-by-side) configurations.",
+      "Construct stem-and-leaf diagrams, enforcing rules that data elements must be ordered and include a descriptive structural key."
+    ]
+  },
+  "E10.7_scatter_diagrams_regression": {
+    "syllabus_ref": "E10.7",
+    "skill_name": "Scatter Plots, Lines of Best Fit, and Linear Regression Equations",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Draw and interpret scatter diagrams, explicitly requiring all plotted data coordinate points to be marked as small crosses (×).",
+      "Identify and define correlation types: positive, negative, and zero correlation.",
+      "Draw by eye, interpret, and use a straight line of best fit that passes through the mean point, extends across the full data set, and maintains a roughly even distribution of points on either side.",
+      "Utilise a GDC to find and apply the exact equation of linear regression for data analysis."
+    ]
+  },
+  "E10.8_cumulative_frequency": {
+    "syllabus_ref": "E10.8",
+    "skill_name": "Cumulative Frequency Curves and Percentile Estimates",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Draw and interpret cumulative frequency tables and cumulative frequency graphs.",
+      "Estimate and interpret statistical thresholds from cumulative frequency graphs: the median, explicit percentiles, upper/lower quartiles, and the interquartile range (IQR).",
+      "Provide a grid with subgrid in gray for students to fill in the cumulative frequency graph. Both axes must start at 0. Include points that are halfway between gridlines. Put cumulative frequency label vertically and 4px above and horizontal axis label below the tick labels."
+    ]
+  }
+}
