@@ -17,8 +17,10 @@
     "technical_constraints": [
       "Understand and use set language, notation, and Venn diagrams to describe sets and represent relationships.",
       "Venn diagrams must be strictly limited to a maximum of two or three sets.",
-      "Utilise standard notation: n(A), element of, not an element of, complement A', empty set varnothing, universal set U, subset, not a subset, union, and intersection.",
-      "Definitions of sets must use proper conditional builder syntax, e.g., A = {x | x is a natural number} or B = {(x,y) | y = mx + c}."
+      "Utilise standard notation: n(A), element of, not an element of, complement A', empty set varnothing, universal set U (do not use mathcal), subset, not a subset, union, and intersection.",
+      "Definitions of sets must use proper conditional builder syntax, e.g., A = {x | x is a natural number} or B = {(x,y) | y = mx + c}.",
+      "Make the Venn Diagram box wider in order to fill in the regions.",
+      "Place the unscript U in the top left of the rectangle and to the left of rectangle in tikz"
     ]
   },
   "E1.3_powers_and_roots": {
@@ -194,7 +196,8 @@
     "difficulty": "Hard",
     "technical_constraints": [
       "Manipulate algebraic fractions through addition, subtraction, multiplication, and division (e.g., evaluate items like x/3 + (x-4)/2 or formulas with variable denominators).",
-      "Factorise and fully simplify rational expressions by cancelling shared binomial components (e.g., simplify (x^2 - 2x) / (x^2 - 5x + 6))."
+      "Factorise and fully simplify rational expressions by cancelling shared binomial components (e.g., simplify (x^2 - 2x) / (x^2 - 5x + 6)).",
+      "use dfrac for fractions"
     ]
   },
   "E2.4_indices_ii_algebraic": {

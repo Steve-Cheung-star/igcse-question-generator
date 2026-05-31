@@ -89,18 +89,39 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
     elif os.path.exists("/usr/local/bin") and "/usr/local/bin" not in os.environ["PATH"]:
         os.environ["PATH"] = f"/usr/local/bin:{os.environ['PATH']}"
 
+    # Pre-parse: Catch independent $$ math $$ blocks and rewrite them as indented text fragments
+    latex_body = re.sub(
+        r"\$\$(.*?)\$\$",
+        r"\n\\par\\vspace{0.1cm}\\hspace*{0.6cm}$\1$\\par\\vspace{0.15cm}\n",
+        latex_body,
+        flags=re.DOTALL
+    )
+
     raw_lines = latex_body.splitlines()
 
-    item_count = sum(1 for line in raw_lines if line.strip().startswith("[ITEM]"))
-    has_multiple_items = item_count > 1
+    # COUNT MAIN-LEVEL ITEMS ONLY
+    main_item_count = 0
+    subenum_depth = 0
+    has_subenum_internal = False
+
+    for line in raw_lines:
+        stripped_line = line.strip()
+        if stripped_line.startswith("[SUBENUM_START]"):
+            subenum_depth += 1
+            has_subenum_internal = True
+        elif stripped_line.startswith("[SUBENUM_END]"):
+            subenum_depth -= 1
+        elif stripped_line.startswith("[ITEM]") and subenum_depth == 0:
+            main_item_count += 1
+
+    # If a question contains subparts, do NOT drop the itemize mechanics
+    is_single_part_question = (main_item_count <= 1) and not has_subenum_internal and not is_markscheme
 
     assembled_lines = []
-    in_enum = False
     active_environments = []
 
     for line in raw_lines:
         line = re.sub(r'(\d+)%\s*', r'\1\\% ', line)
-
         stripped = line.strip()
         if not stripped:
             continue
@@ -116,46 +137,45 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
             if active_environments[-1] == end_match.group(1):
                 active_environments.pop()
 
+        # Structural Token Routing Logic
         if stripped.startswith("[ENUM_START]"):
-            if has_multiple_items:
-                assembled_lines.append(r"\begin{enumerate}[label=\textbf{(\alph*)}]")
-                in_enum = True
+            if not is_single_part_question:
+                assembled_lines.append(r"\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]")
             continue
         elif stripped.startswith("[ENUM_END]"):
-            if has_multiple_items:
+            if not is_single_part_question:
                 assembled_lines.append(r"\end{enumerate}")
-                in_enum = False
+            continue
+        elif stripped.startswith("[SUBENUM_START]"):
+            assembled_lines.append(r"\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=*]")
+            continue
+        elif stripped.startswith("[SUBENUM_END]"):
+            assembled_lines.append(r"\end{enumerate}")
             continue
 
         elif stripped.startswith("[NEWPAGE]") or "[NEWPAGE]" in stripped:
             clean_item_text = stripped.replace("[NEWPAGE]", "").replace("[ITEM]", "").strip()
-            if in_enum and has_multiple_items:
-                assembled_lines.append(r"\end{enumerate}")
-                assembled_lines.append(r"\newpage")
-                assembled_lines.append(r"\begin{enumerate}[label=\textbf{(\alph*)}, resume]")
-                if clean_item_text:
-                    assembled_lines.append(f"\\item {clean_item_text}")
-            else:
-                assembled_lines.append(r"\newpage")
-                if clean_item_text:
+            assembled_lines.append(r"\newpage")
+            if clean_item_text:
+                if "[ITEM]" in stripped:
+                    assembled_lines.append(
+                        f"\\item {clean_item_text}" if not is_single_part_question else f"\\noindent {clean_item_text} \\\\")
+                else:
                     assembled_lines.append(f"{clean_item_text} \\\\")
             continue
 
         elif stripped.startswith("[ITEM]"):
             item_text = stripped.replace("[ITEM]", "").strip()
-            if in_enum and has_multiple_items:
-                assembled_lines.append(f"\\item {item_text}")
-            else:
+            if is_single_part_question:
                 assembled_lines.append(f"\\noindent {item_text} \\\\")
+            else:
+                assembled_lines.append(f"\\item {item_text}")
             continue
 
-        elif stripped.startswith("[MATH_START]"):
-            math_text = stripped.replace("[MATH_START]", "").replace("[MATH_END]", "").strip()
-            assembled_lines.append(f"\n\\par\\vspace{{0.1cm}}\\hspace*{{0.6cm}}${math_text}$\\par\\vspace{{0.1cm}}")
-            continue
-
-        if len(active_environments) == 0:
-            if not stripped.startswith("\\") and not stripped.endswith(r"\\") and not stripped.startswith("["):
+        # Safeguard: Do not append line endings inside active markscheme tables
+        if len(active_environments) == 0 and not is_markscheme:
+            if not stripped.startswith("\\") and not stripped.endswith(r"\\") and not stripped.startswith(
+                    "[") and not stripped.startswith(r"\par"):
                 line = line + r" \\"
 
         assembled_lines.append(line)
@@ -197,7 +217,6 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
 \\usepackage{{array}}
 
 \\setlength{{\\parindent}}{{0pt}}
-\\setlist[enumerate]{{leftmargin=*, align=left}}
 
 {macro_definition}
 
@@ -290,20 +309,32 @@ with col_left:
     except Exception:
         registry_db = {}
 
+    registry_constraints_prompt = ""
+
     if registry_db:
-        selected_niche = st.selectbox("Select Target Syllabus Niche Profile:", list(registry_db.keys()))
+        selected_niche = st.selectbox(
+            "Select Target Syllabus Niche Profile:",
+            list(registry_db.keys()),
+            key="selected_niche_profile"
+        )
         niche_data = registry_db[selected_niche]
         topic = niche_data.get("skill_name", "Unknown Skill")
         syllabus_ref = niche_data.get("syllabus_ref", "")
+
+        constraints_list = niche_data.get("technical_constraints", [])
+        if constraints_list:
+            registry_constraints_prompt = "\nREGISTRY PROFILE TECHNICAL CONSTRAINTS:\n"
+            for c_idx, constraint_text in enumerate(constraints_list, 1):
+                registry_constraints_prompt += f" {c_idx}. {constraint_text}\n"
     else:
         st.warning("⚠️ registry.json is empty. Using baseline fallback fields.")
-        topic = st.text_input("Topic Focus", "Cumulative Frequency Diagrams")
-        syllabus_ref = "E10.8"
+        topic = st.text_input("Topic Focus", "Sets and Venn Diagrams")
+        syllabus_ref = "E1.2"
 
     selected_paper_target = st.radio(
         "🎯 Choose Target Exam Assessment Component:",
         ["Paper 2", "Paper 4"],
-        index=1,
+        index=0,
         help="Paper 2 enforces NON-CALCULATOR parameters. Paper 4 assumes a full CALCULATOR ecosystem framework."
     )
 
@@ -324,7 +355,7 @@ with col_left:
     if not selected_difficulties:
         selected_difficulties = ["Easy"]
 
-    num_variants = st.slider("Variants to Generate per checked difficulty", min_value=1, max_value=10, value=3)
+    num_variants = st.slider("Variants to Generate per checked difficulty", min_value=1, max_value=10, value=5)
     include_tikz = st.checkbox("Include TikZ Diagram", value=True)
 
     tikz_instruction_block = ""
@@ -332,7 +363,7 @@ with col_left:
         tikz_instruction_block = """
 7. ADVANCED TIKZ LAYOUT & STABLE FOREACH EVALUATION: Wrap background lines and graphs strictly within this centering template environment:
      \\begin{center}
-     \\begin{tikzpicture}[scale=0.8, >=Stealth]
+     \\begin{tikzpicture}
      ...
      \\end{tikzpicture}
      \\end{center}
@@ -375,11 +406,12 @@ with col_left:
 
 CRITICAL ASSESSMENT COMPONENT RESTRICTIONS:
 {paper_specific_prompt_rules}
-
+{registry_constraints_prompt}
 CRITICAL STRUCTURING RULES:
 1. NO HEADERS/TITLES: Do not output any titles, question headers, or labels like "Question 1". Start directly with the raw context text or the `[ENUM_START]` token.
 2. ZERO LEFT INDENTATION: Ensure all lines print completely flush against the left margin. 
-3. MANDATORY SUBPART ENUMERATION & SYNTAX ROUTING: Every single sub-problem parts block MUST start with `[ENUM_START]` and wrap each subpart inside a `[ITEM]` token tag line. Follow these three condition-aware layout formats strictly:
+3. NESTED SUBPART ENUMERATION & SYNTAX ROUTING: Main alphabetical lists must start with `[ENUM_START]` and close with `[ENUM_END]`. If an item contains sub-properties (like part b containing several distinct questions), wrap those properties inside a nested sub-list starting with `[SUBENUM_START]` and closing with `[SUBENUM_END]`. Use `[ITEM]` for every element line.
+   Follow these condition-aware layout formats strictly:
 
    ❌ CASE A: PLOTTING / ACTION COMMANDS ("Complete the table", "Draw", "Sketch", "Graph", "Plot")
    Do NOT output the `\\examanswerslot` macro. Instead, insert the mark count completely flush against the right margin right below your context/table/TikZ diagram using this exact syntax row:
@@ -399,14 +431,14 @@ CRITICAL STRUCTURING RULES:
    [ITEM] Calculate the median value.
    \\examanswerslot{{2cm}}{{0.25}}{{1}}
 
-4. STANDALONE EXPRESSIONS & DISPLAY FRACTIONS: Isolate standalone complex fractions or equations onto independent lines using `[MATH_START]` and `[MATH_END]`.
+4. STANDALONE EXPRESSIONS & DISPLAY MATH BLOCKS: Isolate standalone complex fractions or complex mathematical equations completely onto their own independent lines using standard double dollar signs ($$).
    Example:
    [ITEM] Rationalise the denominator.
-   [MATH_START]\\frac{{3}}{{\\sqrt{{5}}}}[MATH_END]
+   $$ \\frac{{3}}{{\\sqrt{{5}}}} $$
    \\examanswerslot{{2cm}}{{0.25}}{{2}}
 
 5. THE MANDATORY CORRESPONDING MARKSCHEME:
-For each variant question generated, you MUST construct its precise official matching markscheme structured entry row inside an `\\begin{{officialmarkscheme}}` environment. Do not use an overarching question number column; focus completely on subparts (a), (b), (c) as row descriptors. Use standard LaTeX table columns matching: Part & Answer & Marks & Partial Marks / Guidance.
+For each variant question generated, you MUST construct its precise official matching markscheme structured entry row inside an `\\begin{{officialmarkscheme}}` environment. Match nested subparts (such as (b)(i), (b)(ii)) exactly in the Part descriptor column. Use standard LaTeX table columns matching: Part & Answer & Marks & Partial Marks / Guidance.
 
 BATCH DISTRIBUTION DIRECTIVES:
 {strategy_distribution_directives}
@@ -449,7 +481,6 @@ with col_right:
     )
 
     if gemini_output:
-        # 1. First patch Gemini's typo where it closes with \begin{officialmarkscheme} instead of \end
         sanitized_output = re.sub(
             r"\\begin\{officialmarkscheme\}\s*(?=\[MS_\d+_END\])",
             r"\\end{officialmarkscheme}\n",
@@ -457,35 +488,58 @@ with col_right:
         )
 
 
-        # ------------------------------------------------------------------
-        # SCOPED MARKSCHEME TABLE ALIGNMENT SCANNER ENGINE
-        # ------------------------------------------------------------------
         def advanced_ms_cleaner(text):
             def replace_ms(match):
                 content = match.group(1)
-                # Convert loose single backslashes preceding an ampersand into double backslashes with structural newline
-                content = re.sub(r'(?<!\\)\\(?!\\)(\s*&)', r'\\\\ \n\1', content)
-                # Convert loose single backslashes at the end of cell lines into double backslashes
-                content = re.sub(r'(?<!\\)\\(?!\\)\s*$', r'\\\\', content, flags=re.MULTILINE)
+
+                # Sinks any single trailing backslashes at row ends (even followed by spaces or \hline)
+                content = re.sub(r'(?<!\\)\Silicon_Code_Patch\\(?!\s*\\)\s*(\\hline)?\s*$', r'\\\\ \1', content,
+                                 flags=re.MULTILINE)
+
+                # Catches internal cell formatting breaks where a row step was skipped
+                content = re.sub(r'(?<!\\)\Silicon_Code_Patch\\(?!\\)(\s*&)', r'\\\\ \1', content)
                 return f"\\begin{{officialmarkscheme}}{content}\\end{{officialmarkscheme}}"
 
-            return re.sub(r'\\begin\{officialmarkscheme\}(.*?)\\end\{officialmarkscheme\}', replace_ms, text,
+            return re.sub(r'\\begin{{officialmarkscheme}}(.*?)\\end{{officialmarkscheme}}', replace_ms, text,
                           flags=re.DOTALL)
 
 
-        # Execute scoped alignment processing specifically inside the official markscheme code spaces
         sanitized_output = advanced_ms_cleaner(sanitized_output)
 
-        # Secondary cleanup parameters for any redundant table declarations
+        # Strip redundant markdown/tabular artifacts cleanly
         sanitized_output = re.sub(r"\\begin\{tabular\}\{[^\}]*\}", "", sanitized_output)
         sanitized_output = re.sub(r"\\end\{tabular\}", "", sanitized_output)
 
-        # Remove manual duplicate text headings inside the table grid
-        sanitized_output = re.sub(r"\bPart\s*&\s*Answer\s*&\s*Marks\s*&\s*Partial.*️\\\\ \\hline", "", sanitized_output)
-        sanitized_output = re.sub(r"\bPart\s*&\s*Answer\s*&\s*Marks\s*&\s*Partial.*️\\\\", "", sanitized_output)
+        sanitized_output = re.sub(r"\bPart\s*&\s*Answer\s*&\s*Marks\s*&\s*Partial.*️\\\\(\s*\\hline)?", "",
+                                  sanitized_output)
 
-        sanitized_output = sanitized_output.replace(r"\ \hline", r" \\ \hline")
-        sanitized_output = re.sub(r"(?<!\\)\\s*\\hline", r"\\\\ \\hline", sanitized_output)
+        # ------------------------------------------------------------------
+        # FIXED CONDITIONAL LABEL STRIPPING (ONLY STRIPS SINGLE PART SECTIONS)
+        # ------------------------------------------------------------------
+        # Count total rows matching an alignment delimiter column marker to determine total entries
+        row_count = len(re.findall(r"&", sanitized_output))
+
+        # If there are 3 or fewer alignments across the body matrix, it's a single question entry!
+        if row_count <= 3:
+            sanitized_output = re.sub(
+                r"^\s*\(?[a-zA-e]\)?(?:\([i-v]+\))?\s*(&)",
+                r" \1",
+                sanitized_output,
+                count=0,
+                flags=re.MULTILINE
+            )
+
+        # ------------------------------------------------------------------
+        # CLEAN ROW END PIPELINE (PREVENTS \\ \\ DUPLICATES)
+        # ------------------------------------------------------------------
+        # Wipe out any pre-existing messy double/triple backslashes before hlines first
+        sanitized_output = re.sub(r"\\\\+\s*\\hline", r"\\hline", sanitized_output)
+        # Re-inject exactly ONE clean pair of backslashes before every hline
+        sanitized_output = re.sub(r"(?<!\\)\s*\\hline", r" \\\\ \\hline", sanitized_output)
+
+        # Force a completely clean vertical closure at the end of the environment body
+        sanitized_output = re.sub(r"(?<!\\)\s*\\end\{officialmarkscheme\}", r" \\\\ \\hline\n\\end{officialmarkscheme}",
+                                  sanitized_output)
 
         parsed_variants = {}
         parsed_ms = {}
@@ -550,10 +604,8 @@ with col_right:
         if compiled_q_pngs and compiled_ms_pngs:
             st.divider()
 
-            # Detect the absolute highest increment currently sitting in the folder
             next_global_id = get_next_global_id(IMAGE_FOLDER)
 
-            # Form clean global target filename descriptors
             final_q_filename = f"q_{next_global_id}.png"
             final_ms_filename = f"ms_{next_global_id}.png"
 
@@ -563,16 +615,13 @@ with col_right:
             st.info(f"💾 Next available global database slot: **{q_target_path}** and **{ms_target_path}**")
 
             if st.button(f"💾 Commit and Save as Global Entry #{next_global_id}"):
-                # Move compiled first-page assets safely out of buffer into flat root
                 shutil.move(compiled_q_pngs[0], q_target_path)
                 shutil.move(compiled_ms_pngs[0], ms_target_path)
 
-                # Wipe multi-page layout engine artifact vectors if they manifest
                 for extra_path in compiled_q_pngs[1:] + compiled_ms_pngs[1:]:
                     if os.path.exists(extra_path):
                         os.remove(extra_path)
 
-                # Marks Calculation Logic
                 raw_code = st.session_state["selected_latex_code"]
                 slot_marks = re.findall(r"\\examanswerslot\{.*?\}\{.*?\}\{(\d+)\}", raw_code)
                 manual_marks = re.findall(r"\\makebox\[\d+pt\]\[r\]\{\s*\[?(\d+)\]?\s*\}", raw_code)
@@ -580,13 +629,12 @@ with col_right:
                 all_mark_strings = slot_marks + manual_marks
                 calculated_marks = sum(int(m) for m in all_mark_strings) if all_mark_strings else 3
 
-                # Fallback parameters definitions
-                active_topic = topic if 'topic' in locals() else "Cumulative Frequency Diagrams"
+                active_topic = topic if 'topic' in locals() else "Sets and Venn Diagrams"
                 active_difficulty = selected_difficulties[0] if selected_difficulties else "Medium"
 
-                # RICH COMPREHENSIVE SCHEMA GENERATION - Stores paths AND full source code syntax
                 new_entry = {
                     "paper": selected_paper_target,
+                    "question_base": f"{selected_paper_target}_{next_global_id}",
                     "question_paths": [q_target_path],
                     "ms_paths": [ms_target_path],
                     "question_code": st.session_state["selected_latex_code"],
@@ -614,8 +662,7 @@ with col_right:
                     json.dump(existing_bank, f, indent=4, ensure_ascii=False)
 
                 st.balloons()
-                st.success(
-                    f"Successfully saved as {final_q_filename}/{final_ms_filename} and appended to {bank_filename} with raw syntax code text mapped!")
+                st.success(f"Successfully saved as {final_q_filename}/{final_ms_filename}!")
                 st.rerun()
 
 if st.session_state["selected_latex_code"]:

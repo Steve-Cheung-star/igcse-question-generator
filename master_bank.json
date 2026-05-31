@@ -7,6 +7,8 @@
         "ms_paths": [
             "images/ms_1.png"
         ],
+        "question_code": "Here is a list of numbers:\n\n\n$$\\sqrt{16}, \\quad \\pi, \\quad -5, \\quad \\frac{2}{3}, \\quad \\sqrt{7}, \\quad 0$$\n\n\nFrom this list, identify which number is:\n[ENUM_START]\n[ITEM] a negative integer,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] a prime number,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] an irrational number.\n\\examanswerslot{2cm}{0.25}{1}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & $-5$ & 1 & B1 \\\\\n(b) & $\\sqrt{16}$ (or 4) & 1 & B1 \\\\\n(c) & $\\pi$ or $\\sqrt{7}$ & 1 & B1 (Accept either) \\\\\\end{officialmarkscheme}",
         "metadata": {
             "topics": [
                 "Types of Number, Prime Factorisation, HCF and LCM"
@@ -23,6 +25,8 @@
         "ms_paths": [
             "images/ms_2.png"
         ],
+        "question_code": "[ENUM_START]\n[ITEM] Write 180 as a product of its prime factors.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Find the highest common factor (HCF) of 180 and 54.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & $2^2 \\times 3^2 \\times 5$ & 2 & M1 for systematic division or factor tree showing at least two correct prime steps. \\\\\n(b) & 18 & 2 & M1 for listing factors or using prime factorisations ($2 \\times 3^2$). \\\\\\end{officialmarkscheme}",
         "metadata": {
             "topics": [
                 "Types of Number, Prime Factorisation, HCF and LCM"
@@ -39,6 +43,8 @@
         "ms_paths": [
             "images/ms_3.png"
         ],
+        "question_code": "Two alarms beep at regular intervals. Alarm A beeps every 12 minutes and Alarm B beeps every 15 minutes. Both alarms beep together at 09:00.\n[ENUM_START]\n[ITEM] Find the lowest common multiple (LCM) of 12 and 15.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the next time that both alarms beep together.\n\\examanswerslot{2cm}{0.25}{1}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & 60 & 2 & M1 for listing multiples or using prime factorisations ($2^2 \\times 3 \\times 5$). \\\\\n(b) & 10:00 & 1 & B1 (Accept 10 am or 10:00 am) \\\\\\end{officialmarkscheme}",
         "metadata": {
             "topics": [
                 "Types of Number, Prime Factorisation, HCF and LCM"
@@ -55,6 +61,8 @@
         "ms_paths": [
             "images/ms_4.png"
         ],
+        "question_code": "The prime factorisations of two numbers, $X$ and $Y$, are given below:\n[MATH_START]X = 2^3 \\times 3 \\times 5^2[MATH_END]\n[MATH_START]Y = 2^2 \\times 3^2 \\times 7[MATH_END]\nLeaving your answers as products of prime factors, find:\n[ENUM_START]\n[ITEM] the highest common factor (HCF) of $X$ and $Y$,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] the lowest common multiple (LCM) of $X$ and $Y$.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & $2^2 \\times 3$ & 1 & B1 (Accept 12) \\\\\n(b) & $2^3 \\times 3^2 \\times 5^2 \\times 7$ & 2 & M1 for any product containing at least three correct prime bases to the correct maximum power. \\\\\\end{officialmarkscheme}",
         "metadata": {
             "topics": [
                 "Types of Number, Prime Factorisation, HCF and LCM"
@@ -64,36 +72,759 @@
         }
     },
     {
-        "paper": "Paper 4",
+        "paper": "Paper 2",
         "question_paths": [
             "images/q_5.png"
         ],
         "ms_paths": [
             "images/ms_5.png"
         ],
+        "question_code": "[ENUM_START]\n[ITEM] Write down the value of the largest prime number that is less than 30.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Explain why 39 is not a prime number.\n\\examanswerslot{2.5cm}{0}{1}\n[ITEM] Find the lowest common multiple (LCM) of 8 and 14.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & 29 & 1 & B1 \\\\\n(b) & It has factors other than 1 and itself / it is divisible by 3 (or 13) / $3 \\times 13 = 39$ & 1 & B1 for a clear, mathematically sound reason. \\\\\n(c) & 56 & 2 & M1 for listing multiples or using prime factors ($2^3 \\times 7$). \\\\\\end{officialmarkscheme}",
         "metadata": {
             "topics": [
-                "Core Angle Properties of Circles"
+                "Types of Number, Prime Factorisation, HCF and LCM"
             ],
-            "marks": 8,
-            "difficulty": "Hard"
+            "marks": 4,
+            "difficulty": "Easy"
         }
     },
     {
-        "paper": "Paper 4",
+        "paper": "Paper 2",
         "question_paths": [
             "images/q_6.png"
         ],
         "ms_paths": [
             "images/ms_6.png"
         ],
-        "question_code": "The diagram shows a circle with centre $O$ and diameter $AB = 10\\text{ cm}$. Points $C$ and $D$ lie on the circumference of the circle. The chords $AC$ and $BD$ are extended to intersect at the point $E$. The chords $AD$ and $BC$ intersect inside the circle at the point $F$. It is given that $\\angle CAB = 55^\\circ$ and $\\angle DBA = 60^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8, >=Stealth]\n\\coordinate (O) at (0,0);\n\\draw[thick] (O) circle (2.5);\n\\coordinate (A) at (-2.5,0);\n\\coordinate (B) at (2.5,0);\n\\coordinate (C) at (110:2.5);\n\\coordinate (D) at (60:2.5);\n\\draw[thick] (A) -- (B);\n\\coordinate (E) at (intersection of A--C and B--D);\n\\coordinate (F) at (intersection of A--D and B--C);\n\\draw[thick] (A) -- (E);\n\\draw[thick] (B) -- (E);\n\\draw[thick] (A) -- (D);\n\\draw[thick] (B) -- (C);\n\\node[below left] at (A) {$A$};\n\\node[below right] at (B) {$B$};\n\\node[above left] at (C) {$C$};\n\\node[above right] at (D) {$D$};\n\\node[above] at (E) {$E$};\n\\node[below] at (F) {$F$};\n\\fill (O) circle (1.5pt);\n\\node[below] at (O) {$O$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate $\\angle AEB$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate $\\angle AFB$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the length of $EF$.\n\\examanswerslot{2cm}{0.25}{4}\n[ENUM_END]",
-        "ms_code": "\\begin{officialmarkscheme}\n(a) & $65^\\circ$ & 2 & M1 for $180^\\circ - 55^\\circ - 60^\\circ$ \\\\\n(b) & $115^\\circ$ & 3 & M1 for $\\angle ACB = 90^\\circ \\implies \\angle CBA = 35^\\circ$ \\\\ \n & & & M1 for $\\angle ADB = 90^\\circ \\implies \\angle DAB = 30^\\circ$ \\\\ \n & & & A1 for $180^\\circ - 30^\\circ - 35^\\circ = 115^\\circ$ \\\\\n(c) & $4.66\\text{ cm}$ & 4 & M1 for $AE = \\frac{10\\sin(60^\\circ)}{\\sin(65^\\circ)} = 9.555\\text{ cm}$ \\\\ \n & & & M1 for $AG = 9.555\\cos(55^\\circ) = 5.481\\text{ cm}$ and $EG = 9.555\\sin(55^\\circ) = 7.827\\text{ cm}$ \\\\ \n & & & M1 for $FG = 5.481\\tan(30^\\circ) = 3.164\\text{ cm} \\implies EF = 7.827 - 3.164$ \\\\\\end{officialmarkscheme}",
+        "question_code": "Here is a list of numbers:\n[MATH_START]\\sqrt{16}, \\quad \\pi, \\quad 0.333\\dots, \\quad \\sqrt{8}, \\quad -5, \\quad 19[MATH_END]\n[ENUM_START]\n[ITEM] From this list, write down all the irrational numbers.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the Highest Common Factor (HCF) of 72 and 120 by first writing each number as a product of its prime factors.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] A flashing light operates every 42 seconds and another operates every 60 seconds. They flash together at 13:00. Find the next time that they flash together.\n\\examanswerslot{3cm}{0.25}{3}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & $\\pi$ and $\\sqrt{8}$ & 1 & Both required. Accept in any order.  \\\\ \\hline\n(b) & 24 & 3 & M1 for $72 = 2^3 \\times 3^2$ and $120 = 2^3 \\times 3 \\times 5$. M1 for $2^3 \\times 3$.  \\\\ \\hline\n(c) & 13:07 & 3 & M1 for prime factors of 42 ($2 \\times 3 \\times 7$) and 60 ($2^2 \\times 3 \\times 5$). M1 for LCM = 420 seconds (= 7 minutes).  \\\\ \\hline\n\\end{officialmarkscheme}",
         "metadata": {
             "topics": [
                 "Types of Number, Prime Factorisation, HCF and LCM"
             ],
-            "marks": 9,
+            "marks": 7,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_7.png"
+        ],
+        "ms_paths": [
+            "images/ms_7.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Explain why 43 is classified as a prime number while 45 is classified as a composite number.\n\\examanswerslot{2.5cm}{0}{2}\n[ITEM] Express 540 as a product of its prime factors, giving your answer in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] The Highest Common Factor (HCF) of two numbers is 14 and their Lowest Common Multiple (LCM) is 210. Given that one of the numbers is 42, find the other number.\n\\examanswerslot{2.5cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & 43 has only two factors (1 and itself) whereas 45 has more than two factors (e.g., 3, 5, 9, 15). & 2 & B1 for correct definition/reasoning for 43. B1 for correct reasoning for 45.  \\\\ \\hline\n(b) & $2^2 \\times 3^3 \\times 5$ & 2 & M1 for finding at least two correct prime steps in a tree or division line (e.g., $2 \\times 270$ or $10 \\times 54$).  \\\\ \\hline\n(c) & 70 & 2 & M1 for $\\frac{14 \\times 210}{42}$ or equivalent working.  \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_8.png"
+        ],
+        "ms_paths": [
+            "images/ms_8.png"
+        ],
+        "question_code": "Two numbers, $A$ and $B$, are written as products of their prime factors:\n[MATH_START]A = 2^3 \\times 3^2 \\times 5 \\times 7[MATH_END]\n[MATH_START]B = 2^2 \\times 3^4 \\times 5^2[MATH_END]\n[ENUM_START]\n[ITEM] Find the Highest Common Factor (HCF) of $A$ and $B$, leaving your answer as a product of prime factors in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the Lowest Common Multiple (LCM) of $A$ and $B$, leaving your answer as a product of prime factors in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the smallest positive integer value of $k$ such that $A \\times k$ is a perfect cube.\n\\examanswerslot{2.5cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & $2^2 \\times 3^2 \\times 5$ & 2 & B1 for any two correct prime bases with correct minimum powers.  \\\\ \\hline\n(b) & $2^3 \\times 3^4 \\times 5^2 \\times 7$ & 2 & B1 for any three correct prime bases with correct maximum powers.  \\\\ \\hline\n(c) & 147 & 2 & M1 for identifying needed powers: $3 \\times 5^2 \\times 7^2$ is incorrect; should be $3 \\times 5^2 \\times 7^2 = 3 \\times 25 \\times 49$, wait. $A = 2^3 \\times 3^2 \\times 5 \\times 7$. To make a cube, we need powers to be multiples of 3. We need $3^1 \\times 5^2 \\times 7^2 = 3 \\times 25 \\times 49 = 3675$. Correct answer is 3675. M1 for $3^1 \\times 5^2 \\times 7^2$.  \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_9.png"
+        ],
+        "ms_paths": [
+            "images/ms_9.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Show that the sum of any three consecutive integers is always a multiple of 3.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Find the Highest Common Factor (HCF) of 105, 135 and 150.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Three continuous tolling bells chime at intervals of 8 minutes, 12 minutes and 15 minutes respectively. If they all chime together at 09:15, find the next time they will all chime together.\n\\examanswerslot{3cm}{0.25}{3}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & $n + (n+1) + (n+2) = 3n + 3 = 3(n+1)$, which is divisible by 3. & 2 & M1 for algebraic setup $n + (n+1) + (n+2)$. A1 for factoring out 3 to prove divisibility.  \\\\ \\hline\n(b) & 15 & 2 & M1 for prime factorisations: $105=3\\times5\\times7$, $135=3^3\\times5$, $150=2\\times3\\times5^2$.  \\\\ \\hline\n(c) & 11:15 & 3 & M1 for finding LCM of 8, 12, 15. M1 for LCM = 120 minutes (= 2 hours).  \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 7,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_10.png"
+        ],
+        "ms_paths": [
+            "images/ms_10.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Given that $x$ is a prime number and $y$ is an even integer greater than 2, state whether the product $xy$ is prime, odd, or composite.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the Lowest Common Multiple (LCM) of 48 and 84.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Find the smallest positive integer $n$ such that $\\frac{180}{n}$ is a perfect square.\n\\examanswerslot{2.5cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance  \\\\ \\hline\n(a) & Composite & 1 & Given $y$ is even, $xy$ must have factors 1, 2, $x$, $y$, etc.  \\\\ \\hline\n(b) & 336 & 2 & M1 for $48 = 2^4 \\times 3$ and $84 = 2^2 \\times 3 \\times 7$. LCM = $2^4 \\times 3 \\times 7$.  \\\\ \\hline\n(c) & 5 & 2 & M1 for prime decomposition $180 = 2^2 \\times 3^2 \\times 5$.  \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_11.png"
+        ],
+        "ms_paths": [
+            "images/ms_11.png"
+        ],
+        "question_code": "Given that $A = 2^4 \\times 3^x \\times 5^2$ and $B = 2^y \\times 3^3 \\times 7$, where $x$ and $y$ are positive integers.\nThe Highest Common Factor (HCF) of $A$ and $B$ is 360.\nThe Lowest Common Multiple (LCM) of $A$ and $B$ is 75600.\n[ENUM_START]\n[ITEM] Show that $x = 2$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Find the value of $y$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the smallest positive integer $k$ such that $Ak$ is a perfect cube.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & $360 = 2^3 \\times 3^2 \\times 5$ \\newline $\\min(x, 3) = 2 \\implies x = 2$ & 2 & M1 for prime factorisation of 360 or using LCM entry \\\\\n(b) & $y = 3$ & 2 & B2 for correct answer \\newline M1 for $\\min(4, y) = 3$ from HCF \\\\\n(c) & $k = 6$ & 2 & B2 for correct answer \\newline M1 for $2^2 \\times 3 \\times 5$ or analyzing powers for $A = 2^4 \\times 3^2 \\times 5^2$ \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_12.png"
+        ],
+        "ms_paths": [
+            "images/ms_12.png"
+        ],
+        "question_code": "Three security lights flash at different regular intervals.\nLight $P$ flashes every 42 seconds, Light $Q$ flashes every 60 seconds, and Light $R$ flashes every $t$ seconds, where $t$ is an integer such that $60 < t < 100$.\nAll three lights flash together at exactly 18:00.\nThey next flash together at exactly 18:14.\n[ENUM_START]\n[ITEM] Express 42 and 60 as products of their prime factors.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the total number of seconds between 18:00 and 18:14.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Determine the two possible values of $t$.\n\\examanswerslot{2cm}{0.25}{3}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & $42 = 2 \\times 3 \\times 7$ \\newline $60 = 2^2 \\times 3 \\times 5$ & 2 & B1 for each correct prime factorisation \\\\\n(b) & 840 & 1 & B1 for 840 seconds \\\\\n(c) & $t = 70$ or $t = 84$ & 3 & B3 for both values correct \\newline B2 for one correct value \\newline M1 for recognizing $\\text{LCM}(42, 60, t) = 840$ or $840 = 2^3 \\times 3 \\times 5 \\times 7$ \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_13.png"
+        ],
+        "ms_paths": [
+            "images/ms_13.png"
+        ],
+        "question_code": "Consider the set of numbers $S = \\{ \\sqrt{121}, \\pi, 0.\\dot{4}\\dot{5}, \\sqrt{8}, -7, \\frac{22}{7}, 0 \\}$.\n[ENUM_START]\n[ITEM] List all the irrational numbers in set $S$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the number $0.\\dot{4}\\dot{5}$ can be written as the fraction $\\frac{5}{11}$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Write down the highest common factor of the two largest integers in set $S$.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & $\\pi, \\sqrt{8}$ & 2 & B2 for both correct, B1 for one correct and no extras \\\\\n(b) & Let $x = 0.4545...$ \\newline $100x = 45.4545...$ \\newline $99x = 45 \\implies x = \\frac{45}{99} = \\frac{5}{11}$ & 2 & M1 for setting up $100x - x = 45$ or equivalent fractional method \\\\\n(c) & 11 & 2 & B2 for 11 (integers are 0 and 11, $\\text{HCF}(0,11)=11$) \\newline M1 for identifying integers as 11 and 0 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_14.png"
+        ],
+        "ms_paths": [
+            "images/ms_14.png"
+        ],
+        "question_code": "An algebraic expression is defined as $N = 140x^2y^3$, where $x$ and $y$ are distinct prime numbers greater than 7.\n[ENUM_START]\n[ITEM] Express 140 as a product of its prime factors.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down the total number of positive factors of $140$, justifying your calculation.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Given a second expression $M = 105x^4y$, find the Highest Common Factor (HCF) of $N$ and $M$ in terms of $x$ and $y$, giving your answer in its simplest prime-factored algebraic form.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & $2^2 \\times 5 \\times 7$ & 1 & B1 for correct prime factorisation \\\\\n(b) & 12 & 2 & B1 for 12 \\newline M1 for $(2+1)(1+1)(1+1)$ or listing all 12 factors cleanly \\\\\n(c) & $35x^2y$ & 2 & B2 for $35x^2y$ or $5 \\times 7 \\times x^2y$ \\newline M1 for finding HCF of 140 and 105 is 35 or picking $x^2y$ \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 5,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_15.png"
+        ],
+        "ms_paths": [
+            "images/ms_15.png"
+        ],
+        "question_code": "Consider the numbers 504 and 540.\n[ENUM_START]\n[ITEM] Write 504 as a product of its prime factors.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Express 540 as a product of its prime factors.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the highest common factor (HCF) of 504 and 540.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the lowest common multiple (LCM) of 504 and 540.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $2^3 \\times 3^2 \\times 7$ & 2 & B1 for any correct product that equals 504 or factor tree showing all prime branches \\\\\n(b) & $2^2 \\times 3^3 \\times 5$ & 2 & B1 for any correct product that equals 540 or factor tree showing all prime branches \\\\\n(c) & 36 & 2 & M1 for $2^2 \\times 3^2$ or list of common factors \\\\\n(d) & 7560 & 2 & M1 for $2^3 \\times 3^3 \\times 5 \\times 7$ or their $\\text{(a)} \\times \\text{(b)} / \\text{their (c)}$ \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 8,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_16.png"
+        ],
+        "ms_paths": [
+            "images/ms_16.png"
+        ],
+        "question_code": "A builder has a rectangular floor measuring 840 cm by 1260 cm. He wants to cover the floor entirely with identical square tiles of side length $x$ cm, where $x$ is an integer. No tiles are to be cut.\n[ENUM_START]\n[ITEM] Find the largest possible value of $x$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Using your answer to part (a), calculate the total number of square tiles needed to cover the floor.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] State whether $x=15$ could be a possible side length for the tiles. Give a reason for your answer.\n\\examanswerslot{2cm}{0.25}{1}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 420 & 2 & M1 for identifying HCF of 840 and 1260 \\\\\n(b) & 6 & 2 & M1 for $(840 \\div \\text{their } x) \\times (1260 \\div \\text{their } x)$ or $840 \\times 1260 \\div (\\text{their } x)^2$ \\\\\n(c) & Yes, because 15 is a factor of both 840 and 1260 & 1 & B1 for correct decision with valid mathematical reason \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_17.png"
+        ],
+        "ms_paths": [
+            "images/ms_17.png"
+        ],
+        "question_code": "The mass of an atom of Element $X$ is $1.26 \\times 10^{2}$ units, and the mass of an atom of Element $Y$ is $1.98 \\times 10^{2}$ units.\n[ENUM_START]\n[ITEM] Find the highest common factor (HCF) of 126 and 198.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the lowest common multiple (LCM) of 126 and 198.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the ratio of the HCF to the LCM can be written as a fraction in the form:\n[MATH_START]\\frac{1}{k}[MATH_END]\nwhere $k$ is an integer. Find the value of $k$.\n\\examanswerslot{3.5cm}{0}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 18 & 2 & M1 for $126 = 2 \\times 3^2 \\times 7$ and $198 = 2 \\times 3^2 \\times 11$ \\\\\n(b) & 1386 & 2 & M1 for $2 \\times 3^2 \\times 7 \\times 11$ \\\\\n(c) & $k = 77$ & 2 & M1 for setting up $\\frac{18}{1386}$ or $\\frac{1}{7 \\times 11}$ with dotted line parameter 0 enforced \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_18.png"
+        ],
+        "ms_paths": [
+            "images/ms_18.png"
+        ],
+        "question_code": "Two automated vehicles start driving around a circular track from the same position at 09:00. Vehicle $A$ completes a lap every 108 seconds. Vehicle $B$ completes a lap every 144 seconds.\n[ENUM_START]\n[ITEM] Write down the prime factorisation of 108.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Write down the prime factorisation of 144.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Determine the number of minutes it will take for both vehicles to meet again at the starting line.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $2^2 \\times 3^3$ & 2 & B1 for any correct numerical product totaling 108 \\\\\n(b) & $2^4 \\times 3^2$ & 2 & B1 for any correct numerical product totaling 144 \\\\\n(c) & 7.2 & 2 & M1 for LCM $= 2^4 \\times 3^3 = 432$ seconds, then dividing by 60 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_19.png"
+        ],
+        "ms_paths": [
+            "images/ms_19.png"
+        ],
+        "question_code": "Consider the large integers $X = 2^{n+2} \\times 3^3 \\times 5 \\times 11^2$ and $Y = 2^4 \\times 3^n \\times 7^2$, where $n$ is a positive integer.\n[ENUM_START]\n[ITEM] Given that the highest common factor (HCF) of $X$ and $Y$ is 432, show that $n = 3$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Using $n = 3$, find the lowest common multiple (LCM) of $X$ and $Y$. Leave your answer as a product of prime factors in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the smallest positive integer $k$ such that $kY$ is a perfect cube.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $n = 3$ derived & 2 & M1 for writing $432 = 2^4 \\times 3^3$. \\\\ \n\n& & & A1 for equating $\\min(n+2, 4) = 4 \\Rightarrow n \\ge 2$ and $\\min(3, n) = 3 \\Rightarrow n = 3$. \\\\\n(b) & $2^5 \\times 3^3 \\times 5 \\times 7^2 \\times 11^2$ & 2 & B1 for correct powers of 2, 3 and 5. \\\\ \n\n& & & B1 for correct powers of 7 and 11. \\\\\n(c) & 147 & 2 & M1 for identifying needed powers for $Y = 2^4 \\times 3^3 \\times 7^2$ to be a cube ($2^6 \\times 3^3 \\times 7^3$). \\\\ \n\n& & & A1 for $2^2 \\times 7 = 28$. \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_20.png"
+        ],
+        "ms_paths": [
+            "images/ms_20.png"
+        ],
+        "question_code": "The mass of an electron is approximately $9.11 \\times 10^{-31}$ kg, and the mass of a proton is approximately $1.67 \\times 10^{-27}$ kg.\n[ENUM_START]\n[ITEM] State whether the mass of an electron, when expressed in kilograms without standard form, is a rational or irrational number. Give a reason for your answer.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate how many times heavier a proton is than an electron. Give your answer correct to 3 significant figures.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the lowest common multiple (LCM) of the two integers 911 and 167, given that both are prime numbers.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Rational with reason & 2 & B1 for Rational. \\\\ \n\n& & & B1 for reason: it can be written as a terminating decimal or as a fraction $\\frac{a}{b}$ where $a, b \\in \\mathbb{Z}$. \\\\\n(b) & 1830 & 2 & M1 for $\\frac{1.67 \\times 10^{-27}}{9.11 \\times 10^{-31}}$. \\\\ \n\n& & & A1 for 1833.15... rounds to 1830 (3 s.f.). \\\\\n(c) & 152137 & 2 & M1 for $911 \\times 167$ since both are prime. \\\\ \n\n& & & A1 for 152137. \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_21.png"
+        ],
+        "ms_paths": [
+            "images/ms_21.png"
+        ],
+        "question_code": "Let $P$ be the set of all prime numbers, $\\mathbb{Z}$ be the set of integers, $\\mathbb{Q}$ be the set of rational numbers, and $\\mathbb{R}$ be the set of real numbers.\n[ENUM_START]\n[ITEM] Identify which of the following numbers are elements of the set $\\mathbb{R} \\setminus \\mathbb{Q}$.\n[MATH_START]\\sqrt{49}, \\quad \\pi, \\quad 0.333\\dots, \\quad \\sqrt{18}, \\quad -\\frac{22}{7}[MATH_END]\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Express 504 as a product of its prime factors in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Given that $\\text{LCM}(504, M) = 7560$ and $\\text{HCF}(504, M) = 12$, calculate the value of the integer $M$.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\pi$ and $\\sqrt{18}$ & 2 & B1 for $\\pi$, B1 for $\\sqrt{18}$. Deduct 1 mark for each extra incorrect value. \\\\\n(b) & $2^3 \\times 3^2 \\times 7$ & 2 & M1 for systematic division by primes. \\\\ \n\n& & & A1 for $2^3 \\times 3^2 \\times 7$. \\\\\n(c) & 180 & 2 & M1 for using $\\text{HCF} \\times \\text{LCM} = 504 \\times M$. \\\\ \n\n& & & A1 for $M = \\frac{12 \\times 7560}{504} = 180$. \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_22.png"
+        ],
+        "ms_paths": [
+            "images/ms_22.png"
+        ],
+        "question_code": "Two numbers, $A$ and $B$, are written as products of their prime factors.\n[MATH_START]A = 2^{x+1} \\times 3^y \\times 11^z[MATH_END]\n[MATH_START]B = 2^x \\times 3^{y+2} \\times 11^2[MATH_END]\nwhere $x$, $y$, and $z$ are positive integers.\nThe highest common factor (HCF) of $A$ and $B$ is $11,664$.\nThe lowest common multiple (LCM) of $A$ and $B$ is $15,229,152$.\n[ENUM_START]\n[ITEM] Show that $2^x \\times 3^y = 108$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Find the value of $x$, the value of $y$, and the value of $z$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Determine whether the value of the product $AB$ is a square number, a cube number, both, or neither. Justify your answer mathematically.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $2^x \\times 3^y \\times 11^2 = 11664 \\Rightarrow 2^x \\times 3^y = \\frac{11664}{121} = 108$ & 2 & M1 for writing HCF expression: $\\text{HCF} = 2^x \\times 3^y \\times 11^{\\min(z,2)}$ and establishing $\\min(z,2)=2$ \\\\\n(b) & $x=2, y=3, z=4$ & 3 & B1 for each correct value. \\newline (M1 for $108 = 2^2 \\times 3^3$ to identify $x$ and $y$) \\newline (M1 for using LCM to isolate $z$: $\\max(z,2)=4$) \\\\\n(c) & Neither, with valid explanation & 2 & B1 for showing $AB = 2^5 \\times 3^8 \\times 11^6$ \\newline B1 for referencing that the powers (5 and 8) are not multiples of 2 or 3 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 7,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_23.png"
+        ],
+        "ms_paths": [
+            "images/ms_23.png"
+        ],
+        "question_code": "The highest common factor (HCF) of two positive integers, $A$ and $B$, is 18.\nThe lowest common multiple (LCM) of $A$ and $B$ is 1080.\nThe ratio of $A : B$ is $2 : 15$.\n\n[ENUM_START]\n[ITEM] Write down the value of the product $A \\times B$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the value of $A$ and the value of $B$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Determine whether $A$ is a rational or irrational multiple of $\\sqrt{B}$.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 19440 & 1 & B1 for 19440 (from $18 \\times 1080$) \\\\\n(b) & $A = 36$, $B = 270$ & 3 & M1 for setting $2k \\times 15k = 19440$ or $\\frac{B}{A} = \\frac{15}{2} = \\frac{\\text{LCM}}{\\text{HCF}} \\div \\text{something}$\\newline M1 for $30k^2 = 19440 \\implies k^2 = 648$ is incorrect method, correct tracking:\\newline Let $A = 18m$, $B = 18n \\implies 18 \\times m \\times n = 1080 \\implies m \\times n = 60$\\newline Since $A:B = 2:15 \\implies m:n = 2:15 \\implies m=2, n=15$\\newline A1 for $A = 36, B = 270$ \\\\\n(c) & Irrational and $\\frac{36}{\\sqrt{270}} = \\frac{4\\sqrt{30}}{15}$ & 2 & M1 for evaluating $\\frac{A}{\\sqrt{B}} = \\frac{36}{\\sqrt{270}}$ or $\\frac{36}{16.43...}$\\newline A1 for Irrational with valid justification\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_24.png"
+        ],
+        "ms_paths": [
+            "images/ms_24.png"
+        ],
+        "question_code": "A rectangular floor measures $16.8\\text{ m}$ by $12.6\\text{ m}$. A contractor wishes to cover the entire floor with identical square tiles of side length $x\\text{ cm}$, where $x$ is an integer. No tiles are to be cut.\n\n[ENUM_START]\n[ITEM] Change $16.8\\text{ m}$ and $12.6\\text{ m}$ into centimetres.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the largest possible value of $x$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the total number of these largest square tiles required to cover the floor.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $1680\\text{ cm}$ and $1260\\text{ cm}$ & 1 & B1 for both values correct \\\\\n(b) & 420 & 2 & M1 for listing prime factors of $1680$ ($2^4 \\times 3 \\times 5 \\times 7$) and $1260$ ($2^2 \\times 3^2 \\times 5 \\times 7$)\\newline A1 for 420 \\\\\n(c) & 12 & 2 & M1 for $(1680 \\div 420) \\times (1260 \\div 420)$ or $\\frac{1680 \\times 1260}{420^2}$\\newline A1 for 12\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_25.png"
+        ],
+        "ms_paths": [
+            "images/ms_25.png"
+        ],
+        "question_code": "Consider the number $N = 2520$.\n\n[ENUM_START]\n[ITEM] Express 2520 as a product of its prime factors, writing your answer in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the smallest positive integer $k$ such that $2520k$ is a perfect square.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] The value $\\sqrt[3]{2520 \\times m}$ is an integer. Find the smallest positive integer $m$.\n\\examanswerslot{2cm}{0.25}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $2^3 \\times 3^2 \\times 5 \\times 7$ & 2 & M1 for a continuous systematic division or factor tree completed to prime levels\\newline A1 for $2^3 \\times 3^2 \\times 5 \\times 7$ \\\\\n(b) & 70 & 2 & M1 for identifying odd powers ($2^1, 5^1, 7^1$) needed to pair up\\newline A1 for 70 (from $2 \\times 5 \\times 7$) \\\\\n(c) & 1475 & 2 & M1 for adjusting powers to multiples of 3 ($2^3 \\times 3^3 \\times 5^3 \\times 7^3$)\\newline A1 for 1475 (from $3 \\times 5^2 \\times 7^2$)\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_26.png"
+        ],
+        "ms_paths": [
+            "images/ms_26.png"
+        ],
+        "question_code": "Two algebraic expressions, $P$ and $Q$, are given by $P = 72x^3y^5z$ and $Q = 108x^2y^6$.\n\n[ENUM_START]\n[ITEM] Find the highest common factor (HCF) of $P$ and $Q$, leaving your answer in terms of $x$, $y$, and $z$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the lowest common multiple (LCM) of $P$ and $Q$, leaving your answer in terms of $x$, $y$, and $z$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the product of $P$ and $Q$ is equal to the product of their HCF and their LCM.\n\\examanswerslot{3.5cm}{0}{2}",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $36x^2y^5$ & 2 & M1 for correct numerical HCF (36) or correct algebraic components ($x^2y^5$)\\newline A1 for $36x^2y^5$ \\\\\n(b) & $216x^3y^6z$ & 2 & M1 for correct numerical LCM (216) or correct algebraic components ($x^3y^6z$)\\newline A1 for $216x^3y^6z$ \\\\\n(c) & $\\text{Product} = 7776x^5y^{11}z$ & 2 & M1 for showing $P \\times Q = 7776x^5y^{11}z$ or $\\text{HCF} \\times \\text{LCM} = 36x^2y^5 \\times 216x^3y^6z$\\newline A1 for complete convincing demonstration with 0 dots line width\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_27",
+        "question_paths": [
+            "images/q_27.png"
+        ],
+        "ms_paths": [
+            "images/ms_27.png"
+        ],
+        "question_code": "The universal set $U = \\{x \\mid x \\text{ is an integer and } 1 \\le x \\le 12\\}$.\nThe sets $A$ and $B$ are defined as follows:\n[MATH_START]A = {x \\mid x \\text{ is a multiple of } 3}[MATH_END]\n[MATH_START]B = {x \\mid x \\text{ is a factor of } 12}[MATH_END]\n[ENUM_START]\n[ITEM] List the elements of the set $A \\cap B$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{n}(A \\cup B)'$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Complete the statement using the correct set notation symbol:\nThe number 5 ... $B$.\n\\examanswerslot{2cm}{0.25}{1}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & $\\{3, 6, 12\\}$ & 2 & B1 for any two correct elements or for listing $A=\\{3,6,9,12\\}$ and $B=\\{1,2,3,4,6,12\\}$. \\\\\n(b) & 4 & 2 & B1 for $\\text{n}(A \\cup B) = 8$ or for listing $(A \\cup B)' = \\{5, 7, 8, 10, 11\\}$ incorrectly with one error. \\\\\n(c) & $\\notin$ & 1 & B1 for correct symbol. \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Set Notation and Venn Diagrams"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_1",
+        "question_paths": [
+            "images/q_1.png"
+        ],
+        "ms_paths": [
+            "images/ms_1.png"
+        ],
+        "question_code": "Here is a list of numbers:\n\n\n$$4, \\; 7, \\; 9, \\; 12, \\; 15, \\; 23, \\; 27, \\; 32$$\n\n\nFrom this list, write down:\n[ENUM_START]\n[ITEM] the square number,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] the cube number,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] the prime number that is greater than 10,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] the reciprocal of the integer 4.\n\\examanswerslot{2cm}{0.25}{1}",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\n(a) & 9 & 1 & EEO \\\n(b) & 27 & 1 & EEO \\\n(c) & 23 & 1 & EEO \\\n(d) & $\\frac{1}{4}$ & 1 & EEO \\\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_2",
+        "question_paths": [
+            "images/q_2.png"
+        ],
+        "ms_paths": [
+            "images/ms_2.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Express 72 as a product of its prime factors. Give your answer in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the Highest Common Factor (HCF) of 72 and 120.\n\\examanswerslot{1.5cm}{0.25}{2}\n[ITEM] Find the Lowest Common Multiple (LCM) of 72 and 120.\n\\examanswerslot{1.5cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 2^3 \\times 3^2 & 2 & M1 for correct prime factor tree or division (2, 2, 2, 3, 3) \\\\\n(b) & 24 & 2 & M1 for identifying common prime factors $2^3 \\times 3$ or list of factors \\\\\n(c) & 360 & 2 & M1 for identifying all prime factors $2^3 \\times 3^2 \\times 5$ or list of multiples \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_3",
+        "question_paths": [
+            "images/q_3.png"
+        ],
+        "ms_paths": [
+            "images/ms_3.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Find the Lowest Common Multiple (LCM) of 12 and 15.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Write down a common multiple of 6 and 9 that lies between 40 and 60.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & 60 & 2 & M1 for listing multiples or $2^2 \\times 3 \\times 5$ \\\\\n(b) & 54 & 1 & B1 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_4",
+        "question_paths": [
+            "images/q_4.png"
+        ],
+        "ms_paths": [
+            "images/ms_4.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the number seven million four hundred and five thousand and twenty-three in figures.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] From the following list of numbers:\n\n\n$$2, \\quad 9, \\quad 11, \\quad 15, \\quad 25, \\quad 28$$\n\n\nidentify:\n[SUBENUM_START]\n[ITEM] the prime number,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] the cube number,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] the triangle number.\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & 7 405 023 & 1 & B1 \\\\\n(b)(i) & 2 or 11 & 1 & B1 \\\\\n(b)(ii) & 9 & 1 & B1 \\\\\n(b)(iii) & 15 & 1 & B1 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_5",
+        "question_paths": [
+            "images/q_5.png"
+        ],
+        "ms_paths": [
+            "images/ms_5.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Express 72 as a product of its prime factors. Give your answer in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Explain why $\\sqrt{7}$ is an irrational number.\n\\examanswerslot{3.5cm}{0}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & $2^3 \\times 3^2$ & 2 & M1 for clear prime division (e.g., $2 \\times 36$ or split tree) \\\\\n(b) & It cannot be written as a fraction $\\frac{a}{b}$ where $a$ and $b$ are integers & 1 & B1 for standard definition or mentioning non-terminating, non-recurring decimal \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_6",
+        "question_paths": [
+            "images/q_6.png"
+        ],
+        "ms_paths": [
+            "images/ms_6.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Find the Highest Common Factor (HCF) of 48 and 60.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Write down the reciprocal of 8.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a) & 12 & 2 & M1 for listing factors or prime factorisation showing $2^2 \\times 3$ \\\\\n(b) & $\\frac{1}{8}$ & 1 & B1 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_7",
+        "question_paths": [
+            "images/q_7.png"
+        ],
+        "ms_paths": [
+            "images/ms_7.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Two algebraic expressions, $A$ and $B$, are written as products of their prime factors:\n\n\n$$A = 2^2 \\times 3 \\times x$$\n\n$$B = 2 \\times 3^2 \\times x^2$$\n\n\nFind, in terms of $x$:\n[SUBENUM_START]\n[ITEM] the Highest Common Factor (HCF) of $A$ and $B$,\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] the Lowest Common Multiple (LCM) of $A$ and $B$.\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\\\\n(a)(i) & $6x$ & 2 & M1 for identifying common bases with lowest powers ($2^1 \\times 3^1 \\times x^1$) \\\\\n(a)(ii) & $36x^2$ & 2 & M1 for identifying all bases with highest powers ($2^2 \\times 3^2 \\times x^2$) \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_8",
+        "question_paths": [
+            "images/q_8.png"
+        ],
+        "ms_paths": [
+            "images/ms_8.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the number seven million forty-two thousand and five in figures.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] From the list of numbers:\n\n\n$$-4, \\quad 0, \\quad 1, \\quad \\sqrt{3}, \\quad 9, \\quad 11, \\quad 15$$\n\n\nidentify:\n[SUBENUM_START]\n[ITEM] a prime number,\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] an irrational number,\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] a square number.\n\\examanswerslot{1.5cm}{0.25}{1}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 7,042,005 & 1 & B1 \\\\\n(b)(i) & 11 & 1 & B1 \\\\\n(b)(ii) & \\sqrt{3} & 1 & B1 \\\\\n(b)(iii) & 1 or 9 & 1 & B1 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_9",
+        "question_paths": [
+            "images/q_9.png"
+        ],
+        "ms_paths": [
+            "images/ms_9.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the number 305,012 in words.\n\\examanswerslot{3cm}{0.25}{1}\n[ITEM] From the list of numbers:\n\n\n$$-5, \\quad \\frac{2}{3}, \\quad 4, \\quad 7, \\quad 10, \\quad 16, \\quad 28$$\n\n\nidentify:\n[SUBENUM_START]\n[ITEM] a multiple of 8,\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] a triangle number,\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] a factor of 14.\n\\examanswerslot{1.5cm}{0.25}{1}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Three hundred and five thousand, twelve & 1 & B1 (Accept slight variations in punctuation) \\\\\n(b)(i) & 16 & 1 & B1 \\\\\n(b)(ii) & 10 or 28 & 1 & B1 \\\\\n(b)(iii) & 7 & 1 & B1 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_10",
+        "question_paths": [
+            "images/q_10.png"
+        ],
+        "ms_paths": [
+            "images/ms_10.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Find the value of the reciprocal of 0.25.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down:\n[SUBENUM_START]\n[ITEM] the smallest prime number,\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] a cube number between 10 and 30,\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] a natural number that is neither prime nor composite.\n\\examanswerslot{1.5cm}{0.25}{1}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 4 & 1 & B1 \\\\\n(b)(i) & 2 & 1 & B1 \\\\\n(b)(ii) & 27 & 1 & B1 \\\\\n(b)(iii) & 1 & 1 & B1 \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_11",
+        "question_paths": [
+            "images/q_11.png"
+        ],
+        "ms_paths": [
+            "images/ms_11.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Express 90 as a product of its prime factors.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the Lowest Common Multiple (LCM) of 90 and 24.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 2 \\times 3^2 \\times 5 & 2 & M1 for any correct product equaling 90 or factor tree breakdown \\\\\n(b) & 360 & 2 & M1 for listing multiples or using prime factor products (e.g., 2^3 \\times 3^2 \\times 5) \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_12",
+        "question_paths": [
+            "images/q_12.png"
+        ],
+        "ms_paths": [
+            "images/ms_12.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Find the Highest Common Factor (HCF) of the algebraic terms $12x^2y$ and $18xy^3$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the Lowest Common Multiple (LCM) of the algebraic terms $12x^2y$ and $18xy^3$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 6xy & 2 & M1 for finding 6 or $xy$ or correct partial algebraic factorisation \\\\\n(b) & 36x^2y^3 & 2 & M1 for finding 36 or $x^2y^3$ or correct common multiple expansion \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_13",
+        "question_paths": [
+            "images/q_13.png"
+        ],
+        "ms_paths": [
+            "images/ms_13.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Given that $n$ is an integer such that $40 < n < 50$, write down the value of $n$ when:\n[SUBENUM_START]\n[ITEM] $n$ is a prime number,\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] $n$ is a square number,\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] $n$ is a triangle number.\n\\examanswerslot{1.5cm}{0.25}{1}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & 43 or 47 & 1 & B1 \\\\\n(a)(ii) & 46 & 1 & B1 (Since $6^2=36$ and $7^2=49$) \\\\\n(a)(iii) & 45 & 1 & B1 (Since $T_9 = 45$) \\\\\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_14",
+        "question_paths": [
+            "images/q_14.png"
+        ],
+        "ms_paths": [
+            "images/ms_14.png"
+        ],
+        "question_code": "Shade the regions corresponding to the given set expressions on each Venn diagram.\n[ENUM_START]\n[ITEM] $(A \\cap B)'$\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) rectangle (7,4);\n\\node at (-0.3,3.7) {$U$};\n\\draw[thick] (2.7,2) circle (1.3);\n\\draw[thick] (4.3,2) circle (1.3);\n\\node at (1.7,3.1) {$A$};\n\\node at (5.3,3.1) {$B$};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[1]}\n[ITEM] $A \\cup B'$\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) rectangle (7,4);\n\\node at (-0.3,3.7) {$U$};\n\\draw[thick] (2.7,2) circle (1.3);\n\\draw[thick] (4.3,2) circle (1.3);\n\\node at (1.7,3.1) {$A$};\n\\node at (5.3,3.1) {$B$};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[1]}\n[ITEM] $A' \\cap B'$\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) rectangle (7,4);\n\\node at (-0.3,3.7) {$U$};\n\\draw[thick] (2.7,2) circle (1.3);\n\\draw[thick] (4.3,2) circle (1.3);\n\\node at (1.7,3.1) {$A$};\n\\node at (5.3,3.1) {$B$};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[1]}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\  \\\\ \\hline\n(a) & Whole diagram shaded except the central overlap intersection. & 1 & B1 for correct regional shading. \\  \\\\ \\hline\n(b) & Set $A$ fully shaded along with the entire background region outside both circles. Circle $B$ only left blank. & 1 & B1 for correct regional shading. \\  \\\\ \\hline\n(c) & Only the background region outside both circles is shaded. Circles $A$ and $B$ are completely unshaded. & 1 & B1 for correct regional shading. \\\n \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_15",
+        "question_paths": [
+            "images/q_15.png"
+        ],
+        "ms_paths": [
+            "images/ms_15.png"
+        ],
+        "question_code": "A survey of 30 students was conducted to find out who owns a bicycle ($B$) or a skateboard ($S$).\nIt is given that $\\text{n}(U) = 30$, $\\text{n}(B) = 18$, $\\text{n}(S) = 15$, and $\\text{n}(B \\cap S) = 7$.\n[ENUM_START]\n[ITEM] Complete the Venn diagram to show the number of elements in each of the four regions.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) rectangle (7,4);\n\\node at (-0.3,3.7) {$U$};\n\\draw[thick] (2.7,2) circle (1.3);\n\\draw[thick] (4.3,2) circle (1.3);\n\\node at (1.7,3.1) {$B$};\n\\node at (5.3,3.1) {$S$};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[2]}\n[ITEM] Find $\\text{n}(B \\cup S)'$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] A student is chosen at random from the group. Find the probability that this student owns a skateboard but not a bicycle.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\  \\\\ \\hline\n(a) & Middle: 7, Left ($B$ only): 11, Right ($S$ only): 8, Outside: 4 & 2 & B2 for all 4 regions correct. B1 for any 2 or 3 regions correct. \\  \\\\ \\hline\n(b) & $4$ & 1 & B1 follow through from their diagram value outside circles. \\  \\\\ \\hline\n(c) & $\\frac{8}{30}$ or $\\frac{4}{15}$ & 1 & B1 follow through from their diagram value for $S$ only divided by 30. \\\n \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_16",
+        "question_paths": [
+            "images/q_16.png"
+        ],
+        "ms_paths": [
+            "images/ms_16.png"
+        ],
+        "question_code": "The universal set $U = \\{x \\mid x \\text{ is an integer and } 1 \\le x \\le 10\\}$.\nSets $P$, $Q$, and $R$ are defined within $U$ such that:\n\n\n$$P = \\{x \\mid x \\text{ is a prime number}\\}$$\n\n$$Q = \\{x \\mid x \\text{ is an even number}\\}$$\n\n$$R = \\{1, 2, 4, 8\\}$$\n\n\n[ENUM_START]\n[ITEM] List the elements of the set $P \\cap Q \\cap R$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Explain why $R \\not\\subset Q$.\n\\examanswerslot{3.5cm}{0}{1}\n[ITEM] Find the value of $\\text{n}(P \\cup Q)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\  \\\\ \\hline\n(a) & $\\{2\\}$ or $2$ & 1 & B1 for correct element identified. \\  \\\\ \\hline\n(b) & $1 \\in R$ but $1 \\notin Q$ (or 1 is an odd number). & 1 & B1 for pointing out that 1 is in $R$ but not in $Q$. \\  \\\\ \\hline\n(c) & $8$ & 2 & M1 for listing $P \\cup Q = \\{2, 3, 4, 5, 6, 7, 8, 10\\}$ or for stating $\\text{n}(P) = 4, \\text{n}(Q) = 5, \\text{n}(P \\cap Q) = 1$. \\\n \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_17",
+        "question_paths": [
+            "images/q_17.png"
+        ],
+        "ms_paths": [
+            "images/ms_17.png"
+        ],
+        "question_code": "The Venn diagram shows the number of elements in subsets $X$ and $Y$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) rectangle (7,4);\n\\node at (-0.3,3.7) {$U$};\n\\draw[thick] (2.7,2) circle (1.3);\n\\draw[thick] (4.3,2) circle (1.3);\n\\node at (1.7,3.1) {$X$};\n\\node at (5.3,3.1) {$Y$};\n\\node at (2.0,2) {$2n+1$};\n\\node at (3.5,2) {$n$};\n\\node at (5.0,2) {5};\n\\node at (1.0,0.5) {6};\n\\end{tikzpicture}\n\\end{center}\nIt is given that $\\text{n}(U) = 24$.\n[ENUM_START]\n[ITEM] Show that $3n + 12 = 24$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Find the value of $n$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{n}(X \\cup Y')$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\  \\\\ \\hline\n(a) & Summing all regions: $(2n+1) + n + 5 + 6 = 24 \\implies 3n + 12 = 24$. & 2 & M1 for forming a correct initial algebraic sum equation matching all four layout regions. \\  \\\\ \\hline\n(b) & $4$ & 1 & B1 for correct solution from linear extraction ($3n = 12$). \\  \\\\ \\hline\n(c) & $19$ & 2 & M1 for identifying elements as $\\text{n}(X) + \\text{n}(X \\cup Y)' = (2n+1) + n + 6$ or $24 - \\text{n}(Y \\cap X') = 24 - 5$. \\\n\\\n \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_18",
+        "question_paths": [
+            "images/q_18.png"
+        ],
+        "ms_paths": [
+            "images/ms_18.png"
+        ],
+        "question_code": "The universal set $U = \\{x \\mid x \\text{ is an integer and } 1 \\le x \\le 12\\}$.\nThe sets $A$ and $B$ are defined as follows:\n\n\n$$A = \\{x \\mid x \\text{ is a multiple of } 3\\}$$\n\n$$B = \\{x \\mid x \\text{ is a factor of } 12\\}$$\n\n\n[ENUM_START]\n[ITEM] List the elements of the set $A \\cap B$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{n}(A \\cup B)'$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Shade the region $A' \\cap B$ on the Venn diagram below.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) rectangle (7,4);\n\\node at (-0.3,3.7) {$U$};\n\\draw[thick] (2.7,2) circle (1.3);\n\\draw[thick] (4.3,2) circle (1.3);\n\\node at (1.7,3.1) {$A$};\n\\node at (5.3,3.1) {$B$};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[1]}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\nPart & Answer & Marks & Partial Marks / Guidance \\  \\\\ \\hline\n(a) & $\\{3, 6, 12\\}$ & 1 & B1 for correct list, order immaterial. Braces not required. \\  \\\\ \\hline\n(b) & $4$ & 2 & M1 for identifying elements in $(A \\cup B)' = \\{2, 5, 7, 11\\}$ or $\\text{n}(A \\cup B) = 8$. \\  \\\\ \\hline\n(c) & Correct shading of the region inside $B$ only, excluding the intersection. & 1 & B1 for correct region shaded clearly. \\\n \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 4,
             "difficulty": "Easy"
         }
     }
