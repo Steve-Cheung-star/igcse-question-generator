@@ -1,0 +1,218 @@
+[
+    {
+        "question_base": "Paper 2_82",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_82.png"
+        ],
+        "ms_paths": [
+            "images/ms_82.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Easy",
+            "marks": 3,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_83",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_83.png"
+        ],
+        "ms_paths": [
+            "images/ms_83.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Easy",
+            "marks": 3,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_84",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_84.png"
+        ],
+        "ms_paths": [
+            "images/ms_84.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Easy",
+            "marks": 4,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_85",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_85.png"
+        ],
+        "ms_paths": [
+            "images/ms_85.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Easy",
+            "marks": 4,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_86",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_86.png"
+        ],
+        "ms_paths": [
+            "images/ms_86.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Easy",
+            "marks": 4,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_87",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_87.png"
+        ],
+        "ms_paths": [
+            "images/ms_87.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Medium",
+            "marks": 4,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_88",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_88.png"
+        ],
+        "ms_paths": [
+            "images/ms_88.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Medium",
+            "marks": 4,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_89",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_89.png"
+        ],
+        "ms_paths": [
+            "images/ms_89.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Medium",
+            "marks": 5,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_90",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_90.png"
+        ],
+        "ms_paths": [
+            "images/ms_90.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Medium",
+            "marks": 5,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_91",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_91.png"
+        ],
+        "ms_paths": [
+            "images/ms_91.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Medium",
+            "marks": 4,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 2_92",
+        "paper": "Paper 2",
+        "question_paths": [
+            "images/q_92.png"
+        ],
+        "ms_paths": [
+            "images/ms_92.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Hard",
+            "marks": 4,
+            "year": "N/A"
+        }
+    },
+    {
+        "question_base": "Paper 4_93",
+        "paper": "Paper 4",
+        "question_paths": [
+            "images/q_93.png"
+        ],
+        "ms_paths": [
+            "images/ms_93.png"
+        ],
+        "metadata": {
+            "topics": [
+                "Arithmetic Indices and Power Rules"
+            ],
+            "difficulty": "Easy",
+            "marks": 4,
+            "year": "N/A"
+        }
+    }
+]

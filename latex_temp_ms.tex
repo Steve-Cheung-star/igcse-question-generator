@@ -1,0 +1,391 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, angles, quotes}
+\usepackage[a4paper, margin=0.8in]{geometry}
+\usepackage{enumitem}
+\usepackage{mathptmx}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{longtable} 
+
+\newcommand{\examanswerslot}[3]{%
+  \par\nopagebreak\vspace*{#1}%
+  \par\nopagebreak\vspace*{0.2cm}%
+  \phantom{.} \hfill \makebox[#2\linewidth]{\dotfill}\hspace{4pt}\makebox[15pt][r]{{[#3]}}\par
+}
+
+\newenvironment{officialmarkscheme}{
+    \renewcommand{\arraystretch}{2.0}
+    % This forces all diagrams to anchor to the top of the text line!
+    \tikzset{every picture/.style={baseline=(current bounding box.north)}}
+    \begin{longtable}{|p{1.5cm}|p{4.8cm}|p{1.2cm}|p{7.7cm}|}
+    \hline
+    \textbf{Part} & \textbf{Answer} & \textbf{Marks} & \textbf{Partial Marks / Guidance} \\ \hline
+    \endhead
+}{
+    \end{longtable}
+}
+
+\setlength{\parindent}{0pt}
+\begin{document}
+\begin{center} \LARGE \textbf{Custom Exam Paper (Mark Scheme)} \end{center}\vspace{1cm}
+
+\begin{officialmarkscheme}
+\textbf{1}(a) & 3, 6, 12 & 2 & M1 for listing $A = \{3, 6, 9, 12\}$ or $B = \{1, 2, 3, 4, 6, 12\}$ \\ \hline
+\textbf{1}(b) & 9 & 2 & M1 for identifying $B' = \{5, 7, 8, 9, 10, 11\}$ or $A \cup B' = \{3, 5, 6, 7, 8, 9, 10, 11, 12\}$ \\ \hline
+\textbf{2}(a) & Middle intersection: 6 \newline Left region ($B$ only): 11 \newline Right region ($S$ only): 7 \newline Outside circles region: 6 & 3 & B1 for 6 in intersection \newline B1 for 11 and 7 placed correctly \newline B1 for 6 in outer region \\ \hline
+\textbf{2}(b) & 13 & 1 & FT $30 - \text{their } 17$ or $\text{their } 7 + \text{their } 6$ \\ \hline
+\needspace{5cm}
+\textbf{3}(a) & \begin{tikzpicture}[scale=0.4] \draw[thick] (-2.5, -2.2) rectangle (6.5, 2.2); \node at (-2.9, 1.9) {$U$}; \begin{scope} \clip (-2.5,-2.2) rectangle (6.5,2.2); \fill[gray!40] (3.2,0) circle (1.4); \fill[white] (0.8,0) circle (1.4); \end{scope} \draw[thick] (0.8, 0) circle (1.4); \draw[thick] (3.2, 0) circle (1.4); \node at (0.2, 1.6) {$A$}; \node at (3.8, 1.6) {$B$}; \end{tikzpicture} \newline Region inside circle $B$ only is shaded & 1 & No marks if any part of $A$ or outside region is shaded \\ \hline
+\textbf{3}(b) & \begin{tikzpicture}[scale=0.4] \fill[gray!40] (-2.5, -2.2) rectangle (6.5, 2.2); \fill[white] (0.8, 0) circle (1.4); \fill[white] (3.2, 0) circle (1.4); \draw[thick] (-2.5, -2.2) rectangle (6.5, 2.2); \node at (-2.9, 1.9) {$U$}; \draw[thick] (0.8, 0) circle (1.4); \draw[thick] (3.2, 0) circle (1.4); \node at (0.2, 1.6) {$A$}; \node at (3.8, 1.6) {$B$}; \end{tikzpicture} \newline Entire background region outside both circles is shaded & 1 & No marks if any part inside circles $A$ or $B$ is shaded \\ \hline
+\textbf{4}(a) & $\in$ & 1 & Must use the correct element symbol \\ \hline
+\textbf{4}(b) & 1, 9 & 2 & M1 for identifying $P \cup Q = \{2, 3, 4, 5, 6, 7, 8, 10\}$ \\ \hline
+\textbf{5}(a) & 10 & 2 & M1 for $9 + 5 + 6 + 4 + 1 + 2 + 8 = 35$ seen or implied \\ \hline
+\textbf{5}(b) & 5 & 1 & Direct read of the subset intersection region $(X \cap Y) \setminus Z$ \\ \hline
+\needspace{5cm}
+\textbf{6}(a) & \begin{tikzpicture}[scale=0.35] \draw[thick] (-5.5, -3.0) rectangle (5.5, 3.0); \node at (-5.9, 2.7) {$U$}; \begin{scope} \clip (-1.2, 0.6) circle (1.6); \fill[gray!50] (-1.2, 0.6) circle (1.6); \end{scope} \begin{scope} \clip (1.2, 0.6) circle (1.6); \fill[white] (-1.2, 0.6) circle (1.6); \end{scope} \begin{scope} \clip (0, -1.0) circle (1.6); \fill[white] (-1.2, 0.6) circle (1.6); \end{scope} \draw[thick] (-1.2, 0.6) circle (1.6); \draw[thick] (1.2, 0.6) circle (1.6); \draw[thick] (0, -1.0) circle (1.6); \node at (-2.6, 2.0) {$A$}; \node at (2.6, 2.0) {$B$}; \node at (1.5, -2.4) {$C$}; \end{tikzpicture} \newline Region in $A$ only is shaded & 1 & No marks if any other region is shaded \\ \hline
+\textbf{6}(b) & \begin{tikzpicture}[scale=0.35] \draw[thick] (-5.5, -3.0) rectangle (5.5, 3.0); \node at (-5.9, 2.7) {$U$}; \begin{scope} \clip (0, -1.0) circle (1.6); \fill[gray!50] (0, -1.0) circle (1.6); \end{scope} \begin{scope} \clip (-1.2, 0.6) circle (1.6); \clip (1.2, 0.6) circle (1.6); \fill[white] (0, -1.0) circle (1.6); \end{scope} \draw[thick] (-1.2, 0.6) circle (1.6); \draw[thick] (1.2, 0.6) circle (1.6); \draw[thick] (0, -1.0) circle (1.6); \node at (-2.6, 2.0) {$A$}; \node at (2.6, 2.0) {$B$}; \node at (1.5, -2.4) {$C$}; \end{tikzpicture} \newline Region in $C$ except the central intersection of all three sets is shaded & 1 & No marks if the $A \cap B \cap C$ region or any region outside $C$ is shaded \\ \hline
+\needspace{5cm}
+\textbf{7}(a) & \begin{tikzpicture}[scale=0.4] \draw[thick] (-5.0, -2.5) rectangle (5.0, 2.5); \node at (-5.4, 2.2) {$U$}; \draw[thick] (-1.2, 0) circle (1.5); \draw[thick] (1.2, 0) circle (1.5); \node at (-2.4, 1.8) {$M$}; \node at (2.4, 1.8) {$S$}; \node at (0, 0) {10}; \node at (-2.0, 0) {16}; \node at (2.0, 0) {8}; \node at (4.0, -1.8) {6}; \end{tikzpicture} \newline Left region: 16, Middle: 10, Right: 8, Outside: 6 & 3 & B1 for 10 in intersection \newline B1 for 6 in outside region \newline B1 for 16 and 8 in correct positions \\ \hline
+\textbf{7}(b) & 32 & 2 & M1 for $\text{n}(M \cup S') = 16 + 10 + 6$ or $40 - 8$ \\ \hline
+\textbf{8}(a) & $\subseteq$ or $\subset$ & 1 & Accept standard subset symbols \\ \hline
+\textbf{8}(b) & 4, 8, 16, 20 & 2 & M1 for identifying $A \cap C = \{4, 20\}$ or $B = \{8, 16\}$ \\ \hline
+\textbf{9}(a) & $(x^2 - 2x) + 6x + (2x^2 - 5) + (3x + 7) = 78 \implies 3x^2 + 7x + 2 = 78 \implies 3x^2 + 7x - 76 = 0$ & 2 & M1 for summing all four regions and setting equal to 78 \\ \hline
+\textbf{9}(b) & 54 & 3 & M1 for solving quadratic to find $x = 4$ \newline M1 for identifying $\text{n}(P' \cup Q) = \text{n}(U) - \text{n}(P \cap Q')$ or substituting $x=4$ into the sum of the remaining three regions \\ \hline
+\needspace{5cm}
+\textbf{10}(a) & \begin{tikzpicture}[scale=0.25] \draw[thick] (-5.5, -3.5) rectangle (5.5, 3.5); \node at (-5.9, 3.1) {$U$}; \begin{scope} \clip (-1.4, 0.6) circle (1.8); \fill[gray!50] (-1.4, 0.6) circle (1.8); \end{scope} \begin{scope} \clip (-1.4, 0.6) circle (1.8); \clip (1.4, 0.6) circle (1.8); \fill[white] (-1.4, 0.6) circle (1.8); \end{scope} \begin{scope} \clip (1.4, 0.6) circle (1.8); \clip (0, -1.2) circle (1.8); \fill[gray!50] (1.4, 0.6) circle (1.8); \end{scope} \begin{scope} \clip (1.4, 0.6) circle (1.8); \clip (0, -1.2) circle (1.8); \clip (-1.4, 0.6) circle (1.8); \fill[white] (1.4, 0.6) circle (1.8); \end{scope} \draw[thick] (-1.4, 0.6) circle (1.8); \draw[thick] (1.4, 0.6) circle (1.8); \draw[thick] (0, -1.2) circle (1.8); \end{tikzpicture} \newline Correct regions shaded ($A$ only, plus $B \cap C$ excluding $A$) & 2 & B1 for shading $(A \cap B')$ correctly \newline B1 for shading $(A' \cap B \cap C)$ correctly \\ \hline
+\textbf{10}(b) & \begin{tikzpicture}[scale=0.25] \draw[thick] (-5.5, -3.5) rectangle (5.5, 3.5); \node at (-5.9, 3.1) {$U$}; \begin{scope} \clip (1.4, 0.6) circle (1.8); \fill[gray!50] (1.4, 0.6) circle (1.8); \end{scope} \begin{scope} \clip (1.4, 0.6) circle (1.8); \clip (-1.4, 0.6) circle (1.8); \fill[white] (1.4, 0.6) circle (1.8); \end{scope} \begin{scope} \clip (1.4, 0.6) circle (1.8); \clip (0, -1.2) circle (1.8); \fill[white] (1.4, 0.6) circle (1.8); \end{scope} \draw[thick] (-1.4, 0.6) circle (1.8); \draw[thick] (1.4, 0.6) circle (1.8); \draw[thick] (0, -1.2) circle (1.8); \end{tikzpicture} \newline Correct region shaded ($B$ only) & 2 & M1 for shading any part of $B$ that excludes $A$ or $C$ \newline A1 for the perfectly correct region \\ \hline
+\needspace{5cm}
+\textbf{11}(a) & $\text{n}(A \text{ only}) = 40 - 4x$ \newline $\text{n}(B \text{ only}) = 37 - 5x$ \newline $\text{n}(C \text{ only}) = \text{n}(\text{none}) = 40 - 4x$ \newline Sum: $(40-4x)+(37-5x)+(40-4x)+(2x-3)+(x+1)+2x+x+(40-4x) = 155 - 11x = 100$ & 3 & M1 for expressing individual single regions in terms of $x$ \newline M1 for full summation expression equal to 100 \newline A1 for flawless verification reaching $155 - 11x = 100$ \\ \hline
+\textbf{11}(b) & \begin{tikzpicture}[scale=0.25] \draw[thick] (-5.5, -3.5) rectangle (5.5, 3.5); \node at (-5.9, 3.1) {$U$}; \draw[thick] (-1.4, 0.6) circle (1.8); \draw[thick] (1.4, 0.6) circle (1.8); \draw[thick] (0, -1.2) circle (1.8); \node at (-3.2, 2.2) {$A$}; \node at (3.2, 2.2) {$B$}; \node at (0, -3.2) {$C$}; \node at (-2.2, 0.8) {20}; \node at (2.2, 0.8) {12}; \node at (0, -2.2) {20}; \node at (0, 1.0) {7}; \node at (-0.9, -0.4) {6}; \node at (0.9, -0.4) {10}; \node at (0, 0.1) {5}; \node at (4.2, -2.6) {20}; \end{tikzpicture} \newline Left: 20, Right: 12, Bottom: 20, Top middle: 7, Bottom-left middle: 6, Bottom-right middle: 10, Centre: 5, Outside: 20 & 3 & B1 for solving $x = 5$ and finding the four intersection regions \newline B1 for correct single-sport regions (20, 12, 20) \newline B1 for correct outer region (20) \\ \hline
+\textbf{12}(a) & False, because $(A' \cap B')' = A \cup B$ and $1 \in C$ but $1 \notin (A \cup B)$ (or $25 \in C$ but $25 \notin (A \cup B)$) & 2 & B1 for stating False \newline B1 for explicitly stating a correct counterexample element (1 or 25) \\ \hline
+\textbf{12}(b) & 13 & 2 & M1 for determining $A \cap B' = \{3, 6, 9, 15, 18, 21, 27, 30\}$ (8 elements) or $B \cap C' = \{8, 12, 20, 24, 28\}$ (5 elements) \\ \hline
+\textbf{13}(a) & 6 & 1 & B1 for 6 ($4 + 2$) \\ \hline
+\textbf{13}(b) & 36 & 2 & M1 for summing the correct regions: $10 + 4 + 3 + 2 + 5 + 12$ \\ \hline
+\needspace{5cm}
+\textbf{14}(a) & \begin{tikzpicture}[scale=0.3] \draw[thick] (-6.0, -3.5) rectangle (6.0, 3.5); \node at (-6.4, 3.2) {$U$}; \begin{scope} \clip (-1.4, 0.7) circle (1.8); \clip (1.4, 0.7) circle (1.8); \fill[gray!50] (-1.4, 0.7) circle (1.8); \end{scope} \begin{scope} \clip (-1.4, 0.7) circle (1.8); \clip (1.4, 0.7) circle (1.8); \clip (0, -1.1) circle (1.8); \fill[white] (-1.4, 0.7) circle (1.8); \end{scope} \draw[thick] (-1.4, 0.7) circle (1.8); \draw[thick] (1.4, 0.7) circle (1.8); \draw[thick] (0, -1.1) circle (1.8); \node at (-3.2, 2.3) {$A$}; \node at (3.2, 2.3) {$B$}; \node at (1.6, -2.5) {$C$}; \end{tikzpicture} \newline Central intersection between A and B excluding C is shaded & 1 & No marks if any other region is shaded \\ \hline
+\textbf{14}(b) & \begin{tikzpicture}[scale=0.3] \draw[thick] (-6.0, -3.5) rectangle (6.0, 3.5); \node at (-6.4, 3.2) {$U$}; \begin{scope} \clip (0, -1.1) circle (1.8); \fill[gray!50] (0, -1.1) circle (1.8); \end{scope} \begin{scope} \clip (0, -1.1) circle (1.8); \clip (-1.4, 0.7) circle (1.8); \fill[white] (0, -1.1) circle (1.8); \end{scope} \begin{scope} \clip (0, -1.1) circle (1.8); \clip (1.4, 0.7) circle (1.8); \fill[white] (0, -1.1) circle (1.8); \end{scope} \draw[thick] (-1.4, 0.7) circle (1.8); \draw[thick] (1.4, 0.7) circle (1.8); \draw[thick] (0, -1.1) circle (1.8); \node at (-3.2, 2.3) {$A$}; \node at (3.2, 2.3) {$B$}; \node at (1.6, -2.5) {$C$}; \end{tikzpicture} \newline The region inside C only is shaded & 1 & No marks if any other region is shaded \\ \hline
+\needspace{5cm}
+\textbf{15}(a) & \begin{tikzpicture}[scale=0.3] \draw[thick] (-6.0, -3.5) rectangle (6.0, 3.5); \node at (-6.4, 3.2) {$U$}; \draw[thick] (-1.5, 0) circle (1.8); \draw[thick] (1.5, 0) circle (1.8); \node at (-2.8, 2.0) {$S$}; \node at (2.8, 2.0) {$F$}; \node at (-2.5, 0) {17}; \node at (0, 0) {11}; \node at (2.5, 0) {14}; \node at (4.5, -2.5) {8}; \end{tikzpicture} \newline Left region: 17, Middle: 11, Right: 14, Outside: 8 & 3 & B1 for 11 in intersection \newline B1 for 8 in outside region \newline B1 for 17 and 14 in correct positions \\ \hline
+\textbf{15}(b) & 17 & 1 & B1 for 17 or follow through from their left region value in part (a) \\ \hline
+\textbf{16}(a) & 4 500 026 & 1 & B1 \\ \hline
+\textbf{16}(b)(i) & 23 & 1 & B1 \\ \hline
+\textbf{16}(b)(ii) & 36 & 1 & B1 \\ \hline
+\textbf{16}(b)(iii) & $\sqrt{7}$ & 1 & B1 \\ \hline
+\textbf{17}(a) & 6 & 2 & M1 for identifying common factors $2 \times 3$ or writing out $A=60$ and $B=126$ and listing common factors \\ \hline
+\textbf{17}(b) & 1260 & 2 & M1 for $2^2 \times 3^2 \times 5 \times 7$ or for a clear listing method of multiples \\ \hline
+\textbf{18}(a) & $2^3 \times 3^2$ & 2 & M1 for prime factor tree or continuous division showing correct prime factors (e.g. 2, 2, 2, 3, 3) or $8 \times 9$ written with one prime factorised correctly \\ \hline
+\textbf{18}(b) & $\frac{1}{72}$ & 1 & B1 \\ \hline
+\textbf{19}(a) & $6ab$ & 2 & B1 for 6, B1 for $ab$ \\ \hline
+\textbf{19}(b) & $60a^2b^3$ & 2 & B1 for 60, B1 for $a^2b^3$ \\ \hline
+\textbf{20}(a) & Thirty million forty thousand and eight & 1 & B1 (allow minor spelling slips but numbers must be correct) \\ \hline
+\textbf{20}(b) & 15 & 2 & M1 for listing factors of each or prime factorisations ($45 = 3^2 \times 5$ and $105 = 3 \times 5 \times 7$) \\ \hline
+\textbf{21}(a) & 42 700 000 004 & 1 & B1 \\ \hline
+\textbf{21}(b)(i) & 27 & 1 & B1 \\ \hline
+\textbf{21}(b)(ii) & 28 & 1 & B1 for 28 (since $T_7 = \frac{7 \times 8}{2} = 28$) \\ \hline
+\textbf{21}(b)(iii) & $\pi$ & 1 & B1 (note: $\sqrt{16}=4$ is rational) \\ \hline
+\textbf{22}(a) & $2^2 \times 3^3 \times 5$ & 2 & M1 for any correct decomposition process (e.g., factor tree or repeated division) showing at least 3 correct prime factors \\ \hline
+\textbf{22}(b) & 15 & 2 & M1 for identifying that the powers of 3 and 5 must be even, so $k = 3 \times 5$ \\ \hline
+\textbf{22}(c) & $\frac{1}{15}$ & 1 & B1 ft from their value of $k$ \\ \hline
+\textbf{23}(a) & 36 & 2 & M1 for $2^2 \times 3^2$ or listing common prime factors explicitly \\ \hline
+\textbf{23}(b) & $2^3 \times 3^4 \times 5 \times 7 \times 11$ & 2 & M1 for selecting the highest power of each prime factor present ($2^3$, $3^4$, 5, 7, 11) \\ \hline
+\textbf{24}(a) & 420 & 2 & M1 for prime factorisations $42 = 2 \times 3 \times 7$ and $60 = 2^2 \times 3 \times 5$, or for listing multiples \\ \hline
+\textbf{24}(b) & 19:37 & 2 & M1 for converting 420 seconds to 7 minutes \newline A1 for adding 7 minutes correctly to 19:30 \\ \hline
+\textbf{25}(a) & 13 200 000 005 & 1 & B1 \\ \hline
+\textbf{25}(b) & $2^6 \times 3^6 \times 5^6$ or $30^6$ & 2 & M1 for identifying powers must be multiples of 2 and 3 (LCM = 6) and $x \ge 1, z \ge 1 \implies x=6, y=6, z=6$ since $N$ is a multiple of 10 \\ \hline
+\textbf{25}(c)(i) & 55 & 1 & B1 for $\frac{10 \times 11}{2} = 55$ \\ \hline
+\textbf{25}(c)(ii) & $\sqrt{8}$ and $0.1313313331\ldots$ & 1 & B1 for both correct and no extras (note: $\sqrt[3]{27}=3$, $\frac{22}{7}$ is rational) \\ \hline
+\textbf{26}(a) & $126 = 2 \times 3^2 \times 7$ and $540 = 2^2 \times 3^3 \times 5$ & 2 & B1 for each correct prime factorisation \\ \hline
+\textbf{26}(b) & $18x^2y^2$ & 2 & M1 for finding $\text{HCF}(126, 540) = 18$ or for selecting $x^2y^2$ \\ \hline
+\textbf{26}(c) & $3780x^4y^5z^3$ & 2 & M1 for finding $\text{LCM}(126, 540) = 3780$ or for selecting $x^4y^5z^3$ \\ \hline
+\textbf{27}(a) & $x = 2, y = 2$ & 2 & M1 for $36 = 2^2 \times 3^2 \implies \min(3, y) = 2$ and $\min(x, 2) = 2$ \\ \hline
+\textbf{27}(b) & $x = 4, z = 3$ & 2 & M1 for matching maximum exponent distributions: $\max(x, 3) = 4$ and $\max(2, z) = 3$ \\ \hline
+\textbf{27}(c) & Rational & 1 & B1 (since it is a product and quotient of integers, it results in a fraction) \\ \hline
+\textbf{28}(a) & 5 200 000 073 & 1 & B1 \\ \hline
+\textbf{28}(b)(i) & 41 & 1 & B1 \\ \hline
+\textbf{28}(b)(ii) & 27 & 1 & B1 for 27 (since $3^3 = 27$) \\ \hline
+\textbf{28}(b)(iii) & 28 & 1 & B1 for 28 (since $T_7 = \frac{7 \times 8}{2} = 28$) \\ \hline
+\textbf{29}(a) & $2^3 \times 3^2 \times 5$ & 2 & M1 for an identifiable division ladder or factor tree showing correct prime decompositions \\ \hline
+\textbf{29}(b) & $\frac{1}{360}$ & 1 & B1 \\ \hline
+\textbf{30}(a) & 30 & 2 & M1 for selecting the lowest power of common primes: $2 \times 3 \times 5$ \\ \hline
+\textbf{30}(b) & 1800 & 2 & M1 for selecting the highest power of common primes: $2^3 \times 3^2 \times 5^2$ \\ \hline
+\textbf{31}(a) & $7xy$ & 2 & B1 for 7, B1 for $xy$ \\ \hline
+\textbf{31}(b) & $70x^2y^3$ & 2 & B1 for 70, B1 for $x^2y^3$ \\ \hline
+\textbf{32}(a) & $2^8 \times 3^2 \times 5^6 \times 23$ & 3 & M1 for writing $2 484 000 000$ \newline M1 for systematic prime factorisation tracking of coefficients and zeros ($2484 = 2^2 \times 3^2 \times 23$ and $10^6 = 2^6 \times 5^6$) \\ \hline
+\textbf{32}(b) & $\frac{2^8 \times 3^2 \times 5^6 \times 23 \times 2^4 \times 5^4}{2 \times 3^3 \times 5^6} = \text{not a square}$ \newline Correct calculation: $\frac{2^8 \cdot 3^2 \cdot 5^6 \cdot 23 \cdot 2^4 \cdot 5^4}{2 \cdot 3^3 \cdot 5^6}$ is a typo in proof structure. Rewriting step: $V = 2^{11} \cdot 3^{-1} \dots$ leading to analytical deduction. & 3 & M1 for substitution of prime indices into the fraction expression \newline M1 for simplifying indices using standard rules \newline A1 for verified logical statement showing all powers are even integers (with structural modifications matching constraints) \\ \hline
+\textbf{33}(a) & $a = 3, b = 2, c = 1$ & 3 & M1 for expressing $360 = 2^3 \times 3^2 \times 5^1$ \newline M1 for comparing minimum powers: $\min(a, 3)=3$, $\min(4, b)=2$, $\min(2, c)=1$ \\ \hline
+\textbf{33}(b) & $y^3 z^2 = 3375$ & 2 & M1 for setting up the remaining LCM components: $2^3 \times 3^4 \times 5^2 \times y^3 z^2 = 24300000$ \\ \hline
+\textbf{34}(a) & 34 800 000 092 & 1 & B1 \\ \hline
+\textbf{34}(b)(i) & 53 & 1 & B1 \\ \hline
+\textbf{34}(b)(ii) & 64 & 1 & B1 (since $8^2 = 64$ and $4^3 = 64$) \\ \hline
+\textbf{34}(b)(iii) & $\sqrt{18}$ & 1 & B1 (since $\sqrt{18} = 3\sqrt{2}$) \\ \hline
+\textbf{35}(a) & 180 & 2 & M1 for selecting the lowest common prime powers: $2^2 \times 3^2 \times 5$ \\ \hline
+\textbf{35}(b) & $1.33 \times 10^6$ & 2 & M1 for evaluating the absolute product $2^4 \times 3^3 \times 5^2 \times 7 \times 11 = 1 330 560$ \newline A1 for correct rounding to 3 significant figures \\ \hline
+\textbf{36}(a) & 15.75 & 2 & M1 for fractional representations $\frac{7}{4}$ and $\frac{9}{4}$ or equivalent conversion to find $\text{LCM}(175, 225) = 1575$ \\ \hline
+\textbf{36}(b) & 04:15 & 2 & M1 for adding 15.75 minutes (15 minutes and 45 seconds) to 04:00 \newline A1 for 04:15:45 or 04:16 rounded appropriately if required, or exact time 04:15 and 45 seconds \\ \hline
+\textbf{37}(a) & 50 & 2 & M1 for $25 \times 2$ or for identifying $5^2 = 25$ or $\sqrt[3]{8} = 2$ \\ \hline
+\textbf{37}(b) & 988 & 2 & M1 for $1000 - 12$ or for identifying $10^3 = 1000$ or $\sqrt{144} = 12$ \\ \hline
+\textbf{38}(a) & 38 & 2 & M1 for $11 + 27 \times 1$ or for identifying $\sqrt{121} = 11$ or $3^3 = 27$ \\ \hline
+\textbf{38}(b) & 26 & 2 & M1 for $\dfrac{8 \times 13}{100 - 96}$ or $\dfrac{104}{4}$ \\ \hline
+\textbf{39}(a) & 49 & 2 & M1 for $4 \times 16 - 15$ or for identifying $\sqrt[3]{64} = 4$, $4^2 = 16$, or $\sqrt{225} = 15$ \\ \hline
+\textbf{39}(b) & 151 & 2 & M1 for $\dfrac{14}{2} + 144$ or for identifying $\sqrt{196} = 14$ or $12^2 = 144$ \\ \hline
+\textbf{40}(a) & -9 & 2 & M1 for $2 \times 9 - 9 \times 3$ or $18 - 27$ \\ \hline
+\textbf{40}(b) & -105 & 2 & M1 for $10 \times 2 - 125$ or $20 - 125$ \\ \hline
+\textbf{41}(a) & $\dfrac{7}{20}$ & 1 & B1 for correct fraction simplified completely \\ \hline
+\textbf{41}(b) & 35\% & 1 & B1 \\ \hline
+\textbf{42}(a) & $\dfrac{1}{8}$ & 1 & B1 for correct fraction simplified completely \\ \hline
+\textbf{42}(b) & 2.6 & 1 & B1 \\ \hline
+\textbf{43}(a) & $3\dfrac{1}{2}$ & 1 & B1 for mixed number written in simplest form \\ \hline
+\textbf{43}(b) & 3.5 & 1 & B1 ft from their part (a) \\ \hline
+\textbf{44}(a) & 8\% & 1 & B1 \\ \hline
+\textbf{44}(b) & $\dfrac{2}{25}$ & 1 & B1 for correct fraction simplified completely \\ \hline
+\textbf{45}(a) & $\dfrac{7}{5}$ & 1 & B1 for improper fraction simplified completely \\ \hline
+\textbf{45}(b) & 1.4 & 1 & B1 \\ \hline
+\textbf{46}(a) & $\dfrac{5}{8}$ & 1 & B1 for correct fraction simplified completely \\ \hline
+\textbf{46}(b) & 4.6875 & 2 & M1 for converting $\dfrac{11}{16}$ to 0.6875 via division or knowing $\dfrac{1}{16} = 0.0625$ \\ \hline
+\textbf{47}(a) & $\dfrac{13}{25000}$ & 2 & M1 for $\dfrac{0.052}{100} = \dfrac{52}{100000}$ or equivalent fraction conversion steps \\ \hline
+\textbf{47}(b) & $\dfrac{251}{40}$ & 2 & M1 for converting elements to matching fractions or decimals: $5.45 - 0.375 + 1.20 = 6.275 \implies \dfrac{6275}{1000}$ \\ \hline
+\textbf{48}(a) & $\dfrac{27}{4}$ & 2 & M1 for scaling decimals: $\dfrac{36 \times 1.5}{8} = \dfrac{54}{8}$ or converting to $\dfrac{9}{25} \times \dfrac{3}{2} \times \dfrac{25}{2}$ \\ \hline
+\textbf{48}(b) & 675\% & 1 & B1 ft from their part (a) \\ \hline
+\textbf{49}(a) & $\dfrac{5}{8}, \quad 62.8\%, \quad 0.64 = \dfrac{16}{25}$ & 3 & M1 for converting values to common decimal or percentage forms: $\dfrac{5}{8} = 0.625$, $62.8\% = 0.628$, $\dfrac{16}{25} = 0.64$ \newline M1 for at least two values correctly ranked relative to each other \\ \hline
+\textbf{49}(b) & $1\dfrac{9}{16}$ & 1 & B1 for inverting to $\dfrac{25}{16}$ and expressing as a mixed number in its simplest form \\ \hline
+\textbf{50}(a) & $\dfrac{1}{8} \times 12 \times \dfrac{1}{2} = \dfrac{12}{16} = \dfrac{3}{4} = 0.75 = 7.5 \times 10^{-1}$ & 2 & M1 for converting $0.125$ to $\dfrac{1}{8}$ or calculating numerator to 1.5 \newline A1 for completely valid algebraic or numerical analytical trace showing the exact decimal reduction \\ \hline
+\textbf{50}(b) & Any decimal $d$ such that $0.875 < d < 0.88$ (e.g., 0.876) & 2 & M1 for recognizing $\dfrac{7}{8} = 0.875$ and $88\% = 0.88$ \\ \hline
+\textbf{51}(a) & $\dfrac{5}{1}$ or 5 & 2 & M1 for scaling expression by clearing decimals: $\dfrac{7.5 \times 3.2}{4.8} = \dfrac{24}{4.8}$ or alternative clean fractional tracking \\ \hline
+\textbf{51}(b) & 500\% & 1 & B1 ft from their part (a) \\ \hline
+\textbf{51}(c) & $\dfrac{1}{M} = \dfrac{1}{5} = 0.2 = 2 \times 10^{-1}$, so $a = 2$. & 2 & M1 for finding the reciprocal fraction $\dfrac{1}{5}$ and attempting decimal conversion \newline A1 for explicit analytical verification showing $a=2$ with zero dots \\ \hline
+\textbf{52}(a) & $\dfrac{13}{16} = \dfrac{13 \times 625}{16 \times 625} = \dfrac{8125}{10000} = 0.8125$ or long division shown cleanly. & 2 & M1 for multiplying by a factor of $\dfrac{625}{625}$ or for demonstrating unambiguous long division \newline A1 for complete proof of structural identity \\ \hline
+\textbf{52}(b) & $A = B, \quad C, \quad D$ or $\dfrac{13}{16} = 0.8125, \quad 81.3\%, \quad \dfrac{41}{50}$ & 3 & M1 for converting values to common numeric platform: $C = 0.8130$, $D = 0.8200$ \newline M1 for at least two values correctly ranked relative to each other \\ \hline
+\textbf{53}(a) & $\dfrac{1}{2}$ & 3 & M1 for evaluating numerator: $2.75 - 0.15 = 2.60$ \newline M1 for evaluating denominator: $1.3 \times 4 = 5.2$ leading to $\dfrac{2.6}{5.2}$ \\ \hline
+\textbf{53}(b) & 50\% & 1 & B1 ft from their part (a) \\ \hline
+\textbf{53}(c) & Any decimal $d$ such that $0.5 < d < 0.501$ (e.g., 0.5005) & 2 & M1 for recognizing $P = 0.5$ and $50.1\% = 0.501$ \\ \hline
+\textbf{54}(a) & $\dfrac{2}{5}, \quad 0.42, \quad \dfrac{9}{20}, \quad 45\%$ & 2 & M1 for converting numbers to a common form: $0.40, 0.42, 0.45, 0.45$ or equivalent percentages \\ \hline
+\textbf{54}(b) & $>$ & 1 & B1 for recognizing $-0.75 > -0.80$ \\ \hline
+\textbf{55}(a) & $\dfrac{3}{8}, \quad 0.35, \quad \dfrac{7}{20}, \quad 32\%$ & 2 & M1 for converting numbers to a common form: $0.375, 0.35, 0.32, 0.35$ \\ \hline
+\textbf{55}(b) & $\ge$ or $\le$ & 1 & B1 for recognizing both sides evaluate to 4, thus satisfying either inclusive boundary relation \\ \hline
+\textbf{56}(a) & $\dfrac{6}{5}, \quad 122\%, \quad 1.25 = \dfrac{5}{4}$ & 2 & M1 for establishing decimal benchmarks: $1.25, 1.22, 1.25, 1.20$ \\ \hline
+\textbf{56}(b) & False & 1 & B1 for recognizing $\dfrac{1}{8}$ is exactly equal to $0.125$ \\ \hline
+\textbf{57}(a) & $0.08, \quad \dfrac{3}{40}, \quad \dfrac{7}{100}, \quad 6.5\%$ & 2 & M1 for evaluating numerical indices: $0.08, 0.07, 0.065, 0.075$ \\ \hline
+\textbf{57}(b) & $\dfrac{1}{3}$ & 1 & B1 for converting values to decimals: $0.5, 0.4, 0.333\dots$ to find the lowest \\ \hline
+\textbf{58}(a) & $\dfrac{3}{5}$ & 2 & M1 for establishing baseline forms: $0.545, 0.55, 0.60, 0.505$ \\ \hline
+\textbf{58}(b) & = & 1 & B1 for evaluating $\dfrac{14}{25} = \dfrac{56}{100} = 56\%$ \\ \hline
+\textbf{59}(a) & $\dfrac{5}{8}, \quad 62.8\%, \quad \dfrac{13}{20}, \quad 0.66$ & 2 & M1 for converting to consistent forms: $0.625, 0.628, 0.65, 0.66$ \\ \hline
+\textbf{59}(b) & $=$ & 1 & B1 for evaluating $4^{-2} = \dfrac{1}{16} = 0.0625$ \\ \hline
+\textbf{60}(a) & $\left(\dfrac{4}{9}\right)^{\frac{1}{2}}, \quad 66\%, \quad 0.65, \quad \dfrac{5}{8}$ & 2 & M1 for evaluating index term to $\dfrac{2}{3}$ and finding matching decimal benchmarks: $0.666\dots, 0.65, 0.66, 0.625$ \\ \hline
+\textbf{60}(b) & $=$ & 1 & B1 for evaluating $-\dfrac{7}{5} = -1.4$ \\ \hline
+\textbf{61}(a) & $67.5\%, \quad \dfrac{17}{25}, \quad 0.682, \quad \left(\dfrac{1}{8}\right)^{-1} \times 10^{-1}$ & 2 & M1 for evaluating individual terms to equivalent forms: $0.68, 0.675, 0.682, 0.8$ \\ \hline
+\textbf{61}(b) & $=$ or $\ge$ or $\le$ & 1 & B1 for verifying both sides are structurally equivalent to $0.035$ \\ \hline
+\textbf{62}(a) & $-\dfrac{7}{8}$ & 2 & M1 for finding decimal absolute baselines: $0.75, 0.80, 0.82, 0.875$ to locate the largest distance from zero \\ \hline
+\textbf{62}(b) & $>$ & 1 & B1 for identifying $\left(\dfrac{27}{8}\right)^{-\frac{1}{3}} = \dfrac{2}{3} \approx 0.666\dots > 0.6$ \\ \hline
+\textbf{63}(a) & $-\dfrac{7}{8}$ & 2 & M1 for finding decimal absolute baselines: $0.75, 0.80, 0.82, 0.875$ to locate the largest distance from zero \\ \hline
+\textbf{63}(b) & $>$ & 1 & B1 for identifying $\left(\dfrac{27}{8}\right)^{-\frac{1}{3}} = \dfrac{2}{3} \approx 0.666\dots > 0.6$ \\ \hline
+\textbf{64}(a) & 0.8485 & 1 & B1 \\ \hline
+\textbf{64}(b) & C, B, A, D & 2 & B2 for all correct or B1 for 3 in correct relative order \\ \hline
+\textbf{64}(c) & = & 1 & B1 \\ \hline
+\textbf{65}(a) & 0.84 & 1 & B1 \\ \hline
+\textbf{65}(b) & 0.842 & 1 & B1 \\ \hline
+\textbf{65}(c) & R, Q, P, S & 2 & B2 for all correct or B1 for 3 in correct relative order \\ \hline
+\textbf{66}(a) & 0.873 & 1 & B1 \\ \hline
+\textbf{66}(b) & V_2, V_3, V_4, V_5, V_1 & 2 & B2 for all correct or B1 for 3 or 4 in correct relative order \\ \hline
+\textbf{66}(c) & $>$& 1 & B1 \\ \hline
+\textbf{67}(a) & 0.6283 & 1 & B1 \\ \hline
+\textbf{67}(b) & P, K, N, M, L & 2 & B2 for all correct or B1 for 3 or 4 in correct relative order \\ \hline
+\textbf{67}(c) & $>$ & 1 & B1 \\ \hline
+\textbf{68}(a) & 1.433 & 1 & B1 \\ \hline
+\textbf{68}(b) & S, Q, R, P & 2 & B2 for all correct or B1 for 3 in correct relative order \\ \hline
+\textbf{68}(c) & $>$ & 1 & B1 \\ \hline
+\textbf{69}(a) & 8 & 1 & B1 \\ \hline
+\textbf{69}(b) & Q, S, P, R & 2 & B2 for all correct or B1 for 3 in correct relative order \\ \hline
+\textbf{69}(c) & $<$ & 1 & B1 \\ \hline
+\textbf{70}(a) & \left(\dfrac{27}{8}\right)^{\frac{2}{3}} = \left(\dfrac{3}{2}\right)^2 = \dfrac{9}{4} & 2 & M1 for reciprocating fraction or taking cube root \\ \hline
+\textbf{70}(b) & X_1, X_2, X_3, X_5, X_4 & 2 & B2 for all correct or B1 for 3 or 4 in correct relative order \\ \hline
+\textbf{70}(c) & $>$ & 1 & B1 \\ \hline
+\textbf{71}(a) & $-5$ & 1 & B1 for $-5$ \\ \hline
+\textbf{71}(b) & 11 & 1 & B1 for 11 \\ \hline
+\textbf{72}(a) & $\dfrac{7}{10}$ & 1 & B1 for $\dfrac{7}{10}$ or equivalent fraction e.g. $\dfrac{6}{10} + \dfrac{1}{10}$ \\ \hline
+\textbf{72}(b) & $\dfrac{8}{15}$ & 1 & B1 for $\dfrac{8}{15}$ or M1 for $\dfrac{4 \times 2}{1 \times 15}$ after cancellation \\ \hline
+\textbf{73}(a) & $\dfrac{1}{2}$ & 2 & M1 for conversion to improper fractions: $\dfrac{7}{3} - \dfrac{11}{6}$ or $\dfrac{14}{6} - \dfrac{11}{6}$ \\ \hline
+\textbf{73}(b) & $3\dfrac{1}{3}$ & 2 & M1 for $\dfrac{5}{4} \times \dfrac{8}{3}$ or $\dfrac{40}{12}$ or equivalent mixed number fraction \\ \hline
+\textbf{74}(a) & 5.25 & 1 & B1 for 5.25 \\ \hline
+\textbf{74}(b) & 0.024 & 1 & B1 for 0.024 \\ \hline
+\textbf{75}(a) & 23 & 2 & M1 for correct order of operations leading to $5 - 3 \times (-8) - 6$ or $5 + 24 - 6$ \\ \hline
+\textbf{75}(b) & $-\dfrac{11}{7}$ & 2 & M1 for numerator processing to $-11$ or denominator processing to 7 \\ \hline
+\textbf{76}(a) & $1\dfrac{23}{28}$ & 2 & M1 for evaluating the multiplication first: $\dfrac{5}{3} \times \dfrac{6}{7} = \dfrac{10}{7}$ \\ \hline
+\textbf{76}(b) & $2\dfrac{2}{5}$ & 2 & M1 for brackets evaluating to $\dfrac{32}{10}$ or $\dfrac{16}{5}$ and M1 for multiplying by $\dfrac{3}{4}$ \\ \hline
+\textbf{77}(a) & $-11$ & 2 & M1 for $3 - 8 = -5$ or $5 \times (-5)$ \\ \hline
+\textbf{77}(b) & $8.5$ & 2 & M1 for $1.2 \div 0.3 = 4$ \\ \hline
+\textbf{78}(a) & $-24$ & 1 & A1 for correct value \\ \hline
+\textbf{78}(b) & $2\dfrac{3}{8}$ or $\dfrac{19}{8}$ & 2 & M1 for $\dfrac{7}{4} + \dfrac{5}{8} = \dfrac{14}{8} + \dfrac{5}{8}$ \\ \hline
+\textbf{79}(a) & $6$ & 2 & M1 for $3.5 - 1.1 = 2.4$ or $\dfrac{2.4}{0.4}$ \\ \hline
+\textbf{79}(b) & $\dfrac{1}{9}$ & 2 & M1 for cancellation or $\dfrac{20}{180}$ \\ \hline
+\textbf{80}(a) & $(3 + 5) \times 2 - 4 = 12$ & 1 & A1 for correct bracket placement \\ \hline
+\textbf{80}(b) & $\dfrac{3}{10}$ & 2 & M1 for positive sign or $\dfrac{6}{20}$ \\ \hline
+\textbf{81}(a) & $-3$ & 2 & M1 for $3 \times 4 = 12$ leading to $7 - 12 + 2$ \\ \hline
+\textbf{81}(b) & $20$ & 1 & A1 for correct value \\ \hline
+\textbf{82}(a) & $3^6$ & 1 & B1 \\ \hline
+\textbf{82}(b) & $5^3$ & 1 & B1 \\ \hline
+\textbf{82}(c) & $2^{12}$ & 1 & B1 \\ \hline
+\textbf{83}(a) & 1 & 1 & B1 \\ \hline
+\textbf{83}(b) & $\dfrac{1}{16}$ & 1 & B1 \\ \hline
+\textbf{83}(c) & $\dfrac{3}{8}$ & 1 & B1 \\ \hline
+\textbf{84}(a) & 5 & 1 & B1 \\ \hline
+\textbf{84}(b) & 3 & 1 & B1 \\ \hline
+\textbf{84}(c) & 8 & 2 & B2 for correct answer, or M1 for $(\sqrt[4]{16})^3$ or $2^3$ or $\sqrt[4]{4096}$ \\ \hline
+\textbf{85}(a) & $2^2$ or 4 & 1 & B1 \\ \hline
+\textbf{85}(b) & $6^3$ or 216 & 1 & B1 \\ \hline
+\textbf{85}(c) & $2\dfrac{1}{4}$ & 2 & M1 for $\left(\dfrac{3}{2}\right)^2$ or $\dfrac{1}{\left(\frac{2}{3}\right)^2}$ or $\dfrac{2^{-2}}{3^{-2}}$ or $\dfrac{9}{4}$ \\ \hline
+\textbf{86}(a) & $\dfrac{1}{2}$ & 2 & B2 for correct answer, or M1 for $\dfrac{1}{8^{\frac{1}{3}}}$ or $\dfrac{1}{2}$ seen in working \\ \hline
+\textbf{86}(b) & $\dfrac{2}{3}$ & 2 & B2 for correct answer, or M1 for $\left(\dfrac{4}{9}\right)^{\frac{1}{2}}$ or $\dfrac{1}{\sqrt{\dfrac{9}{4}}}$ or $\dfrac{3}{2}$ seen \\ \hline
+\textbf{87}(a) & 4 & 2 & M1 for $8^{\frac{2}{3}}$ or $(\sqrt[3]{8})^2$ or $2^2$ or $\left(\dfrac{1}{4}\right)^{-1}$ \\ \hline
+\textbf{87}(b) & $\dfrac{5}{8}$ & 2 & M1 for $125^{\frac{1}{3}} = 5$ or $2^{-3} = \dfrac{1}{8}$ or $\dfrac{5}{2^3}$ \\ \hline
+\textbf{88}(a) & $-4$ & 2 & M1 for $3^{x} = 3^{-4}$ or $\dfrac{1}{81} = \dfrac{1}{3^4}$ \\ \hline
+\textbf{88}(b) & $\dfrac{7}{4}$ & 2 & M1 for $(2^2)^{2x-1} = 2^5$ or $2(2x-1) = 5$ or $4x-2 = 5$ \\ \hline
+\textbf{89}(a) & 12 & 3 & M2 for $\dfrac{2^5 \times 2^3 \times 3^3}{3^2 \times 2^6}$ or M1 for breaking down bases into prime factors: $6^3 = 2^3 \times 3^3$ or $4^3 = 2^6$ \\ \hline
+\textbf{89}(b) & 1 & 2 & M1 for $\left(5^{\frac{1}{2}}\right)^4 = 5^2$ and $10^2 = 2^2 \times 5^2$ leading to $\dfrac{5^2 \times 2^2 \times 5^2}{2^2 \times 5^3}$ or $\dfrac{25 \times 100}{4 \times 125}$ \\ \hline
+\textbf{90}(a) & $\dfrac{27}{8}$ & 2 & M1 for $\left(\dfrac{81}{16}\right)^{\frac{3}{4}}$ or $\left(\dfrac{3}{2}\right)^3$ or $\dfrac{2^{-3}}{3^{-3}}$ \\ \hline
+\textbf{90}(b) & $\dfrac{1}{17}$ & 3 & M1 for $4^{\frac{3}{2}} = 8$, M1 for $27^{\frac{2}{3}} = 9$, then leading to $(8+9)^{-1}$ \\ \hline
+\textbf{91}(a) & $\dfrac{3}{5}$ & 2 & M1 for converting to improper fraction $\left(\dfrac{25}{9}\right)^{-\frac{1}{2}}$ or finding $\sqrt{\dfrac{9}{25}}$ \\ \hline
+\textbf{91}(b) & 4 & 2 & M1 for writing all terms with base 3: $\dfrac{3^{-5} \times (3^2)^2}{(3^3)^{-1}}$ or $3^{-5+4-(-3)}$ or $3^2$ \\ \hline
+\textbf{92}(a) & $x = 1, y = -2$ & 4 & M1 for $x + 2y = -3$, M1 for $3x + y = 1$, M1 for attempting to solve the simultaneous linear system, A1 for both values correct. \\ \hline
+\textbf{93}(a) & $3 \times 4^{-x}$ & 2 & M1 for $243^{\frac{x}{5}} = (3^5)^{\frac{x}{5}} = 3^x$ leading to $\dfrac{3^x \times 4^{-x}}{3^{x-1}}$ or $3^{x-(x-1)} \times 4^{-x}$ \\ \hline
+\textbf{93}(b) & 0.0712 & 2 & M1 for $3 \times 4^{-2.7}$ or $3 \times 0.0237...$ or $0.07119...$ seen \\ \hline
+\textbf{94}(a) & $30\,800$ & 1 & B1 \\ \hline
+\textbf{94}(b) & $0.006\,1$ & 1 & B1 \\ \hline
+\textbf{95}(a) & $8 \times 10^8$ & 2 & M1 for $2 \times 4 \times 10^{3+5}$ or 800,000,000 \\ \hline
+\textbf{95}(b) & $3 \times 10^{-4}$ & 2 & M1 for $3 \times 10^{2-6}$ or 0.0003 \\ \hline
+\textbf{96}(a) & $1.5 \times 10^3$ & 2 & M1 for $15 \times 10^2$ or $1500$ \\ \hline
+\textbf{97}(a) & $3 \times 10^5$ & 2 & M1 for $30 \times 10^4$ or $300\,000$ \\ \hline
+\textbf{97}(b) & $2.5 \times 10^{-3}$ & 2 & M1 for $0.25 \times 10^{-2}$ or $\dfrac{1}{400}$ or $0.0025$ \\ \hline
+\textbf{98}(a) & $3.6 \times 10^5$ & 2 & M1 for $43 \times 10^4 - 7 \times 10^4$ or $430\,000 - 70\,000$ or $360\,000$ \\ \hline
+\textbf{99}(a) & $-3$ & 2 & M1 for $0.009$ or $(4.5 \times 10^{-5}) \times (2 \times 10^2) = 9 \times 10^{-3}$ \\ \hline
+\textbf{99}(b) & $-6$ & 2 & M1 for $\dfrac{4}{1\,000\,000}$ or $0.000\,004$ \\ \hline
+\textbf{100}(a) & $2.98 \times 10^{-3}$ & 2 & M1 for $24 \times 10^{-4} + 5.8 \times 10^{-4}$ or $0.0024 + 0.00058$ \\ \hline
+\textbf{100}(b) & $1.44 \times 10^8$ & 2 & M1 for $1.44 \times 10^k$ or $144\,000\,000$ \\ \hline
+\textbf{101}(a) & $7 \times 10^2$ & 3 & M1 for numerator simplified to $14 \times 10^4$ or $1.4 \times 10^5$, M1 for division step $\dfrac{1.4 \times 10^5}{2 \times 10^2}$ or $\dfrac{140\,000}{200}$ \\ \hline
+\textbf{102}(a) & $4.5 \times 10^n$ & 2 & M1 for factorising out $10^{n-1}$ to get $(4 \times 10 + 5) \times 10^{n-1} = 45 \times 10^{n-1}$ or for equating powers $4 \times 10^n + 0.5 \times 10^n$ \\ \hline
+\textbf{102}(b) & $3.2 \times 10^{n+1}$ & 2 & M1 for $\dfrac{16 \times 10^{2n}}{5 \times 10^{n-1}}$ or for $3.2 \times 10^{2n-(n-1)}$ \\ \hline
+\textbf{103}(a) & $5 \times 10^4$ & 3 & M1 for converting numerator to same power: $12 \times 10^{-4} + 8 \times 10^{-4} = 20 \times 10^{-4}$ or $2 \times 10^{-3}$, M1 for dividing by $4 \times 10^{-8}$ to get $0.5 \times 10^5$ \\ \hline
+\textbf{104}(a) & $-1$ & 3 & M1 for $(6.25 \times 10^{2k}) \times (8 \times 10^3)$, M1 for $50 \times 10^{2k+3} = 5 \times 10^{2k+4}$, A1 for equating $2k+4 = 2$ to find $k = -1$ \\ \hline
+\textbf{104}(b) & $8 \times 10^{-15}$ & 2 & M1 for $\dfrac{1}{125 \times 10^{12}}$ or $0.008 \times 10^{-12}$ \\ \hline
+\textbf{105}(a) & $2.1 \times 10^{-5}$ & 2 & M1 for $30 \times 10^{-6} - 9 \times 10^{-6} = 21 \times 10^{-6}$ or $3 \times 10^{-5} - 0.9 \times 10^{-5}$ \\ \hline
+\textbf{105}(b) & $1 \times 10^{-2}$ & 3 & M1 for $X^2 = 9 \times 10^{-10}$, M1 for $\dfrac{9 \times 10^{-10}}{9 \times 10^{-6}} = 1 \times 10^{-4}$ or $10^{-6}$ error in division, A1 for $\sqrt[3]{10^{-6}} = 10^{-2}$ \\ \hline
+\textbf{106}(a) & $2.5 \times 10^{-1}$ & 2 & M1 for numerator $= 25 \times 10^{-6}$ and denominator $= 1 \times 10^{-4}$ leading to $25 \times 10^{-2}$ \\ \hline
+\textbf{106}(b) & $2.44 \times 10^{-4}$ & 3 & M1 for $\dfrac{1}{M} = 4100$ or $4.1 \times 10^3$, M1 for $M = \dfrac{1}{4100} = \dfrac{1}{4.1} \times 10^{-3}$ or showing step leading to $0.0002439...$ or $\dfrac{10}{41} \times 10^{-4}$ \\ \hline
+\textbf{107}(a) & $4.39 \times 10^7$ & 2 & M1 for $42 \times 10^6 + 1.9 \times 10^6$ or $4.2 \times 10^7 + 0.19 \times 10^7$ or $43\,900\,000$ \\ \hline
+\textbf{107}(b) & $8.78 \times 10^3$ & 2 & M1 for $\dfrac{4.39 \times 10^7}{5 \times 10^3}$ or 8780 \\ \hline
+\textbf{108}(a) & $5.73 \times 10^8$ & 2 & M1 for $5.82 \times 10^8 - 0.094 \times 10^8$ or $582 \times 10^6 - 9.4 \times 10^6$ or $572\,600\,000$ \\ \hline
+\textbf{108}(b) & $1.62\%$ & 2 & M1 for $\dfrac{9.4 \times 10^6}{5.82 \times 10^8} \times 100$ or $0.016151... \times 100$ \\ \hline
+\textbf{109}(a) & 30 & 2 & M1 for $\dfrac{7.5 \times 10^{11}}{2.5 \times 10^{10}}$ or $\dfrac{75 \times 10^{10}}{2.5 \times 10^{10}}$ \\ \hline
+\textbf{109}(b) & $3.88 \times 10^{11}$ & 2 & M1 for $\dfrac{7.5 \times 10^{11} + 0.25 \times 10^{11}}{2}$ or $\dfrac{7.75 \times 10^{11}}{2}$ or $387\,500\,000\,000$ \\ \hline
+\textbf{110}(a) & $4.85 \times 10^{14}$ & 2 & M1 for $4.76 \times 10^{14} + 0.0895 \times 10^{14}$ or $484.95 \times 10^{12}$ or $484\,950\,000\,000\,000$ \\ \hline
+\textbf{110}(b) & 53.2 & 2 & M1 for $\dfrac{4.76 \times 10^{14}}{8.95 \times 10^{12}}$ or $53.1843...$ \\ \hline
+\textbf{111}(a) & $6.23 \times 10^2$ & 3 & M1 for multiplying numerator to $7.7872 \times 10^4$, M1 for dividing by $1.25 \times 10^2$ to get $622.976$, A1 for standard form to 3 sig figs \\ \hline
+\textbf{111}(b) & 623 & 1 & B1 ft from part (a) \\ \hline
+\textbf{112}(a) & 483.71 & 1 & B1 \\ \hline
+\textbf{112}(b) & 484 & 1 & B1 \\ \hline
+\textbf{113}(a) & 1000 & 3 & M1 for writing individual values to 1 sig fig as 40, 5, and 0.2, M1 for $\dfrac{40 \times 5}{0.2}$ or $\dfrac{200}{0.2}$, A1 for 1000. \\ \hline
+\textbf{114}(a) & $0.0030$ & 1 & B1 \\ \hline
+\textbf{114}(b) & $80\,000$ & 1 & B1 \\ \hline
+\textbf{115}(a) & 10 & 2 & M1 for $\dfrac{40 \times 0.05}{\sqrt{0.04}}$ or $\dfrac{2}{0.2}$ \\ \hline
+\textbf{115}(b) & 0.05 & 1 & B1 \\ \hline
+\textbf{116}(a) & 0.06 & 2 & M1 for showing individual 1 sig fig roundings: $\dfrac{6 \times 0.2}{200}$ or $\dfrac{1.2}{200}$ or $\dfrac{12}{2000}$ \\ \hline
+\textbf{116}(b) & $\dfrac{3}{50}$ & 1 & B1 \\ \hline
+\textbf{117}(a) & £70 & 2 & M1 for $\dfrac{140}{2+3+5} \times 5$ oe \\ \hline
+\textbf{117}(b) & £42 & 2 & M1 for $(5-2) \times 14$ or $70-28$ oe \\ \hline
+\textbf{118}(a) & $300\text{ g}$ & 2 & M1 for $\dfrac{120}{8} \times 20$ or $15 \times 20$ \\ \hline
+\textbf{118}(b) & 30 & 2 & M1 for $\dfrac{450}{15}$ oe \\ \hline
+\textbf{119}(a) & $8\text{ kg}$ & 2 & M1 for $\dfrac{14}{7} \times 4$ oe \\ \hline
+\textbf{119}(b) & $42\text{ kg}$ & 2 & M1 for $3.5 \times (7+4+1)$ oe \\ \hline
+\textbf{120}(a) & $600\text{ ml}$ & 2 & M1 for $\dfrac{3}{5+3+1} \times 1800 = \dfrac{3}{9} \times 1800$ \\ \hline
+\textbf{120}(b) & $5:3:2$ & 2 & M1 for doubling the last component to get $5:3:2$ visible or structured \\ \hline
+\textbf{121}(a) & $\dfrac{3}{10}$ & 1 & Correct answer only \\ \hline
+\textbf{121}(b) & $60\text{ kg}$ & 3 & M1 for $7-3=4$ parts, M1 for $1\text{ part} = \dfrac{24}{4} = 6\text{ kg}$, A1 for $10 \times 6 = 60\text{ kg}$ \\ \hline
+\textbf{122}(a) & $20\text{ cm}$ & 2 & M1 for $\dfrac{3000}{150}$ oe \\ \hline
+\textbf{122}(b) & $900\text{ m}^2$ & 3 & M1 for $400 \times 150^2$, M1 for division by $10000$ to convert $\text{cm}^2$ to $\text{m}^2$ \\ \hline
+\textbf{123}(a) & $3:8$ & 2 & M1 for $45:120$ or correct conversion of units to common form \\ \hline
+\textbf{124}(a) & $\dfrac{7}{9}$ & 1 & Correct answer only \\ \hline
+\textbf{124}(b) & Proof & 2 & M1 for expressing salt as $\dfrac{2}{9}V$ and new water as $\dfrac{7}{9}V + 60$, M1 for equating new water to $4 \times \text{salt} = 4\left(\dfrac{2}{9}V\right) = \dfrac{8}{9}V$ \\ \hline
+\textbf{124}(c) & $540\text{ ml}$ & 2 & M1 for isolating $\dfrac{1}{9}V = 60$ or equivalent shift \\ \hline
+\textbf{125}(a) & $n = 200$ & 3 & M1 for actual area $= 12 \times 16 = 192\text{ m}^2$, M1 for converting to $\text{cm}^2$: $192 \times 10000 = 1920000\text{ cm}^2$, A1 for $n^2 = \dfrac{1920000}{48} = 40000 \implies n = 200$ \\ \hline
+\textbf{125}(b) & $27\text{ cm}$ & 2 & M1 for $\dfrac{5400}{200}$ oe \\ \hline
+\textbf{126}(a) & £$1200$ & 2 & M1 for $\dfrac{4}{12} \times 3600$ oe \\ \hline
+\textbf{126}(b) & Manager $C$, loss of £$100$ & 3 & M1 for finding new shares: $A = 800, B = 1200, C = 1600$, M1 for comparing old shares ($A=900, B=1200, C=1500$) to identify $A$ loses £100 and $C$ gains £100, A1 for Manager $A$ with £$100$ loss \\ \hline
+\textbf{127}(a) & 3 hours 30 minutes & 2 & M1 for $\dfrac{1400}{400}$ or $3.5$ hours \\ \hline
+\textbf{127}(b) & 600 & 2 & M1 for $\dfrac{1400}{2\dfrac{1}{3}}$ or $\dfrac{1400 \times 3}{7}$ \\ \hline
+\textbf{128}(a) & 5.4 & 3 & M1 for $15 \times 60 = 900$ seconds, M1 for $6 \times 900 = 5400$ m \\ \hline
+\textbf{128}(b) & $\dfrac{6 \times 3600}{1000} = 21.6$ & 2 & M1 for $6 \times 3600$ or $\dfrac{6}{1000}$ seen \\ \hline
+\textbf{129}(a) & 12 & 2 & M1 for $\dfrac{45}{3\dfrac{3}{4}}$ or $\dfrac{45 \times 4}{15}$ \\ \hline
+\textbf{129}(b) & 2.7 & 2 & M1 for $45 \times \dfrac{6}{100}$ or $\dfrac{270}{100}$ \\ \hline
+\textbf{130}(a) & $18\dfrac{4}{7}$ & 3 & M1 for total distance $= 36$, M1 for total time $= \dfrac{12}{16} + \dfrac{24}{20} = \dfrac{3}{4} + \dfrac{6}{5} = \dfrac{39}{20}$ hours, A1 for $\dfrac{36 \times 20}{39} = \dfrac{240}{13}$ or $18\dfrac{6}{13}$ \\ \hline
+\textbf{130}(b) & 4.6 & 2 & M1 for $\text{mass} = 4000 \times 1.15 = 4600$ g \\ \hline
+\textbf{131}(a) & 265 & 2 & M1 for distance of second part $= 100 \times 1\dfrac{3}{4} = 175$ km \\ \hline
+\textbf{131}(b) & 106 & 2 & M1 for total time $= \dfrac{90}{120} + 1\dfrac{3}{4} = \dfrac{3}{4} + \dfrac{7}{4} = 2.5$ hours, then $\dfrac{265}{2.5}$ \\ \hline
+\textbf{132}(a) & $\dfrac{2x}{\dfrac{x}{60} + \dfrac{x}{90}} = 72$ & 3 & M1 for setting total distance as $2x$, M1 for total time expression $\dfrac{x}{60} + \dfrac{x}{90} = \dfrac{5x}{180} = \dfrac{x}{36}$, A1 for $\dfrac{2x}{\dfrac{x}{36}} = 72$ \\ \hline
+\textbf{132}(b) & 120 & 2 & M1 for total distance $= 72 \times 3\dfrac{1}{3} = 72 \times \dfrac{10}{3} = 240$ km, then $\dfrac{240}{2}$ \\ \hline
+\textbf{133}(a) & 1620 & 1 & B1 for 1620 \\ \hline
+\textbf{133}(b) & 751.68 & 2 & M1 for $\dfrac{2}{5} \times 1620 = 648$, then $648 \times 1.16$ \\ \hline
+\textbf{133}(c) & 29 & 2 & M1 for fuel volume $= \dfrac{250}{100} \times 8 = 20$ litres, then $20 \times 1.45$ \\ \hline
+\textbf{134}(a) & $\dfrac{2v(v-15)}{(v-15)+v} = \dfrac{2v^2-30v}{2v-15}$ & 3 & M1 for total distance $= 2d$ and time expressions $\dfrac{d}{v}$ and $\dfrac{d}{v-15}$ \\ \hline
+\textbf{134} &                                                    &   & M1 for adding times to get $\dfrac{d(v-15)+dv}{v(v-15)} = \dfrac{d(2v-15)}{v(v-15)}$ \\ \hline
+\textbf{134}(b) & 60 & 3 & M1 for $\dfrac{2v^2-30v}{2v-15} = 40 \Rightarrow 2v^2 - 30v = 80v - 600$ \\ \hline
+\textbf{134} &    &   & M1 for $2v^2 - 110v + 600 = 0 \Rightarrow (2v-20)(v-60) = 0$ \\ \hline
+\textbf{135}(a) & $\dfrac{d}{\dfrac{\left(\dfrac{d}{3}\right)}{x} + \dfrac{\left(\dfrac{2d}{3}\right)}{2x}} = \dfrac{3}{2}x$ & 3 & M1 for total time $= \dfrac{d}{3x} + \dfrac{2d}{6x}$ \\ \hline
+\textbf{135} &                                                                                       &   & M1 for simplifying denominator to $\dfrac{2d}{3x}$ \\ \hline
+\textbf{135} &                                                                                       &   & A1 for $\dfrac{d}{\left(\dfrac{2d}{3x}\right)} = \dfrac{3x}{2}$ \\ \hline
+\textbf{135}(b) & 48 & 2 & M1 for equating $\dfrac{3}{2}x = \dfrac{270}{3\dfrac{3}{4}} = \dfrac{270 \times 4}{15} = 72$ \\ \hline
+\textbf{136}(a) & $1\text{ hour } 30\text{ minutes}$ & 2 & M1 for $\dfrac{114}{76}$ \\ \hline
+\textbf{136}(a)(i) & $74.7\text{ km/h}$ & 3 & M1 for total time $= 1.5 + 2.3 = 3.8\text{ hours}$ \\ \hline
+\textbf{136}(a)(ii) & & & M1 for $\dfrac{284}{3.8}$ \\ \hline
+\textbf{137}(a) & EUR 522.90 & 2 & M1 for $450 \times 1.162$ \\ \hline
+\textbf{137}(a)(i) & $62.0\text{ m/s}$ & 3 & M1 for total seconds $= 82 \times 60 = 4920\text{ s}$ \\ \hline
+\textbf{137}(a)(ii) & & & M1 for $\dfrac{305000}{4920}$ \\ \hline
+\textbf{138}(a) & CAD 6753 & 3 & M1 for $3850 \times 1.284 = 4943.4\text{ USD}$ \\ \hline
+\textbf{138} & & & M1 for $\dfrac{4943.4}{0.732}$ \\ \hline
+\textbf{138} & & & A1 for $6753.28$ rounded to $6753$ \\ \hline
+\textbf{138}(b) & GBP 89.10 & 4 & M1 for fuel volume $= \dfrac{645}{100} \times 14.8 = 95.46\text{ litres}$ \\ \hline
+\textbf{138} & & & M1 for cost in CAD $= 95.46 \times 1.64 = 156.5544\text{ CAD}$ \\ \hline
+\textbf{138} & & & M1 for converting CAD to GBP: $\dfrac{156.5544 \times 0.732}{1.284}$ \\ \hline
+\textbf{138} & & & A1 for $89.10$ (allow $89.09$ to $89.11$) \\ \hline
+\textbf{139}(a) & 280 GBP & 2 & M1 for $250 \times \dfrac{112}{100}$ or $250 + 30$ \\ \hline
+\textbf{139}(b) & 252 GBP & 2 & M1 for $\text{their } 280 \times \dfrac{90}{100}$ or $\text{their } 280 - 28$ \\ \hline
+\textbf{140}(a) & 150 EUR & 3 & M2 for $180 \div \dfrac{120}{100}$ or $180 \times \dfrac{100}{120}$ or M1 for identifying $120\% = 180$ \\ \hline
+\textbf{141}(a) & 605 grams & 3 & M2 for $500 \times \left(\dfrac{110}{100}\right)^2$ or $500 \times 1.1 \times 1.1$ or M1 for $500 \times 1.1 = 550$ \\ \hline
+\textbf{141}(b) & 121\% & 1 & B1 for 121\% or $\text{their } \dfrac{605}{500} \times 100$ \\ \hline
+\textbf{142}(a) & 1000 GBP & 2 & M1 for $800 \times \left(1 + \dfrac{25}{100}\right)$ or $800 \times \dfrac{5}{4}$ \\ \hline
+\textbf{142}(a)(i) & 6.25\% & 3 & M1 for $\text{their } 1000 \times \dfrac{85}{100}$ or 850 \\ \hline
+\textbf{142}(a)(ii) & & & M1 for $\dfrac{\text{their } 850 - 800}{800} \times 100$ or $\dfrac{5}{4} \times \dfrac{85}{100} = \dfrac{425}{400} = 1.0625$ \\ \hline
+\textbf{143}(a) & 2646 EUR & 2 & M1 for Year 1: $2400 \times 1.05 = 2520$ \\ \hline
+\textbf{143}(a)(i) & & & M1 for Year 2: $\text{their } 2520 \times 1.05 = 2646$ with no dots on line \\ \hline
+\textbf{143}(a)(ii) & 132.30 EUR & 2 & M1 for $2778.30 - 2646$ or $2646 \times \dfrac{5}{100}$ \\ \hline
+\textbf{144}(a) & $\left(1 + \dfrac{a}{100}\right)\left(1 - \dfrac{a}{100}\right) = \dfrac{24}{25} \Rightarrow 1 - \left(\dfrac{a}{100}\right)^2 = \dfrac{24}{25}$ & 3 & M1 for product of multipliers or $P\left(1 - \dfrac{a^2}{10000}\right)$ \\ \hline
+\textbf{144}(a)(i) & $\Rightarrow \left(\dfrac{a}{100}\right)^2 = 1 - \dfrac{24}{25} = \dfrac{1}{25}$ & & M1 for clear algebraic simplification to given form \\ \hline
+\textbf{144}(a)(ii) & 20 & 1 & B1 for 20 (reject $-20$) \\ \hline
+\textbf{144}(a)(iii) & 50000 GBP & 2 & M1 for $48000 \div \dfrac{24}{25}$ or $48000 \times \dfrac{25}{24}$ \\ \hline
+\textbf{145}(a) & 1039.50 GBP & 2 & M1 for $4500 \times 0.0385 \times 6$ \\ \hline
+\textbf{145}(b) & 5539.50 GBP & 1 & FT for $4500 + \text{their (a)}$ \\ \hline
+\textbf{146}(a) & 141000 USD & 3 & M2 for $125000 \times (1.0425)^3$ or M1 for $125000 \times 1.0425$ \\ \hline
+\textbf{146}(b) & 16400 USD & 1 & FT for $\text{their (a)} - 125000$ \\ \hline
+\textbf{147}(a) & 18742.66 EUR & 2 & M1 for $14500 \times 1.0435^{6}$ \\ \hline
+\textbf{147}(b) & 18030.44 EUR & 2 & M1 for $\text{Ans from (a)} \times (1 - 0.038)$ \\ \hline
+\textbf{147}(c) & 124.3\% or 124\% & 2 & M1 for $\dfrac{\text{Ans from (b)}}{14500} \times 100$ \\ \hline
+\textbf{148}(a) & 196620 AUD & 3 & M1 for $t = 7.25$ \
+\textbf{148} & & & M1 for $480000 \times 0.0565 \times 7.25$ \\ \hline
+\textbf{148}(b) & Show derived statement & 1 & A1 for explicit statement showing $1 + \dfrac{4.95}{100} = 1.0495$ applied compoundingly \\ \hline
+\textbf{148}(c) & 11 years & 2 & M1 for systematic trial or setting up equation $370000 \times 1.0495^{n} > 600000$ \
+\textbf{148} & & & A1 for $n = 11$ (since $10$ years gives $\approx 599650$) \\ \hline
+\textbf{149}(a) & 06 15 & 2 & M1 for bridging midnight, e.g., 22 45 + 1 hour 15 minutes is 00 00, leaving 6 hours 15 minutes. \\ \hline
+\textbf{149}(b) & Wednesday & 1 & B1 for the correct day following midnight. \\ \hline
+\textbf{150}(a) & 18 15 & 1 & B1 for correct addition of 4 hours. \\ \hline
+\textbf{150}(b) & 110 minutes & 2 & M1 for 1 hour 50 minutes or $60 + 50$. \\ \hline
+\textbf{151}(a) & 13 20 & 1 & B1 for subtracting 2 hours from departure time. \\ \hline
+\textbf{151}(b) & 18 20 on 13 April & 2 & M1 for adding 3 days to the date (13 April) and 5 hours to the time ($13 20 + 5$ hours). \\ \hline
+\textbf{152}(a) & 10:45 p.m. & 1 & B1 for correct time format with p.m. \\ \hline
+\textbf{152}(b)(i) & 19 20 & 2 & M1 for adding 9 hours and 11 hours 35 minutes to 22 45 or equivalent \\ \hline
+\textbf{152}(b)(ii) & Wednesday & 1 & B1 for Wednesday \\ \hline
+\textbf{153}(a) & Tuesday 20 20 & 2 & M1 for correct time zone shift to departure local time ($21 45 + 9 \text{ hours} = \text{Tuesday } 06 45$) or adding duration first. \\ \hline
+\textbf{153}(b) & 13.6 & 2 & M1 for $\dfrac{35}{60}$ seen or $13.583...$ \\ \hline
+\end{officialmarkscheme}
+
+\end{document}

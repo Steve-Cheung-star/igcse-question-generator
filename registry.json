@@ -20,7 +20,8 @@
       "Utilise standard notation: n(A), element of, not an element of, complement A', empty set varnothing, universal set U (do not use mathcal), subset, not a subset, union, and intersection.",
       "Definitions of sets must use proper conditional builder syntax, e.g., A = {x | x is a natural number} or B = {(x,y) | y = mx + c}.",
       "Make the Venn Diagram box wider in order to fill in the regions.",
-      "Place the unscript U in the top left of the rectangle and to the left of rectangle in tikz"
+      "Place the unscript U in the top left of the rectangle and to the left of rectangle (outside) in tikz",
+      "If a question asks to shade in or complete the Venn Diagram , the Markscheme MUST include the correct Venn diagram in tikz"
     ]
   },
   "E1.3_powers_and_roots": {
@@ -39,6 +40,7 @@
     "difficulty": "Easy",
     "technical_constraints": [
       "Use appropriate language and notation for proper fractions, improper fractions, mixed numbers, decimals, and percentages.",
+      "Do not include recurring decimals",
       "Recognise structural equivalence and convert fluidly between these numeric forms.",
       "Enforce rules requiring candidates to write all fractions in their simplest form."
     ]
@@ -49,7 +51,9 @@
     "difficulty": "Easy",
     "technical_constraints": [
       "Order a list of diverse rational numbers or expressions by magnitude.",
-      "Demonstrate absolute familiarity with inequalities and relational symbols (=, !=, >, <, >=, <=)."
+      "Demonstrate absolute familiarity with inequalities and relational symbols (=, !=, >, <, >=, <=).",
+      "Use log(x), don't use ln(x)",
+      "Put $$ around > and < in markscheme"
     ]
   },
   "E1.6_four_operations": {
@@ -97,6 +101,7 @@
     "difficulty": "Medium",
     "technical_constraints": [
       "Express given ratios in their simplest constituent form (e.g., 20:30:40 simplifies to 2:3:4).",
+      "Include ratios of 2 and 3 parts",
       "Divide a specific total financial or physical quantity into a given ratio.",
       "Apply proportional reasoning and scaling in real-world contexts, such as adapting recipes or analyzing map scales to determine best value."
     ]
@@ -557,8 +562,11 @@
     "difficulty": "Hard",
     "technical_constraints": [
       "Carry out calculations and solve multi-step problems in three dimensions using Pythagoras' theorem and trigonometry.",
+      "Higher difficulty can include show that type of questions, work backwards, and solving algebraically, cross over with similiarity and ratios of sides",
+      "Include cuboid, cube, prism, cylinder, pyramid, cone, sphere, hemisphere, tetrahedron, frustum.",
       "Calculations must require candidates to find the length of internal diagonals across 3D shapes or calculate the true angle formed between a line and a plane.",
-      "Include a diagram with vertices and sides labelled."
+      "Include a diagram with vertices and sides labelled, do not use grid, use dashed lines for invisible lines, label any size and angles directly on the diagram.",
+      "Exclude the words such as space diagonal, base diagonal, just name the lines and angles using the vertices, unnecessary diagaonals."
     ]
   },
   "E8.1_transformations_geometry": {

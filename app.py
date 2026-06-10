@@ -30,9 +30,6 @@ if not os.path.exists(IMAGE_FOLDER):
 # GLOBAL FLAT FILE MAXIMUM INCREMENT DETECTOR
 # ------------------------------------------------------------------
 def get_next_global_id(folder_path=IMAGE_FOLDER):
-    """Scans the flat images folder, finds the maximum integer X among
-    existing 'q_X.png' files, and returns X + 1. Default starts at 1.
-    """
     if not os.path.exists(folder_path):
         return 1
 
@@ -53,10 +50,6 @@ def get_next_global_id(folder_path=IMAGE_FOLDER):
 # FIXED VERTICAL-ONLY PILLOW IMAGE CROPPER
 # ------------------------------------------------------------------
 def autocrop_image_margins(image_path, padding=25):
-    """Opens the compiled canvas sheet, calculates the absolute vertical
-    pixel boundaries, and trims exclusively above and below while
-    leaving the horizontal page format completely intact.
-    """
     img = Image.open(image_path).convert("RGB")
     bg = Image.new("RGB", img.size, (255, 255, 255))
     diff = ImageChops.difference(img, bg)
@@ -81,15 +74,11 @@ def autocrop_image_margins(image_path, padding=25):
 # MULTI-PAGE EXAM-FORMATTED LATEX COMPILER ENGINE
 # ------------------------------------------------------------------
 def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=False):
-    """Wraps either a question block or a markscheme table structure into an
-    article template, executes pdflatex, and returns list of cropped PNG paths.
-    """
     if os.path.exists("/opt/homebrew/bin") and "/opt/homebrew/bin" not in os.environ["PATH"]:
         os.environ["PATH"] = f"/opt/homebrew/bin:{os.environ['PATH']}"
     elif os.path.exists("/usr/local/bin") and "/usr/local/bin" not in os.environ["PATH"]:
         os.environ["PATH"] = f"/usr/local/bin:{os.environ['PATH']}"
 
-    # Pre-parse: Catch independent $$ math $$ blocks and rewrite them as indented text fragments
     latex_body = re.sub(
         r"\$\$(.*?)\$\$",
         r"\n\\par\\vspace{0.1cm}\\hspace*{0.6cm}$\1$\\par\\vspace{0.15cm}\n",
@@ -99,7 +88,6 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
 
     raw_lines = latex_body.splitlines()
 
-    # COUNT MAIN-LEVEL ITEMS ONLY
     main_item_count = 0
     subenum_depth = 0
     has_subenum_internal = False
@@ -114,7 +102,6 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
         elif stripped_line.startswith("[ITEM]") and subenum_depth == 0:
             main_item_count += 1
 
-    # If a question contains subparts, do NOT drop the itemize mechanics
     is_single_part_question = (main_item_count <= 1) and not has_subenum_internal and not is_markscheme
 
     assembled_lines = []
@@ -137,7 +124,6 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
             if active_environments[-1] == end_match.group(1):
                 active_environments.pop()
 
-        # Structural Token Routing Logic
         if stripped.startswith("[ENUM_START]"):
             if not is_single_part_question:
                 assembled_lines.append(r"\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]")
@@ -172,7 +158,6 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
                 assembled_lines.append(f"\\item {item_text}")
             continue
 
-        # Safeguard: Do not append line endings inside active markscheme tables
         if len(active_environments) == 0 and not is_markscheme:
             if not stripped.startswith("\\") and not stripped.endswith(r"\\") and not stripped.startswith(
                     "[") and not stripped.startswith(r"\par"):
@@ -193,16 +178,18 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
 }
 """
     if is_markscheme:
-        macro_definition += r"""
-\newenvironment{officialmarkscheme}{
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|p{1.5cm}|p{4.8cm}|p{1.2cm}|p{7.7cm}|}
-    \hline
-    \textbf{Part} & \textbf{Answer} & \textbf{Marks} & \textbf{Partial Marks / Guidance} \\ \hline
-}{
-    \hline
-    \end{tabular}
-}
+        # Detect presence of display fractions to choose the proper row stretch height metric dynamically
+        stretch_factor = "2.5" if r"\dfrac" in latex_body else "1.5"
+        macro_definition += f"""
+\\newenvironment{{officialmarkscheme}}{{
+    \\renewcommand{{\\arraystretch}}{{{stretch_factor}}}
+    \\begin{{tabular}}{{|p{{1.5cm}}|p{{4.8cm}}|p{{1.2cm}}|p{{7.7cm}}|}}
+    \\hline
+    \\textbf{{Part}} & \\textbf{{Answer}} & \\textbf{{Marks}} & \\textbf{{Partial Marks / Guidance}} \\\\ \\hline
+}}{{
+    \\hline
+    \\end{{tabular}}
+}}
 """
 
     full_latex_document = f"""\\documentclass[12pt]{{{'article'}}}
@@ -400,6 +387,7 @@ with col_left:
     else:
         paper_specific_prompt_rules = """- ENFORCE CALCULATOR EXPECTATIONS FOR PAPER 4:
   * Questions should contain advanced calculations, multi-step geometric problem layouts, continuous statistics tracking, or multi-stage formulas where digital calculators are typical.
+  * Figures and values should be less nice.
   * Answers can require 3 significant figure approximations where necessary, but parameters should remain mathematically clean inside variables."""
 
     massive_prompt = fr"""You are an elite math test setter specializing in Cambridge IGCSE 0607 Extended International Mathematics. Generate exactly {total_requested_count} distinct question variations regarding '{topic}' (Syllabus Reference Context: {syllabus_ref}). Use British spelling throughout.
@@ -434,11 +422,21 @@ CRITICAL STRUCTURING RULES:
 4. STANDALONE EXPRESSIONS & DISPLAY MATH BLOCKS: Isolate standalone complex fractions or complex mathematical equations completely onto their own independent lines using standard double dollar signs ($$).
    Example:
    [ITEM] Rationalise the denominator.
-   $$ \\frac{{3}}{{\\sqrt{{5}}}} $$
+   $$ \\dfrac{{3}}{{\\sqrt{{5}}}} $$
    \\examanswerslot{{2cm}}{{0.25}}{{2}}
 
 5. THE MANDATORY CORRESPONDING MARKSCHEME:
-For each variant question generated, you MUST construct its precise official matching markscheme structured entry row inside an `\\begin{{officialmarkscheme}}` environment. Match nested subparts (such as (b)(i), (b)(ii)) exactly in the Part descriptor column. Use standard LaTeX table columns matching: Part & Answer & Marks & Partial Marks / Guidance.
+For each variant question generated, you MUST construct its precise official matching markscheme structured entry row inside an `\\begin{{officialmarkscheme}}` environment. Match nested subparts (such as (b)(i), (b)(ii)) exactly in the Part descriptor column. Use standard LaTeX table columns matching: Part & Answer & Marks & Partial Marks / Guidance.\
+
+6. CURRENCY SYMBOLS: Use 3 letter codes like HKD, AUD, GBP, USD, EUR (312 HKD, 58 GBP)  . Do not use dollar signs, pound signs, euro signs, etc.
+
+CRITICAL PARSING CONSTRAINT:
+You MUST use valid LaTeX row line breaks inside the `officialmarkscheme` environment. Every data entry line must end with a full double backslash `\\\\`. Do NOT output single backslashes `\\` under any circumstances. Ensure no trailing space follows the double backslash token.
+
+MATHEMATICAL TYPOGRAPHY FRACTION RULES:
+- ALWAYS use display-style fractions (`\\dfrac{{num}}{{den}}`) for all standard equations, fractions inside sentences, fractions inside tables, and display math blocks to maximize clarity and alignment metrics.
+- DO NOT use standard `\\frac` except when formatting components embedded within an exponent/superscript profile (e.g., $x^{{\\frac{{1}}{{2}}}}$). For all other scenarios, `\\dfrac` is strictly required.
+- CRITICAL MARKSCHEME CELL MATH MODE: Inside the tabular `officialmarkscheme` environments, any cell string containing fractions (`\\dfrac`), operators (`\\times`, `\\div`), or math characters MUST be wrapped explicitly in standard inline math delimiters (`$...$`). Example: `$1\\dfrac{{2}}{{3}}$` or `M1 for $\\dfrac{{8}}{{3}} \\times \\dfrac{{5}}{{8}}$`.
 
 BATCH DISTRIBUTION DIRECTIVES:
 {strategy_distribution_directives}
@@ -456,20 +454,55 @@ Do not include markdown code ticks inside packaging tags.
     encoded_prompt_b64 = base64.b64encode(massive_prompt.encode("utf-8")).decode("utf-8")
     clean_gemini_url = "https://gemini.google.com/app"
 
-    js_text = f"""
-    <script>
-    async function runText() {{
-        const rawPrompt = atob("{encoded_prompt_b64}");
-        const textBlob = new Blob([rawPrompt], {{ type: 'text/plain' }});
-        await navigator.clipboard.write([new ClipboardItem({{"text/plain": textBlob}})]);
-        window.open("{clean_gemini_url}", "_blank");
-    }}
-    </script>
-    <button onclick="runText()" style="background:linear-gradient(135deg, #4b6cb7 0%, #182848 100%);color:white;padding:12px;border:none;border-radius:6px;cursor:pointer;width:100%;font-weight:bold;font-size:15px;">
-        🚀 Copy Requirements & Open Gemini Loop
-    </button>
-    """
-    st.components.v1.html(js_text, height=55)
+    if st.query_params.get("copied") == "true":
+        st.toast("Requirements copied to clipboard successfully!", icon="✅")
+        st.query_params.clear()
+
+    btn_col1, btn_col2 = st.columns(2)
+
+    with btn_col1:
+        js_loop_text = f"""
+        <script>
+        async function runTextLoop() {{
+            const rawPrompt = atob("{encoded_prompt_b64}");
+            const textBlob = new Blob([rawPrompt], {{ type: 'text/plain' }});
+            await navigator.clipboard.write([new ClipboardItem({{"text/plain": textBlob}})]);
+            window.open("{clean_gemini_url}", "_blank");
+        }}
+        </script>
+        <button onclick="runTextLoop()" style="background:linear-gradient(135deg, #4b6cb7 0%, #182848 100%);color:white;padding:12px;border:none;border-radius:6px;cursor:pointer;width:100%;font-weight:bold;font-size:14px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            🚀 Copy Requirements & Open Gemini Loop
+        </button>
+        """
+        st.components.v1.html(js_loop_text, height=55)
+
+    with btn_col2:
+        js_silent_text = f"""
+        <script>
+        async function runTextSilent(btn) {{
+            try {{
+                const rawPrompt = atob("{encoded_prompt_b64}");
+                const textBlob = new Blob([rawPrompt], {{ type: 'text/plain' }});
+                await navigator.clipboard.write([new ClipboardItem({{"text/plain": textBlob}})]);
+
+                btn.style.background = "linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)";
+                btn.innerHTML = "✓ Copied Requirements!";
+
+                setTimeout(() => {{
+                    const url = new URL(window.parent.location.href);
+                    url.searchParams.set("copied", "true");
+                    window.parent.location.href = url.toString();
+                }}, 400);
+            }} catch(e) {{
+                btn.innerHTML = "❌ Copy Failed";
+            }}
+        }}
+        </script>
+        <button onclick="runTextSilent(this)" style="background:linear-gradient(135deg, #2c3e50 0%, #3498db 100%);color:white;padding:12px;border:none;border-radius:6px;cursor:pointer;width:100%;font-weight:bold;font-size:14px;box-shadow: 0 2px 4px rgba(0,0,0,0.1);transition: all 0.3s ease;">
+            📋 Copy Requirements (Silent)
+        </button>
+        """
+        st.components.v1.html(js_silent_text, height=55)
 
 with col_right:
     st.header("📥 Step 2: Paste & Pick")
@@ -487,39 +520,10 @@ with col_right:
             gemini_output
         )
 
-
-        def advanced_ms_cleaner(text):
-            def replace_ms(match):
-                content = match.group(1)
-
-                # Sinks any single trailing backslashes at row ends (even followed by spaces or \hline)
-                content = re.sub(r'(?<!\\)\Silicon_Code_Patch\\(?!\s*\\)\s*(\\hline)?\s*$', r'\\\\ \1', content,
-                                 flags=re.MULTILINE)
-
-                # Catches internal cell formatting breaks where a row step was skipped
-                content = re.sub(r'(?<!\\)\Silicon_Code_Patch\\(?!\\)(\s*&)', r'\\\\ \1', content)
-                return f"\\begin{{officialmarkscheme}}{content}\\end{{officialmarkscheme}}"
-
-            return re.sub(r'\\begin{{officialmarkscheme}}(.*?)\\end{{officialmarkscheme}}', replace_ms, text,
-                          flags=re.DOTALL)
-
-
-        sanitized_output = advanced_ms_cleaner(sanitized_output)
-
-        # Strip redundant markdown/tabular artifacts cleanly
         sanitized_output = re.sub(r"\\begin\{tabular\}\{[^\}]*\}", "", sanitized_output)
         sanitized_output = re.sub(r"\\end\{tabular\}", "", sanitized_output)
 
-        sanitized_output = re.sub(r"\bPart\s*&\s*Answer\s*&\s*Marks\s*&\s*Partial.*️\\\\(\s*\\hline)?", "",
-                                  sanitized_output)
-
-        # ------------------------------------------------------------------
-        # FIXED CONDITIONAL LABEL STRIPPING (ONLY STRIPS SINGLE PART SECTIONS)
-        # ------------------------------------------------------------------
-        # Count total rows matching an alignment delimiter column marker to determine total entries
         row_count = len(re.findall(r"&", sanitized_output))
-
-        # If there are 3 or fewer alignments across the body matrix, it's a single question entry!
         if row_count <= 3:
             sanitized_output = re.sub(
                 r"^\s*\(?[a-zA-e]\)?(?:\([i-v]+\))?\s*(&)",
@@ -529,17 +533,37 @@ with col_right:
                 flags=re.MULTILINE
             )
 
-        # ------------------------------------------------------------------
-        # CLEAN ROW END PIPELINE (PREVENTS \\ \\ DUPLICATES)
-        # ------------------------------------------------------------------
-        # Wipe out any pre-existing messy double/triple backslashes before hlines first
-        sanitized_output = re.sub(r"\\\\+\s*\\hline", r"\\hline", sanitized_output)
-        # Re-inject exactly ONE clean pair of backslashes before every hline
-        sanitized_output = re.sub(r"(?<!\\)\s*\\hline", r" \\\\ \\hline", sanitized_output)
 
-        # Force a completely clean vertical closure at the end of the environment body
-        sanitized_output = re.sub(r"(?<!\\)\s*\\end\{officialmarkscheme\}", r" \\\\ \\hline\n\\end{officialmarkscheme}",
-                                  sanitized_output)
+        # ----------------------------------------------------------
+        # DYNAMIC PATH ELEMENT DETECTOR: ATTACH \hline AFTER EVERY PART
+        # ----------------------------------------------------------
+        def inject_hlines_per_row(match):
+            inner_content = match.group(1)
+            # Split by literal newlines instead of LaTeX backslashes to avoid LLM hallucinations
+            raw_lines = inner_content.split('\n')
+            cleaned_rows = []
+
+            for line in raw_lines:
+                # Strip out any existing \hline or trailing backslashes so we start fresh
+                line = re.sub(r"\\hline", "", line)
+                line = re.sub(r"\\+$", "", line.strip()).strip()
+
+                # Completely ignore empty lines or the redundant header row
+                if not line or "Part & Answer" in line:
+                    continue
+
+                # Rebuild the line perfectly with the proper LaTeX row ending
+                cleaned_rows.append(f"{line} \\\\ \\hline")
+
+            return "\n" + "\n".join(cleaned_rows) + "\n"
+
+
+        sanitized_output = re.sub(
+            r"\\begin\{officialmarkscheme\}(.*?)\\end\{officialmarkscheme\}",
+            lambda m: f"\\begin{{officialmarkscheme}}{inject_hlines_per_row(m)}\\end{{officialmarkscheme}}",
+            sanitized_output,
+            flags=re.DOTALL
+        )
 
         parsed_variants = {}
         parsed_ms = {}
@@ -571,9 +595,6 @@ with col_right:
         st.session_state["selected_latex_code"] = variants[chosen_variant_key]
         st.session_state["selected_ms_code"] = st.session_state["ms_dict"].get(chosen_variant_key, "")
 
-        # ------------------------------------------------------------------
-        # DUAL-TAB LIVE RENDER ARCHITECTURE
-        # ------------------------------------------------------------------
         tab_question, tab_markscheme = st.tabs(["📄 Preview Question Sheet", "📋 Preview Official Markscheme"])
 
         compiled_q_pngs = []
@@ -598,9 +619,6 @@ with col_right:
                 else:
                     st.warning("No corresponding markscheme segment block was found for this variant.")
 
-        # ------------------------------------------------------------------
-        # FLAT ROOT AUTOMATED INCREMENT ASSET COMMIT & RICH DATA PERSISTENCE
-        # ------------------------------------------------------------------
         if compiled_q_pngs and compiled_ms_pngs:
             st.divider()
 
@@ -629,7 +647,7 @@ with col_right:
                 all_mark_strings = slot_marks + manual_marks
                 calculated_marks = sum(int(m) for m in all_mark_strings) if all_mark_strings else 3
 
-                active_topic = topic if 'topic' in locals() else "Sets and Venn Diagrams"
+                active_topic = topic
                 active_difficulty = selected_difficulties[0] if selected_difficulties else "Medium"
 
                 new_entry = {
