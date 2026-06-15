@@ -158,10 +158,39 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
                 assembled_lines.append(f"\\item {item_text}")
             continue
 
-        if len(active_environments) == 0 and not is_markscheme:
-            if not stripped.startswith("\\") and not stripped.endswith(r"\\") and not stripped.startswith(
-                    "[") and not stripped.startswith(r"\par"):
-                line = line + r" \\"
+        # ------------------------------------------------------------------
+        # NEW LINE-BREAK NORMALIZATION LOGIC
+        # ------------------------------------------------------------------
+        # Rip off ALL trailing backslashes to give us a clean baseline (strips 1, 2, or 3+ slashes)
+        clean_stripped = re.sub(r"\\+$", "", stripped).strip()
+
+        if len(active_environments) > 0 and (
+                "tabular" in active_environments or "officialmarkscheme" in active_environments):
+            # TABULAR SAFETY NET: Any row with '&' MUST end with exactly '\\'
+            if "&" in stripped and not stripped.endswith(r"\hline"):
+                line = clean_stripped + r" \\"
+            else:
+                line = stripped
+
+        elif len(active_environments) == 0:
+            # Check if it already has a valid LaTeX line break
+            if not stripped.endswith(r"\\") and not stripped.endswith(r"\par"):
+                # Skip structural/spacing commands that handle their own layout
+                skip_prefixes = (
+                    r"\begin", r"\end", r"\item", r"\par",
+                    r"\examanswerslot", r"\newpage", r"\vspace",
+                    r"\hspace", r"\[", r"\]", r"\\", "["
+                )
+                if not stripped.startswith(skip_prefixes):
+                    # Rebuild the line using the clean baseline
+                    line = clean_stripped + r" \\"
+                else:
+                    line = stripped
+            else:
+                line = stripped
+        else:
+            # If we are inside an environment (like TikZ), trust the line as-is
+            line = stripped
 
         assembled_lines.append(line)
 
@@ -428,7 +457,7 @@ CRITICAL STRUCTURING RULES:
 5. THE MANDATORY CORRESPONDING MARKSCHEME:
 For each variant question generated, you MUST construct its precise official matching markscheme structured entry row inside an `\\begin{{officialmarkscheme}}` environment. Match nested subparts (such as (b)(i), (b)(ii)) exactly in the Part descriptor column. Use standard LaTeX table columns matching: Part & Answer & Marks & Partial Marks / Guidance.\
 
-6. CURRENCY SYMBOLS: Use 3 letter codes like HKD, AUD, GBP, USD, EUR (312 HKD, 58 GBP)  . Do not use dollar signs, pound signs, euro signs, etc.
+6. CURRENCY SYMBOLS: Use 3 letter codes like HKD, AUD, GBP, USD, EUR (312 HKD, 58 GBP)  . Do not use dollar signs, pound signs, euro signs, etc.\
 
 CRITICAL PARSING CONSTRAINT:
 You MUST use valid LaTeX row line breaks inside the `officialmarkscheme` environment. Every data entry line must end with a full double backslash `\\\\`. Do NOT output single backslashes `\\` under any circumstances. Ensure no trailing space follows the double backslash token.
@@ -520,8 +549,23 @@ with col_right:
             gemini_output
         )
 
-        sanitized_output = re.sub(r"\\begin\{tabular\}\{[^\}]*\}", "", sanitized_output)
-        sanitized_output = re.sub(r"\\end\{tabular\}", "", sanitized_output)
+
+        # ----------------------------------------------------------
+        # TARGETED FIX: Strip tabular ONLY inside markscheme blocks
+        # ----------------------------------------------------------
+        def strip_tabular_inside_ms(match):
+            block = match.group(0)
+            block = re.sub(r"\\begin\{tabular\}\{[^\}]*\}", "", block)
+            block = re.sub(r"\\end\{tabular\}", "", block)
+            return block
+
+
+        sanitized_output = re.sub(
+            r"\[MS_\d+_START\].*?\[MS_\d+_END\]",
+            strip_tabular_inside_ms,
+            sanitized_output,
+            flags=re.DOTALL
+        )
 
         row_count = len(re.findall(r"&", sanitized_output))
         if row_count <= 3:

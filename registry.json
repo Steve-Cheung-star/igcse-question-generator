@@ -163,6 +163,7 @@
     "technical_constraints": [
       "Apply exponential tracking models to determine values for assets or groups.",
       "Scenarios must involve physical asset financial depreciation or human/animal population changes.",
+      "Only give the percentage rates and not the model or equation themeselves.",
       "Advanced calculus or structural knowledge of the mathematical constant 'e' is strictly not required."
     ]
   },
@@ -172,7 +173,8 @@
     "difficulty": "Hard",
     "technical_constraints": [
       "Understand and manipulate surds, including simplifying complex expressions (e.g., converting sqrt(20) to 2*sqrt(5) or evaluating sqrt(200) - sqrt(32)).",
-      "Rationalise algebraic or numeric denominators, including single surds or binomial expressions (e.g., 10/sqrt(5) or 1 / (-1 + sqrt(3)))."
+      "Rationalise algebraic or numeric denominators, including single surds or binomial expressions (e.g., 10/sqrt(5) or 1 / (-1 + sqrt(3))).",
+      "Can include geometry problems and algebraic problems involving roots."
     ]
   },
   "E2.1_intro_algebra_substitution": {
@@ -196,13 +198,15 @@
     ]
   },
   "E2.3_algebraic_fractions": {
-    "syllabus_ref": "E2.3",
     "skill_name": "Algebraic Fractions Operations and Simplification",
     "difficulty": "Hard",
     "technical_constraints": [
-      "Manipulate algebraic fractions through addition, subtraction, multiplication, and division (e.g., evaluate items like x/3 + (x-4)/2 or formulas with variable denominators).",
-      "Factorise and fully simplify rational expressions by cancelling shared binomial components (e.g., simplify (x^2 - 2x) / (x^2 - 5x + 6)).",
-      "use dfrac for fractions"
+      "Manipulate algebraic fractions through addition, subtraction, multiplication, and division (e.g., evaluate items like \\dfrac{x}{3} + \\dfrac{x-4}{2} or formulas with variable denominators).",
+      "Factorise and fully simplify rational expressions by cancelling shared binomial components (e.g., simplify \\dfrac{x^2 - 2x}{x^2 - 5x + 6}).",
+      "Incorporate kinematics word problems (e.g., calculating total time taken for a journey split into two parts with different variable speeds) that require setting up an equation with algebraic fractions and subsequently solving the resulting quadratic equation.",
+      "Include geometry contexts involving the area and perimeter of simple and compound shapes where dimensions are given as algebraic expressions. Require the formulation and solving of equations (linear or quadratic) derived from algebraic fractions when the total area or perimeter is provided as an absolute value, a ratio, or algebraically.",
+      "Design contextual real-world scenarios (e.g., unit cost comparisons where a fixed budget is used to buy quantities of two different items, and one item costs a specific amount more than the other) that translate into equations involving algebraic fractions.",
+      "Ensure all fractions are formatted using \\dfrac instead of standard fractions."
     ]
   },
   "E2.4_indices_ii_algebraic": {
@@ -436,26 +440,30 @@
       "Provide a diagram in tikzpicture preferably not to scale. Label NOT TO SCALE on the right of diagram."
     ]
   },
-  "E5.6_circle_theorems_i": {
-    "syllabus_ref": "E5.6",
-    "skill_name": "Core Angle Properties of Circles",
-    "difficulty": "Hard",
-    "technical_constraints": [
-      "Calculate unknown angles in circle configurations, providing step-by-step geometric explanations for each deduction.",
-      "Apply core theorems: angle in a semicircle is 90°, angle between a tangent and radius is 90°, and the angle subtended at the centre is twice the angle at the circumference.",
-      "Apply advanced cyclic properties: angles subtended in the same segment are equal, opposite angles of a cyclic quadrilateral sum to 180° (supplementary), and the alternate segment theorem.",
-      "Apply other angle theorems such as isosceles triangle, angles between parallel lines.",
-      "Include a diagram in tikz, preferably not to scale, include NOT TO SCALE to the far right of the diagram. Ensure that vertices and angles are labelled and oriented properly using pic in tikz."
+    "E5.6_circle_theorems_i": {
+      "skill_name": "Core Angle Properties of Circles",
+      "difficulty": "Hard",
+      "technical_constraints": [
+        "Calculate unknown angles in circle configurations, often asking to find the value of explicit variables such as $x$ or $y$.",
+        "Usually include multi-part questions requiring the calculation of 2 to 4 different angles sequentially.",
+        "Require students to provide geometrical reasoning for their answers, such as completing a statement (e.g., 'Angle OAP = 90° because...') or explicitly stating the theorem used.",
+        "Ask students to write down the mathematical name of specific shapes formed within the circle, such as a cyclic quadrilateral or a kite.",
+        "Apply core theorems: angle in a semicircle is 90°, angle between a tangent and radius is 90°, and the angle subtended at the centre is twice the angle at the circumference.",
+        "Apply advanced cyclic properties: angles subtended in the same segment are equal, opposite angles of a cyclic quadrilateral sum to 180° (supplementary), exterior angle of a cyclic quadrilateral, and the alternate segment theorem.",
+        "Combine circle theorems with other basic angle properties such as isosceles triangles, straight lines, and angles between parallel lines.",
+        "Include a diagram in tikz, preferably not to scale, include 'NOT TO SCALE' to the far right of the diagram. Ensure that vertices and angles are labelled and oriented properly using pic in tikz. Rotate the diagram to introduce variability but make sure labels are still relatively correct. Use single letters for tangent endpoints."
     ]
   },
-  "E5.7_circle_theorems_ii": {
-    "syllabus_ref": "E5.7",
-    "skill_name": "Symmetry Chords and Tangents of Circles",
-    "difficulty": "Hard",
-    "technical_constraints": [
-      "Calculate measurements utilizing the underlying symmetry properties of circles.",
-      "Apply properties: equal chords are equidistant from the circle centre, and the perpendicular bisector of any chord passes through the centre.",
-      "Apply boundary properties: tangents drawn to a circle from an external point are equal in length."
+    "E5.7_circle_theorems_ii": {
+      "skill_name": "Symmetry Chords and Tangents of Circles",
+      "difficulty": "Hard",
+      "technical_constraints": [
+        "Calculate measurements utilizing the underlying symmetry properties of circles, heavily featuring the calculation of perimeters and areas of complex compound shapes involving arcs, sectors, and triangles.",
+        "Apply properties: equal chords are equidistant from the circle centre, and the perpendicular bisector of any chord passes through the centre.",
+        "Apply boundary properties: tangents drawn to a circle from an external point are equal in length.",
+        "Integrate Angle Properties of Circles, Trigonometry, and particularly Arcs and Sectors (e.g., using angles to calculate arc lengths or sector areas).",
+        "20 percent of the time, include multi-part extensions involving mathematically similar sides or solids (e.g., relating sides, volumes and surface areas of 3D shapes) as secondary concepts tied to the primary geometry problem.",
+        "Include a diagram in tikz, preferably not to scale, include 'NOT TO SCALE' to the far right of the diagram. Ensure that vertices and angles are labelled and oriented properly using pic in tikz. Rotate the diagram to introduce variability but make sure labels are still relatively correct. Use single letters for tangent endpoints."
     ]
   },
   "E6.1_units_of_measure": {
@@ -474,7 +482,8 @@
     "difficulty": "Easy",
     "technical_constraints": [
       "Carry out calculations to find the perimeter and total area of rectangles, triangles, parallelograms, and trapezia.",
-      "Formulas for rectangles, parallelograms, and trapezia are explicitly not given in assessment papers; the area of a triangle formula is given."
+      "Formulas for rectangles, parallelograms, and trapezia are explicitly not given in assessment papers; the area of a triangle formula is given.",
+      "Must include a diagram, do not use gridlines unless it's a graph or plot."
     ]
   },
   "E6.3_circles_arcs_sectors": {
@@ -484,7 +493,8 @@
     "technical_constraints": [
       "Calculate the total perimeter, circumference, and area of a circle using standard formulas which are provided.",
       "Calculate fractional arc lengths and sector areas as proportional divisions of a circle, evaluating both minor and major sectors.",
-      "Structure problem outputs to allow answers to be requested as decimals or in exact terms of pi (π)."
+      "Structure problem outputs to allow answers to be requested as decimals or in exact terms of pi (π).",
+      "Must include a diagram, do not use gridlines unless it's a graph or plot."
     ]
   },
   "E6.4_surface_area_volume": {
@@ -494,7 +504,8 @@
     "technical_constraints": [
       "Calculate the total surface area and internal volume of 3D solids: cuboids, prisms, cylinders, spheres, pyramids, and cones.",
       "Utilise provided formulas: curved surface area of a cylinder/cone, surface area of a sphere, and volumes of prisms, pyramids, cylinders, cones, and spheres.",
-      "Apply the definition of a prism to solids with any uniform cross-section, such as a cylindrical sector, and format answers in exact terms of pi (π) if requested."
+      "Apply the definition of a prism to solids with any uniform cross-section, such as a cylindrical sector, and format answers in exact terms of pi (π) if requested.",
+      "Must include a diagram, do not use gridlines unless it's a graph or plot."
     ]
   },
   "E6.5_compound_shapes_solids": {
@@ -504,7 +515,8 @@
     "technical_constraints": [
       "Solve practical problems involving the composite perimeters and total surface areas of compound 2D shapes or sliced parts of shapes.",
       "Calculate total surface areas and volumes of compound solids or parts of solids.",
-      "Incorporate explicit geometric calculations to find the surface area and volume of a frustum, allowing final answers to be written in terms of pi (π)."
+      "Incorporate explicit geometric calculations to find the surface area and volume of a frustum, allowing final answers to be written in terms of pi (π).",
+      "Must include a diagram, do not use gridlines unless it's a graph or plot."
     ]
   },
   "E7.1_pythagoras_theorem": {
@@ -561,12 +573,13 @@
     "skill_name": "3D Pythagoras and Trigonometry",
     "difficulty": "Hard",
     "technical_constraints": [
-      "Carry out calculations and solve multi-step problems in three dimensions using Pythagoras' theorem and trigonometry.",
-      "Higher difficulty can include show that type of questions, work backwards, and solving algebraically, cross over with similiarity and ratios of sides",
-      "Include cuboid, cube, prism, cylinder, pyramid, cone, sphere, hemisphere, tetrahedron, frustum.",
-      "Calculations must require candidates to find the length of internal diagonals across 3D shapes or calculate the true angle formed between a line and a plane.",
-      "Include a diagram with vertices and sides labelled, do not use grid, use dashed lines for invisible lines, label any size and angles directly on the diagram.",
-      "Exclude the words such as space diagonal, base diagonal, just name the lines and angles using the vertices, unnecessary diagaonals."
+      "Solve complex, multi-step 3D geometry problems broken down into structured sequential sub-parts (e.g., (a), (b), (c), (d)), frequently utilizing 'Show that...' prompts for intermediate lengths or heights to scaffold the question.",
+      "Focus heavily on 3D configurations such as cuboids, triangular prisms, and right pyramids with square, rectangular, or regular polygonal bases (e.g., pentagons), as well as vertical poles or flagpoles standing on a multi-point horizontal ground plane supported by wires.",
+      "Integrate 3D Pythagoras and basic right-angled trigonometry with advanced 2D trigonometric rules on non-right-angled planes, including the Sine Rule, Cosine Rule, and area formulas for oblique triangles ($1/2 ab \\sin C$) or regular polygon bases.",
+      "Require calculations of internal spatial diagonals, perpendicular heights from a vertex to a base, shortest distances from a point to a line within a 3D sub-plane, or the true angle formed between a line and a plane (often asking explicitly for a trigonometric ratio, e.g., 'Find the sine of the angle PAN').",
+      "Incorporate multi-part extension cross-overs involving secondary topics such as 3D volumes, surface areas, mass/density contextual scenarios, and mathematical similarity relationships between linear dimensions and 3D volumes (using scale factors $k$ and $k^3$).",
+      "Provide a clear 3D perspective diagram in TikZ that is not to scale, explicitly including 'NOT TO SCALE' to the far right. Use uppercase letters for vertices (e.g., $A, B, C, V, P, M, N$), use dashed lines for all internal and invisible structural edges, and exclude generic terms like 'space diagonal' or 'base diagonal' by naming lines and angles exclusively using their vertex coordinates.",
+      "Label any length of sides and size of angles directly on the diagram."
     ]
   },
   "E8.1_transformations_geometry": {
@@ -693,8 +706,12 @@
     "technical_constraints": [
       "Draw and interpret scatter diagrams, explicitly requiring all plotted data coordinate points to be marked as small crosses (×).",
       "Identify and define correlation types: positive, negative, and zero correlation.",
-      "Draw by eye, interpret, and use a straight line of best fit that passes through the mean point, extends across the full data set, and maintains a roughly even distribution of points on either side.",
-      "Utilise a GDC to find and apply the exact equation of linear regression for data analysis."
+      "Provide a few points pre-drawn on the graph, leave 2 for students to fill in. Points values do not necessarily need to be on lattice points, in between is good. Provide a table of up to 8 points.",
+      "Provide a grid with subgrid in gray for students to plot missing points. Both axes must start at 0. Label the horizontal and vertical axes. Include points that are halfway between gridlines. Major ticks can be 5, 10, 20, minor ticks can be 0.1, 0,2, 0.4, 0.5, 1, 2, 4, 5, etc. Major ticks gridlines should be thicker",
+      "Choose values where the points won't be too cramped together, scale the graph big enough to easily plot on, the points should be on the lattice or halfway between",
+      "Utilise a GDC to find and apply the exact equation of linear regression for data analysis.",
+      "Include a part occasionally to ask whether the predicted value is valid or not (interpolation or extrapolation).",
+      "Easy difficulty can just give a hypothetical regression line in the form y = mx + b or y = a + bx and ask about the correlation, and use it to predict values, without the use of scatter diagrams."
     ]
   },
   "E10.8_cumulative_frequency": {

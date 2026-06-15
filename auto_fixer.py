@@ -3,7 +3,6 @@ import re
 import os
 import shutil
 
-
 def get_expected_labels(q_code):
     tags = re.findall(r'\[ITEM\]|\[SUBENUM_START\]|\[SUBENUM_END\]', q_code)
     
@@ -53,6 +52,38 @@ def get_expected_labels(q_code):
                 
     return labels
 
+def fix_tabular_newlines(latex_code):
+    """
+    Parses the code to find tabular and officialmarkscheme environments.
+    Ensures any row containing '&' correctly ends with standard ' \\'.
+    """
+    lines = latex_code.split('\n')
+    new_lines = []
+    active_envs = []
+    
+    for line in lines:
+        stripped = line.strip()
+        
+        # Track active environments
+        start_match = re.search(r"\\begin\{([A-Za-z0-9\*]+)\}", stripped)
+        if start_match:
+            active_envs.append(start_match.group(1))
+        end_match = re.search(r"\\end\{([A-Za-z0-9\*]+)\}", stripped)
+        if end_match and active_envs:
+            if active_envs[-1] == end_match.group(1):
+                active_envs.pop()
+                
+        # If we are inside a table and looking at a data row
+        if ('tabular' in active_envs or 'officialmarkscheme' in active_envs):
+            if '&' in stripped and not stripped.endswith(r'\hline'):
+                # Strip trailing backslashes/whitespace and enforce a clean double backslash
+                clean_line = re.sub(r"\\+$", "", line.rstrip())
+                new_lines.append(clean_line + r" \\")
+                continue
+                
+        new_lines.append(line)
+        
+    return '\n'.join(new_lines)
 
 def fix_ms_code(ms_code, expected_labels):
     lines = ms_code.split('\n')
@@ -73,7 +104,6 @@ def fix_ms_code(ms_code, expected_labels):
             new_lines.append(line)
 
     return '\n'.join(new_lines)
-
 
 def run_autofixer():
     input_file = "master_bank.json"
@@ -97,37 +127,45 @@ def run_autofixer():
         q_code = item.get("question_code", "")
         ms_code = item.get("ms_code", "")
 
-        expected_labels = get_expected_labels(q_code)
+        # A: Enforce correct tabular new lines on both question and markscheme logic blocks
+        fixed_q_code = fix_tabular_newlines(q_code)
+        fixed_ms_code = fix_tabular_newlines(ms_code)
+        
+        changed = (fixed_q_code != q_code) or (fixed_ms_code != ms_code)
 
-        if not expected_labels:
-            continue
+        expected_labels = get_expected_labels(fixed_q_code)
 
-        # Count the data rows in the mark scheme
-        ms_rows = [l for l in ms_code.split('\n') if
-                   '&' in l and not l.strip().startswith('\\') and 'Part & Answer' not in l]
+        if expected_labels:
+            # Count the data rows in the newly formatted mark scheme
+            ms_rows = [l for l in fixed_ms_code.split('\n') if
+                       '&' in l and not l.strip().startswith('\\') and 'Part & Answer' not in l]
 
-        # Apply fix if rows and predicted labels match perfectly
-        if len(expected_labels) == len(ms_rows):
-            new_ms_code = fix_ms_code(ms_code, expected_labels)
+            # B: Apply label fix if rows and predicted labels match perfectly
+            if len(expected_labels) == len(ms_rows):
+                new_ms_code = fix_ms_code(fixed_ms_code, expected_labels)
+                if new_ms_code != fixed_ms_code:
+                    fixed_ms_code = new_ms_code
+                    changed = True
+            else:
+                manual_review.append((q_id, len(expected_labels), len(ms_rows)))
 
-            if new_ms_code != ms_code:
-                item["ms_code"] = new_ms_code
-                fixed_count += 1
-        else:
-            manual_review.append((q_id, len(expected_labels), len(ms_rows)))
+        # 3. Only overwrite if something actually changed
+        if changed:
+            item["question_code"] = fixed_q_code
+            item["ms_code"] = fixed_ms_code
+            fixed_count += 1
 
-    # 2. Overwrite the original file so Streamlit sees the changes immediately
+    # Overwrite original file
     with open(input_file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
 
-    print(f"✅ Successfully fixed {fixed_count} questions!")
+    print(f"✅ Successfully checked/updated {fixed_count} questions!")
     print(f"📂 Updated {input_file} directly. (A backup was saved as {backup_file})\n")
 
     if manual_review:
-        print(f"⚠️ Skipped {len(manual_review)} questions due to mismatched rows (Requires Manual Edit):")
+        print(f"⚠️ Skipped label sync for {len(manual_review)} questions due to mismatched rows (Requires Manual Edit):")
         for q_id, q_len, ms_len in manual_review:
             print(f" - ID: {q_id} (Question code wants {q_len} parts, Mark Scheme table has {ms_len} rows)")
-
 
 if __name__ == "__main__":
     run_autofixer()
