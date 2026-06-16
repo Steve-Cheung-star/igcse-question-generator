@@ -38,6 +38,7 @@ if "test_cart" not in st.session_state:
 if "shuffle_seed" not in st.session_state:
     st.session_state.shuffle_seed = 42
 
+
 # --- 3. DATA LOADING ---
 @st.cache_data
 def load_db():
@@ -55,7 +56,7 @@ def load_db():
     db = []
     for i, item in enumerate(raw_data):
         meta = item.get("metadata", {})
-        
+
         topics_raw = meta.get("topics", ["Uncategorized"])
         if isinstance(topics_raw, str): topics_raw = [topics_raw]
 
@@ -81,11 +82,21 @@ def load_db():
         })
     return db
 
+
 db = load_db()
 
+
 def get_all_papers(database): return sorted(list(set([item.get('paper') for item in database if item.get('paper')])))
-def get_all_topics(database): return sorted(list(set([t for item in database for t in item.get('metadata', {}).get('topics', [])])))
-def get_all_difficulties(database): return sorted(list(set([item.get('metadata', {}).get('difficulty') for item in database if item.get('metadata', {}).get('difficulty')])))
+
+
+def get_all_topics(database): return sorted(
+    list(set([t for item in database for t in item.get('metadata', {}).get('topics', [])])))
+
+
+def get_all_difficulties(database): return sorted(list(
+    set([item.get('metadata', {}).get('difficulty') for item in database if
+         item.get('metadata', {}).get('difficulty')])))
+
 
 # --- 4. SIDEBAR: FILTERS ---
 st.sidebar.subheader("Filters")
@@ -101,8 +112,8 @@ filtered_items = []
 for item in db:
     meta = item.get('metadata', {})
     if (not sel_papers or item.get('paper') in sel_papers) and \
-       (not sel_topics or any(t in sel_topics for t in meta.get('topics', []))) and \
-       (not sel_diffs or meta.get('difficulty') in sel_diffs):
+            (not sel_topics or any(t in sel_topics for t in meta.get('topics', []))) and \
+            (not sel_diffs or meta.get('difficulty') in sel_diffs):
         filtered_items.append(item)
 
 col_a, col_b = st.sidebar.columns(2)
@@ -117,6 +128,19 @@ with col_b:
     if st.button("🗑️ Clear Cart"):
         st.session_state.test_cart = []
         st.rerun()
+
+# RESTORED: Sidebar Random Pick (1 Per Topic) button feature
+if st.sidebar.button("🎲 Random Pick (1 Per Topic)", disabled=not sel_topics,
+                     help="Select at least one topic above to use this feature."):
+    current_bases = {c.get('question_base') for c in st.session_state.test_cart}
+    for topic in sel_topics:
+        topic_items = [item for item in filtered_items if topic in item.get('metadata', {}).get('topics', [])]
+        available_items = [item for item in topic_items if item.get('question_base') not in current_bases]
+        if available_items:
+            chosen = random.choice(available_items)
+            st.session_state.test_cart.append(chosen)
+            current_bases.add(chosen.get('question_base'))
+    st.rerun()
 
 st.sidebar.divider()
 total_marks = sum([item.get('metadata', {}).get('marks', 0) for item in st.session_state.test_cart])
@@ -137,7 +161,7 @@ st.sidebar.caption(f"⏱️ Estimated Time: ~{est_time} mins")
 def parse_to_pure_latex(latex_body, is_markscheme=False):
     """Converts the raw JSON tags into standard LaTeX logic with smart list promotion"""
     if not latex_body: return ""
-    
+
     latex_body = re.sub(
         r"\$\$(.*?)\$\$",
         r"\n\\par\\vspace{0.1cm}\\hspace*{0.6cm}$\1$\\par\\vspace{0.15cm}\n",
@@ -146,16 +170,18 @@ def parse_to_pure_latex(latex_body, is_markscheme=False):
     )
 
     raw_lines = latex_body.splitlines()
-    
-    # 1. SMART CHECK: Count ONLY top-level items (ignore sub-items)
+
     main_item_count = 0
     temp_in_sub = False
     for line in raw_lines:
         s = line.strip()
-        if s.startswith("[SUBENUM_START]"): temp_in_sub = True
-        elif s.startswith("[SUBENUM_END]"): temp_in_sub = False
-        elif s.startswith("[ITEM]") and not temp_in_sub: main_item_count += 1
-        
+        if s.startswith("[SUBENUM_START]"):
+            temp_in_sub = True
+        elif s.startswith("[SUBENUM_END]"):
+            temp_in_sub = False
+        elif s.startswith("[ITEM]") and not temp_in_sub:
+            main_item_count += 1
+
     is_single_main = (main_item_count <= 1) and not is_markscheme
 
     assembled_lines = []
@@ -185,10 +211,8 @@ def parse_to_pure_latex(latex_body, is_markscheme=False):
         elif stripped.startswith("[SUBENUM_START]"):
             in_sub = True
             if is_single_main:
-                # PROMOTED: If only 1 main item, sub-items become (a), (b)
                 assembled_lines.append(r"\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]")
             else:
-                # REGULAR: Keep as (i), (ii)
                 assembled_lines.append(r"\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=0.6cm]")
             continue
         elif stripped.startswith("[SUBENUM_END]"):
@@ -201,14 +225,14 @@ def parse_to_pure_latex(latex_body, is_markscheme=False):
                 assembled_lines.append(f"\\item {item_text}")
             else:
                 if is_single_main:
-                    # No (a) label, just normal text
                     assembled_lines.append(f"\\noindent {item_text} \\par\\vspace{{0.1cm}}")
                 else:
                     assembled_lines.append(f"\\item {item_text}")
             continue
 
         if len(active_environments) == 0 and not is_markscheme:
-            if not stripped.startswith("\\") and not stripped.endswith(r"\\") and not stripped.startswith("[") and not stripped.startswith(r"\par"):
+            if not stripped.startswith("\\") and not stripped.endswith(r"\\") and not stripped.startswith(
+                    "[") and not stripped.startswith(r"\par"):
                 line = line + r" \\"
 
         assembled_lines.append(line)
@@ -216,8 +240,9 @@ def parse_to_pure_latex(latex_body, is_markscheme=False):
     processed_latex = "\n".join(assembled_lines)
     if "\\begin{tikzpicture}" in processed_latex or "\\begin{tabular}" in processed_latex:
         processed_latex = "\\needspace{5cm}\n" + processed_latex
-        
+
     return processed_latex
+
 
 def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_title="Exam Paper"):
     """Compiles the entire cart into a single LaTeX document."""
@@ -232,7 +257,6 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
         macro_definition += r"""
 \newenvironment{officialmarkscheme}{
     \renewcommand{\arraystretch}{2.0}
-    % This forces all diagrams to anchor to the top of the text line!
     \tikzset{every picture/.style={baseline=(current bounding box.north)}}
     \begin{longtable}{|p{1.5cm}|p{4.8cm}|p{1.2cm}|p{7.7cm}|}
     \hline
@@ -244,53 +268,65 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
 """
 
     document_body = f"\\begin{{center}} \\LARGE \\textbf{{{custom_title}}} \\end{{center}}\\vspace{{1cm}}\n\n"
-    
-    # MARKSCHEME: Start one giant continuous table
+
     if is_markscheme:
         document_body += "\\begin{officialmarkscheme}\n"
-    # QUESTION PAPER: Start the master numbered list
     else:
         document_body += "\\begin{enumerate}[label=\\textbf{\\arabic*}, leftmargin=0.2cm, labelsep=0.5cm, align=right]\n"
-    
+
     for i, item in enumerate(cart):
         raw_code = item.get('ms_code') if is_markscheme else item.get('question_code')
         parsed_code = parse_to_pure_latex(raw_code, is_markscheme=is_markscheme)
-        
+
         if is_markscheme:
-            # 1. Strip out the individual table environment wrappers
             parsed_code = re.sub(r"\\begin\{officialmarkscheme\}", "", parsed_code)
             parsed_code = re.sub(r"\\end\{officialmarkscheme\}", "", parsed_code)
-            
-            # 2. Process rows to remove headers and inject the question number
+
             lines = parsed_code.split('\n')
             new_lines = []
+
+            # Keep track of whether we've printed the main question number for this block yet
+            has_printed_first_row = False
+
             for line in lines:
-                # Skip the redundant "Part & Answer & Marks" header row
                 if 'Part' in line and 'Answer' in line and 'Marks' in line:
                     continue
-                    
-                # If it's an answer row, prepend the question number (e.g., 1(a))
                 if '&' in line and not line.strip().startswith('\\'):
                     parts = line.split('&', 1)
                     label = parts[0].strip()
-                    
-                    # Create the new label: \textbf{1}(a)
-                    new_label = f"\\textbf{{{i+1}}}{label}" if label else f"\\textbf{{{i+1}}}"
+
+                    # 1. Clean out old bold tags and spaces to see what text we actually have
+                    clean_label = re.sub(r'\\textbf\{.*?\}', '', label).strip()
+
+                    # 2. Extract just the sub-part characters (letters, roman numerals, brackets)
+                    subpart_only = re.sub(r'\d+', '', clean_label).strip()
+
+                    if subpart_only:
+                        # If there is an explicit subpart (e.g. "(a)", "b(i)"), force it to pair with the question number
+                        new_label = f"\\textbf{{{i + 1}}}{subpart_only}"
+                        has_printed_first_row = True
+                    else:
+                        # If there are no sub-part characters left, it's either a main number or a blank row
+                        if not has_printed_first_row:
+                            # If it's the very first row of this question block, it MUST display the question number
+                            new_label = f"\\textbf{{{i + 1}}}"
+                            has_printed_first_row = True
+                        else:
+                            # If we already printed the main number/subpart above, this is a true blank continuation row
+                            new_label = ""
+
                     new_lines.append(f"{new_label} &" + parts[1])
                 elif line.strip():
                     new_lines.append(line)
-                    
-            document_body += '\n'.join(new_lines) + "\n"
-            
-        else:
-            # Add each question as an \item in the master list
-            document_body += "\\item " + parsed_code + "\n"
-            
-            # Add a separator rule between questions
-            if i < len(cart) - 1:
-                document_body += "\\vspace{1cm}\\par\\noindent\\rule{\\linewidth}{0.4pt}\\vspace{1cm}\n"
 
-    # Close the respective environments
+            document_body += '\n'.join(new_lines) + "\n"
+
+        else:
+            document_body += "\\needspace{6cm}\n"
+            document_body += "\\item " + parsed_code + "\n"
+            if i < len(cart) - 1:
+                document_body += "\\vspace{1cm}\n"
+
     if is_markscheme:
         document_body += "\\end{officialmarkscheme}\n"
     else:
@@ -318,14 +354,17 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
         f.write(full_latex_document)
 
     try:
-        subprocess.run(["pdflatex", "-interaction=nonstopmode", tex_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        subprocess.run(["pdflatex", "-interaction=nonstopmode", tex_path], stdout=subprocess.PIPE,
+                       stderr=subprocess.PIPE, text=True)
     except Exception as e:
         import streamlit as st
         st.error(f"LaTeX Compilation Failed: {e}")
 
+
 # --- 6. REPORTLAB IMAGE EXPORT HELPERS ---
 def natural_key(string_):
     return [int(s) if s.isdigit() else s.lower() for s in re.split(r'(\d+)', string_)]
+
 
 def generate_exam_pdf_images(cart, filename, is_ms=False, custom_title="Exam"):
     c = canvas.Canvas(filename, pagesize=A4)
@@ -385,21 +424,21 @@ if st.sidebar.button("🔨 Build Final Files", disabled=is_cart_empty):
         EXPORT_DIR = "exports"
         os.makedirs(EXPORT_DIR, exist_ok=True)
         safe_prefix = custom_exam_title.strip().replace(' ', '-')
-        
+
         base_pdf = os.path.join(EXPORT_DIR, f"{safe_prefix}_Paper.pdf")
         ms_pdf = os.path.join(EXPORT_DIR, f"{safe_prefix}_MS.pdf")
-        
+
         if export_mode == "ReportLab (Images)":
             generate_exam_pdf_images(st.session_state.test_cart, base_pdf, is_ms=False, custom_title=custom_exam_title)
             generate_exam_pdf_images(st.session_state.test_cart, ms_pdf, is_ms=True, custom_title=custom_exam_title)
         else:
-            # LaTeX Compilation uses raw name to avoid pdflatex spacing issues
             base_temp = "latex_temp_q"
             ms_temp = "latex_temp_ms"
-            compile_full_latex_exam(st.session_state.test_cart, base_temp, is_markscheme=False, custom_title=custom_exam_title)
-            compile_full_latex_exam(st.session_state.test_cart, ms_temp, is_markscheme=True, custom_title=custom_exam_title + " (Mark Scheme)")
-            
-            # Rename the outputs to the exports folder
+            compile_full_latex_exam(st.session_state.test_cart, base_temp, is_markscheme=False,
+                                    custom_title=custom_exam_title)
+            compile_full_latex_exam(st.session_state.test_cart, ms_temp, is_markscheme=True,
+                                    custom_title=custom_exam_title + " (Mark Scheme)")
+
             if os.path.exists(f"{base_temp}.pdf"): os.rename(f"{base_temp}.pdf", base_pdf)
             if os.path.exists(f"{ms_temp}.pdf"): os.rename(f"{ms_temp}.pdf", ms_pdf)
 
@@ -424,6 +463,7 @@ def render_cart_button(item):
         if st.button("➕ Add", key=f"add_{q_base}", use_container_width=True):
             st.session_state.test_cart.append(item)
             st.rerun(scope="fragment")
+
 
 tab_explore, tab_preview, tab_analytics = st.tabs(["🔎 Browse", "📝 Organise Exam", "📊 Analytics"])
 
@@ -459,16 +499,72 @@ with tab_preview:
         st.subheader(f"Exam Preview ({len(st.session_state.test_cart)} Questions)")
         for i, item in enumerate(st.session_state.test_cart):
             with st.container(border=True):
-                col_info, col_img, col_actions = st.columns([2, 6, 2])
+                col_info, col_img, col_actions = st.columns([3, 5, 2])
+
+                q_topics = item.get('metadata', {}).get('topics', [])
+                q_paper = item.get('paper')
+
                 with col_info:
                     st.markdown(f"### Q{i + 1}")
-                    st.caption(f"Paper: {item.get('paper')}")
+                    st.markdown(f"**📖 Paper:** {q_paper}")
+                    st.markdown(f"**🏷️ Topics:** {', '.join(q_topics)}")
+                    st.caption(
+                        f"📊 Current Difficulty: {item.get('metadata', {}).get('difficulty', 'Medium')} | 📝 {item.get('metadata', {}).get('marks', 0)} Marks")
+
                 with col_img:
                     paths = item.get('question_paths', [])
-                    if paths and os.path.exists(paths[0]): st.image(paths[0], width=400)
+                    if paths and os.path.exists(paths[0]):
+                        st.image(paths[0], width=400)
+
                 with col_actions:
-                    if st.button("🗑️ Remove", key=f"del_prev_{i}"):
+                    if st.button("🗑️ Remove", key=f"del_prev_{i}", use_container_width=True):
                         st.session_state.test_cart.pop(i)
+                        st.rerun()
+
+                    st.divider()
+
+                    diff_options = ["Easy", "Medium", "Hard"]
+                    curr_diff = item.get('metadata', {}).get('difficulty', 'Medium')
+                    default_idx = diff_options.index(curr_diff) if curr_diff in diff_options else 1
+
+                    target_diff = st.selectbox(
+                        "Target Difficulty",
+                        diff_options,
+                        index=default_idx,
+                        key=f"diff_sel_{i}"
+                    )
+
+                    current_cart_bases = {c.get('question_base') for c in st.session_state.test_cart}
+                    same_topic_pool = [
+                        candidate for candidate in db
+                        if candidate.get('question_base') not in current_cart_bases
+                           and candidate.get('paper') == q_paper
+                           and any(t in q_topics for t in candidate.get('metadata', {}).get('topics', []))
+                           and candidate.get('metadata', {}).get('difficulty') == target_diff
+                    ]
+
+                    st.caption(f"({len(same_topic_pool)} unique options available)")
+
+                    if st.button(
+                            "🎲 Randomise",
+                            key=f"rand_prev_{i}",
+                            use_container_width=True,
+                            disabled=not same_topic_pool,
+                            help="Swap this question with a random variant from the same paper and topic matching the target difficulty."
+                    ):
+                        new_q = random.choice(same_topic_pool)
+                        st.session_state.test_cart[i] = new_q
+                        st.rerun()
+
+                    if st.button(
+                            "➕ Insert Next",
+                            key=f"insert_prev_{i}",
+                            use_container_width=True,
+                            disabled=not same_topic_pool,
+                            help="Add another question from this topic and paper configuration directly underneath."
+                    ):
+                        new_q = random.choice(same_topic_pool)
+                        st.session_state.test_cart.insert(i + 1, new_q)
                         st.rerun()
 
 with tab_analytics:
@@ -487,7 +583,8 @@ with tab_analytics:
         c1, c2 = st.columns(2)
         with c1:
             st.write("**Marks by Difficulty**")
-            st.bar_chart(pd.DataFrame(list(diff_marks.items()), columns=["Difficulty", "Marks"]).set_index("Difficulty"))
+            st.bar_chart(
+                pd.DataFrame(list(diff_marks.items()), columns=["Difficulty", "Marks"]).set_index("Difficulty"))
         with c2:
             st.write("**Marks by Topic**")
             st.bar_chart(pd.DataFrame(list(topic_marks.items()), columns=["Topic", "Marks"]).set_index("Topic"))

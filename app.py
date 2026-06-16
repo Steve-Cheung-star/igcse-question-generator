@@ -8,6 +8,7 @@ import re
 import json
 from pdf2image import convert_from_path
 import shutil
+import uuid
 
 # ------------------------------------------------------------------
 # SYSTEM ENVIRONMENT PATH OVERRIDE FOR MACOS COMPILATION STEPS
@@ -302,6 +303,7 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
     return None
 
 
+# State Initialization
 if "selected_latex_code" not in st.session_state:
     st.session_state["selected_latex_code"] = ""
 if "selected_ms_code" not in st.session_state:
@@ -310,6 +312,10 @@ if "variants_dict" not in st.session_state:
     st.session_state["variants_dict"] = {}
 if "ms_dict" not in st.session_state:
     st.session_state["ms_dict"] = {}
+if "batch_id" not in st.session_state:
+    st.session_state["batch_id"] = str(uuid.uuid4())
+if "last_gemini_output" not in st.session_state:
+    st.session_state["last_gemini_output"] = ""
 
 # ------------------------------------------------------------------
 # TWO-COLUMN WORKFLOW LAYOUT
@@ -546,7 +552,26 @@ with col_right:
         placeholder="Expecting payload block containing [VARIANT_x_START] and [MS_x_START] tags..."
     )
 
+    # Detect new payloads to prevent Streamlit from carrying over old edits into fresh batches
+    if gemini_output and gemini_output != st.session_state["last_gemini_output"]:
+        st.session_state["last_gemini_output"] = gemini_output
+        st.session_state["batch_id"] = str(uuid.uuid4())
+
     if gemini_output:
+        # ----------------------------------------------------------
+        # STEP A: UNIFY ALL ROW BREAKS INSIDE MARKSCHEME BLOCKS
+        # ----------------------------------------------------------
+        def normalize_ms_row_breaks(match):
+            block = match.group(0)
+            # Convert any trailing backslash mess (\, \\, \\\, etc.) at line-ends cleanly to \\
+            block = re.sub(r"\\+\s*$", r" \\\\", block, flags=re.MULTILINE)
+
+            # Tabular safety fallback: Strip accidental markdown artifacts or manual tabular wrappings
+            block = re.sub(r"\\begin\{tabular\}\{[^\}]*\}", "", block)
+            block = re.sub(r"\\end\{tabular\}", "", block)
+            return block
+
+
         sanitized_output = re.sub(
             r"\\begin\{officialmarkscheme\}\s*(?=\[MS_\d+_END\])",
             r"\\end{officialmarkscheme}\n",
@@ -583,12 +608,12 @@ with col_right:
 
 
         # ----------------------------------------------------------
-        # DYNAMIC PATH ELEMENT DETECTOR: ATTACH \hline AFTER EVERY PART
+        # STEP B: STRUCTURAL 4-COLUMN ENFORCER & LINE INJECTOR
         # ----------------------------------------------------------
         def inject_hlines_per_row(match):
             inner_content = match.group(1)
 
-            # 1. Isolate and shield all TikZ blocks from line modifications
+            # 1. Isolate and shield all TikZ blocks from structural split adjustments
             tikz_blocks = []
 
             def save_tikz(m_tikz):
@@ -602,56 +627,44 @@ with col_right:
                 flags=re.DOTALL
             )
 
-            # 2. Process rows structurally by accumulating lines belonging to each part
+            # 2. Process rows systematically line-by-line based on row intents
             raw_lines = protected_content.split('\n')
             cleaned_rows = []
-            current_row_segments = []
-
-            def flush_current_row():
-                if not current_row_segments:
-                    return
-                full_row_str = " ".join(current_row_segments).strip()
-                full_row_str = re.sub(r"\\hline", "", full_row_str)
-                full_row_str = re.sub(r"\\+$", "", full_row_str).strip()
-
-                if not full_row_str or "Part & Answer" in full_row_str:
-                    return
-
-                # Strict 4-column normalization to prevent table overflow crashes
-                parts = full_row_str.split('&')
-                if len(parts) > 4:
-                    # Keep columns 1-3 intact; condense excess hallucinated cells using \newline
-                    main_parts = parts[:3]
-                    guidance_parts = [p.strip() for p in parts[3:] if p.strip()]
-                    guidance_text = " \\newline ".join(guidance_parts)
-                    main_parts.append(guidance_text)
-                    full_row_str = " & ".join(main_parts)
-                elif len(parts) < 4:
-                    while len(parts) < 4:
-                        parts.append("")
-                    full_row_str = " & ".join(parts)
-
-                cleaned_rows.append(f"{full_row_str} \\\\ \\hline")
 
             for line in raw_lines:
                 line_stripped = line.strip()
                 if not line_stripped or "Part & Answer" in line_stripped:
                     continue
 
-                # Detect if this line initiates a brand-new table row segment
-                is_new_part_start = re.match(r"^\s*\(?[a-z0-9_i-v]+\)?(?:\([a-z0-9_i-v]+\))?\s*&", line_stripped,
-                                             re.IGNORECASE)
+                # If the line contains an ampersand, it's an intended table data row
+                if "&" in line_stripped:
+                    row_content = re.sub(r"\\hline", "", line_stripped)
+                    row_content = re.sub(r"\\+$", "", row_content).strip()
 
-                if is_new_part_start:
-                    flush_current_row()
-                    current_row_segments = [line_stripped]
+                    # Strict 4-column normalization to protect LaTeX layout metrics from crashing
+                    parts = row_content.split('&')
+                    if len(parts) > 4:
+                        main_parts = parts[:3]
+                        guidance_parts = [p.strip() for p in parts[3:] if p.strip()]
+                        guidance_text = " \\newline ".join(guidance_parts)
+                        main_parts.append(guidance_text)
+                        row_content = " & ".join(main_parts)
+                    elif len(parts) < 4:
+                        while len(parts) < 4:
+                            parts.append("")
+                        row_content = " & ".join(parts)
+
+                    cleaned_rows.append(f"{row_content} \\\\ \\hline")
                 else:
-                    current_row_segments.append(line_stripped)
+                    # Append hanging/unstructured text lines safely to the previous row's guidance cell
+                    if cleaned_rows:
+                        last_row = cleaned_rows.pop()
+                        last_row_clean = last_row.replace(r" \\ \hline", "").strip()
+                        cleaned_rows.append(f"{last_row_clean} \\newline {line_stripped} \\\\ \\hline")
+                    else:
+                        cleaned_rows.append(f" & & & {line_stripped} \\\\ \\hline")
 
-            # Flush out the remaining row left in the buffer
-            flush_current_row()
-
-            # 3. Re-assemble and seamlessly restore original TikZ code blocks
+            # 3. Restore protected TikZ diagrams back to their locations
             final_content = "\n".join(cleaned_rows)
             for idx, tikz_code in enumerate(tikz_blocks):
                 final_content = final_content.replace(f"__TIKZ_BLOCK_{idx}__", f"\n{tikz_code}\n")
@@ -659,6 +672,7 @@ with col_right:
             return "\n" + final_content + "\n"
 
 
+        # Apply the layout injector over the text blocks
         sanitized_output = re.sub(
             r"\\begin\{officialmarkscheme\}(.*?)\\end\{officialmarkscheme\}",
             lambda m: f"\\begin{{officialmarkscheme}}{inject_hlines_per_row(m)}\\end{{officialmarkscheme}}",
@@ -693,8 +707,34 @@ with col_right:
             key="variant_selector_widget"
         )
 
-        st.session_state["selected_latex_code"] = variants[chosen_variant_key]
-        st.session_state["selected_ms_code"] = st.session_state["ms_dict"].get(chosen_variant_key, "")
+        # ----------------------------------------------------------
+        # EDITABLE SOURCE SYNTAX (LIVE RECOMPILE INJECTOR)
+        # ----------------------------------------------------------
+        with st.expander("✍️ Edit Source Syntax (Live Recompile)", expanded=False):
+            st.info(
+                "Any changes made here will automatically recompile the previews below and be saved when you commit.")
+
+            edited_q_code = st.text_area(
+                "Question LaTeX Source:",
+                value=variants[chosen_variant_key],
+                height=250,
+                key=f"edit_q_{st.session_state['batch_id']}_{chosen_variant_key}"
+            )
+
+            edited_ms_code = st.text_area(
+                "Markscheme LaTeX Source:",
+                value=st.session_state["ms_dict"].get(chosen_variant_key, ""),
+                height=250,
+                key=f"edit_ms_{st.session_state['batch_id']}_{chosen_variant_key}"
+            )
+
+        # Push edits back into dictionaries so they survive switching tabs or variants
+        st.session_state["variants_dict"][chosen_variant_key] = edited_q_code
+        st.session_state["ms_dict"][chosen_variant_key] = edited_ms_code
+
+        # Override the selected codes with the newly edited strings for compilation
+        st.session_state["selected_latex_code"] = edited_q_code
+        st.session_state["selected_ms_code"] = edited_ms_code
 
         tab_question, tab_markscheme = st.tabs(["📄 Preview Question Sheet", "📋 Preview Official Markscheme"])
 
@@ -741,6 +781,7 @@ with col_right:
                     if os.path.exists(extra_path):
                         os.remove(extra_path)
 
+                # This correctly pulls the actively edited code from earlier
                 raw_code = st.session_state["selected_latex_code"]
                 slot_marks = re.findall(r"\\examanswerslot\{.*?\}\{.*?\}\{(\d+)\}", raw_code)
                 manual_marks = re.findall(r"\\makebox\[\d+pt\]\[r\]\{\s*\[?(\d+)\]?\s*\}", raw_code)
@@ -783,12 +824,3 @@ with col_right:
                 st.balloons()
                 st.success(f"Successfully saved as {final_q_filename}/{final_ms_filename}!")
                 st.rerun()
-
-if st.session_state["selected_latex_code"]:
-    with col_left:
-        st.divider()
-        st.subheader("Selected Document Source Syntax:")
-        st.code(st.session_state["selected_latex_code"], language="latex")
-        if st.session_state["selected_ms_code"]:
-            st.subheader("Selected Markscheme Source Syntax:")
-            st.code(st.session_state["selected_ms_code"], language="latex")
