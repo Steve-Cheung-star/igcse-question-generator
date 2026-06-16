@@ -215,19 +215,65 @@
     "difficulty": "Medium",
     "technical_constraints": [
       "Apply rules of positive, zero, negative, and fractional indices to variable algebraic strings.",
-      "Simplify variable products, quotients, or powers containing parameters (e.g., evaluate 3x^-4 * (2/3)x^(1/2), compound divisions, or nested structures like ((2x^5)/3)^3)."
+      "Include evaluating expressions that to a single value like decimal, fractions, integer, etc, (for example (0.008)^(1/3), 64^(2/3), (-8)^(-1/3)) without variables in the final answer, and can be in multiparts.",
+      "Simplify variable products, quotients, or powers containing parameters (e.g., evaluate 3x^-4 * (2/3)x^(1/2), compound divisions, or nested structures like ((2x^5)/3)^3).",
+      "Do not use dfrac for exponents."
     ]
   },
-  "E2.5_equations_linear_quadratic_simultaneous": {
+  "E2.5.1_linear_equations": {
     "syllabus_ref": "E2.5",
-    "skill_name": "Constructing and Solving Equations and Changing Subjects",
+    "skill_name": "Solving Linear Equations",
     "difficulty": "Hard",
     "technical_constraints": [
-      "Construct expressions, equations, and formulas from words (e.g., consecutive even numbers).",
-      "Solve linear equations in one unknown, fractional equations with numerical and linear algebraic denominators, and simultaneous linear equations in two unknowns.",
-      "Solve quadratic equations by factorisation, GDC, or the quadratic formula (which is given), presenting solutions in exact surd form if required.",
-      "Change the subject of a formula, explicitly including cases where the target subject appears twice or is bound within a power or root.",
-      "Solve exponential equations where bases can be balanced or processed (e.g., 32^x = 2 or 5^(x+1) = 25^x), and solve equations using a GDC (e.g., 2x - 1 = 1 / x^3)."
+      "Solve linear equations in one unknown that require multi-step algebraic manipulation.",
+      "Include equations that require expanding single or nested brackets as a first step (e.g., $a(bx + c) = d$).",
+      "Include simple fractional equations with numerical denominators that require multiplying through to clear the fraction (e.g., \\dfrac{ax}{b} = c).",
+      "Include equations where the variable appears on both sides of the equals sign.",
+      "Ensure final solutions are exact integers or simplified fractions, avoiding decimals unless specified by a context.",
+      "Can include manipulation questions as a multipart."
+    ]
+  },
+  "E2.5.2_quadratic_equations": {
+    "syllabus_ref": "E2.5",
+    "skill_name": "Solving Quadratic Equations",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Formulate and solve quadratic equations in the standard form $ax^2 + bx + c = 0$.",
+      "Require the algebraic solution of quadratic equations using factorization for equations with exact integer or simple fractional roots.",
+      "Include questions that introduce a quadratic expression already in vertex form, $a(x+p)^2 + q$.",
+      "Include 'Show that...' steps requiring students to expand a provided vertex form to demonstrate that it simplifies to a specifically given general form $ax^2 + bx + c = 0$.",
+      "Explicitly exclude 'completing the square' as a method for solving equations, and do not ask students to convert from the general form to the vertex form.",
+      "Structure multi-part questions where students must first derive a quadratic equation from a mathematical context, such as manipulating algebraic fractions or applying geometric formulas.",
+      "Can include manipulation questions as a multipart. Simplify the instructions to basic keywords like Solve, Show that, Find, etc."
+    ]
+  },
+  "E2.5.3_unfamiliar_equations": {
+    "syllabus_ref": "E2.5",
+    "skill_name": "Solving Unfamiliar Equations Graphically",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Require the use of a graphic display calculator (GDC) or graphical methods to solve complex or unfamiliar equations formed by setting two different non-linear functions equal to each other.",
+      "Include combinations of specific function types: cubic, rational, exponential, and logarithmic. Strictly use base-10 logarithms (denoted as $\\log$) and explicitly exclude natural logarithms ($\\ln$).",
+      "Explicitly include the instruction to 'solve using a graphical method' or 'use a graphic display calculator to solve the equation'.",
+      "Structure the problem so students must conceptualize finding the $x$-coordinates of the points of intersection between two functions to solve equations of the form $f(x) = g(x)$ (e.g., $x^3 - 3x^2 + x + 2 = 2^x$).",
+      "Include a diagram in TikZ that provides empty Cartesian axes (just the $x$ and $y$ axes with arrowheads and $x$/$y$ labels). Ensure the axes are completely blank, containing no numerical tick marks, grid lines, or scales, providing a designated space for the student to sketch the graphs.",
+      "Format the answer space to accommodate multiple roots by providing sequential answer lines (e.g., '$x = \\dots$ or $x = \\dots$ or $x = \\dots$') based on the number of intersections. Put this to the left of number of marks [x].",
+      "Ask for the final solutions to be given to a specified degree of accuracy, such as 3 significant figures or 2 decimal places.",
+      "Can include multi-part questions asking to first sketch the graphs on the provided axes, and then state the solutions to the equation.",
+      "Markscheme must show a sketch of the graph in tikz. Scale the graph to show all the intersection points, crop the end results so it doesn't go beyond the axes bounding boxes."
+    ]
+  },
+    "E2.5.4_change_of_subject": {
+    "syllabus_ref": "E2.5",
+    "skill_name": "Change of Subject",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Require the rearrangement of algebraic formulas to make a specified variable the subject.",
+      "Include formulas where the target variable is raised to a power (e.g., squared), requiring the use of square roots or cube roots to isolate the final variable (e.g., rearranging physics formulas like $F = \\dfrac{1}{2}mv^2$).",
+      "Include complex fractional formulas where the target variable appears multiple times, specifically in both the numerator and the denominator (e.g., $p = \\dfrac{qr}{q-r}$).",
+      "Require multi-step algebraic manipulation for the complex cases. Students must demonstrate clearing denominators, expanding brackets, collecting all terms containing the target variable on one side of the equation, factorizing out the target variable, and dividing to isolate it.",
+      "Format the question clearly, stating 'Make [variable] the subject of the formula' alongside the equation.",
+      "Ensure the final answer space is formatted to accept the isolated variable (e.g., providing '$v = \\dots$' or '$q = \\dots$')."
     ]
   },
   "E2.6_inequalities_graphical": {

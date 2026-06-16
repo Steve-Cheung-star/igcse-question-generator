@@ -5527,5 +5527,423 @@
             "marks": 7,
             "difficulty": "Hard"
         }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_292",
+        "question_paths": [
+            "images/q_292.png"
+        ],
+        "ms_paths": [
+            "images/ms_292.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate each of the following.\n[SUBENUM_START]\n[ITEM] $64^{\\frac{2}{3}}$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $\\left(\\dfrac{1}{8}\\right)^{-\\frac{1}{3}}$\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Simplify the following expression, giving your answer with positive indices.\n\n\n$$4x^{-3} \\times \\dfrac{1}{2}x^{5}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & 16 & 1 & B1 \\\\ \\hline\n(a)(ii) & 2 & 1 & B1 \\\\ \\hline\n(b) & $2x^{2}$ & 2 & B2 for correct answer \\\\ \\hline\n& & & M1 for coefficient 2 or index 2 seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_293",
+        "question_paths": [
+            "images/q_293.png"
+        ],
+        "ms_paths": [
+            "images/ms_293.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate each of the following.\n[SUBENUM_START]\n[ITEM] $125^{\\frac{1}{3}}$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $(0.09)^{\\frac{1}{2}}$\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Simplify the following expression, giving your answer with positive indices.\n\n\n$$\\left(\\dfrac{3x^{4}}{2}\\right)^{3}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & 5 & 1 & B1 \\\\ \\hline\n(a)(ii) & 0.3 or $\\dfrac{3}{10}$ & 1 & B1 \\\\ \\hline\n(b) & $\\dfrac{27x^{12}}{8}$ & 2 & B2 for correct answer \\\\ \\hline\n& & & M1 for $\\dfrac{27}{8}$ or $x^{12}$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_294",
+        "question_paths": [
+            "images/q_294.png"
+        ],
+        "ms_paths": [
+            "images/ms_294.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate each of the following.\n[SUBENUM_START]\n[ITEM] $(-27)^{-\\frac{1}{3}}$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $49^{\\frac{3}{2}}$\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Simplify the following expression, giving your answer with positive indices.\n\n\n$$\\dfrac{10x^{7}}{2x^{-2}}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & $-\\dfrac{1}{3}$ & 1 & B1 \\\\ \\hline\n(a)(ii) & 343 & 1 & B1 \\\\ \\hline\n(b) & $5x^{9}$ & 2 & B2 for correct answer \\\\ \\hline\n& & & M1 for 5 or $x^{9}$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_295",
+        "question_paths": [
+            "images/q_295.png"
+        ],
+        "ms_paths": [
+            "images/ms_295.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate each of the following.\n[SUBENUM_START]\n[ITEM] $(0.008)^{\\frac{1}{3}}$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $\\left(\\dfrac{4}{9}\\right)^{-\\frac{1}{2}}$\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Simplify the following expression, giving your answer with positive indices.\n\n\n$$3x^{-5} \\times \\dfrac{2}{3}x^{\\frac{1}{2}}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & 0.2 or $\\dfrac{1}{5}$ & 1 & B1 \\\\ \\hline\n(a)(ii) & $\\dfrac{3}{2}$ or $1\\dfrac{1}{2}$ or 1.5 & 1 & B1 \\\\ \\hline\n(b) & $\\dfrac{2}{x^{\\frac{9}{2}}}$ or $2x^{-\\frac{9}{2}}$ & 2 & B2 for correct answer \\\\ \\hline\n& & & M1 for 2 or $x^{-\\frac{9}{2}}$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_296",
+        "question_paths": [
+            "images/q_296.png"
+        ],
+        "ms_paths": [
+            "images/ms_296.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate each of the following.\n[SUBENUM_START]\n[ITEM] $81^{\\frac{3}{4}}$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $16^{-\\frac{1}{4}}$\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Simplify the following expression, giving your answer with positive indices.\n\n\n$$\\dfrac{(2x^{3})^{4}}{4x^{5}}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & 27 & 1 & B1 \\\\ \\hline\n(a)(ii) & $\\dfrac{1}{2}$ or 0.5 & 1 & B1 \\\\ \\hline\n(b) & $4x^{7}$ & 2 & B2 for correct answer \\\\ \\hline\n& & & M1 for $16x^{12}$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_297",
+        "question_paths": [
+            "images/q_297.png"
+        ],
+        "ms_paths": [
+            "images/ms_297.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Given that $k = 81$, evaluate.\n[SUBENUM_START]\n[ITEM] $k^0$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $k^{-\\frac{1}{4}}$\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Simplify completely.\n\n\n$$\\left(\\dfrac{25x^4}{y^6}\\right)^{-\\frac{1}{2}}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & 1 & 1 & B1 \\\\ \\hline\n(a)(ii) & $\\dfrac{1}{3}$ & 1 & B1 \\\\ \\hline\n(b) & $\\dfrac{y^3}{5x^2}$ & 2 & M1 for inverted fraction or correct power application $\\dfrac{25^{-\\frac{1}{2}}x^{-2}}{y^{-3}}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_298",
+        "question_paths": [
+            "images/q_298.png"
+        ],
+        "ms_paths": [
+            "images/ms_298.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Show that the expression reduces to a single integer.\n\n\n$$\\dfrac{9^{\\frac{3}{2}} \\times 2^{-2}}{(\\frac{1}{3})^{-1}}$$\n\n\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Simplify.\n\n\n$$(16x^8)^{-\\frac{3}{4}} \\times 2x^5$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{9}{4}$ seen with proof leading to $\\dfrac{9}{4} \\div 3 = \\dfrac{3}{4}$ & 2 & M1 for $9^{\\frac{3}{2}} = 27$ and $2^{-2} = \\dfrac{1}{4}$ and $(\\frac{1}{3})^{-1} = 3$ \\\\ \\hline\n(b) & $\\dfrac{1}{4x}$ or $\\dfrac{1}{4}x^{-1}$ & 2 & M1 for simplifying $(16x^8)^{-\\frac{3}{4}} = \\dfrac{1}{8}x^{-6}$ or $\\dfrac{1}{8x^6}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_299",
+        "question_paths": [
+            "images/q_299.png"
+        ],
+        "ms_paths": [
+            "images/ms_299.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Solve the equation.\n\n\n$$5^{2x-1} = \\dfrac{1}{125}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Simplify.\n\n\n$$\\dfrac{(4y^3)^{\\frac{1}{2}} \\times y^{-2}}{2y^4}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $-1$ & 2 & M1 for $\\dfrac{1}{125} = 5^{-3}$ or $2x - 1 = -3$ \\\\ \\hline\n(b) & $\\dfrac{1}{y^{4.5}}$ or $y^{-\\frac{9}{2}}$ & 2 & M1 for simplifying numerator to $2y^{\\frac{3}{2}} \\times y^{-2} = 2y^{-\\frac{1}{2}}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_300",
+        "question_paths": [
+            "images/q_300.png"
+        ],
+        "ms_paths": [
+            "images/ms_300.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Find the exact value of each of the following expressions.\n[SUBENUM_START]\n[ITEM] $0.008^{\\frac{1}{3}}$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $(-27)^{-\\frac{2}{3}}$\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ITEM] Simplify completely.\n\n\n$$\\left(\\dfrac{2a^5}{3}\\right)^3 \\div 4a^7$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & $0.2$ or $\\dfrac{1}{5}$ & 1 & B1 \\\\ \\hline\n(a)(ii) & $\\dfrac{1}{9}$ & 2 & M1 for $(-27)^{\\frac{1}{3}} = -3$ or $\\dfrac{1}{(-27)^{\\frac{2}{3}}}$ or $\\dfrac{1}{9}$ \\\\ \\hline\n(b) & $\\dfrac{2a^8}{27}$ & 2 & M1 for cubing brackets to get $\\dfrac{8a^{15}}{27}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_301",
+        "question_paths": [
+            "images/q_301.png"
+        ],
+        "ms_paths": [
+            "images/ms_301.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate the following numerical expressions, giving each answer as an integer or a fraction in its simplest form.\n[SUBENUM_START]\n[ITEM] Work out the value of\n\n\n$$\\left(\\dfrac{27}{125}\\right)^{-\\frac{2}{3}}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Work out the value of\n\n\n$$(0.0016)^{\\frac{3}{4}} \\times \\left(\\dfrac{1}{2}\\right)^{-3}$$\n\n\n\\examanswerslot{2cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{25}{9}$ & 2 & M1 for $\\left(\\dfrac{125}{27}\\right)^{\\frac{2}{3}}$ or $\\left(\\dfrac{3}{5}\\right)^{-2}$ or $\\dfrac{9}{25}$ seen \\\\ \\hline\n(b) & $\\dfrac{2}{25}$ & 3 & M1 for $\\left(\\dfrac{2}{10}\\right)^3$ or $\\left(\\dfrac{16}{10000}\\right)^{\\frac{3}{4}}$ or $\\dfrac{8}{1000}$ seen \\\\ \\hline\n& & & A1 for $8$ from $\\left(\\dfrac{1}{2}\\right)^{-3}$ or for multiplying by $8$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 5,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_302",
+        "question_paths": [
+            "images/q_302.png"
+        ],
+        "ms_paths": [
+            "images/ms_302.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Simplify the following algebraic expressions, writing your answers with positive indices.\n[SUBENUM_START]\n[ITEM] Simplify completely\n\n\n$$4x^{-3}y^{\\frac{1}{2}} \\times \\left(\\dfrac{2}{3}x^{2}y^{-\\frac{1}{4}}\\right)^{-2}$$\n\n\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Simplify completely\n\n\n$$\\left(\\dfrac{27x^{-6}}{8y^9}\\right)^{-\\frac{1}{3}}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{9y}{x^7}$ & 3 & M1 for squaring the second bracket to get $\\dfrac{4}{9}x^{-4}y^{\\frac{1}{2}}$ \\\\ \\hline\n& & & M1 for handling negative indices correctly to get $9x^{-7}y$ or similar \\\\ \\hline\n(b) & $\\dfrac{2x^2y^3}{3}$ & 2 & M1 for cubed root applied to coefficients to get $\\dfrac{3}{2}$ or $\\dfrac{2}{3}$ \\\\ \\hline\n& & & A1 for correct handling of indices for $x$ and $y$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 5,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_303",
+        "question_paths": [
+            "images/q_303.png"
+        ],
+        "ms_paths": [
+            "images/ms_303.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Show that the algebraic expression\n\n\n$$\\dfrac{(3x^2y^{-1})^3 \\times (2x^{-2}y^3)^2}{18x^4y^5}$$\n\n\nsimplifies to the form $Ax^By^C$, where $A$, $B$, and $C$ are integers to be found.\n\\examanswerslot{3.5cm}{0}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & $6x^{-2}y^{-2}$ & 3 & M1 for numerator expanding to $27x^6y^{-3} \\times 4x^{-4}y^6$ \\\\ \\hline\n& & & M1 for simplifying numerator to $108x^2y^3$ \\\\ \\hline\n& & & A1 for final answer $6x^{-2}y^{-2}$ or $A=6, B=-2, C=-2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 3,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_304",
+        "question_paths": [
+            "images/q_304.png"
+        ],
+        "ms_paths": [
+            "images/ms_304.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Solve the following equations for $x$.\n[SUBENUM_START]\n[ITEM] Find the exact value of $x$ when\n\n$$4^{x+1} = \\left(\\dfrac{1}{8}\\right)^{2x-3}$$\n\n\n\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Find the value of $x$ when\n\n$$3^{x^2 - 5} = 81^x$$\n\n\n\n\\examanswerslot{2cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $x = \\dfrac{7}{8}$ & 3 & M1 for writing both sides as powers of 2: $2^{2(x+1)} = 2^{-3(2x-3)}$ \\\\ \\hline\n& & & M1 for setting exponents equal: $2x + 2 = -6x + 9$ \\\\ \\hline\n(b) & $x = 5$ or $x = -1$ & 3 & M1 for writing 81 as $3^4$ to get $3^{4x}$ \\\\ \\hline\n& & & M1 for forming quadratic $x^2 - 4x - 5 = 0$ and solving \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_305",
+        "question_paths": [
+            "images/q_305.png"
+        ],
+        "ms_paths": [
+            "images/ms_305.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] An algebraic expression is given by\n\n$$W = \\sqrt[3]{\\dfrac{64x^5y^{-2}}{x^{-1}y^4}}$$\n\n\n\n[SUBENUM_START]\n[ITEM] Show that $W$ simplifies to the form $Kx^py^q$, where $K$, $p$, and $q$ are constants to be found.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Hence, find the exact value of $W$ when $x = 2$ and $y = \\dfrac{1}{5}$.\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $4x^2y^{-2}$ & 2 & M1 for simplifying inside the radical to $\\dfrac{64x^6}{y^6}$ or $64x^6y^{-6}$ \\\\ \\hline\n& & & A1 for evaluating the cube root to $4x^2y^{-2}$ \\\\ \\hline\n(b) & $400$ & 2 & M1 for substituting values into their expression from part (a) \\\\ \\hline\n& & & A1 for correct evaluation to $4 \\times 4 \\times 25 = 400$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 4,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_306",
+        "question_paths": [
+            "images/q_306.png"
+        ],
+        "ms_paths": [
+            "images/ms_306.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate the decimal power.\n\n\n$$0.064^{-\\frac{1}{3}}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Perform algebraic manipulations on the following.\n[SUBENUM_START]\n[ITEM] Simplify the expression fully.\n\n\n$$\\dfrac{\\sqrt{36x^{8}}}{\\left(2x^{-1}\\right)^{3}}$$\n\n\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Show that the expression evaluates exactly to $20$.\n\n\n$$\\dfrac{5^{x+2} - 5^{x+1}}{5^{x}}$$\n\n\n\\examanswerslot{3.5cm}{0}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{5}{2}$ or $2.5$ & $2$ & M1 for $\\left(\\dfrac{64}{1000}\\right)^{-\\frac{1}{3}}$ or $\\left(\\dfrac{1000}{64}\\right)^{\\frac{1}{3}}$ \\\\ \\hline\n(b)(i) & $\\dfrac{3x^7}{4}$ & $3$ & B1 for numerator $6x^4$, B1 for denominator $8x^{-3}$, B1 for final answer \\\\ \\hline\n(b)(ii) & $\\dfrac{5^x \\times 5^2 - 5^x \\times 5^1}{5^x}$ & $3$ & M1 for isolating $5^x$ terms as products \\\\ \\hline\n& $\\dfrac{5^x(25 - 5)}{5^x}$ & & M1 for factoring out $5^x$ in the numerator \\\\ \\hline\n& $25 - 5 = 20$ & & A1 for exact reduction to $20$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 8,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_307",
+        "question_paths": [
+            "images/q_307.png"
+        ],
+        "ms_paths": [
+            "images/ms_307.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate the mixed number power.\n\n\n$$\\left( 3\\dfrac{3}{8} \\right)^{\\frac{2}{3}}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Apply index laws to the expressions below.\n[SUBENUM_START]\n[ITEM] Simplify the expression.\n\n\n$$\\left( \\dfrac{64a^{12}}{b^{6}} \\right)^{-\\frac{1}{6}}$$\n\n\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Show that the following relationship holds for any integer $m$.\n\n\n$$2^{m+3} + 2^{m} = 9 \\times 2^{m}$$\n\n\n\\examanswerslot{3.5cm}{0}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{9}{4}$ or $2\\dfrac{1}{4}$ & $2$ & M1 for converting to improper fraction $\\left(\\dfrac{27}{8}\\right)^{\\frac{2}{3}}$ \\\\ \\hline\n(b)(i) & $\\dfrac{b}{2a^2}$ or $\\dfrac{1}{2}a^{-2}b$ & $3$ & B1 for coefficient $\\dfrac{1}{2}$, B1 for $a^{-2}$, B1 for $b$ \\\\ \\hline\n(b)(ii) & $2^m \\times 2^3 + 2^m$ & $3$ & M1 for separating the index on $2^{m+3}$ \\\\ \\hline\n& $2^m(2^3 + 1)$ & & M1 for correctly factoring out $2^m$ \\\\ \\hline\n& $2^m(8 + 1) = 9 \\times 2^m$ & & A1 for explicit valid sequence to the required format \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Algebraic Indices and Power Laws"
+            ],
+            "marks": 8,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_308",
+        "question_paths": [
+            "images/q_308.png"
+        ],
+        "ms_paths": [
+            "images/ms_308.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Solve the following quadratic equations by factorisation.\n[SUBENUM_START]\n[ITEM] $x^2 - 7x + 10 = 0$\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] $2x^2 + 5x - 3 = 0$\n\\examanswerslot{2cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $x = 2$, $x = 5$ & 2 & M1 for $(x - 2)(x - 5) = 0$ \\\\ \\hline\n(b) & $x = \\dfrac{1}{2}$, $x = -3$ & 3 & M2 for $(2x - 1)(x + 3) = 0$, M1 for $(2x + a)(x + b)$ where $ab=-3$ or $2b+a=5$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Solving Quadratic Equations"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_309",
+        "question_paths": [
+            "images/q_309.png"
+        ],
+        "ms_paths": [
+            "images/ms_309.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Solve the equation.\n\n\n$$2(x - 3)^2 - 8 = 0$$\n\n\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & $x = 1$, $x = 5$ & 3 & M1 for $2(x - 3)^2 = 8 \\Rightarrow (x - 3)^2 = 4$, A1 for $x - 3 = \\pm 2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Solving Quadratic Equations"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_310",
+        "question_paths": [
+            "images/q_310.png"
+        ],
+        "ms_paths": [
+            "images/ms_310.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] An algebraic fraction equation is given by:\n\n\n$$\\dfrac{6}{x} - \\dfrac{2}{x + 1} = 1$$\n\n\n[SUBENUM_START]\n[ITEM] Show that this equation simplifies to $x^2 - 3x - 6 = 0$.\n\\examanswerslot{4cm}{0}{3}\n[ITEM] Solve the equation $x^2 - 3x - 6 = 4$.\n\\examanswerslot{2cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $6(x + 1) - 2x = x(x + 1) \\Rightarrow 4x + 6 = x^2 + x \\Rightarrow x^2 - 3x - 6 = 0$ & 3 & M1 for multiplying by $x(x+1)$, M1 for expanding brackets correctly \\\\ \\hline\n(b) & $x = 5$, $x = -2$ & 3 & M1 for $x^2 - 3x - 10 = 0$, M1 for $(x - 5)(x + 2) = 0$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Solving Quadratic Equations"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_311",
+        "question_paths": [
+            "images/q_311.png"
+        ],
+        "ms_paths": [
+            "images/ms_311.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) rectangle (5,3);\n\\node[below] at (2.5,0) {$2x + 1$};\n\\node[left] at (0,1.5) {$x$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] The diagram shows a rectangle with dimensions $x$ cm and $(2x + 1)$ cm. The area of the rectangle is $15\\text{ cm}^2$.\n[SUBENUM_START]\n[ITEM] Show that $2x^2 + x - 15 = 0$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Solve the equation $2x^2 + x - 15 = 0$ to find the value of $x$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $x(2x + 1) = 15 \\Rightarrow 2x^2 + x = 15 \\Rightarrow 2x^2 + x - 15 = 0$ & 2 & M1 for setting up the correct area equation $x(2x + 1) = 15$ \\\\ \\hline\n(b) & $x = 2.5$ (or $\\dfrac{5}{2}$) & 3 & M2 for $(2x - 5)(x + 3) = 0$, A1 for choosing the positive root only \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Solving Quadratic Equations"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_312",
+        "question_paths": [
+            "images/q_312.png"
+        ],
+        "ms_paths": [
+            "images/ms_312.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Solve the quadratic equation.\n\n$$4x^2 - 25 = 0$$\n\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Solve the equation.\n\n$$4x^2 - 12x + 9 = 0$$\n\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $x = \\dfrac{5}{2}$ or $x = -\\dfrac{5}{2}$ & 2 & M1 for $(2x - 5)(2x + 5) = 0$ or $x^2 = \\dfrac{25}{4}$ \\\\ \\hline\n(b) & $x = \\dfrac{3}{2}$ & 2 & M1 for $(2x - 3)^2 = 0$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Solving Quadratic Equations"
+            ],
+            "marks": 4,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_313",
+        "question_paths": [
+            "images/q_313.png"
+        ],
+        "ms_paths": [
+            "images/ms_313.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Solve the equation by factorisation.\n\n\n$$3x^2 - 14x + 8 = 0$$\n\n\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & $x = \\dfrac{2}{3}$ or $x = 4$ & 3 & M2 for $(3x - 2)(x - 4) = 0$ \\\\ \\hline\n& & & or M1 for $3x(x - 4) - 2(x - 4) = 0$ or correct split of middle term. \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Solving Quadratic Equations"
+            ],
+            "marks": 3,
+            "difficulty": "Medium"
+        }
     }
 ]

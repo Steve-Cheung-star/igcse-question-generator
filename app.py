@@ -168,7 +168,11 @@ def compile_exam_page(latex_body, output_filename="temp_layout", is_markscheme=F
                 "tabular" in active_environments or "officialmarkscheme" in active_environments):
             # TABULAR SAFETY NET: Any row with '&' MUST end with exactly '\\'
             if "&" in stripped and not stripped.endswith(r"\hline"):
-                line = clean_stripped + r" \\"
+                # Bypass if the line is "hanging" (ends with &) and waiting for the next line
+                if clean_stripped.endswith("&"):
+                    line = clean_stripped
+                else:
+                    line = clean_stripped + r" \\"
             else:
                 line = stripped
 
@@ -583,23 +587,76 @@ with col_right:
         # ----------------------------------------------------------
         def inject_hlines_per_row(match):
             inner_content = match.group(1)
-            # Split by literal newlines instead of LaTeX backslashes to avoid LLM hallucinations
-            raw_lines = inner_content.split('\n')
+
+            # 1. Isolate and shield all TikZ blocks from line modifications
+            tikz_blocks = []
+
+            def save_tikz(m_tikz):
+                tikz_blocks.append(m_tikz.group(0))
+                return f" __TIKZ_BLOCK_{len(tikz_blocks) - 1}__ "
+
+            protected_content = re.sub(
+                r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}",
+                save_tikz,
+                inner_content,
+                flags=re.DOTALL
+            )
+
+            # 2. Process rows structurally by accumulating lines belonging to each part
+            raw_lines = protected_content.split('\n')
             cleaned_rows = []
+            current_row_segments = []
+
+            def flush_current_row():
+                if not current_row_segments:
+                    return
+                full_row_str = " ".join(current_row_segments).strip()
+                full_row_str = re.sub(r"\\hline", "", full_row_str)
+                full_row_str = re.sub(r"\\+$", "", full_row_str).strip()
+
+                if not full_row_str or "Part & Answer" in full_row_str:
+                    return
+
+                # Strict 4-column normalization to prevent table overflow crashes
+                parts = full_row_str.split('&')
+                if len(parts) > 4:
+                    # Keep columns 1-3 intact; condense excess hallucinated cells using \newline
+                    main_parts = parts[:3]
+                    guidance_parts = [p.strip() for p in parts[3:] if p.strip()]
+                    guidance_text = " \\newline ".join(guidance_parts)
+                    main_parts.append(guidance_text)
+                    full_row_str = " & ".join(main_parts)
+                elif len(parts) < 4:
+                    while len(parts) < 4:
+                        parts.append("")
+                    full_row_str = " & ".join(parts)
+
+                cleaned_rows.append(f"{full_row_str} \\\\ \\hline")
 
             for line in raw_lines:
-                # Strip out any existing \hline or trailing backslashes so we start fresh
-                line = re.sub(r"\\hline", "", line)
-                line = re.sub(r"\\+$", "", line.strip()).strip()
-
-                # Completely ignore empty lines or the redundant header row
-                if not line or "Part & Answer" in line:
+                line_stripped = line.strip()
+                if not line_stripped or "Part & Answer" in line_stripped:
                     continue
 
-                # Rebuild the line perfectly with the proper LaTeX row ending
-                cleaned_rows.append(f"{line} \\\\ \\hline")
+                # Detect if this line initiates a brand-new table row segment
+                is_new_part_start = re.match(r"^\s*\(?[a-z0-9_i-v]+\)?(?:\([a-z0-9_i-v]+\))?\s*&", line_stripped,
+                                             re.IGNORECASE)
 
-            return "\n" + "\n".join(cleaned_rows) + "\n"
+                if is_new_part_start:
+                    flush_current_row()
+                    current_row_segments = [line_stripped]
+                else:
+                    current_row_segments.append(line_stripped)
+
+            # Flush out the remaining row left in the buffer
+            flush_current_row()
+
+            # 3. Re-assemble and seamlessly restore original TikZ code blocks
+            final_content = "\n".join(cleaned_rows)
+            for idx, tikz_code in enumerate(tikz_blocks):
+                final_content = final_content.replace(f"__TIKZ_BLOCK_{idx}__", f"\n{tikz_code}\n")
+
+            return "\n" + final_content + "\n"
 
 
         sanitized_output = re.sub(
