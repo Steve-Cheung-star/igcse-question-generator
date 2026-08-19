@@ -352,7 +352,8 @@
       "Understand mapping diagrams, functional domain, functional range, and standard function notation syntax.",
       "Calculate algebraic inverse functions f^-1(x).",
       "Form composite functions as defined by gf(x) = g(f(x)) (e.g., find fg(x) given fractions or squared terms, simplifying into a fraction in its simplest form).",
-      "Candidates are explicitly not expected to find the domain and range of composite functions."
+      "Candidates are explicitly not expected to find the domain and range of composite functions.",
+      "Questions tend to have 4 to 6 parts for this topic."
     ]
   },
   "E3.4_finding_quadratic_function": {
@@ -549,8 +550,7 @@
     "skill_name": "Perimeter and Area of Polygons",
     "difficulty": "Easy",
     "technical_constraints": [
-      "Carry out calculations to find the perimeter and total area of rectangles, triangles, parallelograms, and trapezia.",
-      "Formulas for rectangles, parallelograms, and trapezia are explicitly not given in assessment papers; the area of a triangle formula is given.",
+      "Carry out calculations to find the perimeter and total area of rectangles, triangles, parallelograms, trapezia, polygons.",
       "Must include a diagram, do not use gridlines unless it's a graph or plot."
     ]
   },
@@ -562,7 +562,7 @@
       "Calculate the total perimeter, circumference, and area of a circle using standard formulas which are provided.",
       "Calculate fractional arc lengths and sector areas as proportional divisions of a circle, evaluating both minor and major sectors.",
       "Structure problem outputs to allow answers to be requested as decimals or in exact terms of pi (π).",
-      "Must include a diagram, do not use gridlines unless it's a graph or plot."
+      "Include a diagram in tikz, preferably not to scale, include 'NOT TO SCALE' to the far right of the diagram. Do not use gridlines unless it's a graph or plot. Ensure that vertices and angles are labelled and oriented properly using pic in tikz. Shade the relevant area or segment."
     ]
   },
   "E6.4_surface_area_volume": {
@@ -572,8 +572,8 @@
     "technical_constraints": [
       "Calculate the total surface area and internal volume of 3D solids: cuboids, prisms, cylinders, spheres, pyramids, and cones.",
       "Utilise provided formulas: curved surface area of a cylinder/cone, surface area of a sphere, and volumes of prisms, pyramids, cylinders, cones, and spheres.",
-      "Apply the definition of a prism to solids with any uniform cross-section, such as a cylindrical sector, and format answers in exact terms of pi (π) if requested.",
-      "Must include a diagram, do not use gridlines unless it's a graph or plot."
+      "Apply the definition of a prism to solids with any uniform cross-section, such as a cylindrical sector, and format answers in decimals, signicant figures, or exact terms of pi (π) if requested.",
+      "Include a diagram in tikz, preferably not to scale, include 'NOT TO SCALE' to the far right of the diagram. Do not use gridlines unless it's a graph or plot. Ensure that vertices and angles are labelled and oriented properly using pic in tikz."
     ]
   },
   "E6.5_compound_shapes_solids": {
@@ -583,8 +583,8 @@
     "technical_constraints": [
       "Solve practical problems involving the composite perimeters and total surface areas of compound 2D shapes or sliced parts of shapes.",
       "Calculate total surface areas and volumes of compound solids or parts of solids.",
-      "Incorporate explicit geometric calculations to find the surface area and volume of a frustum, allowing final answers to be written in terms of pi (π).",
-      "Must include a diagram, do not use gridlines unless it's a graph or plot."
+      "Incorporate explicit geometric calculations to find the surface area and volume of a frustum, allowing final answers to be written as decimals, signicant figures, or in terms of pi (π).",
+      "Include a diagram in tikz, preferably not to scale, include 'NOT TO SCALE' to the far right of the diagram. Do not use gridlines unless it's a graph or plot. Ensure that vertices and angles are labelled and oriented properly using pic in tikz."
     ]
   },
   "E7.1_pythagoras_theorem": {
@@ -603,8 +603,11 @@
     "technical_constraints": [
       "Know and apply sine, cosine, and tangent ratios for acute angles to calculate missing sides and angles in right-angled triangles.",
       "Solve problems in two dimensions combining Pythagoras' theorem and right-angled trigonometry.",
-      "Apply the geometric principle that the perpendicular distance from a point to a line represents the shortest distance.",
-      "Incorporate calculations involving the angle of elevation and the angle of depression, ensuring decimal angles and answers are handled to one decimal place."
+      "Questions should be basic, no context needed. Just find the length of missing side, size of missing angle.",
+      "For medium and hard questions, can involve composite shapes.",
+      "Include a diagram in tikz, preferably not to scale, include 'NOT TO SCALE' to the far right of the diagram. Do not use gridlines unless it's a graph or plot. Ensure that vertices and angles are labelled and oriented properly using pic in tikz.",
+      "10 \\% of the time, apply the geometric principle that the perpendicular distance from a point to a line represents the shortest distance.",
+      "10 \\% of the time, incorporate calculations involving the angle of elevation and the angle of depression, ensuring decimal angles and answers are handled to one decimal place."
     ]
   },
   "E7.3_exact_trig_values": {
@@ -633,8 +636,21 @@
       "Apply the Sine Rule (a/sinA = b/sinB) and the Cosine Rule (a^2 = b^2 + c^2 - 2bccosA) to calculate lengths and angles in any non-right-angled triangle.",
       "Calculate areas of triangles using the provided formula Area = 0.5 * a * b * sin C.",
       "Problems must include complex geometric configurations, explicitly handling obtuse angles and cases involving the ambiguous case of the sine rule.",
+      "Can include questions with bearings. Shortest distance from a point to a line. Context such as speed, time, and distance of a vehicle like a boat.",
       "Include a diagram with vertices and sides labelled."
     ]
+  },
+    "E7.5.1_bearings": {
+    "syllabus_ref": "E7.5",
+    "skill_name": "Calculations with Bearings and Trigonometry",
+    "difficulty": "Hard",
+    "technical_constraints": [
+      "Formulate multi-part problems focused heavily on navigational bearings. Ensure all bearings are treated as angles measured clockwise from North and are formatted as three digits (e.g., $045^\\circ$ or $072^\\circ$).",
+      "Require calculations of missing side lengths, interior angles, and final bearings using the Sine Rule, Cosine Rule, and foundational angle geometry (specifically co-interior angles between parallel North lines and the interior angle sum of a triangle).",
+      "Include explicit questions requiring students to calculate a reverse bearing (back bearing) from a destination point back to a previous point.",
+      "Integrate kinematics scenarios (e.g., boats sailing between ports, aircraft flying) requiring the calculation of speed, total distance, or journey time. Incorporate 24-hour clock notation (e.g., departing at 08 45 and arriving at 13 15) requiring students to calculate elapsed time in hours and minutes.",
+      "Include questions that ask for the 'shortest distance' from a specific point to a line of travel. This requires students to conceptualize a perpendicular drop from the point to the line and apply right-angled trigonometry to find the distance.",
+      "Provide a clear `tikzpicture` diagram illustrating the navigational route. Include vertical arrows at the relevant vertices to denote North, draw solid lines for the travel paths, and use explicit arcs to label given bearings and known interior angles. Ensure the diagram is explicitly labeled 'NOT TO SCALE' on the far right."    ]
   },
   "E7.6_pythagoras_trig_3d": {
     "syllabus_ref": "E7.6",
@@ -764,7 +780,9 @@
     "technical_constraints": [
       "Draw and interpret diagrams: bar charts, pie charts, pictograms, and simple frequency distributions.",
       "Bar charts must include composite (stacked) or dual (side-by-side) configurations.",
-      "Construct stem-and-leaf diagrams, enforcing rules that data elements must be ordered and include a descriptive structural key."
+      "Construct stem-and-leaf diagrams, enforcing rules that data elements must be ordered and include a descriptive structural key.",
+      "Provide a grid with subgrid in gray using dotted lines for students to plot missing points. Both axes must start at 0. Label the horizontal and vertical axes. Include points that are halfway between gridlines. Major ticks can be 1, 2, 4, 10, 20, minor ticks can be 0.1, 0,2, 0.4, 0.5, 1, 2, 4, 5, etc. Major ticks gridlines should be thicker",
+      "Provide the actual diagrams in markscheme as well."
     ]
   },
   "E10.7_scatter_diagrams_regression": {

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.31)  16 JUN 2026 19:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.31)  17 JUN 2026 10:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,122 +661,50 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
 
-Underfull \hbox (badness 4531) in paragraph at lines 50--50
-[]|\OT1/ptm/m/n/12 M1 for con-vert-ing to im-proper frac-tion
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+[]|\OT1/ptm/m/n/12 M1 for us-ing dis-tance for-mula
  []
 
 
-Underfull \hbox (badness 3724) in paragraph at lines 51--51
-[]|\OT1/ptm/m/n/12 M1 for writ-ing all terms with base 3:
- []
-
-! Misplaced \noalign.
-<recently read> \noalign 
-                         
-l.75 \textbf{16} & & & \hline
-                              \\ \hline
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.75 \textbf{16} & & & \hline \\
-                                 \hline
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.75 \textbf{16} & & & \hline \\
-                                 \hline
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--82
-[]|$[] \OT1/ztmcm/m/n/12 =
+Underfull \hbox (badness 2285) in paragraph at lines 64--64
+[]|\OT1/ptm/m/n/12 M1 for for-mu-lat-ing Pythagorean the-o-rem
  []
 
 
-Overfull \hbox (23.01654pt too wide) in paragraph at lines 82--82
-[][] \OT1/ztmcm/m/n/12 =
- []
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.93 ...r $1$ to $4$ correct lines and no extras &
-                                                    \hline
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
-
-Overfull \hbox (34.82265pt too wide) in paragraph at lines 111--111
-[]|$\OT1/ztmcm/m/n/12 67\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 5%\OML/ztmcm/m/it
-/12 ;  [];  \OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 682\OML/zt
-mcm/m/it/12 ;  [][] \OMS/ztmcm/m/n/12 ^^B
- []
-
-
-Underfull \hbox (badness 3128) in paragraph at lines 124--124
-\OT1/ptm/m/n/12 Sum: $\OT1/ztmcm/m/n/12 (40 \OMS/ztmcm/m/n/12 ^^@ \OT1/ztmcm/m/
-n/12 4\OML/ztmcm/m/it/12 x\OT1/ztmcm/m/n/12 ) + (37 \OMS/ztmcm/m/n/12 ^^@
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 124--124
-\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 x \OT1/ztmcm/m/n/12 + 1) + 2\OML/ztmcm/m/
-it/12 x \OT1/ztmcm/m/n/12 + \OML/ztmcm/m/it/12 x \OT1/ztmcm/m/n/12 + (40 \OMS/z
-tmcm/m/n/12 ^^@
- []
-
-
-Overfull \hbox (0.60628pt too wide) in alignment at lines 34--142
+Overfull \hbox (0.60628pt too wide) in alignment at lines 34--66
  [] [] [] [] 
  []
 
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2] [3] [4] [5]
+al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 
-[6] (./latex_temp_ms.aux)
+[2] (./latex_temp_ms.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 14752 strings out of 473190
- 295820 string characters out of 5715799
- 814518 words of memory out of 5000000
- 37725 multiletter control sequences out of 15000+600000
- 593851 words of font info for 117 fonts, out of 8000000 for 9000
+ 14614 strings out of 473190
+ 293162 string characters out of 5715799
+ 708518 words of memory out of 5000000
+ 37597 multiletter control sequences out of 15000+600000
+ 579730 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,107p,920b,904s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,9n,107p,438b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
 usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/
-2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf
--dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on latex_temp_ms.pdf (6 pages, 104377 bytes).
+sr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/202
+5/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on latex_temp_ms.pdf (2 pages, 73231 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

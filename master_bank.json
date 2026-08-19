@@ -8624,5 +8624,1962 @@
             "marks": 12,
             "difficulty": "Medium"
         }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_455",
+        "question_paths": [
+            "images/q_455.png"
+        ],
+        "ms_paths": [
+            "images/ms_455.png"
+        ],
+        "question_code": "A diagram of a triangle $ABC$ with labelled vertices is shown below.\nThe side lengths are $BC = 5$ and $AC = 5\\sqrt{3}$. The angle $BAC = 30^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n\\draw[thick] (0,0) -- (4.33, 2.5) -- (8.66,0) -- cycle;\n\\node[below left] at (0,0) {$A$};\n\\node[above] at (4.33, 2.5) {$B$};\n\\node[below right] at (8.66, 0) {$C$};\n\\node[above right] at (6.5, 1.25) {$5$};\n\\node[below] at (4.33, 0) {$5\\sqrt{3}$};\n\\draw (0.6,0) arc (0:30:0.6);\n\\node at (1.1, 0.25) {$30^\\circ$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the two possible values for angle $ABC$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Given that angle $ABC$ is obtuse, show that the exact area of triangle $ABC$ is:\n\n\n$$\\dfrac{25\\sqrt{3}}{4}$$\n\n\n\\examanswerslot{3.5cm}{0}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $60^\\circ$ and $120^\\circ$ & 3 & M2 for $\\sin B = \\dfrac{5\\sqrt{3} \\times \\sin 30^\\circ}{5}$ or $\\sin B = \\dfrac{\\sqrt{3}}{2}$, M1 for $\\dfrac{5}{\\sin 30^\\circ} = \\dfrac{5\\sqrt{3}}{\\sin B}$ \\\\ \\hline\n(b) & Fully correct analytical proof & 2 & M1 for establishing $\\text{Angle } ACB = 30^\\circ$, M1 for substituting correctly into $\\text{Area} = \\dfrac{1}{2} \\times 5 \\times 5\\sqrt{3} \\times \\sin 30^\\circ$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_456",
+        "question_paths": [
+            "images/q_456.png"
+        ],
+        "ms_paths": [
+            "images/ms_456.png"
+        ],
+        "question_code": "In the diagram, a triangle $KLM$ is shown.\nThe side $KM = 3$, side $LM = \\sqrt{3}$, and the angle $LKM = 30^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}[scale=1.5]\n\\draw[thick] (0,0) -- (3,0) -- (1.5, 0.866) -- cycle;\n\\node[below left] at (0,0) {$K$};\n\\node[below right] at (3,0) {$M$};\n\\node[above] at (1.5, 0.866) {$L$};\n\\node[below] at (1.5, 0) {$3$};\n\\node[above right] at (2.25, 0.433) {$\\sqrt{3}$};\n\\draw (0.4,0) arc (0:30:0.4);\n\\node at (0.7, 0.15) {$30^\\circ$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the two possible values for angle $KLM$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Given that angle $KLM$ is obtuse, calculate the exact area of triangle $KLM$.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $60^\\circ$ and $120^\\circ$ & 3 & M2 for $\\sin L = \\dfrac{3 \\times \\sin 30^\\circ}{\\sqrt{3}}$ or $\\sin L = \\dfrac{\\sqrt{3}}{2}$, M1 for $\\dfrac{\\sqrt{3}}{\\sin 30^\\circ} = \\dfrac{3}{\\sin L}$ \\\\ \\hline\n(b) & $\\dfrac{3\\sqrt{3}}{4}$ & 3 & M1 for finding angle $KML = 30^\\circ$, M1 for substituting into $\\text{Area} = \\dfrac{1}{2} \\times 3 \\times \\sqrt{3} \\times \\sin 30^\\circ$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_457",
+        "question_paths": [
+            "images/q_457.png"
+        ],
+        "ms_paths": [
+            "images/ms_457.png"
+        ],
+        "question_code": "The diagram illustrates a triangle $XYZ$ with an obtuse angle at $X$.\nThe angle $YXZ = 120^\\circ$ and side $XY = 4$. The exact area of triangle $XYZ$ is given as $7\\sqrt{3}$.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n\\draw[thick] (0,0) -- (7,0) -- (-2, 3.464) -- cycle;\n\\node[below] at (0,0) {$X$};\n\\node[below right] at (7,0) {$Z$};\n\\node[above left] at (-2, 3.464) {$Y$};\n\\node[below left] at (-1, 1.732) {$4$};\n\\draw (0.5,0) arc (0:120:0.5);\n\\node at (0.9, 0.6) {$120^\\circ$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that the length of $XZ$ is $7$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the exact length of $YZ$.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Fully correct proof & 2 & M1 for $7\\sqrt{3} = \\dfrac{1}{2} \\times 4 \\times XZ \\times \\sin 120^\\circ$ or $7\\sqrt{3} = 2 \\times XZ \\times \\dfrac{\\sqrt{3}}{2}$ \\\\ \\hline\n(b) & $\\sqrt{93}$ & 3 & M2 for $YZ^2 = 16 + 49 - 56 \\times \\left(-\\dfrac{1}{2}\\right)$ or $YZ^2 = 93$, M1 for $YZ^2 = 4^2 + 7^2 - 2(4)(7)\\cos 120^\\circ$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_458",
+        "question_paths": [
+            "images/q_458.png"
+        ],
+        "ms_paths": [
+            "images/ms_458.png"
+        ],
+        "question_code": "The diagram shows a quadrilateral $ABCD$ constructed from two triangles, $ABC$ and $ADC$.\n$AB = 6$ cm, $BC = 6$ cm, and angle $ABC = 120^\\circ$. In triangle $ADC$, angle $ADC = 60^\\circ$ and angle $CAD = 45^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (B) at (0,0);\n\\coordinate (A) at (-2, 3.46);\n\\coordinate (C) at (2, 3.46);\n\\coordinate (D) at (0, 6.5);\n\\draw[thick] (A) -- (B) node[midway, left] {$6$};\n\\draw[thick] (B) -- (C) node[midway, right] {$6$};\n\\draw[thick, dashed] (A) -- (C);\n\\draw[thick] (A) -- (D) -- (C);\n\\node[left] at (A) {$A$};\n\\node[below] at (B) {$B$};\n\\node[right] at (C) {$C$};\n\\node[above] at (D) {$D$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that the exact length of $AC$ is $6\\sqrt{3}$ cm.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the exact length of $CD$.\n\\examanswerslot{3.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $6\\sqrt{3}$ & 2 & M1 for $AC^2 = 6^2 + 6^2 - 2(6)(6)\\cos(120^\\circ)$ \\\\ \\hline\n(b) & $6\\sqrt{2}$ & 3 & M2 for $CD = \\dfrac{6\\sqrt{3} \\times \\sin(45^\\circ)}{\\sin(60^\\circ)}$ or M1 for $\\dfrac{CD}{\\sin(45^\\circ)} = \\dfrac{6\\sqrt{3}}{\\sin(60^\\circ)}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_459",
+        "question_paths": [
+            "images/q_459.png"
+        ],
+        "ms_paths": [
+            "images/ms_459.png"
+        ],
+        "question_code": "The side $LM = 7$ cm and angle $LMN = 150^\\circ$. The exact area of triangle $LMN$ is given by:\n\n\n$$\\text{Area} = \\dfrac{7}{4} \\text{ cm}^2$$\n\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (M) at (0,0);\n\\coordinate (L) at (4,0);\n\\coordinate (N) at (-2, 1.15);\n\\draw[thick] (M) -- (L) node[midway, below] {$7$};\n\\draw[thick] (M) -- (N);\n\\draw[thick] (L) -- (N);\n\\node[right] at (L) {$L$};\n\\node[below] at (M) {$M$};\n\\node[left] at (N) {$N$};\n\\draw (0.4,0) arc (0:150:0.4);\n\\node at (0.6, 0.4) {$150^\\circ$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the length of $MN$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Calculate the exact value of $LN^2$.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $1$ & 2 & M1 for $\\dfrac{7}{4} = \\dfrac{1}{2} \\times 7 \\times MN \\times \\sin(150^\\circ)$ \\\\ \\hline\n(b) & $50 + 7\\sqrt{3}$ & 3 & M2 for $7^2 + 1^2 - 2(7)(1)\\left(-\\dfrac{\\sqrt{3}}{2}\\right)$ or M1 for correctly substituting into cosine rule \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_460",
+        "question_paths": [
+            "images/q_460.png"
+        ],
+        "ms_paths": [
+            "images/ms_460.png"
+        ],
+        "question_code": "In triangle $XYZ$, $XY = 4$ cm and $XZ = 6$ cm. You are given the exact trigonometric ratio:\n\n\n$$\\cos(YXZ) = -\\dfrac{1}{4}$$\n\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (X) at (0,0);\n\\coordinate (Y) at (3,0);\n\\coordinate (Z) at (-1, 3);\n\\draw[thick] (X) -- (Y) node[midway, below] {$4$};\n\\draw[thick] (X) -- (Z) node[midway, left] {$6$};\n\\draw[thick] (Y) -- (Z);\n\\node[below] at (X) {$X$};\n\\node[below] at (Y) {$Y$};\n\\node[above] at (Z) {$Z$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that $YZ = 8$ cm.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Find the exact area of triangle $XYZ$.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $8$ & 2 & M1 for $YZ^2 = 4^2 + 6^2 - 2(4)(6)\\left(-\\dfrac{1}{4}\\right)$ \\\\ \\hline\n(b) & $3\\sqrt{15}$ & 3 & M1 for $\\sin X = \\sqrt{1 - \\left(-\\dfrac{1}{4}\\right)^2}$ or $\\dfrac{\\sqrt{15}}{4}$, M1 for $\\dfrac{1}{2} \\times 4 \\times 6 \\times \\dfrac{\\sqrt{15}}{4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_461",
+        "question_paths": [
+            "images/q_461.png"
+        ],
+        "ms_paths": [
+            "images/ms_461.png"
+        ],
+        "question_code": "In triangle $PQR$, the side lengths are $PQ = 10\\sqrt{3}$ cm and $QR = 10$ cm. The angle $QPR = 30^\\circ$ and it is given that angle $PRQ$ is obtuse.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (P) at (0,0);\n\\coordinate (Q) at (5,0);\n\\coordinate (R) at (3.5, 1.5);\n\\draw[thick] (P) -- (Q) node[midway, below] {$10\\sqrt{3}$};\n\\draw[thick] (Q) -- (R) node[midway, right] {$10$};\n\\draw[thick] (P) -- (R);\n\\node[left] at (P) {$P$};\n\\node[right] at (Q) {$Q$};\n\\node[above] at (R) {$R$};\n\\draw (0.6,0) arc (0:23:0.6);\n\\node at (0.9, 0.2) {$30^\\circ$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Find the exact size of angle $PRQ$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Calculate the exact area of triangle $PQR$.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $120^\\circ$ & 3 & M1 for $\\dfrac{10\\sqrt{3}}{\\sin R} = \\dfrac{10}{\\sin(30^\\circ)}$, A1 for $\\sin R = \\dfrac{\\sqrt{3}}{2}$ \\\\ \\hline\n(b) & $25\\sqrt{3}$ & 3 & B1 for angle $PQR = 30^\\circ$, M1 for $\\dfrac{1}{2} \\times 10 \\times 10\\sqrt{3} \\times \\sin(30^\\circ)$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_462",
+        "question_paths": [
+            "images/q_462.png"
+        ],
+        "ms_paths": [
+            "images/ms_462.png"
+        ],
+        "question_code": "In triangle $XYZ$, the side $XY = x$ cm and $XZ = 2x$ cm. The interior angle $YXZ$ is $135^\\circ$.\nThe exact area of the triangle is $15\\sqrt{2} \\text{ cm}^2$.\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n\\draw[thick] (0,0) node[below left] {$X$} -- (3,0) node[below right] {$Y$} -- (-2,2) node[above] {$Z$} -- cycle;\n\\node at (1.5,-0.3) {$x$};\n\\node at (-1.3,0.7) {$2x$};\n\\draw (0.5,0) arc (0:135:0.5);\n\\node at (1.1,0.4) {$135^\\circ$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that $x^2 = 30$.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Find the exact value of the squared length $YZ^2$ in the form $a + b\\sqrt{c}$, where $a, b,$ and $c$ are integers.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $30$ & 3 & M1 for Area $= 0.5(x)(2x)\\sin(135^\\circ)$ \\\\ \\hline\n& & & M1 for substituting $\\sin(135^\\circ) = \\dfrac{\\sqrt{2}}{2}$ \\\\ \\hline\n& & & A1 for equation $x^2 \\times \\dfrac{\\sqrt{2}}{2} = 15\\sqrt{2}$ leading to $x^2 = 30$ \\\\ \\hline\n(b) & $150 + 60\\sqrt{2}$ & 3 & M1 for $YZ^2 = x^2 + 4x^2 - 2(x)(2x)\\cos(135^\\circ)$ \\\\ \\hline\n& & & M1 for substitution $5(30) - 4(30)\\left(-\\dfrac{\\sqrt{2}}{2}\\right)$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_463",
+        "question_paths": [
+            "images/q_463.png"
+        ],
+        "ms_paths": [
+            "images/ms_463.png"
+        ],
+        "question_code": "The diagram shows a quadrilateral $ABCD$ composed of two triangles, $ABC$ and $ACD$.\nThe lengths $AB = 4$ cm, $BC = 4$ cm, and angle $ABC = 120^\\circ$.\nThe length $CD = 2\\sqrt{6}$ cm and angle $CAD = 45^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) node[below left]{$A$} -- (4,0) node[below]{$B$} -- (6, 3.46) node[right]{$C$} -- (2.5, 6) node[above]{$D$} -- cycle;\n\\draw[dashed] (0,0) -- (6, 3.46);\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] (a) Calculate the exact length of $AC$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] (b) For the triangle $ACD$:\n[SUBENUM_START]\n[ITEM] (i) Show that triangle $ACD$ is a right-angled triangle.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] (ii) Calculate the exact area of the quadrilateral $ABCD$.\n\\examanswerslot{3cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $4\\sqrt{3}$ & $3$ & M1 for $AC^2 = 4^2 + 4^2 - 2(4)(4)\\cos(120^\\circ)$, M1 for correct evaluation of $16 + 16 - 32\\left(-\\dfrac{1}{2}\\right)$ \\\\ \\hline\n(b)(i) & $90^\\circ$ & $3$ & M1 for $\\dfrac{\\sin(\\angle ADC)}{4\\sqrt{3}} = \\dfrac{\\sin(45^\\circ)}{2\\sqrt{6}}$, M1 for simplifying to $\\sin(\\angle ADC) = 1$ \\\\ \\hline\n(b)(ii) & $12 + 4\\sqrt{3}$ & $3$ & M1 for area of $ABC = \\dfrac{1}{2} \\times 4 \\times 4 \\times \\sin(120^\\circ)$, M1 for area of $ACD = \\dfrac{1}{2} \\times 4\\sqrt{3} \\times 2\\sqrt{6} \\times \\sin(45^\\circ)$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Sine Rule, Cosine Rule, and Non-Right-Angled Triangle Areas"
+            ],
+            "marks": 9,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_464",
+        "question_paths": [
+            "images/q_464.png"
+        ],
+        "ms_paths": [
+            "images/ms_464.png"
+        ],
+        "question_code": "A ship leaves Port $A$ at $08\\ 30$ and sails to Port $B$.\nThe distance from $A$ to $B$ is $45$ km and the bearing of $B$ from $A$ is $065^\\circ$.\nThe ship arrives at Port $B$ at $10\\ 00$.\nThe ship then sails from Port $B$ to Port $C$.\nThe distance from $B$ to $C$ is $62$ km and the bearing of $C$ from $B$ is $140^\\circ$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (3.5, 1.6);\n\\coordinate (C) at (7, -2.5);\n\n\\draw[thick] (A) -- (B) node[midway, above=2mm] {\\small $45$ km};\n\\draw[thick] (B) -- (C) node[midway, right] {\\small $62$ km};\n\\draw[dashed] (A) -- (C);\n\n\\draw[->, thick] (A) -- +(0,1.5) node[above] {$N$};\n\\draw[->, thick] (B) -- +(0,1.5) node[above] {$N$};\n\n\\draw (A) +(0,0.6) arc (90:25:0.6) node[midway, above right] {\\small $65^\\circ$};\n\\draw (B) +(0,0.6) arc (90:-50:0.6) node[midway, right] {\\small $140^\\circ$};\n\n\\node[left] at (A) {$A$};\n\\node[right] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\n\\node[right] at (7, 1.5) {\\textbf{NOT TO SCALE}};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the average speed of the ship from Port $A$ to Port $B$ in kilometres per hour.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the distance $AC$ is $85.5$ km, correct to 3 significant figures.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Calculate:\n[SUBENUM_START]\n[ITEM] angle $BAC$,\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] the bearing of $C$ from $A$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[SUBENUM_END]\n[ITEM] Calculate the bearing of $A$ from $C$.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] The ship sails directly from Port $C$ back to Port $A$. Calculate the shortest distance from Port $B$ to the path $CA$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $30$ & 2 & M1 for $1.5$ hours seen or $45 \\div 1.5$ \\\\ \\hline\n(b) & $45^2 + 62^2 - 2(45)(62)\\cos(105^\\circ)$ & 2 & M1 for identifying interior angle $ABC = 105^\\circ$ \\\\ \\hline\n& $85.51...$ & 1 & A1 for correct evaluation to at least 4 sig figs \\\\ \\hline\n(c)(i) & $44.5^\\circ$ & 3 & M2 for $\\dfrac{\\sin A}{62} = \\dfrac{\\sin 105^\\circ}{85.5}$ or M1 for correct sine rule structure \\\\ \\hline\n(c)(ii) & $109.5^\\circ$ & 2 & M1 for $065^\\circ + \\text{their (c)(i)}$ \\\\ \\hline\n(d) & $289.5^\\circ$ & 1 & B1 for $\\text{their (c)(ii)} + 180^\\circ$ \\\\ \\hline\n(e) & $31.5$ & 3 & M2 for $45 \\times \\sin(\\text{their (c)(i)})$ or M1 for identifying perpendicular distance forms a right-angled triangle \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Calculations with Bearings and Trigonometry"
+            ],
+            "marks": 14,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_465",
+        "question_paths": [
+            "images/q_465.png"
+        ],
+        "ms_paths": [
+            "images/ms_465.png"
+        ],
+        "question_code": "An aircraft flies from airport $P$ to airport $Q$, and then from $Q$ to airport $R$.\nIt departs $P$ at $14\\ 15$ and arrives at $Q$ at $16\\ 45$.\nThe distance $PQ$ is $800$ km and the bearing of $Q$ from $P$ is $110^\\circ$.\nThe distance $QR$ is $650$ km and the bearing of $R$ from $Q$ is $230^\\circ$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (P) at (0,0);\n\\coordinate (Q) at (4, -1.5);\n\\coordinate (R) at (0, -4.5);\n\n\\draw[thick] (P) -- (Q) node[midway, above right] {\\small $800$ km};\n\\draw[thick] (Q) -- (R) node[midway, below right] {\\small $650$ km};\n\\draw[dashed] (P) -- (R);\n\n\\draw[->, thick] (P) -- +(0,1.5) node[above] {$N$};\n\\draw[->, thick] (Q) -- +(0,1.5) node[above] {$N$};\n\n\\draw (P) +(0,0.6) arc (90:-20:0.6) node[midway, right] {\\small $110^\\circ$};\n\\draw (Q) +(0,0.6) arc (90:-140:0.6) node[midway, right] {\\small $230^\\circ$};\n\n\\node[left] at (P) {$P$};\n\\node[right] at (Q) {$Q$};\n\\node[below left] at (R) {$R$};\n\n\\node[right] at (5, -4) {\\textbf{NOT TO SCALE}};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the average speed of the aircraft from $P$ to $Q$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the distance $PR$ is $736.5$ km, correct to 1 decimal place.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Calculate:\n[SUBENUM_START]\n[ITEM] angle $QPR$,\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] the bearing of $R$ from $P$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[SUBENUM_END]\n[ITEM] Calculate the bearing of $P$ from $R$.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] Calculate the shortest distance from $Q$ to the flight path $PR$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $320$ & 2 & M1 for $2.5$ hours seen or $800 \\div 2.5$ \\\\ \\hline\n(b) & $800^2 + 650^2 - 2(800)(650)\\cos(60^\\circ)$ & 2 & M1 for identifying interior angle $PQR = 60^\\circ$ \\\\ \\hline\n& $736.54...$ & 1 & A1 for correct evaluation to at least 5 sig figs \\\\ \\hline\n(c)(i) & $49.8^\\circ$ or $49.9^\\circ$ & 3 & M2 for $\\dfrac{\\sin P}{650} = \\dfrac{\\sin 60^\\circ}{736.5}$ or M1 for correct sine rule structure \\\\ \\hline\n(c)(ii) & $159.8^\\circ$ or $159.9^\\circ$ & 2 & M1 for $110^\\circ + \\text{their (c)(i)}$ \\\\ \\hline\n(d) & $339.8^\\circ$ or $339.9^\\circ$ & 1 & B1 for $\\text{their (c)(ii)} + 180^\\circ$ \\\\ \\hline\n(e) & $611$ or $612$ & 3 & M2 for $800 \\times \\sin(\\text{their (c)(i)})$ or M1 for appropriate trigonometric ratio seen with perpendicular height \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Calculations with Bearings and Trigonometry"
+            ],
+            "marks": 14,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_466",
+        "question_paths": [
+            "images/q_466.png"
+        ],
+        "ms_paths": [
+            "images/ms_466.png"
+        ],
+        "question_code": "A rescue ship leaves Port $P$ and travels to a buoy $B$ which is $45.2$ km away on a bearing of $055^\\circ$. Upon reaching the buoy, the ship alters its course and travels directly to a lighthouse $L$. The lighthouse $L$ is located $72.8$ km from Port $P$ on a bearing of $148^\\circ$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (P) at (0,0);\n\\coordinate (B) at (35:4.52);\n\\coordinate (L) at (-58:7.28);\n\n% Lines\n\\draw[thick] (P) -- (B) node[midway, above=4mm] {$45.2$\\,km};\n\\draw[thick] (B) -- (L);\n\\draw[thick] (P) -- (L) node[midway, below left] {$72.8$\\,km};\n\n% North Arrows\n\\draw[->, >=stealth] (P) -- (0, 2) node[above] {$N$};\n\\draw[->, >=stealth] (B) -- +(0, 1.5) node[above] {$N$};\n\n% Arcs\n\\draw (0,0.8) arc (90:35:0.8);\n\\node at (60:1.2) {$055^\\circ$};\n\n\\draw (0,0.6) arc (90:-58:0.6);\n\\node at (-10:1) {$148^\\circ$};\n\n% Labels\n\\fill (P) circle (2pt) node[left] {$P$};\n\\fill (B) circle (2pt) node[right] {$B$};\n\\fill (L) circle (2pt) node[below] {$L$};\n\n\\node at (7, 0) {\\textbf{NOT TO SCALE}};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the distance from the buoy $B$ to the lighthouse $L$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the bearing of the lighthouse $L$ from the buoy $B$.\n\\examanswerslot{2cm}{0.25}{4}\n[ITEM] A helicopter flies directly from Port $P$ to intercept the ship on its path from $B$ to $L$. Calculate the shortest distance from $P$ to the line of travel $BL$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] The ship's journey logistics and costs are detailed below:\n[SUBENUM_START]\n[ITEM] The ship travels from $P$ to $B$ at a constant speed, departing $P$ at 14 35 and arriving at $B$ at 16 12. Calculate its average speed in km/h.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] The fuel for the complete rescue mission costs $312$ EUR. This final price includes a $24\\%$ emergency maritime tax markup. Calculate the original cost of the fuel before the tax was applied.\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $87.7$ & 3 & M2 for $45.2^2 + 72.8^2 - 2(45.2)(72.8)\\cos(93^\\circ)$ \\\\ \\hline\n& & & M1 for angle $\\angle BPL = 148^\\circ - 55^\\circ = 93^\\circ$ \\\\ \\hline\n(b) & $179^\\circ$ & 4 & M1 for $\\dfrac{\\sin(\\angle PBL)}{72.8} = \\dfrac{\\sin(93^\\circ)}{87.67}$ \\\\ \\hline\n& & & M1 for $\\angle PBL = 56.0^\\circ$ \\\\ \\hline\n& & & M1 for reverse bearing of $P$ from $B = 055^\\circ + 180^\\circ = 235^\\circ$ \\\\ \\hline\n& & & M1 for bearing $= 235^\\circ - 56.0^\\circ$ \\\\ \\hline\n(c) & $37.5$ & 2 & M1 for $d = 45.2 \\times \\sin(56.0^\\circ)$ OR area equivalency method \\\\ \\hline\n(d)(i) & $28.0$ & 3 & M1 for $16\\,12 - 14\\,35 = 1$ hour $37$ mins \\\\ \\hline\n& & & M1 for $45.2 \\div \\left(1 + \\dfrac{37}{60}\\right)$ \\\\ \\hline\n(d)(ii) & $251.61$ & 2 & M1 for $312 \\div 1.24$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Calculations with Bearings and Trigonometry"
+            ],
+            "marks": 14,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_467",
+        "question_paths": [
+            "images/q_467.png"
+        ],
+        "ms_paths": [
+            "images/ms_467.png"
+        ],
+        "question_code": "A sailing competition takes place around a triangular course $ABC$. The distance from mark $A$ to mark $B$ is 5 km, and the distance from $B$ to $C$ is 12 km. The angle at $B$ is exactly $90^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) -- (4.8,0) -- (0,2) -- cycle;\n\\draw (0,0) rectangle (0.2,0.2);\n\\node[below] at (2.4,0) {12 km};\n\\node[left] at (0,1) {5 km};\n\\node[below left] at (0,0) {$B$};\n\\node[below right] at (4.8,0) {$C$};\n\\node[above left] at (0,2) {$A$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the total perimeter of the sailing course.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] A leading boat completes the entire course at a constant average speed of 10 km/h.\n[SUBENUM_START]\n[ITEM] Calculate the time taken for the boat to finish, giving your answer in hours and minutes.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Next year, the organizers plan to extend the course boundaries to form a mathematically similar triangle whose enclosed area is 44% larger than the current course. Calculate the perimeter of this new enlarged course.\n\\examanswerslot{2cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $30$ & 3 & M1 for $AC^2 = 5^2 + 12^2 = 169$. M1 for $AC = 13$. A1 for $5 + 12 + 13 = 30$. \\\\ \\hline\n(b)(i) & $3 \\text{ hours } 0 \\text{ minutes}$ & 2 & M1 for Time $= \\dfrac{30}{10} = 3$. A1 for explicit conversion to $3 \\text{ hours } 0 \\text{ minutes}$. \\\\ \\hline\n(b)(ii) & $36$ & 3 & M1 for area scale factor $= 1.44$ or $\\dfrac{144}{100}$. \\\\ \\hline\n& & & M1 for length scale factor $= \\sqrt{1.44} = 1.2$. A1 for $30 \\times 1.2 = 36$. \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Perimeter and Area of Polygons"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_468",
+        "question_paths": [
+            "images/q_468.png"
+        ],
+        "ms_paths": [
+            "images/ms_468.png"
+        ],
+        "question_code": "The points $P(-1, 2)$, $Q(3, 2)$, and $R(5, 6)$ are three vertices of a parallelogram $PQRS$ drawn on a coordinate grid.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[->, gray] (-2,0) -- (6,0) node[right] {$x$};\n\\draw[->, gray] (0,-1) -- (0,7) node[above] {$y$};\n\\draw[thick] (-1,2) -- (3,2) -- (5,6) -- (1,6) -- cycle;\n\\node[below left] at (-1,2) {$P(-1,2)$};\n\\node[below right] at (3,2) {$Q(3,2)$};\n\\node[above right] at (5,6) {$R(5,6)$};\n\\node[above left] at (1,6) {$S$};\n\\filldraw (-1,2) circle (1.5pt);\n\\filldraw (3,2) circle (1.5pt);\n\\filldraw (5,6) circle (1.5pt);\n\\filldraw (1,6) circle (1.5pt);\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Write down the coordinates of the fourth vertex $S$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Calculate the area of the parallelogram $PQRS$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the exact length of the diagonal $PR$. Give your answer in the form $a\\sqrt{b}$ where $a$ and $b$ are prime numbers.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $(1, 6)$ & 1 & B1 for correct coordinates. \\\\ \\hline\n(b) & $16$ & 2 & M1 for base $= 4$ and perpendicular height $= 4$. Calculation $4 \\times 4$. \\\\ \\hline\n(c) & $2\\sqrt{13}$ & 3 & M1 for using distance formula $\\sqrt{(5 - (-1))^2 + (6 - 2)^2}$. \\\\ \\hline\n& & & M1 for simplifying to $\\sqrt{36 + 16} = \\sqrt{52}$. A1 for final surd form. \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Perimeter and Area of Polygons"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_469",
+        "question_paths": [
+            "images/q_469.png"
+        ],
+        "ms_paths": [
+            "images/ms_469.png"
+        ],
+        "question_code": "A rectangular garden is shown in the diagram. The length of the garden is $(2x + 1)$ m and the width is $(x + 2)$ m. The total area of the garden is $27 \\text{ m}^2$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) rectangle (5,3);\n\\node[below] at (2.5,0) {$(2x + 1)$ m};\n\\node[right] at (5,1.5) {$(x + 2)$ m};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that $2x^2 + 5x - 25 = 0$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Solve the equation to find the exact value of $x$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Hence calculate the perimeter of the garden.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Area $= (2x + 1)(x + 2)$ & M1 & For correctly setting up the area product. \\\\ \\hline\n& $2x^2 + 4x + x + 2 = 27$ & M1 & For correct expansion of the brackets. \\\\ \\hline\n& $2x^2 + 5x - 25 = 0$ & A1 & For correctly rearranging to form the required equation with no errors seen. \\\\ \\hline\n(b) & $x = 2.5$ or $x = \\dfrac{5}{2}$ & 2 & M1 for $(2x - 5)(x + 5) = 0$ or correct use of formula. Discards $x = -5$. \\\\ \\hline\n(c) & $21$ & 2 & M1 for substituting $x = 2.5$ into length and width to get $6$ and $4.5$, then adding and multiplying by $2$. \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Perimeter and Area of Polygons"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_470",
+        "question_paths": [
+            "images/q_470.png"
+        ],
+        "ms_paths": [
+            "images/ms_470.png"
+        ],
+        "question_code": "A decorative window for a new building is designed in the shape of a rectangle with a semi-circle attached to the top edge. The width of the rectangle is $2x$ cm and the height is $y$ cm.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8, thick]\n\\draw (-2,0) -- (2,0) -- (2,3) arc (0:180:2) -- (-2,0);\n\\draw[dashed] (-2,3) -- (2,3);\n\\node[below] at (0,0) {$2x$};\n\\node[right] at (2,1.5) {$y$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Write down an expression for the total perimeter of the window in terms of $x$, $y$, and $\\pi$.\n\\examanswerslot{4cm}{0.25}{1}\n[ITEM] The design specifications state that the perimeter of the window must be exactly $24 + 4\\pi$ cm, and that the height $y$ is constrained by the equation $y = 12 - x$. Show that $x = 4$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Using the value $x = 4$, calculate the exact total area of the window. Give your answer in the form $A + B\\pi$, where $A$ and $B$ are integers.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $2x + 2y + \\pi x$ & 1 & B1 \\\\ \\hline\n(b) & $2x + 2(12 - x) + \\pi x = 24 + 4\\pi$ & 2 & M1 for substituting $y = 12 - x$ into the perimeter expression \\\\ \\hline\n& $24 + \\pi x = 24 + 4\\pi \\Rightarrow x = 4$ & & A1 for clear algebraic progression leading to $x=4$ \\\\ \\hline\n(c) & $64 + 8\\pi$ & 3 & M1 for finding $y = 8$ \\\\ \\hline\n& & & M1 for area expression $(8 \\times 8) + \\dfrac{1}{2}\\pi(4^2)$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Perimeter, Area, and Volume of Compound Shapes and Frustums"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_471",
+        "question_paths": [
+            "images/q_471.png"
+        ],
+        "ms_paths": [
+            "images/ms_471.png"
+        ],
+        "question_code": "A company designs a paper cup in the shape of a frustum of a right circular cone. The top radius of the cup is $6$ cm and the base radius is $3$ cm. The vertical height of the frustum is $4$ cm.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6, thick]\n\\draw (-3,4) -- (-1.5,0) arc (180:360:1.5 and 0.5) -- (3,4);\n\\draw[dashed] (-1.5,0) arc (180:0:1.5 and 0.5);\n\\draw (0,4) ellipse (3 and 1);\n\\draw[dashed] (0,0) -- (0,4);\n\\draw[dashed] (0,0) -- (1.5,0) node[midway, below] {$3$};\n\\draw[dashed] (0,4) -- (3,4) node[midway, above] {$6$};\n\\draw[<->] (4,0) -- (4,4) node[midway, right] {$4$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that the vertical height of the original un-cut cone is $8$ cm.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] The cup is manufactured from waterproofed card.\n[SUBENUM_START]\n[ITEM] Calculate the exact volume of the frustum, giving your answer in terms of $\\pi$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Calculate the exact curved surface area of the outside of the cup, giving your answer in terms of $\\pi$.\n\\examanswerslot{3cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{h+4}{h} = \\dfrac{6}{3}$ & 2 & M1 for valid similarity ratio equation \\\\ \\hline\n& $h+4 = 2h \\Rightarrow h=4$. Total $= 4+4 = 8$ & & A1 for establishing small cone height is $4$ and total is $8$ \\\\ \\hline\n(b)(i) & $84\\pi$ & 3 & M1 for volume of large cone $\\dfrac{1}{3}\\pi(6^2)(8) = 96\\pi$ \\\\ \\hline\n& & & M1 for volume of small cone $\\dfrac{1}{3}\\pi(3^2)(4) = 12\\pi$ \\\\ \\hline\n(b)(ii) & $45\\pi$ & 3 & M1 for slant heights $10$ and $5$ \\\\ \\hline\n& & & M1 for $\\pi(6)(10) - \\pi(3)(5)$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Perimeter, Area, and Volume of Compound Shapes and Frustums"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_472",
+        "question_paths": [
+            "images/q_472.png"
+        ],
+        "ms_paths": [
+            "images/ms_472.png"
+        ],
+        "question_code": "A solid brass paperweight is manufactured by securely attaching a hemisphere to one end of a solid cylinder. Both the hemisphere and the cylinder share a common radius of $3$ cm. The total length of the combined paperweight is $10$ cm.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6, thick]\n\\draw (-2,5) arc (180:0:2);\n\\draw (-2,0) -- (-2,5);\n\\draw (2,0) -- (2,5);\n\\draw (-2,0) arc (180:360:2 and 0.6);\n\\draw[dashed] (-2,0) arc (180:0:2 and 0.6);\n\\draw[dashed] (-2,5) arc (180:360:2 and 0.6);\n\\draw (-2,5) arc (180:0:2 and 0.6);\n\\draw[<->] (3,0) -- (3,7) node[midway, right] {$10$};\n\\draw[dashed] (0,5) -- (2,5) node[midway, above] {$3$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the exact total surface area of the paperweight, giving your answer in terms of $\\pi$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] The mass of the paperweight determines its final shipping cost.\n[SUBENUM_START]\n[ITEM] Show that the exact volume of the paperweight is $81\\pi$ cm$^3$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] The density of the specific brass alloy used is $\\dfrac{5}{\\pi}$ grams per cm$^3$. Write down the exact mass of one paperweight.\n\\examanswerslot{2.5cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] The manufacturing cost for the brass is $2$ HKD per $45$ grams. Find the total cost to manufacture $10$ of these paperweights.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $69\\pi$ & 3 & M1 for cylinder base $9\\pi$ and curved surface $2\\pi(3)(7) = 42\\pi$ \\\\ \\hline\n& & & M1 for hemisphere curved surface $2\\pi(3^2) = 18\\pi$ \\\\ \\hline\n(b)(i) & $\\dfrac{1}{2} \\times \\dfrac{4}{3}\\pi(3^3) + \\pi(3^2)(7)$ & 2 & M1 for correct substitution into volume formulas \\\\ \\hline\n& $18\\pi + 63\\pi = 81\\pi$ & & A1 for establishing sum to $81\\pi$ \\\\ \\hline\n(b)(ii) & $405$ & 1 & B1 \\\\ \\hline\n(c) & $180$ & 2 & M1 for $405 \\div 45 \\times 2 \\times 10$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Perimeter, Area, and Volume of Compound Shapes and Frustums"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_473",
+        "question_paths": [
+            "images/q_473.png"
+        ],
+        "ms_paths": [
+            "images/ms_473.png"
+        ],
+        "question_code": "A flat metal machine plate is formed from a rectangle $ABCD$ where $AB = 8$ cm and $BC = 6$ cm. A quarter-circle of radius $4$ cm is removed from corner $A$. A semicircle is attached outwardly to the top side $DC$.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7, thick]\n\\draw (4,0) -- (8,0) -- (8,6);\n\\draw (0,4) -- (0,6);\n\\draw (4,0) arc (0:90:4);\n\\draw (8,6) arc (0:180:4);\n\\draw[dashed] (0,6) -- (8,6);\n\\draw[dashed] (0,0) -- (4,0);\n\\draw[dashed] (0,0) -- (0,4);\n\\node[below] at (2,0) {$4$};\n\\node[below] at (6,0) {$4$};\n\\node[left] at (0,2) {$4$};\n\\node[left] at (0,5) {$2$};\n\\node[right] at (8,3) {$6$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] State the exact perimeter of the machine plate, giving your answer in the form $p + q\\pi$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Determine the exact area of the machine plate.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] A mathematically similar prototype plate has an area of $432 + 36\\pi$ cm$^2$. Find the length of the right-hand edge $BC$ on this new prototype plate.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $12 + 6\\pi$ & 3 & M1 for identifying straight lengths $4 + 6 + 2 = 12$ \\\\ \\hline\n& & & M1 for identifying arc lengths $2\\pi$ and $4\\pi$ \\\\ \\hline\n(b) & $48 + 4\\pi$ & 3 & M1 for rectangular area $8 \\times 6 = 48$ \\\\ \\hline\n& & & M1 for adding semicircle area $8\\pi$ and subtracting quarter-circle $4\\pi$ \\\\ \\hline\n(c) & $18$ & 3 & M1 for area scale factor $\\dfrac{432 + 36\\pi}{48 + 4\\pi} = 9$ \\\\ \\hline\n& & & M1 for linear scale factor $\\sqrt{9} = 3$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Perimeter, Area, and Volume of Compound Shapes and Frustums"
+            ],
+            "marks": 9,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_474",
+        "question_paths": [
+            "images/q_474.png"
+        ],
+        "ms_paths": [
+            "images/ms_474.png"
+        ],
+        "question_code": "A solid triangular prism has length $17.6$ cm.\nThe uniform cross-section is a right-angled triangle with base $6.2$ cm and height $8.4$ cm.\nA cylindrical hole of radius $1.8$ cm is drilled entirely through the prism, parallel to its length.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[thick] (0,0) -- (3,0) -- (0,4) -- cycle;\n\\draw[thick] (3,0) -- (8,2) -- (5,6) -- (0,4);\n\\draw[dashed] (0,0) -- (5,2) -- (8,2);\n\\draw[dashed] (5,2) -- (5,6);\n\\draw[thick] (1,1.5) circle (0.5cm);\n\\draw[dashed] (6,3.5) circle (0.5cm);\n\\draw[dashed] (1,1) -- (6,3);\n\\draw[dashed] (1,2) -- (6,4);\n\\node at (1.5, -0.3) {$6.2$\\,cm};\n\\node at (-0.8, 2) {$8.4$\\,cm};\n\\node at (6, 0.5) {$17.6$\\,cm};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the volume of the remaining solid.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the total surface area of the remaining solid.\n\\examanswerslot{2cm}{0.25}{5}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $279$ & 3 & M1 for prism volume $= \\dfrac{1}{2}(6.2)(8.4) \\times 17.6$ or $458.3...$ \\\\ \\hline\n& & & M1 for cylinder volume $= \\pi(1.8)^2 \\times 17.6$ or $179.1...$ \\\\ \\hline\n(b) & $671$ & 5 & M1 for hypotenuse $= \\sqrt{6.2^2 + 8.4^2}$ or $10.4...$ \\\\ \\hline\n& & & M1 for area of three outer rectangles $= (6.2 + 8.4 + 10.44) \\times 17.6$ \\\\ \\hline\n& & & M1 for area of two adjusted ends $= 2 \\times (\\dfrac{1}{2}(6.2)(8.4) - \\pi(1.8)^2)$ \\\\ \\hline\n& & & M1 for inside curved surface area $= 2\\pi(1.8)(17.6)$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Perimeter, Area, and Volume of Compound Shapes and Frustums"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_475",
+        "question_paths": [
+            "images/q_475.png"
+        ],
+        "ms_paths": [
+            "images/ms_475.png"
+        ],
+        "question_code": "A window is designed in the shape of a rectangle surmounted by a semicircle. The width of the rectangle is $8$ cm and its height is $6$ cm.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick, fill=gray!10] (0,0) rectangle (4,3);\n\\draw[thick, fill=gray!10] (4,3) arc (0:180:2);\n\\draw[dashed] (0,3) -- (4,3);\n\\node[below] at (2,0) {$8$ cm};\n\\node[left] at (0,1.5) {$6$ cm};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the total exact area of the window.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] The window frame consists of a curved top section and a straight bottom section.\n[SUBENUM_START]\n[ITEM] Calculate the length of the straight perimeter.\n\\examanswerslot{1.5cm}{0.25}{1}\n[ITEM] Find the ratio of the curved perimeter to the straight perimeter, giving your answer in the form $\\pi : k$, where $k$ is an integer.\n\\examanswerslot{2.5cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $48 + 8\\pi$ & 3 & M1 for $8 \\times 6$ \\\\ \\hline\n& & & M1 for $\\dfrac{1}{2} \\times \\pi \\times 4^2$ \\\\ \\hline\n(b)(i) & $20$ & 1 & From $6 + 8 + 6$ \\\\ \\hline\n(b)(ii) & $\\pi : 5$ & 2 & M1 for curved perimeter $= \\dfrac{1}{2} \\times \\pi \\times 8 = 4\\pi$. \\\\ \\hline\n& & & A1 for establishing ratio $4\\pi : 20$ simplifying to $\\pi : 5$. \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_476",
+        "question_paths": [
+            "images/q_476.png"
+        ],
+        "ms_paths": [
+            "images/ms_476.png"
+        ],
+        "question_code": "A pendant is crafted in the shape of a circular segment. The segment is defined by a sector of radius $8$ cm and an angle of $90^\\circ$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\fill[gray!30] (3,0) arc (0:90:3) -- cycle;\n\\fill[white] (0,0) -- (3,0) -- (0,3) -- cycle;\n\\draw[thick] (0,0) -- (3,0) arc (0:90:3) -- cycle;\n\\draw[thick] (3,0) -- (0,3);\n\\draw[thick] (0.3,0) |- (0,0.3);\n\\node[below] at (1.5,0) {$8$ cm};\n\\node[left] at (0,1.5) {$8$ cm};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Show that the area of the unshaded right-angled triangle is $32$ cm$^2$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the exact area of the shaded pendant segment, leaving your answer in terms of $\\pi$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Area $= \\dfrac{1}{2} \\times 8 \\times 8$ & M1 & Correct formula substitution. \\\\ \\hline\n& $= 32$ & A1 & Exact value established. \\\\ \\hline\n(b) & $16\\pi - 32$ & 3 & M1 for sector area $= \\dfrac{90}{360} \\times \\pi \\times 8^2$ \\\\ \\hline\n& & & A1 for sector area $= 16\\pi$. \\\\ \\hline\n& & & B1 for subtraction to find segment. \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_477",
+        "question_paths": [
+            "images/q_477.png"
+        ],
+        "ms_paths": [
+            "images/ms_477.png"
+        ],
+        "question_code": "A square block restrictor fits perfectly inside a circular water pipe. The pipe has a radius of $r = 5$ cm. The four corners of the square touch the inner edge of the circular pipe.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) circle (2);\n\\draw[thick, fill=gray!20] (-1.414,-1.414) rectangle (1.414,1.414);\n\\fill (0,0) circle (0.05);\n\\draw[dashed, thick] (0,0) -- (1.414,1.414);\n\\node at (0.4, 1) {$r=5$};\n\\node at (0, -1.7) {$x$};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Let the side length of the square be $x$ cm. Use Pythagoras' theorem to write down an equation in terms of $x$, and simplify it to the explicit form:\n\n\n$$x^2 = c$$\n\n\nwhere $c$ is an integer.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Calculate the total exact area of the four unshaded circular segments outside the square.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\left(\\dfrac{x}{2}\\right)^2 + \\left(\\dfrac{x}{2}\\right)^2 = 5^2$ OR $x^2 + x^2 = 10^2$ & M1 & Forming a correct Pythagorean relation. \\\\ \\hline\n& $x^2 = 50$ & A1 & Correct algebraic simplification to final integer form. \\\\ \\hline\n(b) & $25\\pi - 50$ & 3 & M1 for area of circle $= \\pi \\times 5^2$ \\\\ \\hline\n& & & M1 for area of square $= 50$ (using result from part a). \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_478",
+        "question_paths": [
+            "images/q_478.png"
+        ],
+        "ms_paths": [
+            "images/ms_478.png"
+        ],
+        "question_code": "The minute hand on a tower clock has a length of $9$ cm.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) circle (2);\n\\foreach \\a in {30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360} {\n\\draw[thick] (\\a:1.8) -- (\\a:2);\n}\n\\draw[thick, ->] (0,0) -- (90:1.5);\n\\draw[dashed, ->] (0,0) -- (-30:1.5);\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the exact angle, in degrees, that the minute hand turns through in a period of $20$ minutes.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the exact distance moved by the tip of the minute hand during these $20$ minutes.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $120^\\circ$ & 2 & M1 for $\\dfrac{20}{60} \\times 360^\\circ$ \\\\ \\hline\n(b) & $6\\pi$ & 2 & M1 for $\\dfrac{120}{360} \\times 2 \\times \\pi \\times 9$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_479",
+        "question_paths": [
+            "images/q_479.png"
+        ],
+        "ms_paths": [
+            "images/ms_479.png"
+        ],
+        "question_code": "The diagram shows a sector of a circle with centre $O$ and radius $(x + 2)$ cm.\nThe sector angle is $90^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}[rotate=15]\n\\coordinate (O) at (0,0);\n\\coordinate (A) at (3,0);\n\\coordinate (B) at (0,3);\n\\fill[gray!20] (O) -- (A) arc (0:90:3) -- cycle;\n\\draw[thick] (O) -- (A) arc (0:90:3) -- cycle;\n\\draw (0.3,0) -- (0.3,0.3) -- (0,0.3);\n\\node[below] at (1.5,0) {$(x + 2)$};\n\\node[left] at (0,1.5) {$(x + 2)$};\n\\node at (4, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] The exact area of the sector is $25\\pi \\text{ cm}^2$. Show that the equation reduces to $x^2 + 4x - 96 = 0$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Factorise $x^2 + 4x - 96$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Hence, find the exact length of the arc of the sector.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Proof & 2 & M1 for $\\dfrac{90}{360} \\times \\pi \\times (x+2)^2 = 25\\pi$. A1 for expanding to $x^2 + 4x + 4 = 100$ and rearranging. \\\\ \\hline\n(b) & $(x+12)(x-8)$ & 2 & M1 for $(x \\pm 12)(x \\pm 8)$ \\\\ \\hline\n(c) & $4\\pi$ & 2 & B1 for $x=8 \\implies r=10$. M1 for $\\dfrac{1}{4} \\times 2 \\times \\pi \\times 10$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_480",
+        "question_paths": [
+            "images/q_480.png"
+        ],
+        "ms_paths": [
+            "images/ms_480.png"
+        ],
+        "question_code": "A company logo is formed by drawing a circle completely inscribed within a square of side length $14$ cm.\nThe region inside the square but outside the circle is shaded blue.\n\\begin{center}\n\\begin{tikzpicture}\n\\fill[blue!30] (-2,-2) rectangle (2,2);\n\\fill[white] (0,0) circle (2);\n\\draw[thick] (-2,-2) rectangle (2,2);\n\\draw[thick] (0,0) circle (2);\n\\draw[<->] (-2,-2.2) -- (2,-2.2) node[midway, below] {$14$ cm};\n\\node at (4, 0) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the exact area of the blue shaded region.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] The shaded region is painted. One tube of paint covers exactly $10 \\text{ cm}^2$.\nUsing the approximation $\\pi \\approx \\dfrac{22}{7}$, calculate the exact number of tubes of paint needed to cover the region fully.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $196 - 49\\pi$ & 2 & M1 for $14^2 - \\pi \\times 7^2$ \\\\ \\hline\n(b) & $5$ & 3 & M1 for substituting $\\pi = \\dfrac{22}{7}$ to get $196 - 49(\\dfrac{22}{7})$. M1 for calculating area $= 196 - 154 = 42$. A1 for $42 \\div 10 = 4.2 \\implies 5$ tubes. \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_481",
+        "question_paths": [
+            "images/q_481.png"
+        ],
+        "ms_paths": [
+            "images/ms_481.png"
+        ],
+        "question_code": "Sector $P$ and Sector $Q$ are mathematically similar.\nThe ratio of the exact area of Sector $P$ to the exact area of Sector $Q$ is $9 : 25$.\nThe radius of Sector $P$ is $6$ cm. Both sectors have an angle of $120^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) -- (1.5,0) arc (0:120:1.5) -- cycle;\n\\node at (0.5,0.4) {$P$};\n\\draw[thick] (3,0) -- (5.5,0) arc (0:120:2.5) -- cycle;\n\\node at (4,0.8) {$Q$};\n\\node at (8.5, 1) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the exact radius of Sector $Q$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the exact difference between the arc lengths of the two sectors.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $10$ & 2 & M1 for linear scale factor $= \\sqrt{\\dfrac{25}{9}} = \\dfrac{5}{3}$. A1 for $6 \\times \\dfrac{5}{3} = 10$. \\\\ \\hline\n(b) & $\\dfrac{8\\pi}{3}$ & 3 & B1 for Arc $P = \\dfrac{1}{3} \\times 12\\pi = 4\\pi$. B1 for Arc $Q = \\dfrac{1}{3} \\times 20\\pi = \\dfrac{20\\pi}{3}$. M1 for $\\dfrac{20\\pi}{3} - \\dfrac{12\\pi}{3}$. \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 5,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_482",
+        "question_paths": [
+            "images/q_482.png"
+        ],
+        "ms_paths": [
+            "images/ms_482.png"
+        ],
+        "question_code": "A car windshield wiper sweeps through an angle of 113°. The entire metal arm is 56 cm long from the pivot. The actual rubber cleaning blade is 41.2 cm long, leaving an uncleaned lower section starting 14.8 cm from the pivot.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\fill[blue!10] (113:1) arc (113:0:1) -- (0:3.5) arc (0:113:3.5) -- cycle;\n\\draw[thick] (0,0) -- (0:3.5);\n\\draw[thick] (0,0) -- (113:3.5);\n\\draw[thick] (0:1) arc (0:113:1);\n\\draw[thick] (0:3.5) arc (0:113:3.5);\n\\draw[<->] (0,-0.3) -- (1,-0.3) node[midway, below] {$14.8$};\n\\draw[<->] (1,-0.3) -- (3.5,-0.3) node[midway, below] {$41.2$};\n\\draw (0.4,0) arc (0:113:0.4);\n\\node at (55:0.6) {$113^\\circ$};\n\\node at (5, 1.5) [anchor=west] {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the total area swept by the full 56 cm arm.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the area of the windshield that is actually cleaned by the rubber blade.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the ratio of the cleaned area to the uncleaned lower section area. Give your answer in the form $n:1$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 3090 or 3092 & 2 & M1 for $\\dfrac{113}{360} \\times \\pi \\times 56^2$ \\\\ \\hline\n(b) & 2880 or 2876 & 2 & M1 for $\\text{their (a)} - \\left( \\dfrac{113}{360} \\times \\pi \\times 14.8^2 \\right)$ \\\\ \\hline\n(c) & 13.3 : 1 & 2 & M1 for $2876.7 / 215.7$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_483",
+        "question_paths": [
+            "images/q_483.png"
+        ],
+        "ms_paths": [
+            "images/ms_483.png"
+        ],
+        "question_code": "The diagram shows a sector, $PQR$, of a circle with centre $P$ and radius $8.8$ m.\nThe sector angle is $142^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (P) at (0,0);\n\\coordinate (Q) at (3,0);\n\\coordinate (R) at (142:3);\n\\draw[fill=gray!20] (P) -- (Q) arc (0:142:3) -- cycle;\n\\draw (P) node[below] {$P$};\n\\draw (Q) node[right] {$Q$};\n\\draw (R) node[above left] {$R$};\n\\pic [draw, \"$\\,142^\\circ$\", angle eccentricity=1.5, angle radius=0.5cm] {angle = Q--P--R};\n\\path (P) -- (Q) node[midway, below] {$8.8$ m};\n\\node[anchor=west] at (4, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the perimeter of the sector $PQR$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the area of the sector.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $39.4$ & 3 & M2 for $\\dfrac{142}{360} \\times 2 \\times \\pi \\times 8.8 + 2 \\times 8.8$ or M1 for $\\dfrac{142}{360} \\times 2 \\times \\pi \\times 8.8$ \\\\ \\hline\n(b) & $95.9$ & 2 & M1 for $\\dfrac{142}{360} \\times \\pi \\times 8.8^2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_484",
+        "question_paths": [
+            "images/q_484.png"
+        ],
+        "ms_paths": [
+            "images/ms_484.png"
+        ],
+        "question_code": "The diagram shows a sector, $OXY$, of a circle with centre $O$ and radius $6.1$ cm.\nThe area of the sector is $45.0$ cm$^2$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (O) at (0,0);\n\\coordinate (X) at (3,0);\n\\coordinate (Y) at (139:3);\n\\draw[fill=gray!20] (O) -- (X) arc (0:139:3) -- cycle;\n\\draw (O) node[below] {$O$};\n\\draw (X) node[right] {$X$};\n\\draw (Y) node[above left] {$Y$};\n\\pic [draw, angle radius=0.6cm] {angle = X--O--Y};\n\\path (O) -- (X) node[midway, below] {$6.1$ cm};\n\\node[anchor=west] at (4, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that the sector angle is $138.6^\\circ$, correct to $1$ decimal place.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the perimeter of the sector $OXY$.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\theta = \\dfrac{45 \\times 360}{\\pi \\times 6.1^2}$ & 2 & M1 for $\\dfrac{\\theta}{360} \\times \\pi \\times 6.1^2 = 45$ \\\\ \\hline\n(b) & $27.0$ & 3 & M2 for $\\dfrac{138.6}{360} \\times 2 \\times \\pi \\times 6.1 + 12.2$ or M1 for $\\dfrac{138.6}{360} \\times 2 \\times \\pi \\times 6.1$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_485",
+        "question_paths": [
+            "images/q_485.png"
+        ],
+        "ms_paths": [
+            "images/ms_485.png"
+        ],
+        "question_code": "The diagram shows a shape made from a circle of radius $9.4$ cm with a minor sector removed.\nThe angle of the removed sector is $42^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (O) at (0,0);\n\\coordinate (A) at (42:3);\n\\coordinate (B) at (360:3);\n\\draw[fill=gray!20] (O) -- (A) arc (42:360:3) -- cycle;\n\\draw[dashed] (O) -- (B) arc (0:42:3) -- cycle;\n\\draw (O) node[left] {$O$};\n\\pic [draw, \"$\\,42^\\circ$\", angle eccentricity=1.7, angle radius=0.6cm] {angle = B--O--A};\n\\path (O) -- (A) node[midway, above left] {$9.4$ cm};\n\\node[anchor=west] at (4, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the area of the shaded shape.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the perimeter of the shaded shape.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $245$ & 3 & M2 for $\\dfrac{318}{360} \\times \\pi \\times 9.4^2$ or M1 for $360 - 42$ \\\\ \\hline\n(b) & $71.0$ & 3 & M2 for $\\dfrac{318}{360} \\times 2 \\times \\pi \\times 9.4 + 2 \\times 9.4$ or M1 for $\\dfrac{318}{360} \\times 2 \\times \\pi \\times 9.4$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_486",
+        "question_paths": [
+            "images/q_486.png"
+        ],
+        "ms_paths": [
+            "images/ms_486.png"
+        ],
+        "question_code": "The diagram shows a sector of a circle with centre $O$ and radius $4.8$ cm.\nThe length of the arc is $6.5$ cm.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (O) at (0,0);\n\\coordinate (A) at (3,0);\n\\coordinate (B) at (78:3);\n\\draw[fill=gray!20] (O) -- (A) arc (0:78:3) -- cycle;\n\\draw (O) node[below left] {$O$};\n\\pic [draw, angle radius=0.6cm] {angle = A--O--B};\n\\path (O) -- (A) node[midway, below] {$4.8$ cm};\n\\path (3,1.5) node[right] {$6.5$ cm};\n\\node[anchor=west] at (4, 3) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that the sector angle is $77.6^\\circ$, correct to $1$ decimal place.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the area of the sector.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\theta = \\dfrac{6.5 \\times 360}{2 \\times \\pi \\times 4.8}$ & 2 & M1 for $\\dfrac{\\theta}{360} \\times 2 \\times \\pi \\times 4.8 = 6.5$ \\\\ \\hline\n(b) & $15.6$ & 2 & M1 for $\\dfrac{77.6}{360} \\times \\pi \\times 4.8^2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Circumference, Area, Arc Length, and Sector Area"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_487",
+        "question_paths": [
+            "images/q_487.png"
+        ],
+        "ms_paths": [
+            "images/ms_487.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A solid cylinder has a base radius of $4\\text{ cm}$ and a perpendicular height of $10\\text{ cm}$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (0,4) ellipse (2 and 0.5);\n\\draw (-2,0) -- (-2,4);\n\\draw (2,0) -- (2,4);\n\\draw (-2,0) arc (180:360:2 and 0.5);\n\\draw[dashed] (2,0) arc (0:180:2 and 0.5);\n\\draw[dashed] (0,0) -- (2,0) node[midway, above] {$4\\text{ cm}$};\n\\draw[<->] (2.5,0) -- (2.5,4) node[midway, right] {$10\\text{ cm}$};\n\\node at (6, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[SUBENUM_START]\n[ITEM] Calculate the exact volume of the cylinder. Give your answer in terms of $\\pi$.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Calculate the exact curved surface area of the cylinder. Give your answer in terms of $\\pi$.\n\\examanswerslot{3cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $160\\pi$ & 2 & M1 for $\\pi \\times 4^2 \\times 10$ \\\\ \\hline\n(b) & $80\\pi$ & 2 & M1 for $2 \\times \\pi \\times 4 \\times 10$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_488",
+        "question_paths": [
+            "images/q_488.png"
+        ],
+        "ms_paths": [
+            "images/ms_488.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A solid cone has a base radius of $6\\text{ cm}$ and a vertical height of $8\\text{ cm}$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (-3,0) arc (180:360:3 and 0.75);\n\\draw[dashed] (3,0) arc (0:180:3 and 0.75);\n\\draw (-3,0) -- (0,4) -- (3,0);\n\\draw[dashed] (0,0) -- (3,0) node[midway, below] {$6\\text{ cm}$};\n\\draw[dashed] (0,0) -- (0,4) node[midway, left] {$8\\text{ cm}$};\n\\fill (0,0) circle (1.5pt);\n\\node at (6, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[SUBENUM_START]\n[ITEM] Show that the slant height of the cone is $10\\text{ cm}$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the exact total surface area of the cone. Give your answer in terms of $\\pi$.\n\\examanswerslot{3cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\sqrt{6^2 + 8^2} = 10$ & 2 & M1 for $\\sqrt{6^2 + 8^2}$ or $36 + 64 = 100$ \\\\ \\hline\n(b) & $96\\pi$ & 3 & M2 for $\\pi \\times 6^2 + \\pi \\times 6 \\times 10$ or M1 for $\\pi \\times 6 \\times 10$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_489",
+        "question_paths": [
+            "images/q_489.png"
+        ],
+        "ms_paths": [
+            "images/ms_489.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A solid hemisphere has a radius of $6\\text{ cm}$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (0,0) ellipse (3 and 0.75);\n\\draw (-3,0) arc (180:360:3);\n\\draw[dashed] (0,0) -- (3,0) node[midway, above] {$6\\text{ cm}$};\n\\fill (0,0) circle (1.5pt);\n\\node at (6, -1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[SUBENUM_START]\n[ITEM] Calculate the exact volume of the solid hemisphere. Give your answer in terms of $\\pi$.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Calculate the exact total surface area of the solid hemisphere. Give your answer in terms of $\\pi$.\n\\examanswerslot{3cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $144\\pi$ & 2 & M1 for $\\dfrac{2}{3} \\times \\pi \\times 6^3$ \\\\ \\hline\n(b) & $108\\pi$ & 3 & M2 for $3 \\times \\pi \\times 6^2$ or M1 for $2 \\times \\pi \\times 6^2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_490",
+        "question_paths": [
+            "images/q_490.png"
+        ],
+        "ms_paths": [
+            "images/ms_490.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] The diagram shows a right triangular prism of length $10\\text{ cm}$. The cross-section is a right-angled triangle with base $3\\text{ cm}$, height $4\\text{ cm}$, and hypotenuse $5\\text{ cm}$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (0,0) -- (3,0) node[midway,below] {$3\\text{ cm}$} -- (0,4) node[midway,above right] {$5\\text{ cm}$} -- cycle;\n\\node[left] at (0,2) {$4\\text{ cm}$};\n\\draw (0,0) rectangle (0.3,0.3);\n\\draw (3,0) -- (6,2) node[midway,below right] {$10\\text{ cm}$};\n\\draw (0,4) -- (3,6);\n\\draw (6,2) -- (3,6);\n\\draw[dashed] (0,0) -- (3,2) -- (6,2);\n\\draw[dashed] (3,2) -- (3,6);\n\\node at (8, 3) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[SUBENUM_START]\n[ITEM] Calculate the volume of the prism.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Calculate the total surface area of the prism.\n\\examanswerslot{2.5cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $60$ & 2 & M1 for $\\left(\\dfrac{1}{2} \\times 3 \\times 4\\right) \\times 10$ \\\\ \\hline\n(b) & $132$ & 3 & M2 for $2 \\times \\left(\\dfrac{1}{2} \\times 3 \\times 4\\right) + (3 + 4 + 5) \\times 10$ or M1 for $(3 + 4 + 5) \\times 10$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_491",
+        "question_paths": [
+            "images/q_491.png"
+        ],
+        "ms_paths": [
+            "images/ms_491.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A solid square-based pyramid has a base side length of $10\\text{ cm}$ and a perpendicular height of $12\\text{ cm}$. The apex of the pyramid is directly above the centre of the square base.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (-2,-1) -- (2,-1) -- (4,1);\n\\draw[dashed] (4,1) -- (0,1) -- (-2,-1);\n\\draw (-2,-1) -- (1,5) -- (2,-1);\n\\draw (4,1) -- (1,5);\n\\draw[dashed] (0,1) -- (1,5);\n\\draw[dashed] (1,5) -- (1,0) node[midway, right] {$12\\text{ cm}$};\n\\draw[dashed] (-2,-1) -- (4,1);\n\\draw[dashed] (0,1) -- (2,-1);\n\\node at (0, -1.3) {$10\\text{ cm}$};\n\\node at (6, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[SUBENUM_START]\n[ITEM] Calculate the volume of the pyramid.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Show that the slant height of each triangular face is $13\\text{ cm}$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the total surface area of the pyramid.\n\\examanswerslot{2.5cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $400$ & 2 & M1 for $\\dfrac{1}{3} \\times 10^2 \\times 12$ \\\\ \\hline\n(b) & $\\sqrt{5^2 + 12^2} = 13$ & 2 & M1 for $\\sqrt{5^2 + 12^2}$ or $25 + 144 = 169$ \\\\ \\hline\n(c) & $360$ & 3 & M2 for $10^2 + 4 \\times \\left(\\dfrac{1}{2} \\times 10 \\times 13\\right)$ or M1 for $4 \\times \\left(\\dfrac{1}{2} \\times 10 \\times 13\\right)$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 7,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_492",
+        "question_paths": [
+            "images/q_492.png"
+        ],
+        "ms_paths": [
+            "images/ms_492.png"
+        ],
+        "question_code": "A composite solid is formed by placing a right circular cone exactly on top of a solid cylinder.\nThe base radius of both the cylinder and the cone is $3\\text{ cm}$.\nThe height of the cylinder is $5\\text{ cm}$ and the height of the cone is $4\\text{ cm}$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (0,0) ellipse (1.5 and 0.4);\n\\draw (-1.5,0) -- (-1.5,2.5);\n\\draw (1.5,0) -- (1.5,2.5);\n\\draw[dashed] (-1.5,2.5) arc (180:360:1.5 and 0.4);\n\\draw (-1.5,2.5) arc (180:0:1.5 and 0.4);\n\\draw (-1.5,2.5) -- (0,4.5) -- (1.5,2.5);\n\\draw[<->] (1.9,0) -- (1.9,2.5) node[midway, right] {$5\\text{ cm}$};\n\\draw[<->, dashed] (0,2.5) -- (1.5,2.5) node[midway, below] {$3\\text{ cm}$};\n\\draw[dashed] (0,2.5) -- (0,4.5);\n\\draw[<->] (-0.3,2.5) -- (-0.3,4.5) node[midway, left] {$4\\text{ cm}$};\n\\node[right] at (4,2.25) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the slant height of the cone.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the exact total volume of the composite solid. Give your answer in terms of $\\pi$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Show that the exact total surface area of the composite solid is $54\\pi \\text{ cm}^2$.\n\\examanswerslot{3.5cm}{0}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $5$ & 2 & M1 for $\\sqrt{3^2 + 4^2}$ \\\\ \\hline\n(b) & $57\\pi$ & 3 & M1 for $\\pi \\times 3^2 \\times 5$ or $45\\pi$ \\\\ \\hline\n& & & M1 for $\\dfrac{1}{3} \\times \\pi \\times 3^2 \\times 4$ or $12\\pi$ \\\\ \\hline\n(c) & $54\\pi$ & 3 & M1 for $2 \\times \\pi \\times 3 \\times 5$ or $30\\pi$ \\\\ \\hline\n& & & M1 for $\\pi \\times 3 \\times 5$ or $15\\pi$ \\\\ \\hline\n& & & A1 for $30\\pi + 15\\pi + \\pi \\times 3^2 = 54\\pi$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_493",
+        "question_paths": [
+            "images/q_493.png"
+        ],
+        "ms_paths": [
+            "images/ms_493.png"
+        ],
+        "question_code": "A solid consists of a hemisphere of radius $6\\text{ cm}$ seamlessly attached to one flat end of a solid cylinder.\nThe cylinder has a base radius of $6\\text{ cm}$ and a height of $h\\text{ cm}$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (0,0) ellipse (2 and 0.5);\n\\draw (-2,0) -- (-2,3);\n\\draw (2,0) -- (2,3);\n\\draw[dashed] (-2,3) arc (180:360:2 and 0.5);\n\\draw (-2,3) arc (180:0:2 and 0.5);\n\\draw (-2,3) arc (180:0:2 and 2);\n\\draw[<->] (2.4,0) -- (2.4,3) node[midway, right] {$h\\text{ cm}$};\n\\draw[dashed] (0,3) -- (2,3) node[midway, below] {$6\\text{ cm}$};\n\\node[right] at (4,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] The exact total volume of the solid is given as $360\\pi \\text{ cm}^3$.\nShow that $h = 6$.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Calculate the exact total surface area of the solid. Give your answer in terms of $\\pi$.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $6$ & 3 & M1 for $\\dfrac{2}{3} \\times \\pi \\times 6^3$ or $144\\pi$ \\\\ \\hline\n& & & M1 for $144\\pi + \\pi \\times 6^2 \\times h = 360\\pi$ \\\\ \\hline\n& & & A1 for $36\\pi h = 216\\pi$ leading to $h = 6$ \\\\ \\hline\n(b) & $180\\pi$ & 3 & M1 for $2 \\times \\pi \\times 6^2$ or $72\\pi$ \\\\ \\hline\n& & & M1 for $2 \\times \\pi \\times 6 \\times 6$ or $72\\pi$ \\\\ \\hline\n& & & A1 for $72\\pi + 72\\pi + 36\\pi = 180\\pi$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_494",
+        "question_paths": [
+            "images/q_494.png"
+        ],
+        "ms_paths": [
+            "images/ms_494.png"
+        ],
+        "question_code": "A solid is a right prism of length $10\\text{ cm}$.\nThe uniform cross-section of the prism is a right-angled triangle with a base of $8\\text{ cm}$ and a perpendicular height of $6\\text{ cm}$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (0,0) -- (3,0) -- (0,2.5) -- cycle;\n\\draw (3,0) -- (5,1.5) -- (2,4) -- (0,2.5);\n\\draw[dashed] (0,0) -- (2,1.5) -- (5,1.5);\n\\draw[dashed] (2,1.5) -- (2,4);\n\\draw (0.25,0) -- (0.25,0.25) -- (0,0.25);\n\\node[below] at (1.5,0) {$8\\text{ cm}$};\n\\node[left] at (0,1.25) {$6\\text{ cm}$};\n\\node[below right] at (4,0.75) {$10\\text{ cm}$};\n\\node[right] at (6,2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the exact volume of the prism.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the total surface area of the prism is $288 \\text{ cm}^2$.\n\\examanswerslot{3.5cm}{0}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $240$ & 2 & M1 for $\\dfrac{1}{2} \\times 8 \\times 6 \\times 10$ \\\\ \\hline\n(b) & $288$ & 3 & M1 for $\\sqrt{6^2 + 8^2} = 10$ \\\\ \\hline\n& & & M1 for $(6 \\times 10) + (8 \\times 10) + (10 \\times 10)$ or $240$ \\\\ \\hline\n& & & A1 for $240 + 2 \\times \\left(\\dfrac{1}{2} \\times 8 \\times 6\\right) = 288$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_495",
+        "question_paths": [
+            "images/q_495.png"
+        ],
+        "ms_paths": [
+            "images/ms_495.png"
+        ],
+        "question_code": "A solid metal cylinder of radius $4\\text{ cm}$ and height $15\\text{ cm}$ is melted down.\nIt is then completely recast to form a single solid right circular cone with a base radius of $12\\text{ cm}$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (-4,0) ellipse (1 and 0.3);\n\\draw (-5,0) -- (-5,2.5);\n\\draw (-3,0) -- (-3,2.5);\n\\draw (-4,2.5) ellipse (1 and 0.3);\n\\node[left] at (-5, 1.25) {$15\\text{ cm}$};\n\\draw[dashed] (-4,2.5) -- (-3,2.5) node[midway, above] {$4\\text{ cm}$};\n\\draw[->, thick] (-1.5, 1.25) -- (0, 1.25) node[midway, above] {\\small melted};\n\\draw (3,0) ellipse (2 and 0.4);\n\\draw (1,0) -- (3,3.5) -- (5,0);\n\\draw[dashed] (3,0) -- (5,0) node[midway, below] {$12\\text{ cm}$};\n\\node[right] at (6,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the exact volume of the metal cylinder. Give your answer in terms of $\\pi$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the perpendicular height of the resulting cone is $5\\text{ cm}$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the exact total surface area of the cone. Give your answer in terms of $\\pi$.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $240\\pi$ & 2 & M1 for $\\pi \\times 4^2 \\times 15$ \\\\ \\hline\n(b) & $5$ & 2 & M1 for $\\dfrac{1}{3} \\times \\pi \\times 12^2 \\times h = 240\\pi$ \\\\ \\hline\n& & & A1 for $48\\pi h = 240\\pi$ leading to $h = 5$ \\\\ \\hline\n(c) & $300\\pi$ & 3 & M1 for $l = \\sqrt{12^2 + 5^2}$ or $13$ \\\\ \\hline\n& & & M1 for $\\pi \\times 12 \\times 13$ or $156\\pi$ \\\\ \\hline\n& & & A1 for $156\\pi + 144\\pi = 300\\pi$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 7,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_496",
+        "question_paths": [
+            "images/q_496.png"
+        ],
+        "ms_paths": [
+            "images/ms_496.png"
+        ],
+        "question_code": "$VABCD$ is a solid right pyramid with a square base $ABCD$. \nThe length of each side of the square base is $4\\sqrt{2}$ cm. \nThe slant edge of the pyramid, $VA$, is $5$ cm. \nThe vertex $V$ is directly above the centre of the base, $O$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (3,-1);\n\\coordinate (C) at (5,0);\n\\coordinate (D) at (2,1);\n\\coordinate (O) at (2.5,0);\n\\coordinate (V) at (2.5,4);\n\\draw[thick] (A) -- (B) -- (C);\n\\draw[thick, dashed] (C) -- (D) -- (A);\n\\draw[thick] (V) -- (A);\n\\draw[thick] (V) -- (B);\n\\draw[thick] (V) -- (C);\n\\draw[thick, dashed] (V) -- (D);\n\\draw[thick, dashed] (A) -- (C);\n\\draw[thick, dashed] (B) -- (D);\n\\draw[thick, dashed] (V) -- (O);\n\\node[left] at (A) {$A$};\n\\node[below] at (B) {$B$};\n\\node[right] at (C) {$C$};\n\\node[above right] at (D) {$D$};\n\\node[above] at (V) {$V$};\n\\node[below] at (O) {$O$};\n\\node at (6, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Show that the vertical height, $VO$, is $3$ cm.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Calculate the exact total volume of the pyramid.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Correct proof & $3$ & M1 for diagonal $AC^2 = (4\\sqrt{2})^2 + (4\\sqrt{2})^2 = 64$ \\\\ \\hline\n& & & M1 for obtaining $AO = 4$ \\\\ \\hline\n& & & A1 for $VO = \\sqrt{5^2 - 4^2} = 3$ \\\\ \\hline\n(b) & $32$ & $2$ & M1 for $\\dfrac{1}{3} \\times (4\\sqrt{2})^2 \\times 3$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 5,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_497",
+        "question_paths": [
+            "images/q_497.png"
+        ],
+        "ms_paths": [
+            "images/ms_497.png"
+        ],
+        "question_code": "A composite solid is formed by attaching a right circular cone to a solid hemisphere of radius $3$ cm. \nThe circular base of the cone completely covers the flat surface of the hemisphere. \nThe vertical height of the cone is $4$ cm.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (2,0) arc (0:-180:2 and 2);\n\\draw[thick, dashed] (2,0) arc (0:180:2 and 0.6);\n\\draw[thick] (2,0) arc (0:-180:2 and 0.6);\n\\draw[thick] (-2,0) -- (0,4) -- (2,0);\n\\draw[dashed] (0,0) -- (2,0) node[midway, below] {$3$\\,cm};\n\\draw[dashed] (0,0) -- (0,4) node[midway, left] {$4$\\,cm};\n\\node at (5, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the exact total volume of the composite solid, giving your answer in terms of $\\pi$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the exact total surface area of the composite solid, giving your answer in terms of $\\pi$.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $30\\pi$ & $3$ & M1 for cone volume $\\dfrac{1}{3}\\pi(3)^2(4)$ \\\\ \\hline\n& & & M1 for hemisphere volume $\\dfrac{1}{2}\\left(\\dfrac{4}{3}\\pi(3)^3\\right)$ \\\\ \\hline\n(b) & $33\\pi$ & $3$ & M1 for slant height $l = \\sqrt{3^2 + 4^2} = 5$ \\\\ \\hline\n& & & M1 for cone CSA $\\pi(3)(5)$ or hemisphere SA $2\\pi(3)^2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_498",
+        "question_paths": [
+            "images/q_498.png"
+        ],
+        "ms_paths": [
+            "images/ms_498.png"
+        ],
+        "question_code": "A solid prism of length $10$ cm has a uniform cross-section that is a sector of a circle with radius $6$ cm and a sector angle of $60^\\circ$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (O) at (0,0);\n\\coordinate (A) at (3,0);\n\\coordinate (B) at (1.5,2.6);\n\\draw[thick] (O) -- (A) arc (0:60:3) -- cycle;\n\\coordinate (O2) at (4,2);\n\\coordinate (A2) at (7,2);\n\\coordinate (B2) at (5.5,4.6);\n\\draw[thick] (A) -- (A2) arc (0:60:3) -- (B2) -- (B);\n\\draw[thick, dashed] (O) -- (O2) -- (A2);\n\\draw[thick, dashed] (O2) -- (B2);\n\\draw (0.6,0) arc (0:60:0.6);\n\\node at (0.9, 0.3) {$60^\\circ$};\n\\node[below] at (1.5,0) {$6$};\n\\node[below right] at (5,1) {$10$};\n\\node at (9, 3) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] (a) Show that the area of the cross-section is $6\\pi$ cm$^2$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] (b) Calculate the exact total volume of the prism.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] (c) Calculate the exact total surface area of the prism, giving your answer in the form $a + b\\pi$.\n\\examanswerslot{2cm}{0.25}{4}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Correct proof & $2$ & M1 for $\\dfrac{60}{360} \\times \\pi \\times 6^2$ \\\\ \\hline\n& & & A1 for obtaining $6\\pi$ without error \\\\ \\hline\n(b) & $60\\pi$ & $1$ & B1 for $6\\pi \\times 10$ \\\\ \\hline\n(c) & $120 + 32\\pi$ & $4$ & M1 for two rectangular faces $2 \\times (6 \\times 10) = 120$ \\\\ \\hline\n& & & M1 for curved surface area $\\left(\\dfrac{60}{360} \\times 2\\pi \\times 6\\right) \\times 10$ \\\\ \\hline\n& & & M1 for sum of two sectors and curved surface $2(6\\pi) + 20\\pi$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 7,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_499",
+        "question_paths": [
+            "images/q_499.png"
+        ],
+        "ms_paths": [
+            "images/ms_499.png"
+        ],
+        "question_code": "A right circular cylinder has a base radius of $r$ and a vertical height of $h$. A right circular cone has a base radius of $2r$ and a vertical height of $H$. The volume of the cylinder is exactly equal to the volume of the cone.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.5]\n\\draw[thick] (2,0) arc (180:360:1 and 0.3);\n\\draw[thick,dashed] (2,0) arc (180:0:1 and 0.3);\n\\draw[thick] (2,0) -- (2,3);\n\\draw[thick] (4,0) -- (4,3);\n\\draw[thick] (2,3) arc (180:360:1 and 0.3);\n\\draw[thick] (2,3) arc (180:0:1 and 0.3);\n\\draw[dashed] (3,0) -- (4,0) node[midway, below] {$r$};\n\\draw[dashed] (3,0) -- (3,3) node[midway, left] {$h$};\n\n\\draw[thick] (5,0) arc (180:360:1.5 and 0.4);\n\\draw[thick, dashed] (5,0) arc (180:0:1.5 and 0.4);\n\\draw[thick] (5,0) -- (6.5,3) -- (8,0);\n\\draw[dashed] (6.5,0) -- (8,0) node[midway, below] {$2r$};\n\\draw[dashed] (6.5,0) -- (6.5,3) node[midway, left] {$H$};\n\n\\node at (10, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] (a) Show that the height of the cone, $H$, is given by the equation:\n\n\n$$H = \\dfrac{3}{4}h$$\n\n\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] (b) Given that $h = 16$ cm and $r = 5$ cm, calculate the exact curved surface area of the cone.\n\\examanswerslot{2cm}{0.25}{4}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Correct proof & $2$ & M1 for $\\pi r^2 h = \\dfrac{1}{3}\\pi (2r)^2 H$ \\\\ \\hline\n& & & A1 for cancelling terms to establish $H = \\dfrac{3}{4}h$ \\\\ \\hline\n(b) & $20\\pi\\sqrt{61}$ & $4$ & B1 for finding $H = 12$ and cone radius $= 10$ \\\\ \\hline\n& & & M1 for slant height $l = \\sqrt{10^2 + 12^2}$ \\\\ \\hline\n& & & M1 for CSA formula $\\pi \\times 10 \\times \\sqrt{244}$ \\\\ \\hline\n& & & A1 for simplifying $\\sqrt{244}$ to $2\\sqrt{61}$ and correctly finishing \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Surface Area and Volume of 3D Solids"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_500",
+        "question_paths": [
+            "images/q_500.png"
+        ],
+        "ms_paths": [
+            "images/ms_500.png"
+        ],
+        "question_code": "Point $D$ is on flat horizontal ground. A vertical tower $EF$ has its base $E$ on the ground and top at $F$.\nThe distance $DE$ is $50\\text{ m}$.\nThe angle of elevation of $F$ from $D$ is $60^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) -- (3,0) node[midway, below] {$50\\text{ m}$};\n\\draw[thick] (3,0) -- (3,4);\n\\draw[thick] (0,0) -- (3,4);\n\\draw (2.8,0) -- (2.8,0.2) -- (3,0.2);\n\\node[below left] at (0,0) {$D$};\n\\node[below right] at (3,0) {$E$};\n\\node[above] at (3,4) {$F$};\n\\draw (0.8,0) arc (0:53:0.8);\n\\node at (1.2,0.4) {$60^\\circ$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that the height of the tower $EF$ is $50\\sqrt{3}\\text{ m}$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the exact straight-line distance $DF$.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Find the shortest distance from $E$ to the line $DF$.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Correct proof & $2$ & M1 for $\\tan(60^\\circ) = \\dfrac{EF}{50}$ \\\\ \\hline\n& & & A1 for $50 \\times \\sqrt{3} = 50\\sqrt{3}$ with no errors seen \\\\ \\hline\n(b) & $100$ & $2$ & M1 for $\\cos(60^\\circ) = \\dfrac{50}{DF}$ or $50^2 + (50\\sqrt{3})^2 = DF^2$ \\\\ \\hline\n(c) & $25\\sqrt{3}$ & $2$ & M1 for $50 \\times \\sin(60^\\circ)$ or $\\dfrac{1}{2} \\times 50 \\times 50\\sqrt{3} = \\dfrac{1}{2} \\times 100 \\times h$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_501",
+        "question_paths": [
+            "images/q_501.png"
+        ],
+        "ms_paths": [
+            "images/ms_501.png"
+        ],
+        "question_code": "A vertical flagpole, $BC$, has height $12\\text{ m}$.\nThe point $B$ is on horizontal ground and $C$ is the top of the flagpole.\nThe point $A$ is on the same horizontal ground.\nThe angle of elevation of $C$ from $A$ is $45^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) -- (4,0) node[midway, below] {};\n\\draw[thick] (4,0) -- (4,4) node[midway, right] {$12\\text{ m}$};\n\\draw[thick] (0,0) -- (4,4);\n\\draw (3.8,0) -- (3.8,0.2) -- (4,0.2);\n\\node[below left] at (0,0) {$A$};\n\\node[below right] at (4,0) {$B$};\n\\node[above] at (4,4) {$C$};\n\\draw (0.8,0) arc (0:45:0.8);\n\\node at (1.3,0.4) {$45^\\circ$};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the exact distance $AB$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Calculate the exact length of the line $AC$.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Calculate the shortest distance from $B$ to the line $AC$.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $12$ & $1$ & B1 for identifying isosceles triangle properties or $\\tan(45^\\circ) = 1$ \\\\ \\hline\n(b) & $12\\sqrt{2}$ & $2$ & M1 for $\\sin(45^\\circ) = \\dfrac{12}{AC}$ or $\\cos(45^\\circ) = \\dfrac{12}{AC}$ or $12^2 + 12^2 = AC^2$ \\\\ \\hline\n(c) & $6\\sqrt{2}$ & $2$ & M1 for $12 \\times \\sin(45^\\circ)$ or $\\dfrac{1}{2} \\times 12 \\times 12 = \\dfrac{1}{2} \\times 12\\sqrt{2} \\times h$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_502",
+        "question_paths": [
+            "images/q_502.png"
+        ],
+        "ms_paths": [
+            "images/ms_502.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] The diagram shows two right-angled triangles, $ABC$ and $ACD$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (B) at (0,0);\n\\coordinate (A) at (0,4);\n\\coordinate (C) at (3,0);\n\\coordinate (D) at (5.3,1.7);\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n\\draw[thick] (A) -- (C) -- (D) -- cycle;\n\\pic [draw, angle radius=3mm] {right angle = A--B--C};\n\\pic [draw, angle radius=3mm] {right angle = A--C--D};\n\\node[left] at (A) {$A$};\n\\node[below left] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\\node[right] at (D) {$D$};\n\\node[left] at (0,2) {$4$};\n\\node[below] at (1.5,0) {$3$};\n\\pic [draw, \"$\\,30^\\circ$\", angle radius=7mm, angle eccentricity=1.5] {angle = C--A--D};\n\\node at (8, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n$AB = 4$ and $BC = 3$.\nAngle $ABC = 90^\\circ$ and angle $ACD = 90^\\circ$.\nAngle $CAD = 30^\\circ$.\n[SUBENUM_START]\n[ITEM] Calculate the exact length of $AC$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Calculate the exact length of $CD$.\n\\examanswerslot{3.5cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $5$ & 2 & M1 for $\\sqrt{4^2 + 3^2}$ \\\\ \\hline\n(b) & $\\dfrac{5\\sqrt{3}}{3}$ or $\\dfrac{5}{\\sqrt{3}}$ & 3 & M1 for $\\tan(30^\\circ) = \\dfrac{CD}{5}$ or equivalent \\\\ \\hline\n& & & M1 for $5 \\times \\dfrac{1}{\\sqrt{3}}$ or $5 \\times \\dfrac{\\sqrt{3}}{3}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_503",
+        "question_paths": [
+            "images/q_503.png"
+        ],
+        "ms_paths": [
+            "images/ms_503.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] In triangle $KLM$, angle $MKL = 90^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (K) at (0,0);\n\\coordinate (M) at (0,3);\n\\coordinate (L) at (5.2,0);\n\\draw[thick] (M) -- (K) -- (L) -- cycle;\n\\pic [draw, angle radius=3mm] {right angle = M--K--L};\n\\node[below left] at (K) {$K$};\n\\node[above left] at (M) {$M$};\n\\node[below right] at (L) {$L$};\n\\node[left] at (0,1.5) {$7$};\n\\node[below] at (2.6,0) {$7\\sqrt{3}$};\n\\node at (8, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n$MK = 7$ and $KL = 7\\sqrt{3}$.\nCalculate the exact size of angle $KML$.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n& $60^\\circ$ & 3 & M1 for $\\tan(\\angle KML) = \\dfrac{7\\sqrt{3}}{7}$ \\\\ \\hline\n& & & M1 for $\\tan(\\angle KML) = \\sqrt{3}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 3,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_504",
+        "question_paths": [
+            "images/q_504.png"
+        ],
+        "ms_paths": [
+            "images/ms_504.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] The diagram shows a right-angled triangle $EFG$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (F) at (0,0);\n\\coordinate (E) at (0,3);\n\\coordinate (G) at (5.2,0);\n\\draw[thick] (E) -- (F) -- (G) -- cycle;\n\\pic [draw, angle radius=3mm] {right angle = E--F--G};\n\\node[below left] at (F) {$F$};\n\\node[above] at (E) {$E$};\n\\node[below right] at (G) {$G$};\n\\pic [draw, \"$30^\\circ$\", angle radius=9mm, angle eccentricity=1.4] {angle = E--G--F};\n\\node[left] at (0,1.5) {$8$};\n\\node at (8, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nAngle $EFG = 90^\\circ$ and angle $EGF = 30^\\circ$.\n$EF = 8$.\n[SUBENUM_START]\n[ITEM] Show that the exact length of $FG$ is $8\\sqrt{3}$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the exact area of triangle $EFG$.\n\\examanswerslot{3.5cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & correctly shown & 2 & M1 for $\\tan(30^\\circ) = \\dfrac{8}{FG}$ \\\\ \\hline\n& & & A1 for $FG = 8 \\div \\dfrac{1}{\\sqrt{3}} = 8\\sqrt{3}$ \\\\ \\hline\n(b) & $32\\sqrt{3}$ & 2 & M1 for $\\dfrac{1}{2} \\times 8 \\times 8\\sqrt{3}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 4,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_505",
+        "question_paths": [
+            "images/q_505.png"
+        ],
+        "ms_paths": [
+            "images/ms_505.png"
+        ],
+        "question_code": "The diagram shows a right-angled triangle $PQR$ with angle $PQR = 90^\\circ$.\n$PQ = 5$ and $QR = 12$.\nThe point $S$ lies on $PR$ such that $QS$ is the perpendicular distance from $Q$ to the line $PR$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (Q) at (0,0);\n\\coordinate (P) at (0,2.5);\n\\coordinate (R) at (6,0);\n\\coordinate (S) at (0.88, 2.12);\n\\draw[thick] (P) node[above] {$P$} -- (Q) node[below left] {$Q$} -- (R) node[below right] {$R$} -- cycle;\n\\draw[dashed] (Q) -- (S) node[above right] {$S$};\n\\pic [draw, thick, angle radius=3mm] {right angle = P--Q--R};\n\\pic [draw, thick, angle radius=2mm] {right angle = Q--S--R};\n\\node[left] at (0,1.25) {$5$};\n\\node[below] at (3,0) {$12$};\n\\node at (7,1) {\\textbf{NOT TO SCALE}};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the length of $PR$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Calculate the shortest distance from $Q$ to the line $PR$. Write your answer as an exact fraction.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $13$ & 1 & B1 for $\\sqrt{5^2 + 12^2}$ \\\\ \\hline\n(b) & $\\dfrac{60}{13}$ & 2 & M1 for $\\dfrac{1}{2} \\times 5 \\times 12 = \\dfrac{1}{2} \\times 13 \\times QS$ OR $\\sin(R) = \\dfrac{5}{13}$ and $\\sin(R) = \\dfrac{QS}{12}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 3,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_506",
+        "question_paths": [
+            "images/q_506.png"
+        ],
+        "ms_paths": [
+            "images/ms_506.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (B) at (0,0);\n\\coordinate (C) at (4,0);\n\\coordinate (A) at (0,3);\n\\draw[thick] (B) -- (C) -- (A) -- cycle;\n\\pic [draw, angle radius=0.4cm] {right angle = A--B--C};\n\\node[below] at (B) {$B$};\n\\node[right] at (C) {$C$};\n\\node[above] at (A) {$A$};\n\\node[left] at (0, 1.5) {$8.4$};\n\\node[below] at (2, 0) {$5.2$};\n\\node at (7, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe diagram shows a right-angled triangle $ABC$.\n$AB = 8.4$ cm and $BC = 5.2$ cm.\n[ENUM_START]\n[ITEM] Calculate the length of $AC$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the size of angle $BAC$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $9.88$ or $9.879\\dots$ & 3 & M2 for $\\sqrt{8.4^2 + 5.2^2}$ or M1 for $8.4^2 + 5.2^2 = AC^2$ \\\\ \\hline\n(b) & $31.8$ or $31.75\\dots$ to $31.76\\dots$ & 2 & M1 for $\\tan(BAC) = \\dfrac{5.2}{8.4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_507",
+        "question_paths": [
+            "images/q_507.png"
+        ],
+        "ms_paths": [
+            "images/ms_507.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (Q) at (0,0);\n\\coordinate (R) at (4.5,0);\n\\coordinate (P) at (0,3.5);\n\\draw[thick] (P) -- (Q) -- (R) -- cycle;\n\\pic [draw, angle radius=0.4cm] {right angle = P--Q--R};\n\\pic [draw, angle radius=0.7cm] {angle = P--R--Q};\n\\node[below] at (Q) {$Q$};\n\\node[right] at (R) {$R$};\n\\node[above] at (P) {$P$};\n\\node at (3.4, 0.3) {$42.6^\\circ$};\n\\node[above right] at (2.25, 1.75) {$17.3$};\n\\node at (8, 1.75) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe diagram shows a right-angled triangle $PQR$.\n$PR = 17.3$ m and angle $PRQ = 42.6^\\circ$.\n[ENUM_START]\n[ITEM] Calculate the length of $PQ$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the length of $QR$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $11.7$ or $11.70\\dots$ & 2 & M1 for $\\sin(42.6^\\circ) = \\dfrac{PQ}{17.3}$ \\\\ \\hline\n(b) & $12.7$ or $12.73\\dots$ & 2 & M1 for $\\cos(42.6^\\circ) = \\dfrac{QR}{17.3}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_508",
+        "question_paths": [
+            "images/q_508.png"
+        ],
+        "ms_paths": [
+            "images/ms_508.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (B) at (0,0);\n\\coordinate (C) at (4,0);\n\\coordinate (A) at (0,3);\n\\coordinate (D) at (4.8, 1.8);\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n\\draw[thick] (A) -- (C) -- (D) -- cycle;\n\\pic [draw, angle radius=0.3cm] {right angle = A--B--C};\n\\pic [draw, angle radius=0.3cm] {right angle = A--C--D};\n\\node[left] at (B) {$B$};\n\\node[below] at (C) {$C$};\n\\node[left] at (A) {$A$};\n\\node[right] at (D) {$D$};\n\\node[left] at (0, 1.5) {$7.1$};\n\\node[below] at (2, 0) {$4.8$};\n\\node[below right] at (4.4, 0.9) {$3.9$};\n\\node at (8, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe diagram shows a quadrilateral $ABCD$ formed by two right-angled triangles $ABC$ and $ACD$.\n$AB = 7.1$ cm, $BC = 4.8$ cm and $CD = 3.9$ cm.\n[ENUM_START]\n[ITEM] Calculate the length of $AC$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the size of angle $CAD$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $8.57$ or $8.570\\dots$ & 3 & M2 for $\\sqrt{7.1^2 + 4.8^2}$ or M1 for $7.1^2 + 4.8^2 = AC^2$ \\\\ \\hline\n(b) & $24.5$ or $24.47\\dots$ & 2 & M1 for $\\tan(CAD) = \\dfrac{3.9}{8.57}$ or $\\tan(CAD) = \\dfrac{3.9}{\\sqrt{73.45}}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_509",
+        "question_paths": [
+            "images/q_509.png"
+        ],
+        "ms_paths": [
+            "images/ms_509.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (C) at (0,0);\n\\coordinate (B) at (6,0);\n\\coordinate (A) at (0,3.5);\n\\draw[thick] (C) -- (B) -- (A) -- cycle;\n\\draw[dashed] (-1,0) -- (C);\n\\draw[dashed] (B) -- (7,0);\n\\pic [draw, angle radius=0.3cm] {right angle = A--C--B};\n\\node[below] at (C) {$C$};\n\\node[below] at (B) {$B$};\n\\node[above] at (A) {$A$};\n\\node[left] at (0, 1.75) {$32.4$};\n\\node[below] at (3, 0) {$51.8$};\n\\node at (9, 1.75) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe diagram shows a point $A$ which is vertically above a point $C$.\nPoint $B$ is on the same horizontal level as $C$.\n$AC = 32.4$ m and $BC = 51.8$ m.\n[ENUM_START]\n[ITEM] Calculate the angle of elevation of $A$ from $B$, giving your answer correct to one decimal place.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the distance $AB$.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $32.0$ & 2 & M1 for $\\tan(B) = \\dfrac{32.4}{51.8}$ \\\\ \\hline\n(b) & $61.1$ or $61.10\\dots$ & 3 & M2 for $\\sqrt{32.4^2 + 51.8^2}$ or M1 for $32.4^2 + 51.8^2 = AB^2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_510",
+        "question_paths": [
+            "images/q_510.png"
+        ],
+        "ms_paths": [
+            "images/ms_510.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (D) at (0,0);\n\\coordinate (F) at (7,0);\n\\coordinate (E) at (3,4);\n\\coordinate (G) at (3,0);\n\\draw[thick] (D) -- (E) -- (F) -- cycle;\n\\draw[dashed] (E) -- (G);\n\\pic [draw, angle radius=0.3cm] {right angle = E--G--F};\n\\pic [draw, angle radius=0.7cm] {angle = G--D--E};\n\\node[left] at (D) {$D$};\n\\node[above] at (E) {$E$};\n\\node[right] at (F) {$F$};\n\\node[below] at (G) {$G$};\n\\node[above left] at (1.5, 2) {$14.2$};\n\\node at (1.1, 0.3) {$58^\\circ$};\n\\node at (9, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe diagram shows a triangle $DEF$.\nA point $G$ lies on the line $DF$ such that $EG$ represents the shortest distance from $E$ to $DF$.\n$DE = 14.2$ cm and angle $EDG = 58^\\circ$.\n[ENUM_START]\n[ITEM] Calculate the shortest distance from $E$ to the line $DF$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the length of $DG$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $12.0$ or $12.04\\dots$ & 2 & M1 for $\\sin(58^\\circ) = \\dfrac{EG}{14.2}$ \\\\ \\hline\n(b) & $7.52$ or $7.524\\dots$ & 2 & M1 for $\\cos(58^\\circ) = \\dfrac{DG}{14.2}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_511",
+        "question_paths": [
+            "images/q_511.png"
+        ],
+        "ms_paths": [
+            "images/ms_511.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\usetikzlibrary{angles,quotes}\n\\coordinate (C) at (0,0);\n\\coordinate (A) at (6,0);\n\\coordinate (D) at (2.5,0);\n\\coordinate (B) at (0,3.5);\n\\draw[thick] (A) -- (C) -- (B) -- cycle;\n\\draw[thick] (B) -- (D);\n\\draw[dashed] (B) -- (3,3.5);\n\\node[below] at (C) {$C$};\n\\node[below] at (A) {$A$};\n\\node[below] at (D) {$D$};\n\\node[above] at (B) {$B$};\n\\pic [draw, angle radius=0.3cm] {right angle = B--C--A};\n\\pic [draw, angle radius=0.8cm, \"$28.4^\\circ$\", angle eccentricity=1.5] {angle = B--A--C};\n\\node[below] at (4.25,0) {$15.2$};\n\\node[right] at (6.5,1.75) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe points $A$, $C$ and $D$ lie on horizontal ground. $B$ is vertically above $C$.\nThe distance $AC = 45.8$,m and $D$ lies on $AC$ such that $AD = 15.2$,m.\nThe angle of elevation of $B$ from $A$ is $28.4^\\circ$.\n[ENUM_START]\n[ITEM] Calculate the height $BC$.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Calculate the angle of depression of $D$ from $B$.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $24.8$ or $24.76...$ & 2 & M1 for $\\tan(28.4^\\circ) = \\dfrac{BC}{45.8}$ \\\\ \\hline\n(b) & $39.0$ or $38.98...$ & 3 & M1 for $45.8 - 15.2$ or $30.6$, M1 for $\\tan(D) = \\dfrac{24.76...}{30.6}$ oe \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_512",
+        "question_paths": [
+            "images/q_512.png"
+        ],
+        "ms_paths": [
+            "images/ms_512.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\usetikzlibrary{angles,quotes}\n\\coordinate (Y) at (0,0);\n\\coordinate (Z) at (5,0);\n\\coordinate (X) at (2.2,3.2);\n\\draw[thick] (Y) -- (Z);\n\\draw[thick] (Y) -- (X);\n\\node[left] at (Y) {$Y$};\n\\node[right] at (Z) {$Z$};\n\\node[above] at (X) {$X$};\n\\pic [draw, angle radius=1cm, \"$51.3^\\circ$\", angle eccentricity=1.6] {angle = Z--Y--X};\n\\node[above left] at (1.1,1.6) {$24.7$\\,cm};\n\\node[right] at (6,1.6) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe point $X$ is $24.7$\\,cm from $Y$. The line $YZ$ is horizontal.\nThe angle $XYZ$ is $51.3^\\circ$.\n[ENUM_START]\n[ITEM] Calculate the shortest distance from $X$ to the line $YZ$.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $19.3$ or $19.27...$ & 2 & M1 for $\\sin(51.3^\\circ) = \\dfrac{d}{24.7}$ oe \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 2,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_513",
+        "question_paths": [
+            "images/q_513.png"
+        ],
+        "ms_paths": [
+            "images/ms_513.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\usetikzlibrary{angles,quotes}\n\\coordinate (D) at (0,0);\n\\coordinate (C) at (5,0);\n\\coordinate (A) at (0,3);\n\\coordinate (B) at (3.2,3);\n\\draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;\n\\node[left] at (A) {$A$};\n\\node[above] at (B) {$B$};\n\\node[right] at (C) {$C$};\n\\node[left] at (D) {$D$};\n\\pic [draw, angle radius=0.3cm] {right angle = B--A--D};\n\\pic [draw, angle radius=0.3cm] {right angle = A--D--C};\n\\node[left] at (0,1.5) {$11.2$};\n\\node[above] at (1.6,3) {$14.3$};\n\\node[below] at (2.5,0) {$21.7$};\n\\node[right] at (6,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe diagram shows a trapezium $ABCD$ where $AB$ is parallel to $DC$.\nAngle $DAB = 90^\\circ$ and angle $ADC = 90^\\circ$.\n$AB = 14.3$,cm, $DC = 21.7$,cm and $AD = 11.2$,cm.\n[ENUM_START]\n[ITEM] Calculate the length of $BC$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Calculate angle $BCD$.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $13.4$ or $13.42...$ & 3 & M1 for $21.7 - 14.3$ or $7.4$, M1 for $11.2^2 + 7.4^2$ \\\\ \\hline\n(b) & $56.5$ or $56.54...$ & 2 & M1 for $\\tan(C) = \\dfrac{11.2}{7.4}$ oe \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_514",
+        "question_paths": [
+            "images/q_514.png"
+        ],
+        "ms_paths": [
+            "images/ms_514.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\usetikzlibrary{angles,quotes}\n\\coordinate (Q) at (0,0);\n\\coordinate (P) at (0,3.8);\n\\coordinate (R) at (2.5,0);\n\\coordinate (S) at (5.2, 2.5);\n\\draw[thick] (P) -- (Q) -- (R) -- cycle;\n\\draw[thick] (P) -- (R) -- (S) -- cycle;\n\\node[left] at (P) {$P$};\n\\node[left] at (Q) {$Q$};\n\\node[below] at (R) {$R$};\n\\node[right] at (S) {$S$};\n\\pic [draw, angle radius=0.3cm] {right angle = P--Q--R};\n\\pic [draw, angle radius=0.3cm] {right angle = P--R--S};\n\\pic [draw, angle radius=1cm, \"$34.1^\\circ$\", angle eccentricity=1.6] {angle = P--S--R};\n\\node[left] at (0,1.9) {$15.2$\\,cm};\n\\node[below] at (1.25,0) {$8.6$\\,cm};\n\\node[right] at (6.5, 1.9) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe diagram shows two right-angled triangles, $PQR$ and $PRS$.\n$PQ = 15.2$\\,cm, $QR = 8.6$\\,cm and angle $PSR = 34.1^\\circ$.\n[ENUM_START]\n[ITEM] Calculate the length of $PR$.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Calculate the length of $RS$.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $17.5$ or $17.46...$ & 2 & M1 for $15.2^2 + 8.6^2$ \\\\ \\hline\n(b) & $25.8$ or $25.79...$ & 2 & M1 for $\\tan(34.1^\\circ) = \\dfrac{17.46...}{RS}$ oe \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_515",
+        "question_paths": [
+            "images/q_515.png"
+        ],
+        "ms_paths": [
+            "images/ms_515.png"
+        ],
+        "question_code": "\\begin{center}\n\\begin{tikzpicture}\n\\usetikzlibrary{angles,quotes}\n\\coordinate (B) at (0,0);\n\\coordinate (C) at (4,0);\n\\coordinate (A) at (0,3);\n\\draw[thick] (B) -- (C) -- (A) -- cycle;\n\\node[below left] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\\node[above left] at (A) {$A$};\n\\pic [draw, angle radius=0.3cm] {right angle = A--B--C};\n\\node[left] at (0,1.5) {$12.4$};\n\\node[below] at (2,0) {$7.8$};\n\\node[right] at (5,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nIn triangle $ABC$, angle $ABC = 90^\\circ$, $AB = 12.4$,cm and $BC = 7.8$,cm.\n[ENUM_START]\n[ITEM] Calculate $AC$.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Calculate angle $BAC$.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $14.6$ or $14.64...$ & 2 & M1 for $12.4^2 + 7.8^2$ \\\\ \\hline\n(b) & $32.2$ or $32.17...$ & 2 & M1 for $\\tan(BAC) = \\dfrac{7.8}{12.4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_516",
+        "question_paths": [
+            "images/q_516.png"
+        ],
+        "ms_paths": [
+            "images/ms_516.png"
+        ],
+        "question_code": "The diagram shows a triangle $LMN$.\nThe point $P$ lies on $LN$ such that angle $LPM = 90^\\circ$.\n$LM = 11.4$ cm, $MN = 16.2$ cm and angle $MLP = 62^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (P) at (0,0);\n\\coordinate (L) at (-2.5,0);\n\\coordinate (N) at (5,0);\n\\coordinate (M) at (0,4);\n\\draw[thick] (L) -- (M) -- (N) -- cycle;\n\\draw[thick] (M) -- (P);\n\\draw (P) ++(0,0.3) -- ++(0.3,0) -- ++(0,-0.3);\n\\pic[draw, angle radius=1.5cm] {angle = P--L--M};\n\\node at (-1.7, 0.4) {$62^\\circ$};\n\\node[above left] at (-1.25, 2) {$11.4$ cm};\n\\node[above right] at (2.5, 2) {$16.2$ cm};\n\\node[left] at (L) {$L$};\n\\node[above] at (M) {$M$};\n\\node[right] at (N) {$N$};\n\\node[below] at (P) {$P$};\n\\node at (7, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Show that $MP = 10.07$ correct to $2$ decimal places.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the length of $PN$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the size of angle $MNP$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\na & $11.4 \\times \\sin(62^\\circ) = 10.06\\ldots$ & 2 & M1 for $\\sin(62^\\circ) = \\dfrac{MP}{11.4}$ \\\\ \\hline\nb & $12.7$ or $12.69\\ldots$ & 3 & M2 for $\\sqrt{16.2^2 - 10.07^2}$ or M1 for $PN^2 + 10.07^2 = 16.2^2$ \\\\ \\hline\nc & $38.4$ or $38.41\\ldots$ & 2 & M1 for $\\sin(N) = \\dfrac{10.07}{16.2}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 7,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_517",
+        "question_paths": [
+            "images/q_517.png"
+        ],
+        "ms_paths": [
+            "images/ms_517.png"
+        ],
+        "question_code": "The points $A$, $B$ and $C$ lie on a vertical plane.\nThe line segment $AB$ is horizontal and $AB = 24.5$ m.\nThe point $C$ is vertically above $B$.\nThe angle of elevation of $C$ from $A$ is $38.2^\\circ$.\nThe point $D$ lies on the line segment $AB$. The angle of depression of $D$ from $C$ is $51.7^\\circ$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (6,0);\n\\coordinate (C) at (6,4);\n\\coordinate (D) at (3.5,0);\n\\coordinate (C_horiz) at (2,4);\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n\\draw[thick] (C) -- (D);\n\\draw[dashed] (C) -- (C_horiz);\n\\draw (B) ++(-0.3,0) -- ++(0,0.3) -- ++(0.3,0);\n\\pic[draw, angle radius=0.9cm] {angle = B--A--C};\n\\node at (1.4, 0.4) {$38.2^\\circ$};\n\\draw[Latex-Latex] (0,-1) -- (6,-1);\n\\node[fill=white] at (3,-1) {24.5 m};\n\\node[below] at (A) {$A$};\n\\node[below] at (B) {$B$};\n\\node[above] at (C) {$C$};\n\\node[below] at (D) {$D$};\n\\node at (8, 2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n[ENUM_START]\n[ITEM] Calculate the vertical height $BC$, giving your answer to one decimal place.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the length of $BD$, giving your answer to one decimal place.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Calculate the length of $AD$, giving your answer to one decimal place.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\na & $19.3$ & 2 & M1 for $24.5 \\times \\tan(38.2^\\circ)$ \\\\ \\hline\nb & $15.2$ & 2 & M1 for $\\dfrac{19.3}{\\tan(51.7^\\circ)}$ \\\\ \\hline\nc & $9.3$ & 1 & B1 for $24.5 - \\text{their (b)}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_518",
+        "question_paths": [
+            "images/q_518.png"
+        ],
+        "ms_paths": [
+            "images/ms_518.png"
+        ],
+        "question_code": "The diagram shows a geometric framework forming a quadrilateral $EFGH$.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\coordinate (E) at (0,0);\n\\coordinate (F) at (6,0);\n\\coordinate (H) at (0,4);\n\\coordinate (G) at (8.5, 6);\n\\draw [thick] (E) -- (F) -- (G) -- (H) -- cycle;\n\\draw [thick] (H) -- (F);\n\\pic [draw, thick, angle radius=0.4cm] {right angle = H--E--F};\n\\pic [draw, thick, angle radius=0.4cm] {right angle = H--F--G};\n\\draw (1, 3.4) arc (-35:8:1.3);\n\\node at (1.8, 3.6) {$42^\\circ$};\n\\node[below] at (3,0) {$32.4$};\n\\node[left] at (0,2) {$19.3$};\n\\node[below left] at (E) {$E$};\n\\node[below right] at (F) {$F$};\n\\node[above right] at (G) {$G$};\n\\node[above left] at (H) {$H$};\n\\node at (current bounding box.east) [xshift=2cm] {\\textbf{NOT TO SCALE}};\n\\end{tikzpicture}\n\\end{center}\nAngle $HEF = 90^\\circ$ and angle $HFG = 90^\\circ$.\n$EF = 32.4 \\text{ cm}$, $EH = 19.3 \\text{ cm}$ and angle $FHG = 42^\\circ$.\n[ENUM_START]\n[ITEM] Calculate the size of angle $EHF$.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Calculate the area of the quadrilateral $EFGH$.\n\\examanswerslot{3cm}{0.25}{4}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $59.2^\\circ$ or $59.21 \\dots^\\circ$ & 2 & M1 for $\\tan(EHF) = \\dfrac{32.4}{19.3}$ \\\\ \\hline\n(b) & $953$ or $952.9 \\dots$ & 4 & M1 for $HF = \\sqrt{19.3^2 + 32.4^2}$ or $37.71 \\dots$ \\\\ \\hline\n~ & ~ & ~ & M1 for $37.71 \\dots \\times \\tan(42^\\circ)$ or $33.95 \\dots$ \\\\ \\hline\n~ & ~ & ~ & M1 for $\\dfrac{1}{2} \\times 19.3 \\times 32.4 + \\dfrac{1}{2} \\times 37.71 \\dots \\times 33.95 \\dots$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_519",
+        "question_paths": [
+            "images/q_519.png"
+        ],
+        "ms_paths": [
+            "images/ms_519.png"
+        ],
+        "question_code": "The diagram shows a right-angled trapezium $WXYZ$.\nThe side $WX$ is parallel to $ZY$.\nAngle $XWZ = 90^\\circ$ and angle $WZY = 90^\\circ$.\n$WX = 8.6$ cm, $ZY = 14.3$ cm and angle $WXY = 124^\\circ$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (Z) at (0,0);\n\\coordinate (Y) at (5,0);\n\\coordinate (X) at (3,3);\n\\coordinate (W) at (0,3);\n\\draw[thick] (W) -- (X) -- (Y) -- (Z) -- cycle;\n\\node[above left] at (W) {$W$};\n\\node[above right] at (X) {$X$};\n\\node[below right] at (Y) {$Y$};\n\\node[below left] at (Z) {$Z$};\n\\pic [draw, angle radius=3mm] {right angle = X--W--Z};\n\\pic [draw, angle radius=3mm] {right angle = W--Z--Y};\n\\pic [draw, angle radius=9mm] {angle = W--X--Y};\n\\node at (2.7, 2.7) {$124^\\circ$};\n\\node at (6.5, 1.5) [right] {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Show that the angle $XYZ = 56^\\circ$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the vertical height $WZ$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the full perimeter of the trapezium $WXYZ$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] A mathematically similar trapezium has an area $K$ times the area of $WXYZ$.\nWrite down an expression for the height of this similar trapezium in terms of $K$ and $WZ$.\n\n\n$$\\text{Height} = \\dots\\dots\\dots\\dots\\dots\\dots\\dots\\dots$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $56^\\circ$ & 2 & M1 for identifying internal $\\angle$ drop from $X$ as $124^\\circ - 90^\\circ = 34^\\circ$ and $180^\\circ - 90^\\circ - 34^\\circ = 56^\\circ$ \\\\ \\hline\n(b) & $8.45$ ($8.450\\dots$) & 3 & M2 for $(14.3 - 8.6) \\times \\tan(56^\\circ)$ or M1 for identifying horizontal base segment as $14.3 - 8.6$ \\\\ \\hline\n(c) & $41.5$ ($41.54\\dots$) & 3 & M1 for $XY = \\dfrac{5.7}{\\cos(56^\\circ)}$ and M1 for summing four sides \\\\ \\hline\n(d) & $WZ \\sqrt{K}$ & 2 & M1 for scale factor $\\sqrt{K}$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 10,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_520",
+        "question_paths": [
+            "images/q_520.png"
+        ],
+        "ms_paths": [
+            "images/ms_520.png"
+        ],
+        "question_code": "The diagram shows a triangle $PQR$ with $PQ = PR = 15.6$ cm and $QR = 10.2$ cm.\nThe point $X$ lies on $QR$. The length $PX$ represents the shortest distance from point $P$ to the straight line $QR$.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (Q) at (0,0);\n\\coordinate (R) at (5,0);\n\\coordinate (P) at (2.5, 4);\n\\coordinate (X) at (2.5,0);\n\\draw[thick] (P) -- (Q) -- (R) -- cycle;\n\\draw[thick, dashed] (P) -- (X);\n\\node[above] at (P) {$P$};\n\\node[left] at (Q) {$Q$};\n\\node[right] at (R) {$R$};\n\\node[below] at (X) {$X$};\n\\pic [draw, angle radius=3mm] {right angle = P--X--R};\n\\node at (6.5, 2) [right] {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Explain why the line $PX$ is perpendicular to $QR$.\n\\examanswerslot{3.5cm}{0}{1}\n[ITEM] Show that $PX = 14.7$ cm, correct to $3$ significant figures.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Calculate the angle $PQR$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Point $Y$ is the exact midpoint of $PR$. A straight line is drawn connecting $X$ to $Y$.\nFind the ratio of the area of $\\triangle XYR$ to the area of $\\triangle PQR$ in its simplest integer form.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & The shortest distance from a point to a straight line is always the perpendicular distance. & 1 & Accept valid geometric equivalents \\\\ \\hline\n(b) & $14.74\\dots$ leading to $14.7$ & 3 & M2 for $\\sqrt{15.6^2 - 5.1^2}$ or M1 for $PX^2 + 5.1^2 = 15.6^2$ \\\\ \\hline\n(c) & $70.9^\\circ$ ($70.91\\dots^\\circ$) & 3 & M2 for $\\arccos\\left(\\dfrac{5.1}{15.6}\\right)$ or M1 for $\\cos(\\angle PQR) = \\dfrac{5.1}{15.6}$ \\\\ \\hline\n(d) & $1 : 4$ & 2 & M1 for identifying the base and height are both halved, resulting in an area scale factor of $\\dfrac{1}{4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 9,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_521",
+        "question_paths": [
+            "images/q_521.png"
+        ],
+        "ms_paths": [
+            "images/ms_521.png"
+        ],
+        "question_code": "The diagram shows a quadrilateral $ABCD$.\nAngle $ABD = 90^\\circ$ and angle $BCD = 90^\\circ$.\n$AB = 7.4$ cm, $AD = 12.8$ cm and $CD = 6.3$ cm.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (A) at (0,3);\n\\coordinate (B) at (0,0);\n\\coordinate (D) at (4,0);\n\\coordinate (C) at (0.8,-1.6);\n\\draw[thick] (A) -- (B) -- (D) -- cycle;\n\\draw[thick] (B) -- (C) -- (D);\n\\node[above left] at (A) {$A$};\n\\node[below left] at (B) {$B$};\n\\node[below right] at (D) {$D$};\n\\node[below] at (C) {$C$};\n\\pic [draw, angle radius=3mm] {right angle = A--B--D};\n\\pic [draw, angle radius=3mm] {right angle = B--C--D};\n\\node at (6, 1) [right] {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the length of $BD$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the size of angle $BDC$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the total area of the quadrilateral $ABCD$.\n\\examanswerslot{2cm}{0.25}{4}\n[ITEM] The quadrilateral $ABCD$ forms the uniform cross-section of a solid prism. The volume of the prism is $450$ cm$^3$.\nCalculate the length of the prism.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $10.4$ ($10.44\\dots$) & 3 & M2 for $\\sqrt{12.8^2 - 7.4^2}$ or M1 for $BD^2 + 7.4^2 = 12.8^2$ \\\\ \\hline\n(b) & $52.9^\\circ$ ($52.89\\dots^\\circ$) & 3 & M2 for $\\arccos\\left(\\dfrac{6.3}{10.44\\dots}\\right)$ or M1 for $\\cos(\\angle BDC) = \\dfrac{6.3}{10.44\\dots}$ \\\\ \\hline\n(c) & $64.9$ ($64.88\\dots$) & 4 & M1 for $0.5 \\times 7.4 \\times 10.44\\dots$ AND M2 for $0.5 \\times 6.3 \\times \\sqrt{10.44\\dots^2 - 6.3^2}$ (or M1 for $BC = \\sqrt{10.44\\dots^2 - 6.3^2}$) \\\\ \\hline\n(d) & $6.94$ ($6.935\\dots$) & 2 & M1 for $\\dfrac{450}{64.88\\dots}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 12,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_522",
+        "question_paths": [
+            "images/q_522.png"
+        ],
+        "ms_paths": [
+            "images/ms_522.png"
+        ],
+        "question_code": "The diagram shows a quadrilateral $ABCD$ formed by two right-angled triangles, $ABC$ and $ACD$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (B) at (0,0);\n\\coordinate (A) at (0,2.5);\n\\coordinate (C) at (4,0);\n\\coordinate (D) at (5.5, 2.4);\n\\draw (A) -- (B) -- (C) -- cycle;\n\\draw (A) -- (C) -- (D) -- cycle;\n\\pic [draw, angle radius=3mm] {right angle = A--B--C};\n\\pic [draw, angle radius=3mm] {right angle = A--C--D};\n\\node[above left] at (A) {$A$};\n\\node[below left] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\\node[above right] at (D) {$D$};\n\\node[left] at (0,1.25) {$8.4$ cm};\n\\node[below] at (2,0) {$6.2$ cm};\n\\draw (A) -- (C);\n\\pic [draw, angle radius=15mm] {angle = C--A--D};\n\\node at (1.1, 2.2) {$34^\\circ$};\n\\node at (8, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe length of $AB = 8.4$ cm, $BC = 6.2$ cm, and $\\angle CAD = 34^\\circ$.\nAngle $ABC = 90^\\circ$ and angle $ACD = 90^\\circ$.\n\n[ENUM_START]\n[ITEM] Calculate the length of $AC$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] Use your answer from part (a) to find:\n[SUBENUM_START]\n[ITEM] The length of $CD$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] The total area of the quadrilateral $ABCD$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $10.4$ \\text{ or } $10.44\\dots$ & 3 & M2 for $\\sqrt{8.4^2 + 6.2^2}$ \\text{ or } M1 for $8.4^2 + 6.2^2$ \\\\ \\hline\n(b)(i) & $7.04$ & 2 & M1 for $10.44 \\times \\tan(34^\\circ)$ \\text{ or } $\\dfrac{CD}{10.44} = \\tan(34^\\circ)$ \\\\ \\hline\n(b)(ii) & $62.8$ & 3 & M1 for $\\dfrac{1}{2} \\times 8.4 \\times 6.2$ \\text{ } M1 for $\\dfrac{1}{2} \\times 10.44 \\times 7.04$ \\text{ } A1 for sum $26.04 + 36.75$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 8,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_523",
+        "question_paths": [
+            "images/q_523.png"
+        ],
+        "ms_paths": [
+            "images/ms_523.png"
+        ],
+        "question_code": "Point $T$ is vertically above point $B$ on horizontal ground.\nPoints $P$ and $Q$ lie on the horizontal ground such that $P$, $B$, and $Q$ are collinear, with $B$ situated between $P$ and $Q$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (P) at (-3,0);\n\\coordinate (B) at (0,0);\n\\coordinate (Q) at (4,0);\n\\coordinate (T) at (0,2.5);\n\\draw (P) -- (Q);\n\\draw (T) -- (B);\n\\draw (P) -- (T) -- (Q);\n\\draw[dashed] (T) -- (4, 2.5);\n\\pic [draw, angle radius=3mm] {right angle = P--B--T};\n\\pic [draw, angle radius=3mm] {right angle = T--B--Q};\n\\pic [draw, angle radius=16mm] {angle = B--P--T};\n\\node at (-2, 0.3) {$28.4^\\circ$};\n\\coordinate (Horiz) at (4, 2.5);\n\\pic [draw, angle radius=22mm] {angle = Q--T--Horiz};\n\\node at (1.5, 2.1) {$51.2^\\circ$};\n\\node[above] at (T) {$T$};\n\\node[below] at (P) {$P$};\n\\node[below] at (B) {$B$};\n\\node[below] at (Q) {$Q$};\n\\node[right] at (0,1.25) {$34.6$ m};\n\\node at (7, 1) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nThe distance $TB = 34.6$ m.\nThe angle of elevation of $T$ from $P$ is $28.4^\\circ$.\nThe angle of depression of $Q$ from $T$ is $51.2^\\circ$.\n\n[ENUM_START]\n[ITEM] Show that the distance $PB$ is $64.0$ m, correct to $3$ significant figures.\n\\examanswerslot{4cm}{0}{2}\n[ITEM] Calculate the total horizontal distance $PQ$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] A particle travels in a straight line from $P$ to $Q$ at a constant speed of $2.4$ m/s. Calculate the time taken.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{34.6}{\\tan(28.4^\\circ)} = 63.99\\dots$ & 2 & M1 for $\\tan(28.4^\\circ) = \\dfrac{34.6}{PB}$ \\\\ \\hline\n(b) & $91.8$ & 3 & M1 for $BQ = \\dfrac{34.6}{\\tan(51.2^\\circ)}$ \\text{ } A1 for $BQ = 27.8\\dots$ \\text{ } M1 for $64.0 + 27.8$ \\\\ \\hline\n(c) & $38.3$  s \\text{ or } $38.25$ s & 2 & M1 for $\\dfrac{91.8}{2.4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 7,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_524",
+        "question_paths": [
+            "images/q_524.png"
+        ],
+        "ms_paths": [
+            "images/ms_524.png"
+        ],
+        "question_code": "The diagram shows a right-angled triangle $DEF$ with $\\angle DEF = 90^\\circ$ and $\\angle DFE = 38^\\circ$. The length of $DE = 14.5$ cm.\nA point $G$ lies on the line $DF$. A path drawn from $E$ to $G$ represents the shortest possible distance from point $E$ to the line $DF$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (E) at (0,0);\n\\coordinate (D) at (0,3);\n\\coordinate (F) at (4,0);\n\\coordinate (G) at (1.44, 1.92);\n\\draw (D) -- (E) -- (F) -- cycle;\n\\draw (E) -- (G);\n\\pic [draw, angle radius=3mm] {right angle = D--E--F};\n\\pic [draw, angle radius=14mm] {angle = D--F--E};\n\\node at (3, 0.3) {$38^\\circ$};\n\\node[left] at (0,1.5) {$14.5$ cm};\n\\node[above left] at (D) {$D$};\n\\node[below left] at (E) {$E$};\n\\node[below right] at (F) {$F$};\n\\node[above right] at (G) {$G$};\n\\node at (7, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Explain geometrically why $\\angle EGF$ must equal $90^\\circ$.\n\\examanswerslot{3.5cm}{0}{1}\n[ITEM] Calculate the following:\n[SUBENUM_START]\n[ITEM] The length of the hypotenuse $DF$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] The shortest distance $EG$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & \\text{The shortest distance from a point to a line is the perpendicular distance.} & 1 & B1 for mentioning perpendicular or $90^\\circ$ property \\\\ \\hline\n(b)(i) & $23.6$ \\text{ or } $23.55\\dots$ & 2 & M1 for $\\sin(38^\\circ) = \\dfrac{14.5}{DF}$ \\\\ \\hline\n(b)(ii) & $11.4$ \\text{ or } $11.42\\dots$ & 3 & M1 for $EF = \\dfrac{14.5}{\\tan(38^\\circ)}$ or $\\cos(38^\\circ) = \\dfrac{EF}{23.55}$ \\text{ } M1 for $EG = EF \\times \\sin(38^\\circ)$ \\text{ or } $\\dfrac{1}{2} \\times 14.5 \\times EF = \\dfrac{1}{2} \\times 23.55 \\times EG$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_525",
+        "question_paths": [
+            "images/q_525.png"
+        ],
+        "ms_paths": [
+            "images/ms_525.png"
+        ],
+        "question_code": "Points $A$, $B$, and $C$ lie on the circumference of a circle, centre $O$.\nThe line $AB$ is a diameter of the circle. The lengths $AC = 9.2$ cm and $BC = 5.8$ cm.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (O) at (0,0);\n\\coordinate (A) at (-2.5,0);\n\\coordinate (B) at (2.5,0);\n\\coordinate (C) at (-1.33, 2.11);\n\\draw (0,0) circle (2.5cm);\n\\draw (A) -- (B);\n\\draw (A) -- (C) -- (B) -- cycle;\n\\node[below] at (O) {$O$};\n\\fill (O) circle (1.5pt);\n\\node[left] at (A) {$A$};\n\\node[right] at (B) {$B$};\n\\node[above] at (C) {$C$};\n\\node[above left] at (-1.8, 1) {$9.2$ cm};\n\\node[above right] at (0.2, 1.2) {$5.8$ cm};\n\\node at (5, 0) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Explain why triangle $ABC$ is a right-angled triangle.\n\\examanswerslot{2.5cm}{0}{1}\n[ITEM] Calculate the radius of the circle.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] Calculate the size of angle $BAC$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] The region inside the circle but outside the triangle $ABC$ is shaded and must be painted. The paint costs $1.45$ GBP per square centimetre. Calculate the total cost of painting the shaded region.\n\\examanswerslot{3cm}{0.25}{4}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & The angle in a semicircle is a right angle. & 1 & B1 for recognizing the semicircle theorem \\\\ \\hline\n(b) & $5.44$ \\text{ or } $5.437\\dots$ & 3 & M1 for $AB^2 = 9.2^2 + 5.8^2$ \\text{ } A1 for $AB = 10.875\\dots$ \\text{ } M1 for $\\dfrac{10.875}{2}$ \\\\ \\hline\n(c) & $32.2^\\circ$ & 2 & M1 for $\\tan(BAC) = \\dfrac{5.8}{9.2}$ \\\\ \\hline\n(d) & $96.0$ \\text{ GBP} & 4 & M1 for Circle Area = $\\pi \\times 5.437^2$ \\text{ } M1 for Triangle Area = $\\dfrac{1}{2} \\times 9.2 \\times 5.8$ \\text{ } M1 for $(92.88 - 26.68) \\times 1.45$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 10,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_526",
+        "question_paths": [
+            "images/q_526.png"
+        ],
+        "ms_paths": [
+            "images/ms_526.png"
+        ],
+        "question_code": "The diagram shows a right-angled triangle $PQR$ with $\\angle PQR = 90^\\circ$.\nThe length of $PQ = (2x + 1)$ cm and the length of $QR = (x + 3)$ cm.\nThe area of triangle $PQR$ is exactly $22$ cm$^2$.\n\\begin{center}\n\\begin{tikzpicture}\n\\coordinate (Q) at (0,0);\n\\coordinate (P) at (0,3);\n\\coordinate (R) at (4,0);\n\\draw (P) -- (Q) -- (R) -- cycle;\n\\pic [draw, angle radius=3mm] {right angle = P--Q--R};\n\\node[left] at (0,1.5) {$2x + 1$};\n\\node[below] at (2,0) {$x + 3$};\n\\node[above left] at (P) {$P$};\n\\node[below left] at (Q) {$Q$};\n\\node[below right] at (R) {$R$};\n\\node at (7, 1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Show that the equation for the area reduces to $2x^2 + 7x - 41 = 0$.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Solve the equation $2x^2 + 7x - 41 = 0$ to find the positive value of $x$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] Using your value of $x$, calculate:\n[SUBENUM_START]\n[ITEM] The total perimeter of triangle $PQR$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] The size of angle $PRQ$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & \\text{Correct derivation to } $2x^2 + 7x - 41 = 0$ & 3 & M1 for $\\dfrac{1}{2}(2x + 1)(x + 3) = 22$ \\text{ } M1 for expansion $2x^2 + 6x + x + 3 = 44$ \\text{ } A1 for correctly rearranging to zero \\\\ \\hline\n(b) & $3.10$ \\text{ or } $3.104\\dots$ & 3 & M2 for $x = \\dfrac{-7 \\pm \\sqrt{7^2 - 4(2)(-41)}}{2(2)}$ \\text{ or } M1 for correct substitution \\\\ \\hline\n(c)(i) & $22.8$ \\text{ or } $22.75\\dots$ & 3 & M1 for substituting $x$ to get $PQ = 7.208$ and $QR = 6.104$ \\text{ } M1 for $PR = \\sqrt{7.208^2 + 6.104^2}$ ($9.445$) \\text{ } A1 for total sum \\\\ \\hline\n(c)(ii) & $49.7^\\circ$ & 2 & M1 for $\\tan(PRQ) = \\dfrac{7.208}{6.104}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Right-Angled Triangle Trigonometry and Elevation Angles"
+            ],
+            "marks": 11,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_527",
+        "question_paths": [
+            "images/q_527.png"
+        ],
+        "ms_paths": [
+            "images/ms_527.png"
+        ],
+        "question_code": "Consider the functions $\\text{f}(x) = 3x - 2$ and $\\text{g}(x) = \\dfrac{4}{x}$ for $x \\neq 0$.\n[ENUM_START]\n[ITEM] Find $\\text{f}(4)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{g}(-2)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{gf}(2)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{f}^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 10 & 1 & B1 for 10 \\\\ \\hline\n(b) & $-2$ & 1 & B1 for -2 \\\\ \\hline\n(c) & 1 & 2 & M1 for $\\text{f}(2) = 4$ or $\\text{g}(3x-2)$ seen \\\\ \\hline\n(d) & $\\dfrac{x+2}{3}$ & 2 & M1 for $x = 3y - 2$ or $y + 2 = 3x$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_528",
+        "question_paths": [
+            "images/q_528.png"
+        ],
+        "ms_paths": [
+            "images/ms_528.png"
+        ],
+        "question_code": "The functions $\\text{f}(x)$ and $\\text{g}(x)$ are defined as follows:\n\n\n$$\\text{f}(x) = 2x + 5$$\n\n$$\\text{g}(x) = x^2 - 3$$\n\n\n[ENUM_START]\n[ITEM] Find $\\text{f}(-4)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{fg}(3)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{f}^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Solve the equation $\\text{g}(x) = 6$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $-3$ & 1 & B1 for $-3$ \\\\ \\hline\n(b) & 17 & 2 & M1 for $\\text{g}(3) = 6$ \\\\ \\hline\n(c) & $\\dfrac{x-5}{2}$ & 2 & M1 for $x = 2y + 5$ or $y - 5 = 2x$ \\\\ \\hline\n(d) & $x = 3$ or $x = -3$ & 2 & M1 for $x^2 = 9$ or $(x-3)(x+3)=0$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 7,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_529",
+        "question_paths": [
+            "images/q_529.png"
+        ],
+        "ms_paths": [
+            "images/ms_529.png"
+        ],
+        "question_code": "Three functions are defined by $\\text{f}(x) = 5 - 2x$, $\\text{g}(x) = \\dfrac{x}{2}$, and $\\text{h}(x) = 3x + 1$.\n[ENUM_START]\n[ITEM] Find $\\text{f}(0)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{gh}(3)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{h}^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Express $\\text{fg}(x)$ as a single simplified fraction.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 5 & 1 & B1 for 5 \\\\ \\hline\n(b) & 5 & 2 & M1 for $\\text{h}(3) = 10$ \\\\ \\hline\n(c) & $\\dfrac{x-1}{3}$ & 2 & M1 for $x = 3y + 1$ or $y - 1 = 3x$ \\\\ \\hline\n(d) & $5 - x$ & 2 & M1 for $5 - 2\\left(\\dfrac{x}{2}\\right)$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 7,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_530",
+        "question_paths": [
+            "images/q_530.png"
+        ],
+        "ms_paths": [
+            "images/ms_530.png"
+        ],
+        "question_code": "Functions $\\text{f}$ and $\\text{g}$ are defined for all real values of $x$ by $\\text{f}(x) = 4x - 1$ and $\\text{g}(x) = \\dfrac{1}{2}x + 3$.\n[ENUM_START]\n[ITEM] Evaluate $\\text{f}\\left(\\dfrac{1}{2}\\right)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Evaluate $\\text{g}(-6)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{f}^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{fg}(x)$, writing your answer in its simplest linear form.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 1 & 1 & B1 for 1 \\\\ \\hline\n(b) & 0 & 1 & B1 for 0 \\\\ \\hline\n(c) & $\\dfrac{x+1}{4}$ & 2 & M1 for $x = 4y - 1$ or $y + 1 = 4x$ \\\\ \\hline\n(d) & $2x + 11$ & 2 & M1 for $4\\left(\\dfrac{1}{2}x + 3\\right) - 1$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_531",
+        "question_paths": [
+            "images/q_531.png"
+        ],
+        "ms_paths": [
+            "images/ms_531.png"
+        ],
+        "question_code": "Consider the mapping diagram shown below, where the function $\\text{f}$ maps elements from Domain $A$ to Range $B$ according to the rule $\\text{f}(x) = 3x - 1$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) ellipse (0.8cm and 1.5cm);\n\\draw[thick] (4,0) ellipse (0.8cm and 1.5cm);\n\\node at (0,1.8) {Domain $A$};\n\\node at (4,1.8) {Range $B$};\n\\node (a1) at (0,0.8) {$1$};\n\\node (a2) at (0,0) {$2$};\n\\node (a3) at (0,-0.8) {$3$};\n\\node (b1) at (4,0.8) {$2$};\n\\node (b2) at (4,0) {$5$};\n\\node (b3) at (4,-0.8) {$8$};\n\\draw[->, thick, >=stealth] (a1) -- (b1);\n\\draw[->, thick, >=stealth] (a2) -- (b2);\n\\draw[->, thick, >=stealth] (a3) -- (b3);\n\\end{tikzpicture}\n\\end{center}\nAnother function is defined as $\\text{g}(x) = 10 - x$.\n[ENUM_START]\n[ITEM] Use the mapping diagram to state the value of $\\text{f}(2)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{g(f}(1))$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{f}^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{gf}(x)$ in its simplest form.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 5 & 1 & B1 for 5 \\\\ \\hline\n(b) & 8 & 2 & M1 for $\\text{f}(1) = 2$ \\\\ \\hline\n(c) & $\\dfrac{x+1}{3}$ & 2 & M1 for $x = 3y - 1$ or $y + 1 = 3x$ \\\\ \\hline\n(d) & $11 - 3x$ & 2 & M1 for $10 - (3x - 1)$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 7,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_532",
+        "question_paths": [
+            "images/q_532.png"
+        ],
+        "ms_paths": [
+            "images/ms_532.png"
+        ],
+        "question_code": "The functions $f$ and $g$ are defined as follows:\n\n\n$$f(x) = \\dfrac{3}{x - 1}, \\quad x \\neq 1$$\n\n$$g(x) = 3x + 2$$\n\n\n[ENUM_START]\n[ITEM] Find $f(4)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $g^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the composite function $fg(x)$ can be simplified to:\n\n\n$$fg(x) = \\dfrac{3}{3x + 1}$$\n\n\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Solve the equation $f(x) = g(-1)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $g(g(x))$ in its simplest form.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $1$ & 1 & B1 \\\\ \\hline\n(b) & $\\dfrac{x - 2}{3}$ & 2 & M1 for $x = 3y + 2$ \\\\ \\hline\n(c) & $\\dfrac{3}{(3x+2)-1} = \\dfrac{3}{3x+1}$ & 2 & M1 for correct substitution into $f(x)$ \\\\ \\hline\n(d) & $-2$ & 2 & M1 for $g(-1) = -1$ and setting $\\dfrac{3}{x-1} = -1$ \\\\ \\hline\n(e) & $9x + 8$ & 2 & M1 for $3(3x+2) + 2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 9,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_533",
+        "question_paths": [
+            "images/q_533.png"
+        ],
+        "ms_paths": [
+            "images/ms_533.png"
+        ],
+        "question_code": "The functions $f$, $g$, and $h$ are defined as follows:\n\n\n$$f(x) = 4 - 3x$$\n\n$$g(x) = \\dfrac{2}{x}, \\quad x \\neq 0$$\n\n$$h(x) = x^2 + 2$$\n\n\n[ENUM_START]\n[ITEM] Find $f\\left(\\dfrac{5}{3}\\right)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $g(h(2))$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $f^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the composite function $hf(x)$ can be expanded and simplified to:\n\n\n$$hf(x) = 9x^2 - 24x + 18$$\n\n\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] State the value of $x$ which cannot be in the domain of $g(x)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $-1$ & 1 & B1 \\\\ \\hline\n(b) & $\\dfrac{1}{3}$ & 2 & M1 for $h(2) = 6$ \\\\ \\hline\n(c) & $\\dfrac{4 - x}{3}$ & 2 & M1 for $x = 4 - 3y$ \\\\ \\hline\n(d) & $(4-3x)^2 + 2 = 16 - 24x + 9x^2 + 2$ & 2 & M1 for correct expansion of $(4-3x)^2$ \\\\ \\hline\n(e) & $0$ & 1 & B1 \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_534",
+        "question_paths": [
+            "images/q_534.png"
+        ],
+        "ms_paths": [
+            "images/ms_534.png"
+        ],
+        "question_code": "The functions $f$, $g$, and $h$ are defined as follows:\n\n\n$$f(x) = \\dfrac{3x + 1}{x - 2}, \\quad x \\neq 2$$\n\n$$g(x) = x^2 - 4$$\n\n$$h(x) = \\left(\\dfrac{1}{2}\\right)^x$$\n\n\n[ENUM_START]\n[ITEM] Find $f(3)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $g(-3)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $f^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Find $gf(4)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the value of $h(-3)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $10$ & 1 & B1 \\\\ \\hline\n(b) & $5$ & 1 & B1 \\\\ \\hline\n(c) & $\\dfrac{2x + 1}{x - 3}$ & 3 & M1 for $x(y-2) = 3y+1$, M1 for grouping $y$ terms \\\\ \\hline\n(d) & $\\dfrac{153}{4}$ & 2 & M1 for $f(4) = \\dfrac{13}{2}$ or $g\\left(\\dfrac{13}{2}\\right)$ \\\\ \\hline\n(e) & $8$ & 1 & B1 \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_535",
+        "question_paths": [
+            "images/q_535.png"
+        ],
+        "ms_paths": [
+            "images/ms_535.png"
+        ],
+        "question_code": "The functions $f$ and $g$ are defined as follows:\n\n\n$$f(x) = 7 - 3x$$\n\n$$g(x) = \\dfrac{x + 1}{x - 3}, \\quad x \\neq 3$$\n\n\n[ENUM_START]\n[ITEM] Find:\n[SUBENUM_START]\n[ITEM] $f(-3)$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $g(5)$\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Find $f^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that $gf(x) = \\dfrac{4 - 3x}{2 - 3x}$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Find $g^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & $16$ & 1 & B1 \\\\ \\hline\n(a)(ii) & $3$ & 1 & B1 \\\\ \\hline\n(b) & $\\dfrac{7 - x}{3}$ & 2 & M1 for $x = 7 - 3y$ or $3x = 7 - y$ \\\\ \\hline\n(c) & $\\dfrac{(7-3x)+1}{(7-3x)-3} = \\dfrac{8-3x}{4-3x}$ & 2 & M1 for correct horizontal substitution \\\\ \\hline\n(d) & $\\dfrac{3x + 1}{x - 1}$ & 3 & M1 for $x(y-3) = y+1$, M1 for isolating $y$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 9,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_536",
+        "question_paths": [
+            "images/q_536.png"
+        ],
+        "ms_paths": [
+            "images/ms_536.png"
+        ],
+        "question_code": "The functions $f$, $g$, and $h$ are defined as follows:\n\n\n$$f(x) = 2x - 3$$\n\n$$g(x) = \\dfrac{4}{x - 2}, \\quad x \\neq 2$$\n\n$$h(x) = 3^x$$\n\n\n[ENUM_START]\n[ITEM] Find $f(-2)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $g(f(4))$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $f^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the composite function $gf(x)$ can be written as:\n\n\n$$gf(x) = \\dfrac{4}{2x - 5}$$\n\n\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Find the value of $h(-1)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $-7$ & 1 & B1 \\\\ \\hline\n(b) & $\\dfrac{4}{3}$ & 2 & M1 for $f(4) = 5$ or $g(2x-3)$ \\\\ \\hline\n(c) & $\\dfrac{x + 3}{2}$ & 2 & M1 for $x = 2y - 3$ or $y + 3 = 2x$ \\\\ \\hline\n(d) & $\\dfrac{4}{(2x-3)-2} = \\dfrac{4}{2x-5}$ & 2 & M1 for correct substitution of $f(x)$ into $g(x)$ \\\\ \\hline\n(e) & $\\dfrac{1}{3}$ & 1 & B1 \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_537",
+        "question_paths": [
+            "images/q_537.png"
+        ],
+        "ms_paths": [
+            "images/ms_537.png"
+        ],
+        "question_code": "The functions $\\text{f}(x)$ and $\\text{g}(x)$ are defined as follows:\n\n\n$$\\text{f}(x) = \\dfrac{3x + 1}{2x - 5}, \\quad x \\neq \\dfrac{5}{2}$$\n\n$$\\text{g}(x) = \\dfrac{4}{x}, \\quad x \\neq 0$$\n\n\n[ENUM_START]\n[ITEM] Find $\\text{f}(2)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{g}^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find $\\text{f}^{-1}(x)$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] Show that the composite function $\\text{gf}(x)$ can be simplified to the form $\\dfrac{ax + b}{cx + d}$, where $a$, $b$, $c$, and $d$ are integers.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Solve the equation $\\text{gf}(x) = 2$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $-7$ & 1 & B1 \\\\ \\hline\n(b) & $\\dfrac{4}{x}$ & 1 & B1 \\\\ \\hline\n(c) & $\\dfrac{5x + 1}{2x - 3}$ & 3 & M1 for $x = \\dfrac{3y+1}{2y-5}$ or $y = \\dfrac{3x+1}{2x-5}$ changing subject \\\\ \\hline\n& & & M1 for isolating terms in $y$ (or $x$): $2xy - 3y = 5x + 1$ \\\\ \\hline\n& & & A1 for correct final expression \\\\ \\hline\n(d) & $\\dfrac{8x - 20}{3x + 1}$ & 3 & M1 for $\\text{gf}(x) = \\dfrac{4}{\\left(\\dfrac{3x+1}{2x-5}\\right)}$ \\\\ \\hline\n& & & M1 for inverted fraction multiplication $4 \\times \\dfrac{2x-5}{3x+1}$ \\\\ \\hline\n& & & A1 for correct numerator and denominator reaching $\\dfrac{8x-20}{3x+1}$ with ratio 0 \\\\ \\hline\n(e) & $11$ & 2 & M1 for $\\dfrac{8x-20}{3x+1} = 2 \\Rightarrow 8x - 20 = 6x + 2$ \\\\ \\hline\n& & & A1 for $x = 11$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 10,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_538",
+        "question_paths": [
+            "images/q_538.png"
+        ],
+        "ms_paths": [
+            "images/ms_538.png"
+        ],
+        "question_code": "Three functions, $\\text{f}$, $\\text{g}$, and $\\text{h}$, are defined for $x \\in \\mathbb{R}$ by:\n\n\n$$\\text{f}(x) = 2x - 3$$\n\n$$\\text{g}(x) = x^2 + 5$$\n\n$$\\text{h}(x) = \\dfrac{12}{x + 1}, \\quad x \\neq -1$$\n\n\n[ENUM_START]\n[ITEM] Find $\\text{ff}(4)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{h}^{-1}(x)$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] Find $\\text{gh}(x)$, writing your answer as a single fraction in its simplest form.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Solve the equation $\\text{g}(x) - \\text{f}(x) = 11$.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $7$ & 2 & M1 for $\\text{f}(4) = 2(4) - 3 = 5$ or $\\text{ff}(x) = 2(2x-3)-3 = 4x-9$ \\\\ \\hline\n& & & A1 for $7$ \\\\ \\hline\n(b) & $\\dfrac{12 - x}{x}$ & 3 & M1 for $x = \\dfrac{12}{y+1}$ \\\\ \\hline\n& & & M1 for $xy + x = 12 \\Rightarrow xy = 12 - x$ \\\\ \\hline\n& & & A1 for $\\dfrac{12-x}{x}$ or $\\dfrac{12}{x}-1$ \\\\ \\hline\n(c) & $\\dfrac{5x^2 + 10x + 149}{(x + 1)^2}$ & 3 & M1 for $\\left(\\dfrac{12}{x+1}\\right)^2 + 5$ \\\\ \\hline\n& & & M1 for $\\dfrac{144}{(x+1)^2} + \\dfrac{5(x+1)^2}{(x+1)^2}$ \\\\ \\hline\n& & & A1 for correct expanded single fraction \\\\ \\hline\n(d) & $x = 3$ or $x = -1$ & 3 & M1 for $x^2 + 5 - (2x - 3) = 11 \\Rightarrow x^2 - 2x - 3 = 0$ \\\\ \\hline\n& & & M1 for factorisation $(x - 3)(x + 1) = 0$ \\\\ \\hline\n& & & A1 for both correct roots \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 11,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_539",
+        "question_paths": [
+            "images/q_539.png"
+        ],
+        "ms_paths": [
+            "images/ms_539.png"
+        ],
+        "question_code": "The diagram shows a functional mapping from set $A$ to set $B$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) ellipse (0.8cm and 1.8cm);\n\\draw[thick] (4,0) ellipse (0.8cm and 1.8cm);\n\\node at (0,2.1) {$A$};\n\\node at (4,2.1) {$B$};\n\\node (a1) at (0,1.2) {$-2$};\n\\node (a2) at (0,0.4) {$0$};\n\\node (a3) at (0,-0.4) {$1$};\n\\node (a4) at (0,-1.2) {$3$};\n\\node (b1) at (4,1.2) {$-1$};\n\\node (b2) at (4,0.4) {$3$};\n\\node (b3) at (4,-0.4) {$5$};\n\\node (b4) at (4,-1.2) {$11$};\n\\draw[->,>=stealth,thick] (a1) -- (b2);\n\\draw[->,>=stealth,thick] (a2) -- (b1);\n\\draw[->,>=stealth,thick] (a3) -- (b2);\n\\draw[->,>=stealth,thick] (a4) -- (b4);\n\\end{tikzpicture}\n\\end{center}\nThe mapping follows the linear rule $\\text{f}(x) = px + q$ except for one element in set $A$ which is mapped incorrectly.\n[ENUM_START]\n[ITEM] Identify the element in set $A$ that does not follow the linear rule $\\text{f}(x) = px + q$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Determine the values of $p$ and $q$ for the correct linear mapping.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] State the range of the correct mapping $\\text{f}(x)$ for the domain given by set $A$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Another function is defined as $\\text{g}(x) = \\dfrac{x + 7}{4}$. Find $\\text{f}^{-1}\\text{g}(5)$ using the correct function $\\text{f}(x)$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $-2$ & 1 & B1 \\\\ \\hline\n(b) & $p = 4, q = -1$ & 2 & M1 for testing pairs to find linear gradient $p = \\dfrac{-1 - 3}{0 - (-2)} = 4$ \\\\ \\hline\n& & & A1 for $p = 4$ and $q = -1$ \\\\ \\hline\n(c) & $\\{-9, -1, 3, 11\\}$ & 1 & B1 (Accept written as a list or set) \\\\ \\hline\n(d) & 1 & 3 & M1 for $\\text{g}(5) = \\dfrac{5+7}{4} = 3$ \\\\ \\hline\n& & & M1 for setting $\\text{f}(x) = 3 \\Rightarrow 4x - 1 = 3$ \\\\ \\hline\n& & & A1 for $x = 1$ (or equivalent fraction if working with $\\text{f}^{-1}(x) = \\dfrac{x+1}{4}$) \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 7,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_540",
+        "question_paths": [
+            "images/q_540.png"
+        ],
+        "ms_paths": [
+            "images/ms_540.png"
+        ],
+        "question_code": "The functions $\\text{f}(x)$ and $\\text{g}(x)$ are defined as follows:\n\n\n$$\\text{f}(x) = \\dfrac{2}{x - 3}, \\quad x \\neq 3$$\n\n$$\\text{g}(x) = \\dfrac{x - 1}{2}$$\n\n\n[ENUM_START]\n[ITEM] Find $\\text{g}\\left(\\dfrac{1}{3}\\right)$, giving your answer as a fraction in its simplest form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{f}^{-1}(x)$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ITEM] Show that the equation $\\text{fg}(x) = \\text{f}(x)$ simplifies to $x^2 - 5x + 6 = 0$.\n\\examanswerslot{3.5cm}{0}{3}\n[ITEM] Solve the equation $\\text{fg}(x) = \\text{f}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $-\\dfrac{1}{3}$ & 2 & M1 for $\\dfrac{\\dfrac{1}{3}-1}{2} = \\dfrac{-\\dfrac{2}{3}}{2}$ \\\\ \\hline\n& & & A1 for $-\\dfrac{1}{3}$ \\\\ \\hline\n(b) & $\\dfrac{2+3x}{x}$ & 3 & M1 for $x = \\dfrac{2}{y-3}$ \\\\ \\hline\n& & & M1 for $xy - 3x = 2 \\Rightarrow xy = 2 + 3x$ \\\\ \\hline\n& & & A1 for $\\dfrac{2+3x}{x}$ or $\\dfrac{2}{x} + 3$ \\\\ \\hline\n(c) & $x^2 - 5x + 6 = 0$ & 3 & M1 for $\\text{fg}(x) = \\dfrac{2}{\\left(\\dfrac{x-1}{2}\\right) - 3} = \\dfrac{4}{x - 7}$ \\\\ \\hline\n& & & M1 for equating $\\dfrac{4}{x-7} = \\dfrac{2}{x-3} \\Rightarrow 4(x-3) = 2(x-7)$ \\\\ \\hline\n& & & A1 for algebra verifying $x^2 - 5x + 6 = 0$ with ratio 0 \\\\ \\hline\n(d) & $x = 2$ or $x = 3$ & 2 & M1 for $(x-2)(x-3) = 0$ \\\\ \\hline\n& & & A1 for $x = 2$ and $x = 3$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 10,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_541",
+        "question_paths": [
+            "images/q_541.png"
+        ],
+        "ms_paths": [
+            "images/ms_541.png"
+        ],
+        "question_code": "Functions $\\text{f}(x)$ and $\\text{g}(x)$ are defined below:\n\n\n$$\\text{f}(x) = \\dfrac{x + 3}{x - 1}, \\quad x \\neq 1$$\n\n$$\\text{g}(x) = 2x + 5$$\n\n\n[ENUM_START]\n[ITEM] Solve the equation $\\text{f}(x) = 3$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find $\\text{f}^{-1}(x)$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Find $\\text{ff}(x)$, giving your answer in its simplest form.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Find $\\text{gf}(x)$, expressing your answer as a single fraction in terms of $x$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $3$ & 2 & M1 for $x + 3 = 3(x - 1) \\Rightarrow x + 3 = 3x - 3$ \\\\ \\hline\n& & & A1 for $x = 3$ \\\\ \\hline\n(b) & $\\dfrac{x + 3}{x - 1}$ & 3 & M1 for $x = \\dfrac{y+3}{y-1} \\Rightarrow xy - x = y + 3$ \\\\ \\hline\n& & & M1 for $xy - y = x + 3 \\Rightarrow y(x - 1) = x + 3$ \\\\ \\hline\n& & & A1 for $\\dfrac{x+3}{x-1}$ \\\\ \\hline\n(c) & $x$ & 3 & M1 for $\\text{ff}(x) = \\dfrac{\\left(\\dfrac{x+3}{x-1}\\right) + 3}{\\left(\\dfrac{x+3}{x-1}\\right) - 1}$ \\\\ \\hline\n& & & M1 for multiplying numerator/denominator by $(x-1)$ to get $\\dfrac{x+3 + 3(x-1)}{x+3 - (x-1)}$ \\\\ \\hline\n& & & A1 for $\\dfrac{4x}{4} = x$ \\\\ \\hline\n(d) & $\\dfrac{7x - 2}{x - 1}$ & 2 & M1 for $2\\left(\\dfrac{x+3}{x-1}\\right) + 5 = \\dfrac{2x+6 + 5(x-1)}{x-1}$ \\\\ \\hline\n& & & A1 for $\\dfrac{7x-2}{x-1}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 10,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_542",
+        "question_paths": [
+            "images/q_542.png"
+        ],
+        "ms_paths": [
+            "images/ms_542.png"
+        ],
+        "question_code": "An international currency exchange service uses functions to compute transaction outcomes. Function $f$ converts an amount of EUR into USD, while function $g$ converts USD into GBP.\n$$ f(x) = \\dfrac{5}{4}x - 10 $$\n$$ g(x) = \\dfrac{4}{5}(x - 20) $$\n[ENUM_START]\n[ITEM] Calculate the total amount of GBP received if a client converts 200 EUR.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Express the composite function $gf(x)$ as a single simplified expression.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Find the inverse function $f^{-1}(x)$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] A different boutique firm converts USD back to EUR using the formula $h(x) = \\dfrac{4}{5}x - 6$. Show that the combined transaction function $hf(x)$ simplifies to $x - 14$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the percentage loss of the original funds if a client converts 200 EUR to USD and then immediately changes it back to EUR using the function $h(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 176 GBP & 1 & B1 for 176 GBP \\\\ \\hline\n(b) & $x - 24$ & 2 & M1 for $\\dfrac{4}{5}\\left(\\left(\\dfrac{5}{4}x - 10\\right) - 20\\right)$ \\\\ \\hline\n(c) & $\\dfrac{4}{5}x + 8$ & 2 & M1 for $x = \\dfrac{5}{4}y - 10 \\implies x + 10 = \\dfrac{5}{4}y$ \\\\ \\hline\n(d) & Correct algebraic proof & 2 & M1 for $h\\left(\\dfrac{5}{4}x - 10\\right) = \\dfrac{4}{5}\\left(\\dfrac{5}{4}x - 10\\right) - 6$ \\\\ \\hline\n& & & A1 for expanding to $x - 8 - 6 = x - 14$ \\\\ \\hline\n(e) & $7\\%$ & 2 & M1 for $\\dfrac{14}{200} \\times 100\\%$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 9,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_543",
+        "question_paths": [
+            "images/q_543.png"
+        ],
+        "ms_paths": [
+            "images/ms_543.png"
+        ],
+        "question_code": "The function $f(x) = -2x + 3$ is defined for the restricted domain $0 \\le x \\le 2$.\n[ENUM_START]\n[ITEM] Write down the domain and range of $f$ as shown by its definition.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] On the grid provided, draw the graph of $y = f(x)$ and the graph of its inverse $y = f^{-1}(x)$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[color=gray!40, xstep=0.5cm, ystep=0.5cm] (-3,-3) grid (3,3);\n\\draw[thick,-Latex] (-3.2,0) -- (3.4,0) node[right] {$x$};\n\\draw[thick,-Latex] (0,-3.2) -- (0,3.4) node[above] {$y$};\n\\foreach \\x in {-3,-2,-1,1,2,3} {\n\\draw (\\x,0.05) -- (\\x,-0.05) node[below, fill=white, inner sep=1pt] {\\small $\\x$};\n}\n\\foreach \\y in {-3,-2,-1,1,2,3} {\n\\draw (0.05,\\y) -- (-0.05,\\y) node[left, fill=white, inner sep=1pt] {\\small $\\y$};\n}\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[3]}\n[ITEM] Find the exact coordinates of the point of intersection between $y = f(x)$ and $y = f^{-1}(x)$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] A straight line $L$ is perpendicular to $y = f(x)$ and passes through the point $(1, -1)$. Find the equation of $L$ in the form $ay + bx = c$, where $a$, $b$, and $c$ are integers.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Domain: $0 \\le x \\le 2$, Range: $-1 \\le y \\le 3$ & 2 & B1 for Domain, B1 for Range \\\\ \\hline\n(b) & Correct line drawn & 3 & B2 for straight line from $(3,0)$ to $(-1,2)$ \\\\ \\hline\n& & & B1 for clear reflection across $y=x$ line \\\\ \\hline\n(c) & $(1, 1)$ & 2 & M1 for setting $-2x + 3 = x \\implies 3x = 3$ \\\\ \\hline\n(d) & $2y - x = -3$ & 3 & M1 for perpendicular gradient $m = \\dfrac{1}{2}$ \\\\ \\hline\n& & & M1 for $y - (-1) = \\dfrac{1}{2}(x - 1)$ or $y = \\dfrac{1}{2}x - \\dfrac{3}{2}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Function Notation, Domains, Inverses, and Composites"
+            ],
+            "marks": 10,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_544",
+        "question_paths": [
+            "images/q_544.png"
+        ],
+        "ms_paths": [
+            "images/ms_544.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] The diagram shows the graph of a quadratic function with leading coefficient $a = 1$. The curve has a minimum point at $(3, -4)$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[color=gray!40, xstep=0.5cm, ystep=0.5cm] (-1,-5) grid (7,3);\n\\draw[->, thick] (-1,0) -- (7,0) node[right] {$x$};\n\\draw[->, thick] (0,-5) -- (0,3) node[above] {$y$};\n\\foreach \\x in {1,2,3,4,5,6} {\n\\draw (\\x,0) -- (\\x,-0.1) node[below] {\\small $\\x$};\n}\n\\foreach \\y in {-4,-3,-2,-1,1,2} {\n\\draw (0,\\y) -- (-0.1,\\y) node[left] {\\small $\\y$};\n}\n\\draw[domain=0.5:5.5, smooth, variable=\\x, blue, thick] plot ({\\x}, {(\\x-3)*(\\x-3)-4});\n\\filldraw[black] (3,-4) circle (2pt) node[below] {$(3,-4)$};\n\\end{tikzpicture}\n\\end{center}\nWrite down the equation of the quadratic function in the form $y = x^2 + bx + c$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & $y = x^2 - 6x + 5$ & 2 & M1 for writing $y = (x - 3)^2 - 4$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Deriving Quadratic Equations from Coordinates"
+            ],
+            "marks": 2,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_545",
+        "question_paths": [
+            "images/q_545.png"
+        ],
+        "ms_paths": [
+            "images/ms_545.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A quadratic curve has a vertex at $(2, -3)$ and passes through the point $(4, 5)$. Find the equation of the quadratic function in the form $y = ax^2 + bx + c$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & $y = 2x^2 - 8x + 5$ & 3 & M1 for substituting vertex into $y = a(x - 2)^2 - 3$ \\\\ \\hline\n& & & M1 for substituting $(4, 5)$ to find $a = 2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Deriving Quadratic Equations from Coordinates"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_546",
+        "question_paths": [
+            "images/q_546.png"
+        ],
+        "ms_paths": [
+            "images/ms_546.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A curve has the equation $y = a(x - h)^2 + k$. It has a vertex at $(-1, 4)$ and crosses the $y$-axis at $(0, 1)$. Find the values of $a$, $h$, and $k$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & $a = -3, h = -1, k = 4$ & 3 & B1 for $h = -1, k = 4$ \\\\ \\hline\n& & & M1 for substituting $(0, 1)$ to find $a = -3$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Deriving Quadratic Equations from Coordinates"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_547",
+        "question_paths": [
+            "images/q_547.png"
+        ],
+        "ms_paths": [
+            "images/ms_547.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] The graph of a quadratic function cuts the $x$-axis at $(-2, 0)$ and $(4, 0)$. Given that the coefficient of $x^2$ is $1$, show that the equation of the curve can be written as $y = x^2 - 2x - 8$.\n\\examanswerslot{3.5cm}{0}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & Correct derivation shown & 2 & M1 for writing $y = (x + 2)(x - 4)$ \\\\ \\hline\n& & & A1 for expanding to $y = x^2 - 2x - 8$ convincingly \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Deriving Quadratic Equations from Coordinates"
+            ],
+            "marks": 2,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_548",
+        "question_paths": [
+            "images/q_548.png"
+        ],
+        "ms_paths": [
+            "images/ms_548.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] The graph of a quadratic function has a leading coefficient of $a = 1$. It has a vertex at the point $(-4, -3)$.\n[SUBENUM_START]\n[ITEM] Express the equation of the function in the form $y = x^2 + bx + c$.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] Show that the $x$-intercepts of the curve can be written in the form $x = -4 \\pm \\sqrt{3}$.\n\\examanswerslot{3.5cm}{0}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $y = x^2 + 8x + 13$ & 2 & M1 for $y = (x + 4)^2 - 3$ or expansion \\\\ \\hline\n(b) & Show inside steps & 2 & M1 for setting $(x + 4)^2 - 3 = 0$ \\\\ \\hline\n& & & A1 for completing proof cleanly to $x = -4 \\pm \\sqrt{3}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Deriving Quadratic Equations from Coordinates"
+            ],
+            "marks": 4,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_549",
+        "question_paths": [
+            "images/q_549.png"
+        ],
+        "ms_paths": [
+            "images/ms_549.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A quadratic function cuts the $x$-axis at the points $(-2, 0)$ and $(5, 0)$, and crosses the $y$-axis at $(0, -20)$.\n[SUBENUM_START]\n[ITEM] Determine the equation of the quadratic function in the form $y = ax^2 + bx + c$.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Write down the $x$-coordinate of the vertex of this curve.\n\\examanswerslot{1.5cm}{0.25}{1}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $y = 2x^2 - 6x - 20$ & 3 & M1 for $y = a(x + 2)(x - 5)$ \\\\ \\hline\n& & & M1 for substituting $(0, -20)$ to find $a = 2$ \\\\ \\hline\n(b) & $\\dfrac{3}{2}$ & 1 & B1 completely independent \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Deriving Quadratic Equations from Coordinates"
+            ],
+            "marks": 4,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_550",
+        "question_paths": [
+            "images/q_550.png"
+        ],
+        "ms_paths": [
+            "images/ms_550.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A curve has the equation $y = a(x - h)^2 + k$. The diagram shows a sketch of this curve with vertex $V(2, 5)$.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[step=0.5cm, color=gray!40] (-1, -1) grid (5, 6);\n\\draw[thick, ->] (-1, 0) -- (5, 0) node[right] {$x$};\n\\draw[thick, ->] (0, -1) -- (0, 6) node[above] {$y$};\n\\draw[domain=-0.2:4.2, smooth, variable=\\x, blue, thick] plot ({\\x}, {-0.75*(\\x-2)*(\\x-2) + 5});\n\\filldraw[black] (2, 5) circle (1.5pt) node[above] {$V(2, 5)$};\n\\filldraw[black] (0, 2) circle (1.5pt) node[left] {$(0, 2)$};\n\\end{tikzpicture}\n\\end{center}\nGiven that the curve crosses the $y$-axis at $(0, 2)$, find the value of $a$, $h$, and $k$.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & $a = -\\dfrac{3}{4}$, $h = 2$, $k = 5$ & 3 & B1 for $h = 2, k = 5$ \\\\ \\hline\n& & & M1 for $2 = a(0 - 2)^2 + 5$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Deriving Quadratic Equations from Coordinates"
+            ],
+            "marks": 3,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_551",
+        "question_paths": [
+            "images/q_551.png"
+        ],
+        "ms_paths": [
+            "images/ms_551.png"
+        ],
+        "question_code": "A group of 120 people were asked to choose their favourite holiday destination. The results are shown in the table.\n\n\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\n\\textbf{Destination} & \\textbf{Frequency} \\\n\\hline\nBeach & 45 \\\n\\hline\nCity & 30 \\\n\\hline\nMountains & $x$ \\\n\\hline\nCountryside & 15 \\\n\\hline\n\\end{tabular}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the value of $x$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Show that the sector angle for the Beach is $135^\\circ$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] On the circle below, draw and label a pie chart to represent this information.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[thick] (0,0) circle (3cm);\n\\filldraw (0,0) circle (1.5pt);\n\\draw[thick] (0,0) -- (0,3);\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[3]}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $30$ & 1 & B1 for $120 - (45 + 30 + 15)$ \\\\ \\hline\n(b) & $\\dfrac{45}{120} \\times 360^\\circ$ & 1 & M1 for correct fraction and multiplier \\\\ \\hline\n& $= 135^\\circ$ & 1 & A1 for correct evaluation with strictly no errors \\\\ \\hline\n(c) & Correct sector for City ($90^\\circ$) & 1 & B1 \\\\ \\hline\n& Correct sector for Mountains ($90^\\circ$) & 1 & B1 \\\\ \\hline\n& Correct sector for Countryside ($45^\\circ$) & 1 & B1 \\\\ \\hline\n& Labels present on all sectors & 1 & B1 (Dependent on at least 2 correct sectors) \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Drawing and Interpreting Charts and Stem-and-Leaf Diagrams"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_552",
+        "question_paths": [
+            "images/q_552.png"
+        ],
+        "ms_paths": [
+            "images/ms_552.png"
+        ],
+        "question_code": "The dual bar chart shows the number of male and female students participating in three different school clubs: Drama, Music, and Science.\n\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[color=gray!40, step=0.5cm] (0,0) grid (6,5);\n\\draw[thick] (0,0) -- (6,0);\n\\draw[thick] (0,0) -- (0,5);\n\\foreach \\y [evaluate=\\y as \\val using int(\\y*4)] in {0,1,2,3,4,5} {\n\\draw (-0.1,\\y) -- (0,\\y) node[left] {\\small $\\val$};\n}\n\\draw[fill=gray!80] (0.5,0) rectangle (1,3);\n\\draw[fill=gray!20] (1,0) rectangle (1.5,4);\n\\draw[fill=gray!80] (2.5,0) rectangle (3,2.5);\n\\draw[fill=gray!20] (3,0) rectangle (3.5,2);\n\\draw[fill=gray!80] (4.5,0) rectangle (5,4.5);\n\\draw[fill=gray!20] (5,0) rectangle (5.5,3.5);\n\\node at (1,-0.4) {Drama};\n\\node at (3,-0.4) {Music};\n\\node at (5,-0.4) {Science};\n\\draw[fill=gray!80] (6.5,4.5) rectangle (6.8,4.8); \\node[right] at (6.8,4.65) {\\small Male};\n\\draw[fill=gray!20] (6.5,4) rectangle (6.8,4.3); \\node[right] at (6.8,4.15) {\\small Female};\n\\end{tikzpicture}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Write down the number of female students in the Drama club.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Calculate the total number of students in the Science club.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Calculate the percentage of all male students who are in the Music club.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $16$ & 1 & B1 \\\\ \\hline\n(b) & $32$ & 1 & B1 for $18 + 14$ \\\\ \\hline\n(c) & $25\\%$ & 2 & M1 for total males $= 12 + 10 + 18 = 40$ \\\\ \\hline\n& & & M1 for $\\dfrac{10}{40} \\times 100$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Drawing and Interpreting Charts and Stem-and-Leaf Diagrams"
+            ],
+            "marks": 4,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_553",
+        "question_paths": [
+            "images/q_553.png"
+        ],
+        "ms_paths": [
+            "images/ms_553.png"
+        ],
+        "question_code": "A survey asked $60$ people to choose their favourite pet. The angles on a pie chart representing this data are given in the table below.\n\n\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\n\\textbf{Pet} & \\textbf{Angle on pie chart} \\\\\n\\hline\nCats & $150^\\circ$ \\\\ \\hline\nDogs & $120^\\circ$ \\\\ \\hline\nBirds & $60^\\circ$ \\\\ \\hline\nFish & $30^\\circ$ \\\\ \\hline\n\\end{tabular}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the number of people who chose Dogs.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] A pictogram is to be drawn to represent this data. Each symbol $\\triangle$ represents $5$ people. Complete the pictogram on the grid below.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (0,0) rectangle (6,4);\n\\draw (1.5,0) -- (1.5,4);\n\\draw (0,1) -- (6,1);\n\\draw (0,2) -- (6,2);\n\\draw (0,3) -- (6,3);\n\\node at (0.75, 3.5) {Cats};\n\\node at (0.75, 2.5) {Dogs};\n\\node at (0.75, 1.5) {Birds};\n\\node at (0.75, 0.5) {Fish};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[3]}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $20$ & 2 & M1 for $\\dfrac{120}{360} \\times 60$ \\\\ \\hline\n(b) &  \n\\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.north)] \\draw (0,0) rectangle (5,4); \\draw (1.5,0) -- (1.5,4); \\draw (0,1) -- (5,1); \\draw (0,2) -- (5,2); \\draw (0,3) -- (5,3); \\node at (0.75, 3.5) {Cats}; \\node at (0.75, 2.5) {Dogs}; \\node at (0.75, 1.5) {Birds}; \\node at (0.75, 0.5) {Fish}; \\node[right] at (1.6, 3.5) {$\\triangle \\triangle \\triangle \\triangle \\triangle$}; \\node[right] at (1.6, 2.5) {$\\triangle \\triangle \\triangle \\triangle$}; \\node[right] at (1.6, 1.5) {$\\triangle \\triangle$}; \\node[right] at (1.6, 0.5) {$\\triangle$}; \\end{tikzpicture}\n  & 3 & B2 for 2 or 3 correct rows \\ B1 for $1$ correct row \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Drawing and Interpreting Charts and Stem-and-Leaf Diagrams"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_554",
+        "question_paths": [
+            "images/q_554.png"
+        ],
+        "ms_paths": [
+            "images/ms_554.png"
+        ],
+        "question_code": "The marks of $15$ students in a mathematics test are recorded below.\n\n$$41, \\quad 22, \\quad 30, \\quad 15, \\quad 48, \\quad 28, \\quad 22, \\quad 37, \\quad 46, \\quad 25, \\quad 18, \\quad 33, \\quad 44, \\quad 31, \\quad 22$$\n\n[ENUM_START]\n[ITEM] Construct an ordered stem-and-leaf diagram to show this information. You must include a key.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (1.5,0) -- (1.5,5);\n\\draw (0,4) -- (6,4);\n\\node at (0.75, 4.5) {\\textbf{Stem}};\n\\node at (3.75, 4.5) {\\textbf{Leaf}};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[3]}\n[ITEM] Find the median mark.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Show that the range of the marks is $33$.\n\\examanswerslot{3.5cm}{0}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) &  \n\\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.north)] \\draw (1,-0.5) -- (1,4.5); \\draw (0,3.5) -- (5,3.5); \\node at (0.5, 4) {Stem}; \\node[right] at (1.2,4) {Leaf}; \\node at (0.5, 3) {$1$}; \\node[right] at (1.2, 3) {$5 \\quad 8$}; \\node at (0.5, 2) {$2$}; \\node[right] at (1.2, 2) {$2 \\quad 2 \\quad 2 \\quad 5 \\quad 8$}; \\node at (0.5, 1) {$3$}; \\node[right] at (1.2, 1) {$0 \\quad 1 \\quad 3 \\quad 7$}; \\node at (0.5, 0) {$4$}; \\node[right] at (1.2, 0) {$1 \\quad 4 \\quad 6 \\quad 8$}; \\node at (2.5, -1) {Key: $1|5$ represents $15$}; \\end{tikzpicture}\n  & 3 & B2 for fully correct ordered leaves \\ B1 for unordered leaves \\ B1 for correct key \\\\ \\hline\n(b) & $30$ & 1 & \\\\ \\hline\n(c) & Highest $= 48$, Lowest $= 15$ \\ Range $= 48 - 15 = 33$ & 1 & M1 for explicitly identifying $48$ and $15$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Drawing and Interpreting Charts and Stem-and-Leaf Diagrams"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_555",
+        "question_paths": [
+            "images/q_555.png"
+        ],
+        "ms_paths": [
+            "images/ms_555.png"
+        ],
+        "question_code": "The manufacturing cost of three products is divided into Materials and Labour. The costs, in EUR, are shown below.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\n\\textbf{Product} & \\textbf{Materials (EUR)} & \\textbf{Labour (EUR)} \\\n\\hline\nProduct A & $20$ & $10$ \\\nProduct B & $15$ & $25$ \\\nProduct C & $30$ & $20$ \\\n\\hline\n\\end{tabular}\n\\end{center}\n\n[ENUM_START]\n[ITEM] The composite bar chart for Product A has been drawn. Complete the composite bar chart for Product B and Product C.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[color=gray!40, xstep=0.5cm, ystep=0.5cm] (0,0) grid (6,6);\n\\draw[thick, ->] (0,0) -- (6,0);\n\\draw[thick, ->] (0,0) -- (0,6);\n\\foreach \\y [evaluate=\\y as \\val using int(\\y*10)] in {0,1,2,3,4,5} {\n\\draw (-0.1,\\y) -- (0,\\y) node[left] {$\\val$};\n}\n\\draw[fill=white] (0.5,0) rectangle (1.5,2);\n\\draw[fill=gray!50] (0.5,2) rectangle (1.5,3);\n\\node at (1,-0.4) {Prod A};\n\\node at (3,-0.4) {Prod B};\n\\node at (5,-0.4) {Prod C};\n\\draw[fill=white] (4,7) rectangle (4.5,7.5); \\node[right] at (4.6, 7.25) {Materials};\n\\draw[fill=gray!50] (4,6) rectangle (4.5,6.5); \\node[right] at (4.6, 6.25) {Labour};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[3]}\n[ITEM] Show that the ratio of the total cost of Materials to the total cost of Labour for all three products reduces to $13 : 11$.\n\\examanswerslot{3.5cm}{0}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) &  \n\\begin{tikzpicture}[scale=0.4,baseline=(current bounding box.north)] \\draw[color=gray!40, xstep=0.5cm, ystep=0.5cm] (0,0) grid (6,5); \\draw[thick, ->] (0,0) -- (6,0); \\draw[thick, ->] (0,0) -- (0,5); \\draw[fill=white] (2.5,0) rectangle (3.5,1.5); \\draw[fill=gray!50] (2.5,1.5) rectangle (3.5,4); \\draw[fill=white] (4.5,0) rectangle (5.5,3); \\draw[fill=gray!50] (4.5,3) rectangle (5.5,5); \\end{tikzpicture}\n  & 3 & B1 for Product B Materials up to $15$ \\ B1 for Product B Labour extending to $40$ \\ B1 for Product C composite bar fully correct (white to $30$, gray to $50$) \\\\ \\hline\n(b) & Total Materials $= 20 + 15 + 30 = 65$ \\ Total Labour $= 10 + 25 + 20 = 55$ \\ Ratio $= 65 : 55$ \\ Dividing by $5$ gives $13 : 11$ & 2 & M1 for finding sum of materials and labour correctly \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Drawing and Interpreting Charts and Stem-and-Leaf Diagrams"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_556",
+        "question_paths": [
+            "images/q_556.png"
+        ],
+        "ms_paths": [
+            "images/ms_556.png"
+        ],
+        "question_code": "A school observes the colours of $120$ cars in a car park. The frequencies are given in the table.\n\n\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\n\\textbf{Colour} & \\textbf{Frequency} \\\n\\hline\nSilver & $40$ \\\nBlack & $30$ \\\nWhite & $30$ \\\nRed & $20$ \\\n\\hline\n\\end{tabular}\n\\end{center}\n\n[ENUM_START]\n[ITEM] Calculate the sector angle for Silver cars in a pie chart.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Show that the sector angle for Red cars reduces exactly to $60^\\circ$.\n\\examanswerslot{3.5cm}{0}{1}\n[ITEM] Complete the pie chart to represent the data. One sector boundary has been drawn for you.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw (0,0) circle (3cm);\n\\fill (0,0) circle (2pt);\n\\draw (0,0) -- (0,3);\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[3]}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $120^\\circ$ & 2 & M1 for $\\dfrac{40}{120} \\times 360$ \\\\ \\hline\n(b) & Angle $= \\dfrac{20}{120} \\times 360$ \\ Angle $= \\dfrac{1}{6} \\times 360 = 60^\\circ$ & 1 & M1 for writing correct fractional multiplication setup \\\\ \\hline\n(c) &  \n\\begin{tikzpicture}[scale=1,baseline=(current bounding box.north)] \\draw (0,0) circle (2cm); \\draw (0,0) -- (90:2); \\draw (0,0) -- (-30:2); \\draw (0,0) -- (-120:2); \\draw (0,0) -- (150:2); \\node at (30:1) {Silver}; \\node at (-75:1) {Black}; \\node at (195:1) {White}; \\node at (120:1) {Red}; \\end{tikzpicture}\n  & 3 & B1 for Silver sector at $120^\\circ$ \\ B1 for Black and White sectors at $90^\\circ$ each \\ B1 for Red sector at $60^\\circ$ and all labelled correctly \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Drawing and Interpreting Charts and Stem-and-Leaf Diagrams"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_557",
+        "question_paths": [
+            "images/q_557.png"
+        ],
+        "ms_paths": [
+            "images/ms_557.png"
+        ],
+        "question_code": "The masses, in kg, of 10 parcels in Van A are recorded in an ordered stem-and-leaf diagram.\n\\begin{center}\n\\begin{tabular}{r|l}\n1 & 2 \\quad 5 \\\n2 & 1 \\quad 4 \\quad $x$ \\quad 8 \\\n3 & 0 \\quad 3 \\quad 5 \\quad 7 \\\n\\end{tabular}\n\\end{center}\nKey: $3 \\mid 5$ represents 35 kg.\n\n[ENUM_START]\n[ITEM] The median mass of the parcels is 26.5 kg. Find the value of $x$.\n\\examanswerslot{2cm}{0.25}{3}\n\n[ITEM] Find the interquartile range of the 10 parcels.\n\\examanswerslot{2cm}{0.25}{2}\n\n[ITEM] A pie chart is to be drawn for the number of parcels in Van A grouped by 10 kg intervals (10-19 kg, 20-29 kg, 30-39 kg). Show that the sector angle for the 20-29 kg interval is exactly $144^{\\circ}$.\n\\examanswerslot{3.5cm}{0}{2}\n\n[ITEM] Van B also carries 10 parcels. The frequencies for the intervals 10-19 kg, 20-29 kg, and 30-39 kg are 3, 5, and 2 respectively. Draw a composite bar chart to display the parcel interval frequencies for both Van A and Van B together.\n\\begin{center}\n\\begin{tikzpicture}\n\\draw[color=gray!40, xstep=2cm, ystep=1cm] (0,0) grid (6,9);\n\\draw[thick, ->] (0,0) -- (6.5,0) node[right] {\\small Mass Interval (kg)};\n\\draw[thick, ->] (0,0) -- (0,9.5) node[above] {\\small Frequency};\n\\foreach \\y [evaluate=\\y as \\val using int(\\y)] in {0,1,2,3,4,5,6,7,8,9} {\n\\draw (-0.1,\\y) -- (0,\\y) node[left] {\\small $\\val$};\n}\n\\node at (1,-0.5) {10-19}; \\node at (3,-0.5) {20-29}; \\node at (5,-0.5) {30-39};\n\\end{tikzpicture}\n\\end{center}\n\\phantom{.} \\hfill \\makebox[15pt][r]{[3]}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $5$ & 3 & M1 for identifying the 5th and 6th terms as $(20+x)$ and $28$ \\\\ \\hline\n& & & M1 for formulating $\\dfrac{20+x+28}{2} = 26.5$ \\\\ \\hline\n(b) & $12$ & 2 & M1 for Lower Quartile $= 21$ and Upper Quartile $= 33$ \\\\ \\hline\n(c) & $\\dfrac{4}{10} \\times 360 = 144^{\\circ}$ & 2 & M1 for extracting the frequency of $4$ for the 20-29 interval \\\\ \\hline\n& & & A1 for fully correct multiplication yielding $144^{\\circ}$ \\\\ \\hline\n(d)  & \n\\begin{tikzpicture}[scale=0.6]\n\\draw[color=gray!40, xstep=2cm, ystep=1cm] (0,0) grid (6,9);\n\\draw[thick, ->] (0,0) -- (6.5,0);\n\\draw[thick, ->] (0,0) -- (0,9.5);\n\\foreach \\y [evaluate=\\y as \\val using int(\\y)] in {0,1,2,3,4,5,6,7,8,9} {\n\\draw (-0.1,\\y) -- (0,\\y) node[left] {\\small $\\val$};\n}\n\\node at (1,-0.5) {10-19}; \\node at (3,-0.5) {20-29}; \\node at (5,-0.5) {30-39};\n\\fill[gray!30] (0.5,0) rectangle (1.5,2); \\fill[gray!80] (0.5,2) rectangle (1.5,5);\n\\fill[gray!30] (2.5,0) rectangle (3.5,4); \\fill[gray!80] (2.5,4) rectangle (3.5,9);\n\\fill[gray!30] (4.5,0) rectangle (5.5,4); \\fill[gray!80] (4.5,4) rectangle (5.5,6);\n\\fill[gray!30] (0, -1.25) rectangle (0.5, -1.75); \\node[right] at (0.5, -1.5) {\\small Van A};\n\\fill[gray!80] (3, -1.25) rectangle (3.5, -1.75); \\node[right] at (3.5, -1.5) {\\small Van B};\n\\end{tikzpicture}\n &  3  &  B1 for correct stacked frequencies for 10-19 kg (Van A: 2, Van B: 3) & \\hline\n& & & B1 for correct stacked frequencies for 20-29 kg (Van A: 4, Van B: 5) and 30-39 kg (Van A: 4, Van B: 2) \\\\ \\hline\n& & & B1 for a fully correct legend or key identifying Van A and Van B \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Drawing and Interpreting Charts and Stem-and-Leaf Diagrams"
+            ],
+            "marks": 10,
+            "difficulty": "Hard"
+        }
     }
 ]

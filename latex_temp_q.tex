@@ -18,357 +18,106 @@
 
 \setlength{\parindent}{0pt}
 \begin{document}
-\begin{center} \LARGE \textbf{Custom Exam Paper} \end{center}\vspace{1cm}
+\begin{center} \LARGE \textbf{Area and Perimeter} \end{center}\vspace{1cm}
 
 \begin{enumerate}[label=\textbf{\arabic*}, leftmargin=0.2cm, labelsep=0.5cm, align=right]
 \needspace{6cm}
 \item \needspace{5cm}
-The diagram shows a pyramid with a square base $PQRS$. \\
-The apex $V$ is directly above the centre $M$ of the base. \\
-The sides of the square base are $6$ cm and the vertical height $VM$ is $3\sqrt{2}$ cm. \\
+A rectangle and a trapezium are shown below. \\
 \begin{center}
-\begin{tikzpicture}[scale=1, line join=round, line cap=round]
-\coordinate (P) at (0,0);
-\coordinate (Q) at (4,0);
-\coordinate (R) at (5,1.5);
-\coordinate (S) at (1,1.5);
-\coordinate (M) at (2.5,0.75);
-\coordinate (V) at (2.5,4.5);
-\draw[dashed] (P) -- (S);
-\draw[dashed] (S) -- (R);
-\draw[dashed] (S) -- (V);
-\draw[dashed] (P) -- (R);
-\draw[dashed] (M) -- (V);
-\draw (P) -- (Q) -- (R) -- (V) -- cycle;
-\draw (Q) -- (V);
-\node[below left] at (P) {$P$};
-\node[below right] at (Q) {$Q$};
-\node[right] at (R) {$R$};
-\node[above left] at (S) {$S$};
-\node[below] at (M) {$M$};
-\node[above] at (V) {$V$};
-\node[below] at (2,0) {$6$ cm};
-\node[right] at (2.5,2.6) {$3\sqrt{2}$ cm};
+\begin{tikzpicture}[scale=0.6]
+\begin{scope}[shift={(-3,0)}]
+\draw[thick] (0,0) rectangle (6,3);
+\node[below] at (3,0) {$8\text{ cm}$};
+\node[left] at (0,1.5) {$x\text{ cm}$};
+\end{scope}
+\begin{scope}[shift={(8,0)}]
+\draw[thick] (0,0) -- (6,0) -- (4.5,4) -- (1.5,4) -- cycle;
+\draw[dashed] (1.5,4) -- (1.5,0);
+\draw (1.5,0) rectangle (1.8,0.3);
+\node[below] at (3,0) {$8\text{ cm}$};
+\node[above] at (3,4) {$4\text{ cm}$};
+\node[left] at (1.5,2) {$(x+1)\text{ cm}$};
+\end{scope}
 \end{tikzpicture}
 \end{center}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Calculate the length $PR$.
-\examanswerslot{2cm}{0.25}{2}
-\item Calculate the length $PM$.
-\examanswerslot{2cm}{0.25}{1}
-\item Calculate the angle between the line $VP$ and the plane $PQRS$.
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item A cyclist rides a distance of 30 km at an average speed of $x$ km/h. On the return journey, the cyclist increases the average speed by 5 km/h. The return journey takes 30 minutes less than the outward journey. \\
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Show that this information reduces to the equation $x^2 + 5x - 300 = 0$.
-\examanswerslot{4cm}{0}{3}
-\item Solve the equation $x^2 + 5x - 300 = 0$ to find the time taken, in hours, for the outward journey.
-\examanswerslot{3cm}{0.25}{3}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Evaluate each of the following.
-\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=0.6cm]
-\item $81^{\frac{3}{4}}$
-\examanswerslot{2cm}{0.25}{1}
-\item $16^{-\frac{1}{4}}$
-\examanswerslot{2cm}{0.25}{1}
-\end{enumerate}
-\item Simplify the following expression, giving your answer with positive indices.
-\par\vspace{0.1cm}\hspace*{0.6cm}$\dfrac{(2x^{3})^{4}}{4x^{5}}$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \needspace{5cm}
-\noindent In the diagram, $ABC$ is an isosceles triangle with $AB = AC$. \par\vspace{0.1cm}
-\begin{center}
-\begin{tikzpicture}[scale=1.2]
-\coordinate (B) at (0,0);
-\coordinate (C) at (4,0);
-\coordinate (A) at (2,3.5);
-\draw[thick] (B) -- (C) -- (A) -- cycle;
-\draw[thick] (0.9,1.8) -- (1.1,1.7);
-\draw[thick] (2.9,1.7) -- (3.1,1.8);
-\draw (0.5,0) arc (0:60:0.5);
-\node at (1.1,0.4) {$(x+30)^\circ$};
-\draw (3.5,0) arc (180:120:0.5);
-\draw (2,3.5) ++ (-60:0.5) arc(-60:-120:0.5);
-\node at (2,2.7) {$4x^\circ$};
-\node at (2,3.8) {$A$};
-\node at (-0.2,0) {$B$};
-\node at (4.2,0) {$C$};
-\node[draw, rectangle, fill=white] at (5.5,1.75) {NOT TO SCALE};
-\end{tikzpicture}
-\end{center}
+The area of the rectangle is equal to the area of the trapezium. \\
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
 \item Find the value of $x$.
-\examanswerslot{2cm}{0.25}{2}
-\item Find the size of angle $BAC$.
-\examanswerslot{2cm}{0.25}{1}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent Evaluate each of the operations without using a calculator, leaving answers as standard rational values. \par\vspace{0.1cm}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item $\left(2\dfrac{7}{9}\right)^{-\frac{1}{2}}$
-\examanswerslot{2cm}{0.25}{2}
-\item $\dfrac{3^{-5} \times 9^2}{27^{-1}}$
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent Make $x$ the subject of the formula. \par\vspace{0.1cm}
-\par\vspace{0.1cm}\hspace*{0.6cm}$y = \dfrac{x + 5}{x}$\par\vspace{0.15cm}
 \examanswerslot{3cm}{0.25}{3}
+\item Calculate the perimeter of the rectangle.
+\examanswerslot{2cm}{0.25}{1}
+\end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
 \item \needspace{5cm}
-A ceremonial badge is shaped as a major sector of a circle with centre $O$ and radius $3\text{ cm}$. \\
-The reflex angle of the major sector is $240^\circ$. \\
+The diagram shows a composite L-shaped polygon. \\
+All internal angles are right angles. \\
 \begin{center}
 \begin{tikzpicture}
-\draw[thick] (0,0) -- (3,0) arc[start angle=0, end angle=240, radius=3] -- cycle;
-\draw (0.5,0) arc[start angle=0, end angle=240, radius=0.5];
-\node at (0.8,0.8) {$240^\circ$};
-\node[below] at (1.5,0) {$3\text{ cm}$};
-\node[below left] at (0,0) {$O$};
+\draw[thick] (0,0) -- (5,0) -- (5,1.5) -- (2,1.5) -- (2,4) -- (0,4) -- cycle;
+\node at (2.5,-0.3) {$10$ cm};
+\node at (5.4,0.75) {$3$ cm};
+\node at (3.5,1.8) {$6$ cm};
+\node at (1.6,2.75) {$5$ cm};
+\node at (1,4.3) {$4$ cm};
+\node at (-0.4,2) {$8$ cm};
 \end{tikzpicture}
 \end{center}
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Show that the exact area of the badge is $6\pi\text{ cm}^2$.
-\examanswerslot{3.5cm}{0}{2}
-\item The badge is coated in liquid silver. The silver coating process costs $5\text{ GBP}$ per $\pi\text{ cm}^2$.
-\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=0.6cm]
-\item Calculate the total cost to coat the badge.
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item A cyclist travels the first 12 km of a journey at an average speed of 16 km/h and the remaining 24 km at an average speed of 20 km/h.
-Calculate the average speed of the cyclist for the entire journey. \\
+\item Calculate the perimeter of the polygon.
+\examanswerslot{2cm}{0.25}{1}
+\item Calculate the total area of the polygon.
 \examanswerslot{2cm}{0.25}{3}
-\item A container has a volume of 4000 cm$^3$. It is filled with a liquid that has a uniform density of 1.15 g/cm$^3$.
-Calculate the total mass of the liquid in kilograms. \\
-\examanswerslot{2cm}{0.25}{2}
 \end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
 \item \needspace{5cm}
-Points $A$, $B$, $C$ and $D$ lie on a circle. \\
-Chords $AC$ and $BD$ intersect at point $E$. \\
-Angle $BAC = 42^\circ$. \\
-Angle $ABD = 56^\circ$. \\
+A rectangle is shown below. All dimensions are in centimetres. \\
 \begin{center}
 \begin{tikzpicture}
-\draw [thick] (0,0) circle (2.5cm);
-\coordinate (A) at (200:2.5);
-\coordinate (B) at (340:2.5);
-\coordinate (C) at (50:2.5);
-\coordinate (D) at (130:2.5);
-\coordinate (E) at (intersection of A--C and B--D);
-\draw [thick] (A) -- (B) -- (C) -- (D) -- cycle;
-\draw [thick] (A) -- (C);
-\draw [thick] (B) -- (D);
-\node[below] at (E) {$E$};
-\node[below left] at (A) {$A$};
-\node[below right] at (B) {$B$};
-\node[above right] at (C) {$C$};
-\node[above left] at (D) {$D$};
-\pic [draw, thick, angle radius=0.8cm, "$42^\circ$", angle eccentricity=1.6] {angle = B--A--C};
-\pic [draw, thick, angle radius=0.9cm, "$56^\circ$", angle eccentricity=1.6] {angle = D--B--A};
-\node at (4.5, 0) {NOT TO SCALE};
+\draw [thick] (0,0) rectangle (4.5,2.5);
+\node at (2.25,-0.3) {$(2x - 1)$};
+\node at (5.1,1.25) {$(x + 2)$};
 \end{tikzpicture}
 \end{center}
+The exact area of the rectangle is $18$ cm$^2$. \\
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Find angle $ACD$.
-\examanswerslot{2cm}{0.25}{1}
-\item Find angle $BDC$.
-\examanswerslot{2cm}{0.25}{1}
-\item Find angle $AED$.
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent A straight line, $L_{1}$, has the equation $y = -2x + 7$. \par\vspace{0.1cm}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Line $L_{2}$ is parallel to line $L_{1}$ and passes through the point $(3, 4)$. Find the equation of line $L_{2}$ in the form $y = mx + c$.
-\examanswerslot{2cm}{0.25}{2}
-\item Line $L_{2}$ crosses the $y$-axis at point $P$. Write down the coordinates of $P$.
-\examanswerslot{2cm}{0.25}{1}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item The points $A(-3, 8)$ and $B(9, -2)$ define the line segment $AB$. \\
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Find the coordinates of the midpoint of $AB$.
-\examanswerslot{2cm}{0.25}{2}
-\item Show that the equation of the perpendicular bisector of $AB$ can be written as $6x - 5y = 3$.
+\item Show that the area equation simplifies to:
+\par\vspace{0.1cm}\hspace*{0.6cm}$2x^2 + 3x - 20 = 0$\par\vspace{0.15cm}
 \examanswerslot{3.5cm}{0}{2}
-\item The perpendicular bisector crosses the $x$-axis at point $Q$. Calculate the coordinates of $Q$.
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent Estimate the value of the following calculation by rounding each initial number correct to exactly 1 significant figure. Show your intermediate rounding step clearly. \par\vspace{0.1cm}
-\par\vspace{0.1cm}\hspace*{0.6cm}$\dfrac{39.4 \times 4.87}{0.193}$\par\vspace{0.15cm}
-\examanswerslot{2.5cm}{0.25}{3}
-\vspace{1cm}
-\needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Expand and simplify.
-\par\vspace{0.1cm}\hspace*{0.6cm}$3(2x - 5) + 4(x + 2)$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{2}
-\item Factorise completely.
-\par\vspace{0.1cm}\hspace*{0.6cm}$12x^2 + 18xy$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{2}
-\item Factorise.
-\par\vspace{0.1cm}\hspace*{0.6cm}$x^2 - 16y^2$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item A company purchases a piece of industrial machinery for 50000 EUR. The value of the machinery depreciates exponentially at a rate of 20\% each year. \\
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Show that the value of the machinery after 2 years is 32000 EUR.
-\examanswerslot{3.5cm}{0}{2}
-\item Calculate the value of the machinery after 3 years.
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Convert $12.5\%$ into a fraction written in its simplest form.
-\examanswerslot{2cm}{0.25}{1}
-\item Write the mixed number $2\dfrac{3}{5}$ as a decimal number.
-\examanswerslot{2cm}{0.25}{1}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \needspace{5cm}
-The diagram shows a region $R$, which is unshaded. \\
-\begin{center}
-\begin{tikzpicture}[scale=1]
-\clip (-1,-1) rectangle (6.5,6.5);
-\fill[gray!60] (-1,-1) rectangle (1,7);
-\fill[gray!60] (-1,-1) rectangle (7,1);
-\fill[gray!60] (0,6) -- (6,0) -- (7,0) -- (7,7) -- (0,7) -- cycle;
-\draw[color=gray!40, xstep=0.5cm, ystep=0.5cm] (-1,-1) grid (7,7);
-\draw[thick, dashed] (1,-1) -- (1,7);
-\draw[thick] (-1,1) -- (7,1);
-\draw[thick, dashed] (-1,7) -- (7,-1);
-\draw[->, thick] (-1,0) -- (6.5,0) node[right] {$x$};
-\draw[->, thick] (0,-1) -- (0,6.5) node[above] {$y$};
-\foreach \x in {1, 2, 3, 4, 5, 6} {
-\draw (\x,0) -- (\x,-0.15) node[below] {\small $\x$};
-}
-\foreach \y in {1, 2, 3, 4, 5, 6} {
-\draw (0,\y) -- (-0.15,\y) node[left] {\small $\y$};
-}
-\node[below left] at (0,0) {$0$};
-\node at (2.5,2) {\Large $R$};
-\end{tikzpicture}
-\end{center}
-\noindent Find the 3 inequalities that define the region $R$. \par\vspace{0.1cm}
-\examanswerslot{5cm}{0.25}{3}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent Two similar geometric cones have surface areas of 18 $\text{cm}^2$ and 32 $\text{cm}^2$. \par\vspace{0.1cm}
-The height of the smaller cone is 6 cm. \\
-Calculate the height of the larger cone. \\
+\item Solve the equation to find the value of $x$.
 \examanswerslot{2cm}{0.25}{3}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent The line segment joining $C(-2, -5)$ and $D(4, 3)$ forms the diameter of a circle. \par\vspace{0.1cm}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Find the coordinates of the centre of this circle.
+\item Calculate the exact perimeter of the rectangle.
 \examanswerslot{2cm}{0.25}{2}
-\item Show that the radius of this circle is 5.
-\examanswerslot{3.5cm}{0}{2}
 \end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
 \item \needspace{5cm}
-\noindent Here is a regular pentagon. \par\vspace{0.1cm}
+The points $P(-1, 2)$, $Q(3, 2)$, and $R(5, 6)$ are three vertices of a parallelogram $PQRS$ drawn on a coordinate grid. \\
 \begin{center}
-\begin{tikzpicture}
-\draw[thick] (90:2) -- (162:2) -- (234:2) -- (306:2) -- (18:2) -- cycle;
+\begin{tikzpicture}[scale=0.8]
+\draw[->, gray] (-2,0) -- (6,0) node[right] {$x$};
+\draw[->, gray] (0,-1) -- (0,7) node[above] {$y$};
+\draw[thick] (-1,2) -- (3,2) -- (5,6) -- (1,6) -- cycle;
+\node[below left] at (-1,2) {$P(-1,2)$};
+\node[below right] at (3,2) {$Q(3,2)$};
+\node[above right] at (5,6) {$R(5,6)$};
+\node[above left] at (1,6) {$S$};
+\filldraw (-1,2) circle (1.5pt);
+\filldraw (3,2) circle (1.5pt);
+\filldraw (5,6) circle (1.5pt);
+\filldraw (1,6) circle (1.5pt);
 \end{tikzpicture}
 \end{center}
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Draw all the lines of symmetry on the pentagon.
-\phantom{.} \hfill \makebox[15pt][r]{[2]}
-\item State the order of rotational symmetry of this pentagon.
+\item Write down the coordinates of the fourth vertex $S$.
 \examanswerslot{2cm}{0.25}{1}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \needspace{5cm}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Solve the following inequalities algebraically.
-\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=0.6cm]
-\item 
-\par\vspace{0.1cm}\hspace*{0.6cm}$\dfrac{x + 1}{2} < 2$\par\vspace{0.15cm}
-\examanswerslot{2.5cm}{0.25}{2}
-\item $-1 \le 2x + 3 < 9$
-\examanswerslot{2.5cm}{0.25}{2}
-\end{enumerate}
-\item List all the integer values that satisfy the inequality in part (a)(ii).
+\item Calculate the area of the parallelogram $PQRS$.
 \examanswerslot{2cm}{0.25}{2}
-\item Represent the solution to part (a)(i) on the number line below.
-\vspace{1cm}
-\begin{center}
-\begin{tikzpicture}
-\draw[thick, <->] (-2,0) -- (6,0);
-\foreach \x [evaluate=\x as \val using int(\x)] in {-1,0,1,2,3,4,5} {
-\draw (\x,0.1) -- (\x,-0.1) node[below] {\small $\val$};
-}
-\end{tikzpicture}
-\end{center}
-\phantom{.} \hfill \makebox[15pt][r]{[1]}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent A large cylindrical water tank has a cross-sectional area of $2.5\text{ m}^2$. Water is poured into the tank at a constant rate of $150\text{ ml}$ per second. \par\vspace{0.1cm}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Express the flow rate of the water in litres per minute.
-\examanswerslot{2cm}{0.25}{2}
-\item Show that the height of the water in the tank increases by $3.6\text{ mm}$ each hour.
-\examanswerslot{3.5cm}{0}{3}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item A horizontal line passes through the point of intersection of the lines $x = -4$ and $y = 7$. Write down the equation of this horizontal line.
-\examanswerslot{2cm}{0.25}{1}
-\item A line $L$ passes through the point $A(6, -5)$ and has a gradient of $-\dfrac{3}{4}$. Find the coordinates of the points where $L$ crosses:
-\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=0.6cm]
-\item the $x$-axis,
-\examanswerslot{2cm}{0.25}{2}
-\item the $y$-axis.
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Arrange the following real terms in ascending order of magnitude.
-\par\vspace{0.1cm}\hspace*{0.6cm}$\dfrac{17}{25}, \quad 67.5\%, \quad 0.682, \quad \left(\dfrac{1}{8}\right)^{-1} \times 10^{-1}$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{2}
-\item Complete the expression using the correct symbol from the set $\{>, <, \ge, \le, =\}$.
-\par\vspace{0.1cm}\hspace*{0.6cm}$3.5\% \quad \text{\_\_\_\_\_\_\_} \quad \dfrac{7}{200}$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{1}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent A rare collector card is sold for 180 EUR, which represents a profit of 20\% on the original purchase price. Calculate the original purchase price. \par\vspace{0.1cm}
+\item Find the exact length of the diagonal $PR$. Give your answer in the form $a\sqrt{b}$ where $a$ and $b$ are prime numbers.
 \examanswerslot{2cm}{0.25}{3}
+\end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
 \item \needspace{5cm}
@@ -394,160 +143,68 @@ Show that the height, $h$, of the triangle is $10$ cm. \\
 \end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Evaluate the expression.
-\par\vspace{0.1cm}\hspace*{0.6cm}$2 \times \sqrt{81} - 3^2 \times \sqrt[3]{27}$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{2}
-\item Evaluate the expression.
-\par\vspace{0.1cm}\hspace*{0.6cm}$\sqrt{100} \times \sqrt{4} - 5^3$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent A specific baking recipe requires $120\text{ g}$ of flour to create a batch of 8 identical scones. \par\vspace{0.1cm}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Calculate the mass of flour required to bake exactly 20 of these scones.
-\examanswerslot{2cm}{0.25}{2}
-\item Determine the maximum number of full complete scones that can be baked using $450\text{ g}$ of flour.
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item The $n$th term of an exponential sequence is given by $T_n = 5 \times 2^{n-1}$. \\
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Write down the first three terms of this sequence.
-\examanswerslot{2cm}{0.25}{1}
-\item Determine the 6th term, $T_6$, of this sequence.
-\examanswerslot{2cm}{0.25}{1}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
 \item \needspace{5cm}
-A group of 100 students are surveyed about their participation in Athletics ($A$), Badminton ($B$), and Cricket ($C$). The results show that 38 students do Athletics, 34 students do Badminton, and 41 students do Cricket. The number of students in the intersection regions are described in terms of $x$: \\
-* $x$ students participate in all three sports. \\
-* The number of students who do Badminton and Cricket only is $2x$. \\
-* The number of students who do Athletics and Cricket only is $x + 1$. \\
-* The number of students who do Athletics and Badminton only is $2x - 3$. \\
-* The number of students who do Cricket only is equal to the number of students who do none of the three sports. \\
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Formulate an equation in terms of $x$ for the total number of students and show that it reduces to $155 - 11x = 100$.
-\examanswerslot{3.5cm}{0}{3}
-\item Complete the Venn diagram to show the exact number of students in each of the 8 regions.
+A sailing competition takes place around a triangular course $ABC$. The distance from mark $A$ to mark $B$ is 5 km, and the distance from $B$ to $C$ is 12 km. The angle at $B$ is exactly $90^\circ$. \\
 \begin{center}
 \begin{tikzpicture}
-\draw[thick] (-5.5, -3.5) rectangle (5.5, 3.5);
-\node at (-5.9, 3.1) {$U$};
-\draw[thick] (-1.4, 0.6) circle (1.8);
-\draw[thick] (1.4, 0.6) circle (1.8);
-\draw[thick] (0, -1.2) circle (1.8);
-\node at (-3.2, 2.2) {$A$};
-\node at (3.2, 2.2) {$B$};
-\node at (0, -3.2) {$C$};
+\draw[thick] (0,0) -- (4.8,0) -- (0,2) -- cycle;
+\draw (0,0) rectangle (0.2,0.2);
+\node[below] at (2.4,0) {12 km};
+\node[left] at (0,1) {5 km};
+\node[below left] at (0,0) {$B$};
+\node[below right] at (4.8,0) {$C$};
+\node[above left] at (0,2) {$A$};
 \end{tikzpicture}
 \end{center}
-\phantom{.} \hfill \makebox[15pt][r]{[3]}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent An algebraic fraction equation is given by: \par\vspace{0.1cm}
-\par\vspace{0.1cm}\hspace*{0.6cm}$\dfrac{6}{x} - \dfrac{2}{x + 1} = 1$\par\vspace{0.15cm}
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Show that this equation simplifies to $x^2 - 3x - 6 = 0$.
-\examanswerslot{4cm}{0}{3}
-\item Solve the equation $x^2 - 3x - 6 = 4$.
+\item Calculate the total perimeter of the sailing course.
+\examanswerslot{2cm}{0.25}{3}
+\item A leading boat completes the entire course at a constant average speed of 10 km/h.
+\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=0.6cm]
+\item Calculate the time taken for the boat to finish, giving your answer in hours and minutes.
+\examanswerslot{2cm}{0.25}{2}
+\item Next year, the organizers plan to extend the course boundaries to form a mathematically similar triangle whose enclosed area is 44\% larger than the current course. Calculate the perimeter of this new enlarged course.
 \examanswerslot{2cm}{0.25}{3}
 \end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \noindent Evaluate the expression below, converting the intermediate step out of ordinary units to give your final answer exactly in standard form. \par\vspace{0.1cm}
-\par\vspace{0.1cm}\hspace*{0.6cm}$(5 \times 10^4) \times (3 \times 10^{-2})$\par\vspace{0.15cm}
-\examanswerslot{2cm}{0.25}{2}
-\vspace{1cm}
-\needspace{6cm}
-\item \needspace{5cm}
-\noindent Find the gradient of the straight line shown on the grid below. \par\vspace{0.1cm}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[color=gray!40, xstep=0.5cm, ystep=0.5cm] (-2,-2) grid (5,7);
-\draw[->,thick] (-2,0) -- (5,0) node[right] {$x$};
-\draw[->,thick] (0,-2) -- (0,7) node[above] {$y$};
-\foreach \x [evaluate=\x as \val using int(\x)] in {-1,1,2,3,4} {
-\draw (\x,0.1) -- (\x,-0.1) node[below] {\small $\val$};
-}
-\foreach \y [evaluate=\y as \val using int(\y)] in {-1,1,2,3,4,5,6} {
-\draw (0.1,\y) -- (-0.1,\y) node[left] {\small $\val$};
-}
-\draw[thick,black] (-1.5,-2) -- (3,7);
-\end{tikzpicture}
-\end{center}
-\examanswerslot{2cm}{0.25}{2}
-\vspace{1cm}
-\needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item (a) Simplify fully.
-\par\vspace{0.1cm}\hspace*{0.6cm}$ 3\sqrt{48} - \sqrt{12} $\par\vspace{0.15cm}
-\examanswerslot{2.5cm}{0.25}{2}
-\item (b) Rationalise the denominator and simplify fully.
-\par\vspace{0.1cm}\hspace*{0.6cm}$ \dfrac{5 + \sqrt{3}}{2 + \sqrt{3}} $\par\vspace{0.15cm}
-\examanswerslot{4cm}{0.25}{3}
 \end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
 \item \needspace{5cm}
-The diagram shows a circle, centre $O$, containing two chords $EF$ and $EG$. The lengths of the chords are equal, with $EF = EG = 8 \text{ cm}$. The angle $FEG$ is $60^\circ$. \\
+A rectangular garden is shown in the diagram. The length of the garden is $(2x + 1)$ m and the width is $(x + 2)$ m. The total area of the garden is $27 \text{ m}^2$. \\
 \begin{center}
-\begin{tikzpicture}[rotate=10]
-\draw[thick] (0,0) circle (2.5cm);
-\coordinate (O) at (0,0);
-\coordinate (E) at (0,2.5);
-\coordinate (F) at (-2.165,-1.25);
-\coordinate (G) at (2.165,-1.25);
-\draw[thick] (E) -- (F) -- (G) -- cycle;
-\filldraw (O) circle (1.5pt) node[below] {$O$};
-\filldraw (E) circle (1.5pt) node[above] {$E$};
-\filldraw (F) circle (1.5pt) node[below left] {$F$};
-\filldraw (G) circle (1.5pt) node[below right] {$G$};
-\pic [draw, angle radius=0.7cm] {angle = F--E--G};
-\node at (0, 1.4) {$60^\circ$};
-\node at (4, 0) {NOT TO SCALE};
+\begin{tikzpicture}
+\draw[thick] (0,0) rectangle (5,3);
+\node[below] at (2.5,0) {$(2x + 1)$ m};
+\node[right] at (5,1.5) {$(x + 2)$ m};
 \end{tikzpicture}
 \end{center}
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Write down the exact length of $FG$.
-\examanswerslot{1.5cm}{0.25}{1}
-\item Find the exact area of triangle $EFG$.
-\par\vspace{0.1cm}\hspace*{0.6cm}$\text{Area} = \dfrac{1}{2}ab\sin C$\par\vspace{0.15cm}
-\examanswerslot{2.5cm}{0.25}{2}
-\item State the geometrical property of circles that ensures the perpendicular distance from $O$ to $EF$ is equal to the perpendicular distance from $O$ to $EG$.
-\examanswerslot{2.5cm}{0.25}{1}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Evaluate.
-\par\vspace{0.1cm}\hspace*{0.6cm}$5 \times (3 - 8) + 14$\par\vspace{0.15cm}
+\item Show that $2x^2 + 5x - 25 = 0$.
+\examanswerslot{3.5cm}{0}{2}
+\item Solve the equation to find the exact value of $x$.
 \examanswerslot{2cm}{0.25}{2}
-\item Work out.
-\par\vspace{0.1cm}\hspace*{0.6cm}$4.5 + 1.2 \div 0.3$\par\vspace{0.15cm}
+\item Hence calculate the perimeter of the garden.
 \examanswerslot{2cm}{0.25}{2}
 \end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
-\item An international cargo ship leaves Port A at 15 20 local time on 10 April. It arrives at Port B after a continuous voyage lasting exactly 3 days and 5 hours. The local time at Port B is 2 hours behind the local time at Port A. \\
+\item \needspace{5cm}
+The parallel sides of a trapezium are in the ratio $3 : 5$. \\
+\begin{center}
+\begin{tikzpicture}
+\draw [thick] (1.5,2.5) -- (4.5,2.5) -- (6,0) -- (0,0) -- cycle;
+\draw [dashed] (1.5,2.5) -- (1.5,0);
+\draw (1.5,0) rectangle (1.7,0.2);
+\node at (2.1,1.25) {$8$ cm};
+\end{tikzpicture}
+\end{center}
+The perpendicular height of the trapezium is $8$ cm. \\
+The area of the trapezium is $96$ cm$^2$. \\
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Calculate the local time at Port B when the ship departs from Port A.
-\examanswerslot{2cm}{0.25}{1}
-\item Calculate the local time and date at Port B when the ship arrives.
-\examanswerslot{2cm}{0.25}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item A security light flashes every 42 seconds. A second security light flashes every 60 seconds. Both lights flash together at 19:30. \\
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Find the Lowest Common Multiple (LCM) of 42 and 60.
-\examanswerslot{2cm}{0.25}{2}
-\item Determine the next time both lights will flash together.
-\examanswerslot{2cm}{0.25}{2}
+\item Calculate the lengths of the two parallel sides.
+\examanswerslot{2cm}{0.25}{3}
+\item The trapezium is isosceles. Calculate the exact perimeter of the trapezium. Give your answer in the form $p + q\sqrt{r}$ where $p, q$, and $r$ are integers.
+\examanswerslot{2cm}{0.25}{4}
 \end{enumerate}
 \end{enumerate}
 

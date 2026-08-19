@@ -384,6 +384,11 @@ with col_left:
     num_variants = st.slider("Variants to Generate per checked difficulty", min_value=1, max_value=10, value=5)
     include_tikz = st.checkbox("Include TikZ Diagram", value=True)
 
+    # NEW: High Variance Toggle
+    st.write("**Generation Style Settings:**")
+    high_variance_mode = st.toggle("🔀 Enable High Variance & Crossover Topics", value=False,
+                                   help="Forces the AI to change structural layouts, mix topics, and avoid simple number-swapping.")
+
     tikz_instruction_block = ""
     if include_tikz:
         tikz_instruction_block = """
@@ -426,14 +431,30 @@ with col_left:
     else:
         paper_specific_prompt_rules = """- ENFORCE CALCULATOR EXPECTATIONS FOR PAPER 4:
   * Questions should contain advanced calculations, multi-step geometric problem layouts, continuous statistics tracking, or multi-stage formulas where digital calculators are typical.
-  * Figures and values should be less nice.
+  * Figures and values should be less nice, they don't need to end with 0 or 5.
   * Answers can require 3 significant figure approximations where necessary, but parameters should remain mathematically clean inside variables."""
+
+    # NEW: Variance and Crossover Injection Logic
+    variance_directive = ""
+    if high_variance_mode:
+        variance_directive = """
+CRITICAL VARIANCE AND CROSSOVER DIRECTIVE:
+- STRICT PROHIBITION ON NUMBER-SWAPPING: You are strictly forbidden from reusing the same question structure and merely changing the values. Each variant MUST have a completely different real-world context, structural layout, and questioning angle.
+- CROSSOVER TOPICS REQUIRED: You must seamlessly integrate at least one secondary syllabus topic into the sub-parts of each variant to test multi-disciplinary knowledge.
+- SUB-PART DIVERSITY: Radically vary the number and nesting of sub-parts. For example, Variant 1 might have (a), (b)(i), (b)(ii); Variant 2 might have (a), (b), (c). 
+- DELIVERABLE VARIETY: Ask for different deliverables across variants (e.g., mix "Show that", "Calculate", "Explain why", "Find the ratio").
+"""
+    else:
+        variance_directive = "- Standard variant generation permitted. Maintain focus purely on the primary topic."
 
     massive_prompt = fr"""You are an elite math test setter specializing in Cambridge IGCSE 0607 Extended International Mathematics. Generate exactly {total_requested_count} distinct question variations regarding '{topic}' (Syllabus Reference Context: {syllabus_ref}). Use British spelling throughout.
 
 CRITICAL ASSESSMENT COMPONENT RESTRICTIONS:
 {paper_specific_prompt_rules}
 {registry_constraints_prompt}
+
+{variance_directive}
+
 CRITICAL STRUCTURING RULES:
 1. NO HEADERS/TITLES: Do not output any titles, question headers, or labels like "Question 1". Start directly with the raw context text or the `[ENUM_START]` token.
 2. ZERO LEFT INDENTATION: Ensure all lines print completely flush against the left margin. 
