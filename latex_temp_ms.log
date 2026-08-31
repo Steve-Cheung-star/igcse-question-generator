@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.31)  28 AUG 2026 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.31)  31 AUG 2026 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -565,27 +565,27 @@ tawesome5
 (/usr/local/texlive/2025/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping
 .def)))
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
-2.
+3.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (./latex_temp_ms.aux)
 \openout1 = `latex_temp_ms.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -644,81 +644,79 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (0.60628pt too wide) in alignment at lines 35--35
+Overfull \hbox (0.60628pt too wide) in alignment at lines 36--36
  [] [] [] [] 
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 36.
+ 37.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 36.
+ 37.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 36.
+ 37.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 36.
+ 37.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 
-Underfull \hbox (badness 1668) in paragraph at lines 62--62
-[]|\OT1/ptm/m/n/12 M2 for $\OT1/ztmcm/m/n/12 24500 \OMS/ztmcm/m/n/12 ^^B \OT1/z
-tmcm/m/n/12 (1 \OMS/ztmcm/m/n/12 ^^@ \OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT
-1/ztmcm/m/n/12 125)[]$ \OT1/ptm/m/n/12 or M1 for
+Underfull \hbox (badness 2932) in paragraph at lines 42--42
+[]|\OT1/ptm/m/n/12 M1 for $[] \OMS/ztmcm/m/n/12 ^^B \OT1/ztmcm/m/n/12 100$ \OT1
+/ptm/m/n/12 or $\OT1/ztmcm/m/n/12 1 \OMS/ztmcm/m/n/12 ^^@
  []
 
 
-Overfull \hbox (0.60628pt too wide) in alignment at lines 35--68
+Overfull \hbox (0.60628pt too wide) in alignment at lines 36--46
  [] [] [] [] 
  []
+
+
 
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-
-[2] (./latex_temp_ms.aux)
+al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./latex_temp_ms.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17730 strings out of 473190
- 362504 string characters out of 5715799
- 757359 words of memory out of 5000000
- 40690 multiletter control sequences out of 15000+600000
- 581594 words of font info for 85 fonts, out of 8000000 for 9000
+ 17727 strings out of 473190
+ 362471 string characters out of 5715799
+ 725234 words of memory out of 5000000
+ 40688 multiletter control sequences out of 15000+600000
+ 580068 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,9n,107p,438b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
-exlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/202
-5/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on latex_temp_ms.pdf (2 pages, 75300 bytes).
+ 102i,10n,107p,438b,271s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/
+texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
+25/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on latex_temp_ms.pdf (1 page, 56732 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 42 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

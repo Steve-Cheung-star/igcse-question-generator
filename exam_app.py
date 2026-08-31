@@ -244,10 +244,11 @@ def parse_to_pure_latex(latex_body, is_markscheme=False):
     return processed_latex
 
 
-def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_title="Exam Paper", exam_date=None):
+def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_title="Exam Paper", exam_date=None, author_name=""):
     """Compiles the entire cart into a single LaTeX document."""
 
     date_str = exam_date.strftime("%d %B %Y") if exam_date else r"\today"
+    author_line = f"\\\\[0.1cm]{{\\small \\textcolor{{gray}}{{prepared by {author_name}}}}}" if author_name.strip() else ""
 
     macro_definition = r"""
 \newcommand{\examanswerslot}[3]{%
@@ -277,8 +278,7 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
     else:
         document_body = f"""\\noindent
         {{\\large \\textbf{{{custom_title}}}}} \\hfill \\textbf{{Name:}} \\makebox[5cm]{{\\hrulefill}} \\\\[0.2cm]
-        {{\\small IGCSE 0607 Extended Mathematics Practice Questions \\hfill {date_str}}} \\\\[0cm]
-        {{\\small prepared by Steve Cheung}}
+        {{\\small IGCSE 0607 Extended Mathematics Practice Questions \\hfill {date_str}}} {author_line}
         \\vspace{{0.3cm}}
         \\hrule
         \\vspace{{0.5cm}}
@@ -355,6 +355,7 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
 \\usepackage{{array}}
 \\usepackage{{longtable}} 
 \\usepackage{{fontawesome5}} % Required for the calculator icon
+\\usepackage{{xcolor}} % Required for textcolor
 {macro_definition}
 \\setlength{{\\parindent}}{{0pt}}
 \\begin{{document}}
@@ -373,7 +374,19 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
         subprocess.run(["pdflatex", "-interaction=nonstopmode", tex_path], stdout=subprocess.PIPE,
                        stderr=subprocess.PIPE, text=True, check=True)
     except subprocess.CalledProcessError as e:
-        st.error(f"LaTeX Compilation Failed: {e}")
+        error_msg = f"LaTeX Compilation Failed: {e}"
+        
+        # Look for the log file to see exactly what LaTeX tripped on
+        log_file = tex_path.replace('.tex', '.log')
+        if os.path.exists(log_file):
+            with open(log_file, "r", encoding="utf-8", errors="replace") as lf:
+                log_contents = lf.read()
+                # Extract lines starting with '!' which denote LaTeX fatal errors
+                latex_errors = [line for line in log_contents.splitlines() if line.startswith('!')]
+                if latex_errors:
+                    error_msg = "**LaTeX Error Details:**\n" + "\n".join(latex_errors)
+                    
+        st.error(error_msg)
 
 
 # --- 6. REPORTLAB IMAGE EXPORT HELPERS ---
@@ -432,6 +445,7 @@ st.sidebar.subheader("📤 Export Exam")
 
 is_cart_empty = len(st.session_state.test_cart) == 0
 custom_exam_title = st.sidebar.text_input("Custom Exam Title", value="Custom Exam Paper")
+author_name = st.sidebar.text_input("Author Name (Optional)", value="", help="Leave blank to omit the author name.")
 exam_date = st.sidebar.date_input("Exam Date", datetime.date.today())
 export_mode = st.sidebar.radio("Rendering Engine:", ["LaTeX (Native Code)", "ReportLab (Images)"])
 
@@ -451,9 +465,9 @@ if st.sidebar.button("🔨 Build Final Files", disabled=is_cart_empty):
             base_temp = "latex_temp_q"
             ms_temp = "latex_temp_ms"
             compile_full_latex_exam(st.session_state.test_cart, base_temp, is_markscheme=False,
-                                    custom_title=custom_exam_title, exam_date=exam_date)
+                                    custom_title=custom_exam_title, exam_date=exam_date, author_name=author_name)
             compile_full_latex_exam(st.session_state.test_cart, ms_temp, is_markscheme=True,
-                                    custom_title=custom_exam_title + " (Mark Scheme)", exam_date=exam_date)
+                                    custom_title=custom_exam_title + " (Mark Scheme)", exam_date=exam_date, author_name=author_name)
 
             if os.path.exists(f"{base_temp}.pdf"): os.rename(f"{base_temp}.pdf", base_pdf)
             if os.path.exists(f"{ms_temp}.pdf"): os.rename(f"{ms_temp}.pdf", ms_pdf)
