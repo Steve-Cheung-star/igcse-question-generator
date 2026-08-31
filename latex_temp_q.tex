@@ -9,6 +9,7 @@
 \usepackage{needspace}
 \usepackage{array}
 \usepackage{longtable} 
+\usepackage{fontawesome5} % Required for the calculator icon
 
 \newcommand{\examanswerslot}[3]{%
   \par\nopagebreak\vspace*{#1}%
@@ -18,193 +19,141 @@
 
 \setlength{\parindent}{0pt}
 \begin{document}
-\begin{center} \LARGE \textbf{Area and Perimeter} \end{center}\vspace{1cm}
+\noindent
+        {\large \textbf{Percentages}} \hfill \textbf{Name:} \makebox[5cm]{\hrulefill} \\[0.2cm]
+        {\small IGCSE 0607 Extended Mathematics Practice Questions \hfill 28 August 2026} \\[0cm]
+        {\small prepared by Steve Cheung}
+        \vspace{0.3cm}
+        \hrule
+        \vspace{0.5cm}
 
-\begin{enumerate}[label=\textbf{\arabic*}, leftmargin=0.2cm, labelsep=0.5cm, align=right]
+        \begin{enumerate}[label=\textbf{\arabic*}, leftmargin=0.2cm, labelsep=0.5cm, align=right]
+        \needspace{6cm}
+\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item Express $40$ as a percentage of $200$.
+\examanswerslot{2.5cm}{0.25}{1}
+\item A bank offers simple interest at a rate of $5\%$ per year.
+Calculate the interest earned on an investment of 600 AUD over 3 years. \\
+\examanswerslot{3cm}{0.25}{2}
+\item A shop sells a coat for 90 HKD, which gives a $50\%$ profit on the cost price.
+Calculate the cost price of the coat. \\
+\examanswerslot{3cm}{0.25}{2}
+\end{enumerate}
+\vspace{1cm}
 \needspace{6cm}
-\item \needspace{5cm}
-A rectangle and a trapezium are shown below. \\
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\begin{scope}[shift={(-3,0)}]
-\draw[thick] (0,0) rectangle (6,3);
-\node[below] at (3,0) {$8\text{ cm}$};
-\node[left] at (0,1.5) {$x\text{ cm}$};
-\end{scope}
-\begin{scope}[shift={(8,0)}]
-\draw[thick] (0,0) -- (6,0) -- (4.5,4) -- (1.5,4) -- cycle;
-\draw[dashed] (1.5,4) -- (1.5,0);
-\draw (1.5,0) rectangle (1.8,0.3);
-\node[below] at (3,0) {$8\text{ cm}$};
-\node[above] at (3,4) {$4\text{ cm}$};
-\node[left] at (1.5,2) {$(x+1)\text{ cm}$};
-\end{scope}
-\end{tikzpicture}
-\end{center}
-The area of the rectangle is equal to the area of the trapezium. \\
+\item \noindent The mass of a breeding colony of insects increases by 10\% each week. At the start of the first week, the mass is 500 grams. \par\vspace{0.1cm}
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Find the value of $x$.
-\examanswerslot{3cm}{0.25}{3}
-\item Calculate the perimeter of the rectangle.
+\item Calculate the mass of the colony at the end of 2 weeks.
+\examanswerslot{2cm}{0.25}{3}
+\item Express the mass at the end of 2 weeks as a percentage of the original mass.
 \examanswerslot{2cm}{0.25}{1}
 \end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
-\item \needspace{5cm}
-The diagram shows a composite L-shaped polygon. \\
-All internal angles are right angles. \\
-\begin{center}
-\begin{tikzpicture}
-\draw[thick] (0,0) -- (5,0) -- (5,1.5) -- (2,1.5) -- (2,4) -- (0,4) -- cycle;
-\node at (2.5,-0.3) {$10$ cm};
-\node at (5.4,0.75) {$3$ cm};
-\node at (3.5,1.8) {$6$ cm};
-\node at (1.6,2.75) {$5$ cm};
-\node at (1,4.3) {$4$ cm};
-\node at (-0.4,2) {$8$ cm};
-\end{tikzpicture}
-\end{center}
+\item \noindent An antique vase is purchased for 250 GBP. \par\vspace{0.1cm}
 \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Calculate the perimeter of the polygon.
-\examanswerslot{2cm}{0.25}{1}
-\item Calculate the total area of the polygon.
-\examanswerslot{2cm}{0.25}{3}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \needspace{5cm}
-A rectangle is shown below. All dimensions are in centimetres. \\
-\begin{center}
-\begin{tikzpicture}
-\draw [thick] (0,0) rectangle (4.5,2.5);
-\node at (2.25,-0.3) {$(2x - 1)$};
-\node at (5.1,1.25) {$(x + 2)$};
-\end{tikzpicture}
-\end{center}
-The exact area of the rectangle is $18$ cm$^2$. \\
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Show that the area equation simplifies to:
-\par\vspace{0.1cm}\hspace*{0.6cm}$2x^2 + 3x - 20 = 0$\par\vspace{0.15cm}
-\examanswerslot{3.5cm}{0}{2}
-\item Solve the equation to find the value of $x$.
-\examanswerslot{2cm}{0.25}{3}
-\item Calculate the exact perimeter of the rectangle.
+\item The value of the vase increases by 12\% after one year. Calculate its new value.
+\examanswerslot{2cm}{0.25}{2}
+\item Due to a minor scratch, the new value then decreases by 10\% . Calculate the final value of the vase.
 \examanswerslot{2cm}{0.25}{2}
 \end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
-\item \needspace{5cm}
-The points $P(-1, 2)$, $Q(3, 2)$, and $R(5, 6)$ are three vertices of a parallelogram $PQRS$ drawn on a coordinate grid. \\
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-\draw[->, gray] (-2,0) -- (6,0) node[right] {$x$};
-\draw[->, gray] (0,-1) -- (0,7) node[above] {$y$};
-\draw[thick] (-1,2) -- (3,2) -- (5,6) -- (1,6) -- cycle;
-\node[below left] at (-1,2) {$P(-1,2)$};
-\node[below right] at (3,2) {$Q(3,2)$};
-\node[above right] at (5,6) {$R(5,6)$};
-\node[above left] at (1,6) {$S$};
-\filldraw (-1,2) circle (1.5pt);
-\filldraw (3,2) circle (1.5pt);
-\filldraw (5,6) circle (1.5pt);
-\filldraw (1,6) circle (1.5pt);
-\end{tikzpicture}
-\end{center}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Write down the coordinates of the fourth vertex $S$.
-\examanswerslot{2cm}{0.25}{1}
-\item Calculate the area of the parallelogram $PQRS$.
-\examanswerslot{2cm}{0.25}{2}
-\item Find the exact length of the diagonal $PR$. Give your answer in the form $a\sqrt{b}$ where $a$ and $b$ are prime numbers.
+\item \noindent A rare collector card is sold for 180 EUR, which represents a profit of 20\% on the original purchase price. Calculate the original purchase price. \par\vspace{0.1cm}
 \examanswerslot{2cm}{0.25}{3}
-\end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
-\item \needspace{5cm}
-The diagram shows a trapezium. \\
-\begin{center}
-\begin{tikzpicture}
-\draw[thick] (0,0) -- (7,0) -- (5.5,2.5) -- (2,2.5) -- cycle;
-\draw[dashed] (2,2.5) -- (2,0);
-\draw (2,0.2) -- (2.2,0.2) -- (2.2,0);
-\node at (3.5,-0.3) {$14$ cm};
-\node at (3.75,2.8) {$8$ cm};
-\node at (1.5,1.25) {$5$ cm};
-\end{tikzpicture}
-\end{center}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Calculate the area of the trapezium.
+\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item A trader buys a bicycle for 150 AUD and sells it for 210 AUD. Calculate the percentage profit.
 \examanswerslot{2cm}{0.25}{2}
-\item A distinct triangle has the same area as the trapezium.
-The triangle has a base of $11$ cm and a perpendicular height of $h$ cm. \\
-\par\vspace{0.1cm}\hspace*{0.6cm}$\text{Area} = \dfrac{1}{2} \times \text{base} \times \text{height}$\par\vspace{0.15cm}
-Show that the height, $h$, of the triangle is $10$ cm. \\
-\examanswerslot{3.5cm}{0}{2}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \needspace{5cm}
-A sailing competition takes place around a triangular course $ABC$. The distance from mark $A$ to mark $B$ is 5 km, and the distance from $B$ to $C$ is 12 km. The angle at $B$ is exactly $90^\circ$. \\
-\begin{center}
-\begin{tikzpicture}
-\draw[thick] (0,0) -- (4.8,0) -- (0,2) -- cycle;
-\draw (0,0) rectangle (0.2,0.2);
-\node[below] at (2.4,0) {12 km};
-\node[left] at (0,1) {5 km};
-\node[below left] at (0,0) {$B$};
-\node[below right] at (4.8,0) {$C$};
-\node[above left] at (0,2) {$A$};
-\end{tikzpicture}
-\end{center}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Calculate the total perimeter of the sailing course.
-\examanswerslot{2cm}{0.25}{3}
-\item A leading boat completes the entire course at a constant average speed of 10 km/h.
-\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=0.6cm]
-\item Calculate the time taken for the boat to finish, giving your answer in hours and minutes.
+\item A population of bacteria is initially 5000. It increases by 20\% in the first hour and then decreases by 10\% in the second hour. Calculate the final population.
 \examanswerslot{2cm}{0.25}{2}
-\item Next year, the organizers plan to extend the course boundaries to form a mathematically similar triangle whose enclosed area is 44\% larger than the current course. Calculate the perimeter of this new enlarged course.
-\examanswerslot{2cm}{0.25}{3}
-\end{enumerate}
-\end{enumerate}
-\vspace{1cm}
-\needspace{6cm}
-\item \needspace{5cm}
-A rectangular garden is shown in the diagram. The length of the garden is $(2x + 1)$ m and the width is $(x + 2)$ m. The total area of the garden is $27 \text{ m}^2$. \\
-\begin{center}
-\begin{tikzpicture}
-\draw[thick] (0,0) rectangle (5,3);
-\node[below] at (2.5,0) {$(2x + 1)$ m};
-\node[right] at (5,1.5) {$(x + 2)$ m};
-\end{tikzpicture}
-\end{center}
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Show that $2x^2 + 5x - 25 = 0$.
-\examanswerslot{3.5cm}{0}{2}
-\item Solve the equation to find the exact value of $x$.
-\examanswerslot{2cm}{0.25}{2}
-\item Hence calculate the perimeter of the garden.
+\item Express 150 HKD as a percentage of 60 HKD.
 \examanswerslot{2cm}{0.25}{2}
 \end{enumerate}
 \vspace{1cm}
 \needspace{6cm}
-\item \needspace{5cm}
-The parallel sides of a trapezium are in the ratio $3 : 5$. \\
-\begin{center}
-\begin{tikzpicture}
-\draw [thick] (1.5,2.5) -- (4.5,2.5) -- (6,0) -- (0,0) -- cycle;
-\draw [dashed] (1.5,2.5) -- (1.5,0);
-\draw (1.5,0) rectangle (1.7,0.2);
-\node at (2.1,1.25) {$8$ cm};
-\end{tikzpicture}
-\end{center}
-The perpendicular height of the trapezium is $8$ cm. \\
-The area of the trapezium is $96$ cm$^2$. \\
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
-\item Calculate the lengths of the two parallel sides.
-\examanswerslot{2cm}{0.25}{3}
-\item The trapezium is isosceles. Calculate the exact perimeter of the trapezium. Give your answer in the form $p + q\sqrt{r}$ where $p, q$, and $r$ are integers.
+\item \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item Find the number of years it takes for 500 GBP to earn 75 GBP in simple interest at a rate of 3\% per year.
+\examanswerslot{2cm}{0.25}{2}
+\item A painting increases in value by 40\% . It is now worth 2800 EUR. Calculate its original value.
+\examanswerslot{2cm}{0.25}{2}
+\item A television is priced at 400 GBP. It is reduced by 15\% in a clearance sale. An additional 10\% discount is then applied to the sale price at the till. Calculate the final price of the television.
+\examanswerslot{2cm}{0.25}{2}
+\end{enumerate}
+\vspace{1cm}
+\needspace{6cm}
+\item In a school, $60\%$ of the students are girls. \\
+The number of boys increases by $25\%$ and the number of girls increases by $10\%$. \\
+\noindent Find the overall percentage increase in the total number of students in the school. \par\vspace{0.1cm}
 \examanswerslot{2cm}{0.25}{4}
+\vspace{1cm}
+\needspace{6cm}
+\item A shopkeeper buys an item for $x$ GBP. He marks it up by $50\%$ to determine the selling price. During a clearance sale, he offers a $20\%$ discount on this selling price. \\
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item Show that the overall percentage profit is $20\%$.
+\examanswerslot{3.5cm}{0}{2}
+\item The profit made during the clearance sale is 25 GBP. Calculate the original cost price, $x$ GBP.
+\examanswerslot{2cm}{0.25}{2}
+\end{enumerate}
+\vspace{1cm}
+\needspace{6cm}
+\item Carlos invests $P$ GBP at a rate of $r\%$ per year simple interest for 2 years. The total interest earned is 120 GBP. \\
+He also invests the same amount $P$ GBP at $r\%$ per year compound interest for 2 years. The total interest earned is 123 GBP. \\
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item Show that $P \times r = 6000$.
+\examanswerslot{3.5cm}{0}{2}
+\item Calculate the value of $r$ and the value of $P$.
+\examanswerslot{2cm}{0.25}{4}
+\end{enumerate}
+\vspace{1cm}
+\needspace{6cm}
+\stepcounter{enumi}
+\item[\llap{\faCalculator\hspace{0.35cm}}\textbf{\arabic{enumi}}] \noindent An investor opens a savings account with an initial deposit of 4500 GBP. The account accrues simple interest at a fixed annual rate of 3.85\% over a period of 6 years. \par\vspace{0.1cm}
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item Calculate the total amount of simple interest earned by the investor at the end of the 6-year period.
+\examanswerslot{2cm}{0.25}{2}
+\item Find the final value of the investment when the 6 years expire.
+\examanswerslot{2cm}{0.25}{1}
+\end{enumerate}
+\vspace{1cm}
+\needspace{6cm}
+\stepcounter{enumi}
+\item[\llap{\faCalculator\hspace{0.35cm}}\textbf{\arabic{enumi}}] A property investor buys a house for 452000 GBP. The value of the house increases by 4.2\% each year. \\
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item Calculate the value of the house after 5 years.
+\examanswerslot{3cm}{0.25}{3}
+\item The house sits on a rectangular plot of land. The length of the plot is increased by 15\% and the width is decreased by 8\% .
+\begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=0.6cm]
+\item Calculate the overall percentage change in the area of the plot.
+\examanswerslot{3cm}{0.25}{3}
+\item Show that the new area is exactly 1.058 times the original area.
+\examanswerslot{3.5cm}{0}{2}
+\end{enumerate}
+\item The investor sells another property for 318500 GBP. This price includes a 12.5\% capital gains tax. Calculate the price of the property before the tax was added.
+\examanswerslot{3cm}{0.25}{3}
+\end{enumerate}
+\vspace{1cm}
+\needspace{6cm}
+\stepcounter{enumi}
+\item[\llap{\faCalculator\hspace{0.35cm}}\textbf{\arabic{enumi}}] \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item A car is bought for 24 500 USD. Its value depreciates by 12.5\% each year. Calculate the value of the car after 4 years. Give your answer correct to 3 significant figures.
+\examanswerslot{3cm}{0.25}{3}
+\item During a sale, the price of a laptop is reduced by 15\% to 845 USD. Calculate the original price of the laptop.
+\examanswerslot{3cm}{0.25}{3}
+\item A sum of 8 000 USD is invested in an account paying 5.2\% per year compound interest. Calculate the minimum number of complete years for the value of the investment to exceed 12 000 USD.
+\examanswerslot{3cm}{0.25}{3}
+\end{enumerate}
+\vspace{1cm}
+\needspace{6cm}
+\stepcounter{enumi}
+\item[\llap{\faCalculator\hspace{0.35cm}}\textbf{\arabic{enumi}}] \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*]
+\item The annual number of tourists visiting a city was 1 450 000. The following year, the number was 1 310 000. Calculate the percentage decrease.
+\examanswerslot{3cm}{0.25}{2}
+\item A travel agent sells a premium holiday package for 2 450 USD. This price includes a 25\% profit on the agent's cost price. Calculate the cost price.
+\examanswerslot{3cm}{0.25}{3}
+\item 9 600 USD is invested at 4.8\% per year compound interest. Calculate the number of complete years required for the investment to double in value.
+\examanswerslot{3cm}{0.25}{3}
 \end{enumerate}
 \end{enumerate}
 

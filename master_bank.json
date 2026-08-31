@@ -10581,5 +10581,1050 @@
             "marks": 10,
             "difficulty": "Hard"
         }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_558",
+        "question_paths": [
+            "images/q_558.png"
+        ],
+        "ms_paths": [
+            "images/ms_558.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the number six hundred and four thousand and fifty-two in figures.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] From the list of numbers below:\n\n\n$$3, \\quad 8, \\quad 11, \\quad 15, \\quad 16, \\quad 21, \\quad 27$$\n\n\n[SUBENUM_START]\n[ITEM] Write down a prime number.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down a square number.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down a cube number.\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Express $60$ as a product of its prime factors.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the highest common factor (HCF) and lowest common multiple (LCM) of $24$ and $36$.\n[SUBENUM_START]\n[ITEM] Find the HCF of $24$ and $36$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the LCM of $24$ and $36$.\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 604 052 & 1 & B1 \\\\ \\hline\n(b)(i) & 3 or 11 & 1 & B1 \\\\ \\hline\n(b)(ii) & 16 & 1 & B1 \\\\ \\hline\n(b)(iii) & 8 or 27 & 1 & B1 \\\\ \\hline\n(c) & $2^2 \\times 3 \\times 5$ & 2 & M1 for prime factors 2, 3, 5 found or factor tree/ladder with one error \\\\ \\hline\n(d)(i) & 12 & 1 & B1 \\\\ \\hline\n(d)(ii) & 72 & 2 & M1 for list of multiples or $2^3 \\times 3^2$ seen \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 9,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_559",
+        "question_paths": [
+            "images/q_559.png"
+        ],
+        "ms_paths": [
+            "images/ms_559.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the number $508013$ in words.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] From the list of numbers below:\n\n\n$$2, \\quad 6, \\quad 9, \\quad 12, \\quad 15, \\quad 25, \\quad 28$$\n\n\n[SUBENUM_START]\n[ITEM] Write down a triangle number.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down the reciprocal of $2$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down an irrational number from the expression $\\sqrt{25}$ or $\\sqrt{12}$.\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Express $84$ as a product of its prime factors.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Two integers are given as $A = 2^2 \\times 3 \\times 5$ and $B = 2 \\times 3^2 \\times 5$.\n[SUBENUM_START]\n[ITEM] Find the HCF of $A$ and $B$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the LCM of $A$ and $B$.\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Five hundred and eight thousand and thirteen & 1 & B1 \\\\ \\hline\n(b)(i) & 6 or 15 or 28 & 1 & B1 \\\\ \\hline\n(b)(ii) & $\\dfrac{1}{2}$ & 1 & B1 \\\\ \\hline\n(b)(iii) & $\\sqrt{12}$ & 1 & B1 \\\\ \\hline\n(c) & $2^2 \\times 3 \\times 7$ & 2 & M1 for prime factors 2, 3, 7 found or factor tree/ladder with one error \\\\ \\hline\n(d)(i) & 30 & 1 & B1 for $2 \\times 3 \\times 5$ or 30 \\\\ \\hline\n(d)(ii) & 180 & 2 & M1 for $2^2 \\times 3^2 \\times 5$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 9,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_560",
+        "question_paths": [
+            "images/q_560.png"
+        ],
+        "ms_paths": [
+            "images/ms_560.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the number three million, forty thousand and seven in figures.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] State whether each of the following statements is True or False.\n[SUBENUM_START]\n[ITEM] $17$ is a prime number.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $\\dfrac{3}{8}$ is an irrational number.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $0$ is a natural number.\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Express $90$ as a product of its prime factors.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the highest common factor (HCF) and lowest common multiple (LCM) of $30$ and $45$.\n[SUBENUM_START]\n[ITEM] Find the HCF of $30$ and $45$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the LCM of $30$ and $45$.\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 3 040 007 & 1 & B1 \\\\ \\hline\n(b)(i) & True & 1 & B1 \\\\ \\hline\n(b)(ii) & False & 1 & B1 \\\\ \\hline\n(b)(iii) & False & 1 & B1 (accept True if defined in non-strict context, but 0607 standard $\\mathbb{N}=\\{1,2,3...\\}$) \\\\ \\hline\n(c) & $2 \\times 3^2 \\times 5$ & 2 & M1 for prime factors 2, 3, 5 found \\\\ \\hline\n(d)(i) & 15 & 1 & B1 \\\\ \\hline\n(d)(ii) & 90 & 2 & M1 for list of multiples or prime factor decomposition \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 9,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_561",
+        "question_paths": [
+            "images/q_561.png"
+        ],
+        "ms_paths": [
+            "images/ms_561.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the number $4002050$ in words.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] From the list below:\n\n\n$$\\sqrt{9}, \\quad \\sqrt{10}, \\quad \\pi, \\quad -\\dfrac{4}{5}, \\quad 0.75$$\n\n\n[SUBENUM_START]\n[ITEM] Write down an integer.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down an irrational number.\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Express $72$ as a product of its prime factors in index form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Given that $X = 2^3 \\times 3 \\times 7$ and $Y = 2^2 \\times 3^2 \\times 5$:\n[SUBENUM_START]\n[ITEM] Find the HCF of $X$ and $Y$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the LCM of $X$ and $Y$.\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Four million two thousand and fifty & 1 & B1 \\\\ \\hline\n(b)(i) & $\\sqrt{9}$ & 1 & B1 (since $\\sqrt{9}=3$) \\\\ \\hline\n(b)(ii) & $\\sqrt{10}$ or $\\pi$ & 1 & B1 \\\\ \\hline\n(c) & $2^3 \\times 3^2$ & 2 & M1 for correct prime factors $2, 2, 2, 3, 3$ seen \\\\ \\hline\n(d)(i) & 12 & 1 & B1 for $2^2 \\times 3$ or 12 \\\\ \\hline\n(d)(ii) & 2520 & 2 & M1 for $2^3 \\times 3^2 \\times 5 \\times 7$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 8,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_562",
+        "question_paths": [
+            "images/q_562.png"
+        ],
+        "ms_paths": [
+            "images/ms_562.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the number two million, seven hundred thousand and fourteen in figures.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] From the list of numbers below:\n\n\n$$1, \\quad 4, \\quad 6, \\quad 10, \\quad 13, \\quad 21, \\quad 64$$\n\n\n[SUBENUM_START]\n[ITEM] Write down a number that is both a square number and a cube number.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down a triangle number greater than $5$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write down the reciprocal of $\\dfrac{3}{5}$.\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] Express $120$ as a product of its prime factors.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Find the highest common factor (HCF) and lowest common multiple (LCM) of $40$ and $50$.\n[SUBENUM_START]\n[ITEM] Find the HCF of $40$ and $50$.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Find the LCM of $40$ and $50$.\n\\examanswerslot{2cm}{0.25}{2}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 2 700 014 & 1 & B1 \\\\ \\hline\n(b)(i) & 1 or 64 & 1 & B1 \\\\ \\hline\n(b)(ii) & 6 or 10 or 21 & 1 & B1 \\\\ \\hline\n(b)(iii) & $\\dfrac{5}{3}$ & 1 & B1 (accept $1\\dfrac{2}{3}$) \\\\ \\hline\n(c) & $2^3 \\times 3 \\times 5$ & 2 & M1 for correct division by prime numbers \\\\ \\hline\n(d)(i) & 10 & 1 & B1 \\\\ \\hline\n(d)(ii) & 200 & 2 & M1 for $2^3 \\times 5^2$ or lists of multiples \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Types of Number, Prime Factorisation, HCF and LCM"
+            ],
+            "marks": 9,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_563",
+        "question_paths": [
+            "images/q_563.png"
+        ],
+        "ms_paths": [
+            "images/ms_563.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $45.826$ correct to\n[SUBENUM_START]\n[ITEM] 1 decimal place,\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] 2 significant figures.\n\\examanswerslot{2cm}{0.25}{1}\n[SUBENUM_END]\n[ITEM] By writing each number correct to 1 significant figure, estimate the value of\n\n\n$$\\dfrac{39.8 \\times 2.15}{0.48}$$\n\n\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & $45.8$ & 1 & \\\\ \\hline\n(a)(ii) & $46$ & 1 & \\\\ \\hline\n(b) & $160$ & 2 & M1 for $\\dfrac{40 \\times 2}{0.5}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Estimation and Specified Accuracy Rounding"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_564",
+        "question_paths": [
+            "images/q_564.png"
+        ],
+        "ms_paths": [
+            "images/ms_564.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $0.07635$ correct to $3$ decimal places.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] Estimate the value of the following expression by writing each number correct to 1 significant figure.\n\n\n$$\\dfrac{\\sqrt{98.5} \\times 4.1}{1.93}$$\n\n\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $0.076$ & 1 & \\\\ \\hline\n(b) & $20$ & 2 & M1 for $\\dfrac{10 \\times 4}{2}$ or $\\dfrac{\\sqrt{100} \\times 4}{2}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Estimation and Specified Accuracy Rounding"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_565",
+        "question_paths": [
+            "images/q_565.png"
+        ],
+        "ms_paths": [
+            "images/ms_565.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $1234.5$ correct to 2 significant figures.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] By writing each number correct to 1 significant figure, estimate the value of\n\n\n$$\\dfrac{3.14 \\times 19.8^2}{4.1}$$\n\n\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $1200$ & 1 & \\\\ \\hline\n(b) & $300$ & 2 & M1 for $\\dfrac{3 \\times 20^2}{4}$ or $\\dfrac{3 \\times 400}{4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Estimation and Specified Accuracy Rounding"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_566",
+        "question_paths": [
+            "images/q_566.png"
+        ],
+        "ms_paths": [
+            "images/ms_566.png"
+        ],
+        "question_code": "A rectangular field has a length of $88.5$ metres and a width of $42.3$ metres.\n[ENUM_START]\n[ITEM] Write the length and the width each correct to 1 significant figure.\n\\examanswerslot{3.5cm}{0.25}{1}\n[ITEM] Use your answers to part (a) to estimate the area of the field.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Length $90$, Width $40$ & 1 & Both values required \\\\ \\hline\n(b) & $3600$ & 2 & M1 for $90 \\times 40$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Estimation and Specified Accuracy Rounding"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_567",
+        "question_paths": [
+            "images/q_567.png"
+        ],
+        "ms_paths": [
+            "images/ms_567.png"
+        ],
+        "question_code": "A meal costs $47$ EUR per person. There are $18$ people attending the dinner.\n[ENUM_START]\n[ITEM] By writing each number correct to 1 significant figure, estimate the total cost in EUR.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Show that the exact total cost is less than $1000$ EUR.\n\\examanswerslot{4cm}{0}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $1000$ & 2 & M1 for $50 \\times 20$ \\\\ \\hline\n(b) & $47 \\times 18 = 846$, which is $< 1000$ & 2 & M1 for clearly attempting $47 \\times 18$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Estimation and Specified Accuracy Rounding"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_568",
+        "question_paths": [
+            "images/q_568.png"
+        ],
+        "ms_paths": [
+            "images/ms_568.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $0.00582$ correct to 1 significant figure.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] By writing each number correct to 1 significant figure, estimate the value of\n\n\n$$\\dfrac{21.1 \\times 5.92}{0.185}$$\n\n\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $0.006$ & 1 & \\\\ \\hline\n(b) & $600$ & 2 & M1 for $\\dfrac{20 \\times 6}{0.2}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Estimation and Specified Accuracy Rounding"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_569",
+        "question_paths": [
+            "images/q_569.png"
+        ],
+        "ms_paths": [
+            "images/ms_569.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $899$ correct to 1 significant figure.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] By writing each number correct to 1 significant figure, estimate the value of\n\n\n$$\\dfrac{\\sqrt{899} + 9.8}{4.2}$$\n\n\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $900$ & 1 & \\\\ \\hline\n(b) & $10$ & 2 & M1 for $\\dfrac{\\sqrt{900} + 10}{4}$ or $\\dfrac{30 + 10}{4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Estimation and Specified Accuracy Rounding"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_570",
+        "question_paths": [
+            "images/q_570.png"
+        ],
+        "ms_paths": [
+            "images/ms_570.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $35\\%$ as a fraction in its simplest form.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write $\\dfrac{3}{8}$ as a decimal.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{7}{20}$ & 1 & \\\\ \\hline\n(b) & $0.375$ & 2 & M1 for $\\dfrac{3 \\times 125}{8 \\times 125}$ or for establishing $3 \\div 8$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Fractions, Decimals, and Percentages Equivalence"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_571",
+        "question_paths": [
+            "images/q_571.png"
+        ],
+        "ms_paths": [
+            "images/ms_571.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $0.04$ as a percentage.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write $2\\dfrac{4}{5}$ as an improper fraction.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Write $2\\dfrac{4}{5}$ as a decimal.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $4\\%$ & 1 & \\\\ \\hline\n(b) & $\\dfrac{14}{5}$ & 1 & \\\\ \\hline\n(c) & $2.8$ & 1 & \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Fractions, Decimals, and Percentages Equivalence"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_572",
+        "question_paths": [
+            "images/q_572.png"
+        ],
+        "ms_paths": [
+            "images/ms_572.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the following in order of size, starting with the smallest.\n\n\n$$0.62 \\qquad 65\\% \\qquad \\dfrac{3}{5}$$\n\n\n\\examanswerslot{4cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n* & $\\dfrac{3}{5} \\quad 0.62 \\quad 65\\%$ & 2 & B1 for identifying $\\dfrac{3}{5} = 0.6$ or $65\\% = 0.65$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Fractions, Decimals, and Percentages Equivalence"
+            ],
+            "marks": 2,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_573",
+        "question_paths": [
+            "images/q_573.png"
+        ],
+        "ms_paths": [
+            "images/ms_573.png"
+        ],
+        "question_code": "A book costs 40 GBP. Jane pays $\\dfrac{3}{5}$ of the cost. Ali pays $35\\%$ of the cost.\n[ENUM_START]\n[ITEM] Work out how much Jane pays in GBP.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Work out what percentage of the cost is left to pay.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $24$ & 2 & M1 for $\\dfrac{3}{5} \\times 40$ \\\\ \\hline\n(b) & $5\\%$ & 2 & M1 for $60\\% + 35\\%$ or $100\\% - 95\\%$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Fractions, Decimals, and Percentages Equivalence"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_574",
+        "question_paths": [
+            "images/q_574.png"
+        ],
+        "ms_paths": [
+            "images/ms_574.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $\\dfrac{7}{20}$ as a percentage.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Show that $\\dfrac{7}{20}$ is greater than $0.34$.\n\\examanswerslot{4cm}{0}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $35\\%$ & 1 & \\\\ \\hline\n(b) & $\\dfrac{7}{20} = 0.35$ and $0.35 > 0.34$ & 1 & Accept $35\\% > 34\\%$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Fractions, Decimals, and Percentages Equivalence"
+            ],
+            "marks": 2,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_575",
+        "question_paths": [
+            "images/q_575.png"
+        ],
+        "ms_paths": [
+            "images/ms_575.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write $0.85$ as a fraction in its simplest form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Express $6\\%$ as a fraction in its simplest form.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{17}{20}$ & 2 & M1 for $\\dfrac{85}{100}$ \\\\ \\hline\n(b) & $\\dfrac{3}{50}$ & 2 & M1 for $\\dfrac{6}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Fractions, Decimals, and Percentages Equivalence"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_576",
+        "question_paths": [
+            "images/q_576.png"
+        ],
+        "ms_paths": [
+            "images/ms_576.png"
+        ],
+        "question_code": "Work out the following, giving each answer as a fraction in its simplest form.\n[ENUM_START]\n[ITEM]\n\n\n$$\\dfrac{3}{4} + \\dfrac{5}{8}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM]\n\n\n$$2\\dfrac{1}{3} - 1\\dfrac{1}{2}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $1\\dfrac{3}{8}$ or $\\dfrac{11}{8}$ & $2$ & M1 for a common denominator of $8$ with correct numerators \\\\ \\hline\n(b) & $\\dfrac{5}{6}$ & $2$ & M1 for a common denominator of $6$ with correct numerators \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_577",
+        "question_paths": [
+            "images/q_577.png"
+        ],
+        "ms_paths": [
+            "images/ms_577.png"
+        ],
+        "question_code": "Calculate the exact value of each expression.\n[ENUM_START]\n[ITEM] $0.4 \\times 0.06$\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] $2.4 \\div 0.08$\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $0.024$ & $1$ & \\\\ \\hline\n(b) & $30$ & $2$ & M1 for $240 \\div 8$ or $\\dfrac{2.4}{0.08} \\times \\dfrac{100}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_578",
+        "question_paths": [
+            "images/q_578.png"
+        ],
+        "ms_paths": [
+            "images/ms_578.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Work out.\n\n\n$$1\\dfrac{3}{5} \\times \\dfrac{5}{12}$$\n\n\nGive your answer as a fraction in its simplest form.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Work out.\n\n\n$$\\dfrac{7}{9} \\div \\dfrac{2}{3}$$\n\n\nGive your answer as a mixed number in its simplest form.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $\\dfrac{2}{3}$ & $2$ & M1 for $\\dfrac{8}{5} \\times \\dfrac{5}{12}$ \\\\ \\hline\n(b) & $1\\dfrac{1}{6}$ & $2$ & M1 for $\\dfrac{7}{9} \\times \\dfrac{3}{2}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_579",
+        "question_paths": [
+            "images/q_579.png"
+        ],
+        "ms_paths": [
+            "images/ms_579.png"
+        ],
+        "question_code": "Work out the exact value of the following.\n[ENUM_START]\n[ITEM]\n\n\n$$0.8 - \\dfrac{2}{5} \\times \\dfrac{1}{2}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM]\n\n\n$$0.75 + 1\\dfrac{1}{2} \\div 3$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $0.6$ or $\\dfrac{3}{5}$ & $2$ & M1 for $\\dfrac{2}{10}$ or $0.2$ \\\\ \\hline\n(b) & $1.25$ or $1\\dfrac{1}{4}$ or $\\dfrac{5}{4}$ & $2$ & M1 for $1.5 \\div 3 = 0.5$ or $\\dfrac{3}{2} \\times \\dfrac{1}{3} = \\dfrac{1}{2}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_580",
+        "question_paths": [
+            "images/q_580.png"
+        ],
+        "ms_paths": [
+            "images/ms_580.png"
+        ],
+        "question_code": "Calculate the value of the following expressions.\n[ENUM_START]\n[ITEM] $( -15 + 3 ) \\div (-4)$\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] $5 - (2 - 7)^2$\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $3$ & $2$ & M1 for evaluating the bracket as $-12$ \\\\ \\hline\n(b) & $-20$ & $2$ & M1 for $(-5)^2$ or $25$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 4,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_581",
+        "question_paths": [
+            "images/q_581.png"
+        ],
+        "ms_paths": [
+            "images/ms_581.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Place one pair of brackets into the equation to make it correct.\n\n\n$$18 - 6 \\times 2 + 1 = 25$$\n\n\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] Work out the exact value of the following expression.\n\n\n$$\\dfrac{3^2 - 4 \\times (-2)}{5 - 2^2}$$\n\n\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $(18 - 6) \\times 2 + 1 = 25$ & $1$ & \\\\ \\hline\n(b) & $17$ & $2$ & M1 for $9 - (-8)$ on numerator or $5 - 4$ on denominator \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_582",
+        "question_paths": [
+            "images/q_582.png"
+        ],
+        "ms_paths": [
+            "images/ms_582.png"
+        ],
+        "question_code": "A customer buys $4$ notebooks which cost $2.40$ AUD each and $3$ pens which cost $1.50$ AUD each.\n[ENUM_START]\n[ITEM] Calculate the total cost of the notebooks and pens.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] The customer pays with a $20$ AUD note. Calculate the change they receive.\n\\examanswerslot{2cm}{0.25}{1}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $14.10$ & $2$ & M1 for $4 \\times 2.40 = 9.60$ or $3 \\times 1.50 = 4.50$ \\\\ \\hline\n(b) & $5.90$ & $1$ & FT $20 - \\text{their (a)}$ if answer to (a) is less than $20$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_583",
+        "question_paths": [
+            "images/q_583.png"
+        ],
+        "ms_paths": [
+            "images/ms_583.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Show that\n\n\n$$3\\dfrac{3}{4} - 1\\dfrac{2}{3} \\times 1\\dfrac{1}{2} = 1\\dfrac{1}{4}$$\n\n\n\\examanswerslot{3.5cm}{0}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $1\\dfrac{1}{4}$ & $3$ & M1 for $\\dfrac{5}{3} \\times \\dfrac{3}{2}$, M1 for evaluating product to $\\dfrac{5}{2}$, M1 for correct subtraction $\\dfrac{15}{4} - \\dfrac{10}{4} = \\dfrac{5}{4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 3,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_584",
+        "question_paths": [
+            "images/q_584.png"
+        ],
+        "ms_paths": [
+            "images/ms_584.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate.\n\n\n$$\\dfrac{0.036 \\div 0.04}{1.5 \\times 0.2}$$\n\n\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $3$ & 3 & M1 for numerator $0.9$, M1 for denominator $0.3$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 3,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_585",
+        "question_paths": [
+            "images/q_585.png"
+        ],
+        "ms_paths": [
+            "images/ms_585.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Evaluate.\n\n\n$$2\\dfrac{1}{2} - 1\\dfrac{3}{4} \\times \\dfrac{4}{7}$$\n\n\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $1\\dfrac{1}{2}$ or $1.5$ & 3 & M2 for $\\dfrac{7}{4} \\times \\dfrac{4}{7} = 1$, M1 for $\\dfrac{7}{4}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "The Four Operations with Integers, Fractions, and Decimals"
+            ],
+            "marks": 3,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_586",
+        "question_paths": [
+            "images/q_586.png"
+        ],
+        "ms_paths": [
+            "images/ms_586.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Calculate $30\\%$ of 250 USD.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] A car is valued at 8000 EUR. Its value decreases by $10\\%$.\nCalculate the new value of the car.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] The price of a shirt is 48 GBP after a $20\\%$ increase.\nCalculate the original price of the shirt.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $75$ & 1 & \\\\ \\hline\n(b) & $7200$ & 2 & M1 for $8000 \\times 0.9$ or $8000 - 800$ \\\\ \\hline\n(c) & $40$ & 2 & M1 for $48 \\div 1.2$ or $48 \\div \\dfrac{120}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_587",
+        "question_paths": [
+            "images/q_587.png"
+        ],
+        "ms_paths": [
+            "images/ms_587.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Express $40$ as a percentage of $200$.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] A bank offers simple interest at a rate of $5\\%$ per year.\nCalculate the interest earned on an investment of 600 AUD over 3 years.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] A shop sells a coat for 90 HKD, which gives a $50\\%$ profit on the cost price.\nCalculate the cost price of the coat.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $20$ & 1 & \\\\ \\hline\n(b) & $90$ & 2 & M1 for $600 \\times \\dfrac{5}{100} \\times 3$ \\\\ \\hline\n(c) & $60$ & 2 & M1 for $90 \\div 1.5$ or $90 \\div \\dfrac{150}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_588",
+        "question_paths": [
+            "images/q_588.png"
+        ],
+        "ms_paths": [
+            "images/ms_588.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Calculate $15\\%$ of 400 JPY.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] The population of a village is $2000$. It increases by $5\\%$ in one year.\nCalculate the new population.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] The price of a television is reduced by $25\\%$ in a sale to 300 EUR.\nCalculate the original price of the television.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $60$ & 1 & \\\\ \\hline\n(b) & $2100$ & 2 & M1 for $2000 \\times 1.05$ or $2000 + 100$ \\\\ \\hline\n(c) & $400$ & 2 & M1 for $300 \\div 0.75$ or $300 \\div \\dfrac{75}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_589",
+        "question_paths": [
+            "images/q_589.png"
+        ],
+        "ms_paths": [
+            "images/ms_589.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Write the following fraction as a percentage.\n\n\n$$\\dfrac{3}{8}$$\n\n\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] A sum of 4000 INR is invested at a compound interest rate of $10\\%$ per year.\nCalculate the total amount at the end of 2 years.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] After a $10\\%$ discount, a book costs 27 USD.\nCalculate the original price of the book.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $37.5$ & 1 & \\\\ \\hline\n(b) & $4840$ & 2 & M1 for $4000 \\times \\left(\\dfrac{110}{100}\\right)^2$ or $4400$ seen \\\\ \\hline\n(c) & $30$ & 2 & M1 for $27 \\div 0.9$ or $27 \\div \\dfrac{90}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_590",
+        "question_paths": [
+            "images/q_590.png"
+        ],
+        "ms_paths": [
+            "images/ms_590.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Express 12 cm as a percentage of 40 cm.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] Calculate the simple interest earned on an investment of 1500 USD for 4 years at a rate of $2\\%$ per year.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] The sale price of a table is 140 EUR after a $30\\%$ reduction on its normal price.\nCalculate the normal price of the table.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $30$ & 1 & \\\\ \\hline\n(b) & $120$ & 2 & M1 for $1500 \\times \\dfrac{2}{100} \\times 4$ \\\\ \\hline\n(c) & $200$ & 2 & M1 for $140 \\div 0.7$ or $140 \\div \\dfrac{70}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_591",
+        "question_paths": [
+            "images/q_591.png"
+        ],
+        "ms_paths": [
+            "images/ms_591.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Express $75$ minutes as a percentage of $5$ hours.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] The price of a meal is 40 GBP plus a $15\\%$ service charge.\nCalculate the total price of the meal.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] A store sells a pair of shoes for 72 EUR, making a $20\\%$ profit on the cost price.\nCalculate the cost price.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $25$ & 2 & M1 for $5 \\times 60$ or $300$ seen or $\\dfrac{75}{300}$ \\\\ \\hline\n(b) & $46$ & 2 & M1 for $40 \\times 1.15$ or $40 + 6$ \\\\ \\hline\n(c) & $60$ & 2 & M1 for $72 \\div 1.2$ or $72 \\div \\dfrac{120}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 6,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_592",
+        "question_paths": [
+            "images/q_592.png"
+        ],
+        "ms_paths": [
+            "images/ms_592.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Calculate $2.5\\%$ of 8000 HKD.\n\\examanswerslot{2.5cm}{0.25}{1}\n[ITEM] A deposit of 3000 AUD earns simple interest.\nAfter 2 years, the total interest earned is 300 AUD.\nCalculate the annual rate of interest.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] The price of a computer drops by $40\\%$ to 360 USD.\nCalculate the original price of the computer.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $200$ & 1 & \\\\ \\hline\n(b) & $5$ & 2 & M1 for $300 = \\dfrac{3000 \\times R \\times 2}{100}$ or equivalent \\\\ \\hline\n(c) & $600$ & 2 & M1 for $360 \\div 0.6$ or $360 \\div \\dfrac{60}{100}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_593",
+        "question_paths": [
+            "images/q_593.png"
+        ],
+        "ms_paths": [
+            "images/ms_593.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A trader buys a bicycle for 150 AUD and sells it for 210 AUD. Calculate the percentage profit.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] A population of bacteria is initially 5000. It increases by 20% in the first hour and then decreases by 10% in the second hour. Calculate the final population.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Express 150 HKD as a percentage of 60 HKD.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 40 & 2 & M1 for $\\dfrac{210 - 150}{150} \\times 100$ \\\\ \\hline\n(b) & 5400 & 2 & M1 for $5000 \\times 1.2 \\times 0.9$ \\\\ \\hline\n(c) & 250 & 2 & M1 for $\\dfrac{150}{60} \\times 100$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_594",
+        "question_paths": [
+            "images/q_594.png"
+        ],
+        "ms_paths": [
+            "images/ms_594.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A car's value is 12000 GBP. It depreciates by 25% in the first year and by a further 20% in the second year. Show that its value after 2 years is 7200 GBP.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] A shopkeeper buys a toy for 40 JPY. She wants to make a 30% profit on the cost price. Calculate the selling price.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] The price of a coat is reduced by 15% in a sale. The sale price is 68 GBP. Calculate the original price of the coat.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Correct proof & 2 & M1 for $12000 \\times 0.75$ or $9000$, A1 for $9000 \\times 0.8 = 7200$ \\\\ \\hline\n(b) & 52 & 1 & \\\\ \\hline\n(c) & 80 & 2 & M1 for $68 \\div 0.85$ or $\\dfrac{68}{0.85}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_595",
+        "question_paths": [
+            "images/q_595.png"
+        ],
+        "ms_paths": [
+            "images/ms_595.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Calculate $2\\dfrac{1}{2}\\%$ of 600 AUD.\n\\examanswerslot{2cm}{0.25}{1}\n[ITEM] 2000 USD is invested for 2 years.\nOption A pays 6% per year simple interest.\nOption B pays 5% per year compound interest.\nCalculate the difference in the total interest earned between the two options.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] A farmer's wheat yield increases by 20% to 4800 tonnes. Calculate the original wheat yield.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 15 & 1 & \\\\ \\hline\n(b) & 35 & 3 & M1 for Option A: $\\dfrac{2000 \\times 6 \\times 2}{100} = 240$, M1 for Option B: $2000 \\times 1.05^2 - 2000 = 205$ \\\\ \\hline\n(c) & 4000 & 2 & M1 for $4800 \\div 1.2$ or $\\dfrac{4800}{1.2}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_596",
+        "question_paths": [
+            "images/q_596.png"
+        ],
+        "ms_paths": [
+            "images/ms_596.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Express 2.4 kg as a percentage of 800 g.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] A business makes a profit of 15000 EUR in one year. The next year, the profit decreases by 8%. Calculate the new profit.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] After a 10% deduction for taxes, a worker receives 720 GBP. Calculate the gross amount before taxes.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 300 & 2 & M1 for $\\dfrac{2400}{800} \\times 100$ \\\\ \\hline\n(b) & 13800 & 2 & M1 for $15000 \\times \\left(1 - \\dfrac{8}{100}\\right)$ \\\\ \\hline\n(c) & 800 & 2 & M1 for $720 \\div 0.9$ or $\\dfrac{720}{0.9}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_597",
+        "question_paths": [
+            "images/q_597.png"
+        ],
+        "ms_paths": [
+            "images/ms_597.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Find the number of years it takes for 500 GBP to earn 75 GBP in simple interest at a rate of 3% per year.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] A painting increases in value by 40%. It is now worth 2800 EUR. Calculate its original value.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] A television is priced at 400 GBP. It is reduced by 15% in a clearance sale. An additional 10% discount is then applied to the sale price at the till. Calculate the final price of the television.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 5 & 2 & M1 for $75 = \\dfrac{500 \\times 3 \\times T}{100}$ \\\\ \\hline\n(b) & 2000 & 2 & M1 for $2800 \\div 1.4$ or $\\dfrac{2800}{1.4}$ \\\\ \\hline\n(c) & 306 & 2 & M1 for $400 \\times 0.85 \\times 0.9$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 6,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_598",
+        "question_paths": [
+            "images/q_598.png"
+        ],
+        "ms_paths": [
+            "images/ms_598.png"
+        ],
+        "question_code": "Carlos invests $P$ GBP at a rate of $r\\%$ per year simple interest for 2 years. The total interest earned is 120 GBP.\nHe also invests the same amount $P$ GBP at $r\\%$ per year compound interest for 2 years. The total interest earned is 123 GBP.\n[ENUM_START]\n[ITEM] Show that $P \\times r = 6000$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the value of $r$ and the value of $P$.\n\\examanswerslot{2cm}{0.25}{4}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Correct proof & 2 & M1 for $\\dfrac{P \\times r \\times 2}{100} = 120$ \\\\ \\hline\n(b) & $r = 5$, $P = 1200$ & 4 & M1 for $P\\left(1 + \\dfrac{r}{100}\\right)^2 - P = 123$ \\newline M1 for $P \\left( \\dfrac{2r}{100} + \\dfrac{r^2}{10000} \\right) = 123$ \\newline M1 for $120 + \\dfrac{6000r}{10000} = 123$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_599",
+        "question_paths": [
+            "images/q_599.png"
+        ],
+        "ms_paths": [
+            "images/ms_599.png"
+        ],
+        "question_code": "A shopkeeper buys an item for $x$ GBP. He marks it up by $50\\%$ to determine the selling price. During a clearance sale, he offers a $20\\%$ discount on this selling price.\n[ENUM_START]\n[ITEM] Show that the overall percentage profit is $20\\%$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] The profit made during the clearance sale is 25 GBP. Calculate the original cost price, $x$ GBP.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Correct proof & 2 & M1 for $1.5 \\times 0.8$ or $1.5x - 0.2 \\times 1.5x$ \\newline A1 for $1.2$ leading to $20\\%$ \\\\ \\hline\n(b) & $125$ & 2 & M1 for $0.2x = 25$ or $\\dfrac{20}{100}x = 25$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 4,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_600",
+        "question_paths": [
+            "images/q_600.png"
+        ],
+        "ms_paths": [
+            "images/ms_600.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Ali invests 4000 USD at a rate of $5\\%$ per year simple interest. Calculate the total interest earned in 4 years.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] Ben invests 4000 USD at a rate of $10\\%$ per year compound interest. Calculate the total value of Ben's investment after 3 years.\n\\examanswerslot{2cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $800$ & 2 & M1 for $4000 \\times \\dfrac{5}{100} \\times 4$ \\\\ \\hline\n(b) & $5324$ & 3 & M2 for $4000 \\times 1.1^3$ \\newline M1 for $4000 \\times 1.1$ or $4000 \\times 1.1^2$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_601",
+        "question_paths": [
+            "images/q_601.png"
+        ],
+        "ms_paths": [
+            "images/ms_601.png"
+        ],
+        "question_code": "The population of a town decreases by $10\\%$ in 2021 and increases by $20\\%$ in 2022.\n[ENUM_START]\n[ITEM] The population at the end of 2022 is 54 000. Calculate the population at the start of 2021.\n\\examanswerslot{2cm}{0.25}{3}\n[ITEM] Calculate the overall percentage change in the population from the start of 2021 to the end of 2022.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $50\\,000$ & 3 & M2 for $\\dfrac{54\\,000}{0.9 \\times 1.2}$ or $\\dfrac{54\\,000}{1.08}$ \\newline M1 for $x \\times 0.9 \\times 1.2 = 54\\,000$ \\\\ \\hline\n(b) & $8\\%$ & 2 & M1 for $0.9 \\times 1.2 = 1.08$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 5,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_602",
+        "question_paths": [
+            "images/q_602.png"
+        ],
+        "ms_paths": [
+            "images/ms_602.png"
+        ],
+        "question_code": "A car's value depreciates by $20\\%$ in the first year and $25\\%$ in the second year.\n[ENUM_START]\n[ITEM] Find the value of the car after 2 years as a percentage of its original value.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] After 2 years, the car is worth 12 000 EUR. Calculate the original value of the car.\n\\examanswerslot{2cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $60\\%$ & 2 & M1 for $0.8 \\times 0.75$ or equivalent fractions $\\dfrac{4}{5} \\times \\dfrac{3}{4}$ \\\\ \\hline\n(b) & $20\\,000$ & 2 & M1 for $\\dfrac{12\\,000}{0.6}$ or $\\dfrac{12\\,000}{\\dfrac{3}{5}}$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 4,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_603",
+        "question_paths": [
+            "images/q_603.png"
+        ],
+        "ms_paths": [
+            "images/ms_603.png"
+        ],
+        "question_code": "Carlos invests $P$ GBP at a rate of $r\\%$ per year simple interest for 2 years. The total interest earned is 120 GBP.\nHe also invests the same amount $P$ GBP at $r\\%$ per year compound interest for 2 years. The total interest earned is 123 GBP.\n[ENUM_START]\n[ITEM] Show that $P \\times r = 6000$.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] Calculate the value of $r$ and the value of $P$.\n\\examanswerslot{2cm}{0.25}{4}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & Correct proof & 2 & M1 for $\\dfrac{P \\times r \\times 2}{100} = 120$ \\\\ \\hline\n(b) & $r = 5$, $P = 1200$ & 4 & M1 for $P\\left(1 + \\dfrac{r}{100}\\right)^2 - P = 123$ \\newline M1 for $P \\left( \\dfrac{2r}{100} + \\dfrac{r^2}{10000} \\right) = 123$ \\newline M1 for $120 + \\dfrac{6000r}{10000} = 123$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 6,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_604",
+        "question_paths": [
+            "images/q_604.png"
+        ],
+        "ms_paths": [
+            "images/ms_604.png"
+        ],
+        "question_code": "In a school, $60\\%$ of the students are girls.\nThe number of boys increases by $25\\%$ and the number of girls increases by $10\\%$.\n[ENUM_START]\n[ITEM] Find the overall percentage increase in the total number of students in the school.\n\\examanswerslot{2cm}{0.25}{4}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $16\\%$ & 4 & M1 for assigning a base value e.g., $100$ students ($60$ girls, $40$ boys) \\newline M1 for calculating new boys $40 \\times 1.25 = 50$ \\newline M1 for calculating new girls $60 \\times 1.1 = 66$ \\newline A1 for new total $116$ leading to $16\\%$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 4,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_605",
+        "question_paths": [
+            "images/q_605.png"
+        ],
+        "ms_paths": [
+            "images/ms_605.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A laptop depreciates by $20\\%$ in its first year and $10\\%$ in its second year.\n[SUBENUM_START]\n[ITEM] Find the total percentage depreciation over the $2$ years.\n\\examanswerslot{2.5cm}{0.25}{2}\n[ITEM] If its value after $2$ years is $720$ USD, calculate its original value.\n\\examanswerslot{3cm}{0.25}{3}\n[SUBENUM_END]\n[ITEM] Find the number of years it would take for an antique vase appreciating by $50\\%$ compound interest per year to increase from $200$ GBP to $675$ GBP.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & $28\\%$ & 2 & M1 for $1 - (0.8 \\times 0.9)$ or $0.72$ seen \\\\ \\hline\n(a)(ii) & $1000$ & 3 & M2 for $\\dfrac{720}{0.72}$ or M1 for $\\text{value} \\times 0.72 = 720$ \\\\ \\hline\n(b) & $3$ & 3 & M2 for $1.5^n = 3.375$ or $1.5^n = \\dfrac{27}{8}$ or M1 for $200 \\times 1.5^n = 675$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 8,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 2",
+        "question_base": "Paper 2_606",
+        "question_paths": [
+            "images/q_606.png"
+        ],
+        "ms_paths": [
+            "images/ms_606.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] Express $45$ as a percentage of $12$.\n\\examanswerslot{2cm}{0.25}{2}\n[ITEM] The price of a concert ticket increases by $25\\%$. A year later, it decreases by $20\\%$. Show that the final price is the same as the original price.\n\\examanswerslot{3.5cm}{0}{2}\n[ITEM] An investment triples in value over $n$ years at a simple interest rate of $5\\%$ per year. Find $n$.\n\\examanswerslot{2.5cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $375\\%$ & 2 & M1 for $\\dfrac{45}{12} \\times 100$ or $\\dfrac{15}{4}$ seen \\\\ \\hline\n(b) & $1.25 \\times 0.8 = 1.0$ & 2 & M1 for $1.25$ and $0.8$ seen multiplied \\\\ \\hline\n(c) & $40$ & 3 & M2 for $0.05n = 2$ or M1 for $P + P \\times 0.05 \\times n = 3P$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 7,
+            "difficulty": "Hard"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_607",
+        "question_paths": [
+            "images/q_607.png"
+        ],
+        "ms_paths": [
+            "images/ms_607.png"
+        ],
+        "question_code": "A property investor buys a house for 452000 GBP. The value of the house increases by 4.2% each year.\n[ENUM_START]\n[ITEM] Calculate the value of the house after 5 years.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] The house sits on a rectangular plot of land. The length of the plot is increased by 15% and the width is decreased by 8%.\n[SUBENUM_START]\n[ITEM] Calculate the overall percentage change in the area of the plot.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] Show that the new area is exactly 1.058 times the original area.\n\\examanswerslot{3.5cm}{0}{2}\n[SUBENUM_END]\n[ITEM] The investor sells another property for 318500 GBP. This price includes a 12.5% capital gains tax. Calculate the price of the property before the tax was added.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $555000$ or $555193$ & 3 & M2 for $452000 \\times 1.042^5$ or M1 for $452000 \\times 1.042$ \\\\ \\hline\n(b)(i) & $5.8\\%$ increase & 3 & M2 for $1.15 \\times 0.92 = 1.058$ or M1 for either $1.15$ or $0.92$ seen \\\\ \\hline\n(b)(ii) & Let original area be $A = L \\times W$. New area $= 1.15L \\times 0.92W$. & 2 & M1 for correct algebraic setup. \\\\ \\hline\n& $= 1.058 \\times L \\times W = 1.058A$. & & A1 for final correct statement with no errors. \\\\ \\hline\n(c) & $283000$ or $283111$ & 3 & M2 for $318500 \\div 1.125$ or M1 for $112.5\\% = 318500$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 11,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_608",
+        "question_paths": [
+            "images/q_608.png"
+        ],
+        "ms_paths": [
+            "images/ms_608.png"
+        ],
+        "question_code": "A car is purchased for 28600 AUD. The value of the car depreciates at a constant annual rate, such that after 4 years, its value is 14200 AUD.\n[ENUM_START]\n[ITEM] Calculate the average annual percentage rate of depreciation.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] To buy the car, the owner took out a loan of 18500 AUD at a simple interest rate of 6.4% per year.\n[SUBENUM_START]\n[ITEM] Calculate the total amount of interest paid over 5 years.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] The total amount (loan plus interest) is repaid in equal monthly instalments over the 5 years. Calculate the ratio of the monthly instalment to a monthly salary of 4200 AUD, giving your answer in its simplest form.\n\\examanswerslot{3cm}{0.25}{4}\n[SUBENUM_END]\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & $15.9\\%$ & 3 & M2 for $\\sqrt[4]{\\dfrac{14200}{28600}}$ or M1 for $28600 \\times (1-r)^4 = 14200$ \\\\ \\hline\n(b)(i) & $5920$ & 2 & M1 for $18500 \\times 0.064 \\times 5$ \\\\ \\hline\n(b)(ii) & Total $= 24420$. Monthly $= 24420 \\div 60 = 407$. & 4 & M1 for total amount, M1 for dividing by 60 \\\\ \\hline\n& Ratio $407 : 4200$ & & M1 for correct unsimplified ratio \\\\ \\hline\n& $407 : 4200$ & & A1 (cannot be simplified further) \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 9,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_609",
+        "question_paths": [
+            "images/q_609.png"
+        ],
+        "ms_paths": [
+            "images/ms_609.png"
+        ],
+        "question_code": "A retail store applies multiple discounts to its products.\n[ENUM_START]\n[ITEM] A luxury jacket originally costs 248 GBP. During a seasonal sale, it is discounted by 25%. A customer uses a loyalty card to receive a further 10% discount on the sale price.\n[SUBENUM_START]\n[ITEM] Calculate the final price paid by the customer.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] Explain why applying a single 35% discount to the original price does not result in the same final price.\n\\examanswerslot{3.5cm}{0}{2}\n[SUBENUM_END]\n[ITEM] The store examines the probability of returns. The probability that a customer returns an item is 0.08. If an item is returned, there is a 15% probability it is damaged. Out of 4500 items sold, calculate the expected number of items that are returned damaged.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] A pair of shoes is sold for 76.50 GBP after a single 15% discount has been applied. Calculate the original price of the shoes.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a)(i) & $167$ or $167.40$ GBP & 2 & M1 for $248 \\times 0.75 \\times 0.9$ \\\\ \\hline\n(a)(ii) & $248 \\times 0.65 = 161.20$. & 2 & M1 for calculating single 35% discount price \\\\ \\hline\n& The second discount is taken from a smaller amount, not the original amount, so the total discount is less. & & A1 for clear conceptual explanation \\\\ \\hline\n(b) & Expected returns $= 4500 \\times 0.08 = 360$. & 3 & M1 for finding expected returns \\\\ \\hline\n& Damaged returns $= 360 \\times 0.15 = 54$. & & M1 for multiplying by 0.15, A1 for 54 \\\\ \\hline\n(c) & $90$ GBP & 3 & M2 for $76.50 \\div 0.85$ or M1 for $85\\% = 76.50$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 10,
+            "difficulty": "Easy"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_610",
+        "question_paths": [
+            "images/q_610.png"
+        ],
+        "ms_paths": [
+            "images/ms_610.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A car is bought for 24 500 USD. Its value depreciates by 12.5% each year. Calculate the value of the car after 4 years. Give your answer correct to 3 significant figures.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] During a sale, the price of a laptop is reduced by 15% to 845 USD. Calculate the original price of the laptop.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] A sum of 8 000 USD is invested in an account paying 5.2% per year compound interest. Calculate the minimum number of complete years for the value of the investment to exceed 12 000 USD.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 14 300 & 3 & M2 for $24 500 \\times (1 - 0.125)^4$ or M1 for $24 500 \\times 0.875$ \\\\ \\hline\n(b) & 994.12 & 3 & M2 for $845 \\div 0.85$ or M1 for $85\\%$ associated with $845$ \\\\ \\hline\n(c) & 8 & 3 & M2 for $1.052^n > 1.5$ (or trial with 8 and 7) M1 for $8 000 \\times 1.052^n = 12 000$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 9,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_611",
+        "question_paths": [
+            "images/q_611.png"
+        ],
+        "ms_paths": [
+            "images/ms_611.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] The annual number of tourists visiting a city was 1 450 000. The following year, the number was 1 310 000. Calculate the percentage decrease.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] A travel agent sells a premium holiday package for 2 450 USD. This price includes a 25% profit on the agent's cost price. Calculate the cost price.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] 9 600 USD is invested at 4.8% per year compound interest. Calculate the number of complete years required for the investment to double in value.\n\\examanswerslot{3cm}{0.25}{3}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 9.66 & 2 & M1 for $\\dfrac{1 450 000 - 1 310 000}{1 450 000} \\times 100$ \\\\ \\hline\n(b) & 1 960 & 3 & M2 for $2 450 \\div 1.25$ or M1 for $125\\%$ associated with $2 450$ \\\\ \\hline\n(c) & 15 & 3 & M2 for $1.048^n > 2$ or trial M1 for $9 600 \\times 1.048^n = 19 200$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 8,
+            "difficulty": "Medium"
+        }
+    },
+    {
+        "paper": "Paper 4",
+        "question_base": "Paper 4_612",
+        "question_paths": [
+            "images/q_612.png"
+        ],
+        "ms_paths": [
+            "images/ms_612.png"
+        ],
+        "question_code": "[ENUM_START]\n[ITEM] A diamond necklace is sold for 1 850 GBP at a loss of 7.5%. Calculate the original cost of the necklace.\n\\examanswerslot{3cm}{0.25}{3}\n[ITEM] The value of gold increases at an average compound rate of 7.5% per year. A gold bar is worth 45 000 GBP now. Calculate its expected value after 5 years.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] 35 000 GBP is invested at 4.5% per year simple interest for 8 years. Calculate the final total amount.\n\\examanswerslot{3cm}{0.25}{2}\n[ITEM] 35 000 GBP is invested at 4.1% per year compound interest for 8 years. Calculate the final total amount.\n\\examanswerslot{3cm}{0.25}{2}\n[ENUM_END]",
+        "ms_code": "\\begin{officialmarkscheme}\n(a) & 2 000 & 3 & M2 for $1 850 \\div 0.925$ or M1 for $92.5\\%$ associated with $1 850$ \\\\ \\hline\n(b) & 64 600 & 2 & M1 for $45 000 \\times 1.075^5$ \\\\ \\hline\n(c) & 47 600 & 2 & M1 for $35 000 + (35 000 \\times 0.045 \\times 8)$ \\\\ \\hline\n(d) & 48 300 & 2 & M1 for $35 000 \\times 1.041^8$ \\\\ \\hline\n\\end{officialmarkscheme}",
+        "metadata": {
+            "topics": [
+                "Percentage Changes, Simple/Compound Interest, and Reverse Problems"
+            ],
+            "marks": 9,
+            "difficulty": "Medium"
+        }
     }
 ]

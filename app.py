@@ -490,6 +490,8 @@ For each variant question generated, you MUST construct its precise official mat
 
 6. CURRENCY SYMBOLS: Use 3 letter codes like HKD, AUD, GBP, USD, EUR (312 HKD, 58 GBP)  . Do not use dollar signs, pound signs, euro signs, etc.\
 
+7. NUMBER FORMAT: Use a space instead of comma for separating thousands and millions.\
+
 CRITICAL PARSING CONSTRAINT:
 You MUST use valid LaTeX row line breaks inside the `officialmarkscheme` environment. Every data entry line must end with a full double backslash `\\\\`. Do NOT output single backslashes `\\` under any circumstances. Ensure no trailing space follows the double backslash token.
 

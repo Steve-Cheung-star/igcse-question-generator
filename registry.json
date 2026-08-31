@@ -124,7 +124,8 @@
       "Calculate a given percentage of a quantity or express one quantity as a percentage of another, including values over 100%.",
       "Calculate explicit percentage increases, percentage decreases, or structures with repeated percentage changes.",
       "Execute arithmetic for financial constructs: simple interest, compound interest (without relying on provided formulas), deposits, discounts, earnings, and profit/loss amounts.",
-      "Incorporate reverse percentage problems (e.g., find the original cost price given the final selling price and percentage profit)."
+      "Incorporate reverse percentage problems (e.g., find the original cost price given the final selling price and percentage profit).",
+      "Include finding the average rate of increase and the number of compounding periods for medium and hard difficulty."
     ]
   },
   "E1.13_calculator_efficiency": {

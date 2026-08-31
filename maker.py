@@ -77,7 +77,8 @@ def load_db():
                 "topics": topics_raw,
                 "difficulty": str(meta.get("difficulty", "Medium")),
                 "marks": int(meta.get("marks", 0)),
-                "year": str(meta.get("year", "N/A"))
+                "year": str(meta.get("year", "N/A")),
+                "calculator": meta.get("calculator", False)
             }
         })
     return db
@@ -129,7 +130,6 @@ with col_b:
         st.session_state.test_cart = []
         st.rerun()
 
-# RESTORED: Sidebar Random Pick (1 Per Topic) button feature
 if st.sidebar.button("🎲 Random Pick (1 Per Topic)", disabled=not sel_topics,
                      help="Select at least one topic above to use this feature."):
     current_bases = {c.get('question_base') for c in st.session_state.test_cart}
@@ -159,7 +159,6 @@ st.sidebar.caption(f"⏱️ Estimated Time: ~{est_time} mins")
 
 # --- 5. LATEX PARSER HELPER ---
 def parse_to_pure_latex(latex_body, is_markscheme=False):
-    """Converts the raw JSON tags into standard LaTeX logic with smart list promotion"""
     if not latex_body: return ""
 
     latex_body = re.sub(
@@ -244,8 +243,11 @@ def parse_to_pure_latex(latex_body, is_markscheme=False):
     return processed_latex
 
 
-def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_title="Exam Paper"):
+def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_title="Exam Paper", exam_date=None):
     """Compiles the entire cart into a single LaTeX document."""
+
+    date_str = exam_date.strftime("%d %B %Y") if exam_date else r"\today"
+
     macro_definition = r"""
 \newcommand{\examanswerslot}[3]{%
   \par\nopagebreak\vspace*{#1}%
@@ -272,7 +274,16 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
     if is_markscheme:
         document_body += "\\begin{officialmarkscheme}\n"
     else:
-        document_body += "\\begin{enumerate}[label=\\textbf{\\arabic*}, leftmargin=0.2cm, labelsep=0.5cm, align=right]\n"
+        document_body = f"""\\noindent
+        {{\\large \\textbf{{{custom_title}}}}} \\hfill \\textbf{{Name:}} \\makebox[5cm]{{\\hrulefill}} \\\\[0.2cm]
+        {{\\small IGCSE 0607 Extended Mathematics Practice Questions \\hfill {date_str}}} \\\\[0cm]
+        {{\\small prepared by Steve Cheung}}
+        \\vspace{{0.3cm}}
+        \\hrule
+        \\vspace{{0.5cm}}
+
+        \\begin{{enumerate}}[label=\\textbf{{\\arabic*}}, leftmargin=0.2cm, labelsep=0.5cm, align=right]
+        """
 
     for i, item in enumerate(cart):
         raw_code = item.get('ms_code') if is_markscheme else item.get('question_code')
@@ -281,11 +292,8 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
         if is_markscheme:
             parsed_code = re.sub(r"\\begin\{officialmarkscheme\}", "", parsed_code)
             parsed_code = re.sub(r"\\end\{officialmarkscheme\}", "", parsed_code)
-
             lines = parsed_code.split('\n')
             new_lines = []
-
-            # Keep track of whether we've printed the main question number for this block yet
             has_printed_first_row = False
 
             for line in lines:
@@ -294,27 +302,18 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
                 if '&' in line and not line.strip().startswith('\\'):
                     parts = line.split('&', 1)
                     label = parts[0].strip()
-
-                    # 1. Clean out old bold tags and spaces to see what text we actually have
                     clean_label = re.sub(r'\\textbf\{.*?\}', '', label).strip()
-
-                    # 2. Extract just the sub-part characters (letters, roman numerals, brackets)
                     subpart_only = re.sub(r'\d+', '', clean_label).strip()
 
                     if subpart_only:
-                        # If there is an explicit subpart (e.g. "(a)", "b(i)"), force it to pair with the question number
                         new_label = f"\\textbf{{{i + 1}}}{subpart_only}"
                         has_printed_first_row = True
                     else:
-                        # If there are no sub-part characters left, it's either a main number or a blank row
                         if not has_printed_first_row:
-                            # If it's the very first row of this question block, it MUST display the question number
                             new_label = f"\\textbf{{{i + 1}}}"
                             has_printed_first_row = True
                         else:
-                            # If we already printed the main number/subpart above, this is a true blank continuation row
                             new_label = ""
-
                     new_lines.append(f"{new_label} &" + parts[1])
                 elif line.strip():
                     new_lines.append(line)
@@ -323,7 +322,18 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
 
         else:
             document_body += "\\needspace{6cm}\n"
-            document_body += "\\item " + parsed_code + "\n"
+
+            # Check if this is a Paper 4 question
+            is_paper_4 = "paper 4" in str(item.get('paper', '')).lower()
+
+            if is_paper_4:
+                # Step the counter manually, then append the icon to the left using \llap inside a custom label
+                document_body += "\\stepcounter{enumi}\n"
+                document_body += "\\item[\\llap{\\faCalculator\\hspace{0.35cm}}\\textbf{\\arabic{enumi}}] " + parsed_code + "\n"
+            else:
+                # Standard item, uses the environment's default label setting
+                document_body += "\\item " + parsed_code + "\n"
+
             if i < len(cart) - 1:
                 document_body += "\\vspace{1cm}\n"
 
@@ -343,6 +353,7 @@ def compile_full_latex_exam(cart, output_filename, is_markscheme=False, custom_t
 \\usepackage{{needspace}}
 \\usepackage{{array}}
 \\usepackage{{longtable}} 
+\\usepackage{{fontawesome5}} % Required for the calculator icon
 {macro_definition}
 \\setlength{{\\parindent}}{{0pt}}
 \\begin{{document}}
@@ -417,6 +428,7 @@ st.sidebar.subheader("📤 Export Exam")
 
 is_cart_empty = len(st.session_state.test_cart) == 0
 custom_exam_title = st.sidebar.text_input("Custom Exam Title", value="Custom Exam Paper")
+exam_date = st.sidebar.date_input("Exam Date", datetime.date.today())
 export_mode = st.sidebar.radio("Rendering Engine:", ["LaTeX (Native Code)", "ReportLab (Images)"])
 
 if st.sidebar.button("🔨 Build Final Files", disabled=is_cart_empty):
@@ -435,9 +447,9 @@ if st.sidebar.button("🔨 Build Final Files", disabled=is_cart_empty):
             base_temp = "latex_temp_q"
             ms_temp = "latex_temp_ms"
             compile_full_latex_exam(st.session_state.test_cart, base_temp, is_markscheme=False,
-                                    custom_title=custom_exam_title)
+                                    custom_title=custom_exam_title, exam_date=exam_date)
             compile_full_latex_exam(st.session_state.test_cart, ms_temp, is_markscheme=True,
-                                    custom_title=custom_exam_title + " (Mark Scheme)")
+                                    custom_title=custom_exam_title + " (Mark Scheme)", exam_date=exam_date)
 
             if os.path.exists(f"{base_temp}.pdf"): os.rename(f"{base_temp}.pdf", base_pdf)
             if os.path.exists(f"{ms_temp}.pdf"): os.rename(f"{ms_temp}.pdf", ms_pdf)
@@ -484,7 +496,10 @@ with tab_explore:
 
                 meta = item.get('metadata', {})
                 st.markdown(f"**Topics:** {', '.join(meta.get('topics', []))}")
-                st.caption(f"📖 {item.get('paper')} | 📊 {meta.get('difficulty')} | 📝 {meta.get('marks')} Marks")
+
+                calc_icon = "🖩 " if meta.get('calculator') else ""
+                st.caption(
+                    f"📖 {item.get('paper')} | {calc_icon}📊 {meta.get('difficulty')} | 📝 {meta.get('marks')} Marks")
                 render_cart_button(item)
 
     if st.session_state.display_limit < len(filtered_items):
@@ -506,7 +521,10 @@ with tab_preview:
 
                 with col_info:
                     st.markdown(f"### Q{i + 1}")
-                    st.markdown(f"**📖 Paper:** {q_paper}")
+
+                    calc_label = " | 🖩 Calculator Allowed" if item.get('metadata', {}).get('calculator') else ""
+                    st.markdown(f"**📖 Paper:** {q_paper}{calc_label}")
+
                     st.markdown(f"**🏷️ Topics:** {', '.join(q_topics)}")
                     st.caption(
                         f"📊 Current Difficulty: {item.get('metadata', {}).get('difficulty', 'Medium')} | 📝 {item.get('metadata', {}).get('marks', 0)} Marks")
