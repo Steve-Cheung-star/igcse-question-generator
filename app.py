@@ -753,10 +753,12 @@ STRICT MATH & PREFIX FORMATTING RULES:
    - STRUCTURED SET CONDITIONS & VENN DIAGRAM INFORMATION: For multi-statement conditions or set definitions where separating items by line improves readability (e.g., set element descriptions, Venn diagram region counts, or multi-line system conditions), format each condition on a clean separate line or indented list (`\\n- ...`).
 
 4. SHAPE TRANSFORMATION ANSWER LINES ("Describe fully..."):
-   - For questions asking to "Describe fully...", format answer line with 3 full-width left-aligned dotted lines:
-     \\noindent \\dotfill \\\\
-     \\noindent \\dotfill \\\\
-     \\noindent \\dotfill
+    - For questions asking to "Describe fully...", keep `answer_prompt` strictly as plain text (or `null`/empty string if no text label is required).
+    - DO NOT place LaTeX dotted lines (`\dotfill`) inside `answer_prompt`.
+    - Output the 3 full-width left-aligned dotted lines exclusively in the dedicated `answer_format` JSON key:
+        \noindent \dotfill \\
+        \noindent \dotfill \\
+        \noindent \dotfill
 
 5. COLUMN VECTOR ANSWER FORMATTING:
    - For column vectors (2x1), format answer space using a pmatrix with custom vertical padding and empty space inside components: `\\begin{{pmatrix}} \\hspace{{1.5cm}} \\\\[2em] \\hspace{{1.5cm}} \\end{{pmatrix}}`. DO NOT put dotted lines inside vector components.

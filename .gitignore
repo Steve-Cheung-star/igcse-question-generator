@@ -4,3 +4,5 @@ __pycache__/
 .env
 temp_q*
 temp_ms*.venv/
+.venv/
+gemini_user_data/

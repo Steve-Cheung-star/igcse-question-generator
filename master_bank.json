@@ -8094,6 +8094,452 @@
     "generated_at": "2026-11-08 07:27:10"
   },
   {
+    "id": "e81tf01e",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Easy",
+    "total_marks": 6,
+    "intro_text": "The diagram shows triangle $A$ on a coordinate grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.6]\\n\\fill[black!12] (1,1) -- (3,1) -- (3,4) -- cycle;\\n\\draw[step=1, gray!70, thin] (-6,-6) grid (6,6);\\n\\draw[thick, ->] (-6.5,0) -- (6.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-6.5) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-6,-4,-2,2,4,6} {\\n    \\draw (\\x, 0.15) -- (\\x, -0.15) node[below] {\\small $\\x$};\\n}\\n\\foreach \\y in {-6,-4,-2,2,4,6} {\\n    \\draw (0.15, \\y) -- (-0.15, \\y) node[left] {\\small $\\y$};\\n}\\n\\node[below left] at (0,0) {\\small $0$};\\n\\draw[thick] (1,1) -- (3,1) -- (3,4) -- cycle;\\n\\node at (2.3, 1.8) {$A$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, translate shape $A$ by the vector $\\begin{pmatrix} -5 \\\\ 2 \\end{pmatrix}$. Label the image $B$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Image $B$ drawn correctly at $(-4,3), (-2,3), (-2,6)$ [B2]",
+          "If incorrect, 1 mark for translation by $\\begin{pmatrix} -5 \\\\ k \\end{pmatrix}$ or $\\begin{pmatrix} k \\\\ 2 \\end{pmatrix}$ [M1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, reflect shape $A$ in the $x$-axis. Label the image $C$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Image $C$ drawn correctly at $(1,-1), (3,-1), (3,-4)$ [B2]",
+          "If incorrect, 1 mark for reflection in $y$-axis or in a line $y = k$ [M1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, rotate shape $A$ by $180^\\circ$ about the origin $(0,0)$. Label the image $D$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Image $D$ drawn correctly at $(-1,-1), (-3,-1), (-3,-4)$ [B2]",
+          "If incorrect, 1 mark for rotation of $180^\\circ$ about the wrong centre, or $90^\\circ$ about $(0,0)$ [M1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:02:53"
+  },
+  {
+    "id": "e81tf03h",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Hard",
+    "total_marks": 6,
+    "intro_text": "The diagram shows shape $A$ on a coordinate grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.6]\\n\\fill[black!12] (-4,2) -- (-2,2) -- (-2,6) -- cycle;\\n\\draw[step=1, gray!70, thin] (-6,-6) grid (8,8);\\n\\draw[thick, ->] (-6.5,0) -- (8.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-6.5) -- (0,8.5) node[above] {$y$};\\n\\foreach \\x in {-6,-4,-2,2,4,6,8} {\\n    \\draw (\\x, 0.15) -- (\\x, -0.15) node[below] {\\small $\\x$};\\n}\\n\\foreach \\y in {-6,-4,-2,2,4,6,8} {\\n    \\draw (0.15, \\y) -- (-0.15, \\y) node[left] {\\small $\\y$};\\n}\\n\\node[below left] at (0,0) {\\small $0$};\\n\\draw[thick] (-4,2) -- (-2,2) -- (-2,6) -- cycle;\\n\\node at (-2.7, 3) {$A$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Shape $A$ is reflected in the line $y = x$ to give shape $B$. On the grid, draw and label shape $B$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Image $B$ drawn correctly at $(2,-4), (2,-2), (6,-2)$ [B2]",
+          "If incorrect, 1 mark for reflection in $y = -x$ or correct orientation but wrong position [M1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Shape $B$ is rotated by $90^\\circ$ clockwise about the point $(2, 2)$ to give shape $C$. On the grid, draw and label shape $C$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Image $C$ drawn correctly at $(-4,2), (-2,2), (-2,-2)$ [B2]",
+          "If incorrect, 1 mark for rotation $90^\\circ$ anti-clockwise about $(2,2)$ or $90^\\circ$ clockwise about the wrong centre [M1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps shape $A$ onto shape $C$.",
+        "marks": 2,
+        "vspace_cm": 2.0,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\n\\noindent \\dotfill",
+        "markscheme": [
+          "Reflection [B1]",
+          "in the line $y = 2$ [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:02:53"
+  },
+  {
+    "id": "e81a3f72",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Easy",
+    "total_marks": 4,
+    "intro_text": "The diagram shows a triangle, Shape $A$, drawn on a coordinate grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.6]\\n\\fill[black!12] (1,1) -- (3,1) -- (1,4) -- cycle;\\n\\draw[step=1, gray!70, thin] (-6,-6) grid (6,6);\\n\\draw[thick, ->] (-6.5,0) -- (6.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-6.5) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (\\x, 3pt) -- (\\x, -3pt) node[below=2pt] {\\scriptsize $\\x$};\\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (3pt, \\y) -- (-3pt, \\y) node[left=2pt] {\\scriptsize $\\y$};\\n\\draw[thick] (1,1) -- (3,1) -- (1,4) -- cycle;\\n\\node at (1.6,1.8) {$A$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, draw the image of Shape $A$ after a translation by the vector $\\begin{pmatrix} -4 \\\\ 2 \\end{pmatrix}$.\\nLabel this image $B$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct translation of Shape $A$ [B2]",
+          "If incorrect, translation of $\\begin{pmatrix} -4 \\\\ k \\end{pmatrix}$ or $\\begin{pmatrix} k \\\\ 2 \\end{pmatrix}$ where $k \\neq 0$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, draw the image of Shape $A$ after a reflection in the line $y = -1$.\\nLabel this image $C$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct reflection of Shape $A$ to form Shape $C$ with vertices at $(1, -3)$, $(3, -3)$, and $(1, -6)$ [B2]",
+          "If incorrect, reflection in $x = -1$ or $y = 1$ [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:09:23"
+  },
+  {
+    "id": "e81b6c49",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Medium",
+    "total_marks": 5,
+    "intro_text": "The diagram shows two triangles, Shape $P$ and Shape $Q$, drawn on a grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.6]\\n\\fill[black!12] (2,2) -- (5,2) -- (5,4) -- cycle;\\n\\fill[black!12] (2,-2) -- (2,-5) -- (4,-5) -- cycle;\\n\\draw[step=1, gray!70, thin] (-6,-6) grid (6,6);\\n\\draw[thick, ->] (-6.5,0) -- (6.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-6.5) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-6,-4,-2,2,4,6} \\draw (\\x, 3pt) -- (\\x, -3pt) node[below=2pt] {\\scriptsize $\\x$};\\n\\foreach \\y in {-6,-4,-2,2,4,6} \\draw (3pt, \\y) -- (-3pt, \\y) node[left=2pt] {\\scriptsize $\\y$};\\n\\draw[thick] (2,2) -- (5,2) -- (5,4) -- cycle;\\n\\draw[thick] (2,-2) -- (2,-5) -- (4,-5) -- cycle;\\n\\node at (4,2.7) {$P$};\\n\\node at (2.7,-4) {$Q$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps Shape $P$ onto Shape $Q$.",
+        "marks": 3,
+        "vspace_cm": 2.5,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\\\\\\\\\n\\noindent \\dotfill \\\\\\\\\\n\\noindent \\dotfill",
+        "markscheme": [
+          "Rotation [B1]",
+          "$90^\\circ$ clockwise OR $270^\\circ$ anti-clockwise [B1]",
+          "Centre $(0, 0)$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Shape $P$ is enlarged by a scale factor of $\\dfrac{1}{2}$ with centre of enlargement $(-2, 2)$.\\n\\nOn the grid, draw the image of Shape $P$ and label it $R$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct triangle drawn with vertices at $(0, 2)$, $(1.5, 2)$, and $(1.5, 3)$ [B2]",
+          "If incorrect, correct size and orientation but wrong position OR correct centre of enlargement but scale factor $2$ [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:09:23"
+  },
+  {
+    "id": "e81d42a1",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Hard",
+    "total_marks": 8,
+    "intro_text": "The diagram shows two triangles, Shape $T$ and Shape $U$.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.7]\\n\\fill[black!12] (1,2) -- (2,2) -- (2,4) -- cycle;\\n\\fill[black!12] (-2,-1) -- (-4,-1) -- (-4,-5) -- cycle;\\n\\draw[step=1, gray!70, thin] (-6,-6) grid (6,6);\\n\\draw[thick, ->] (-6.5,0) -- (6.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-6.5) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-6,-4,-2,2,4,6} \\draw (\\x, 3pt) -- (\\x, -3pt) node[below=2pt] {\\scriptsize $\\x$};\\n\\foreach \\y in {-6,-4,-2,2,4,6} \\draw (3pt, \\y) -- (-3pt, \\y) node[left=2pt] {\\scriptsize $\\y$};\\n\\draw[thick] (1,2) -- (2,2) -- (2,4) -- cycle;\\n\\draw[thick] (-2,-1) -- (-4,-1) -- (-4,-5) -- cycle;\\n\\node at (1.6,2.7) {$T$};\\n\\node at (-3.3,-2.3) {$U$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps Shape $T$ onto Shape $U$.",
+        "marks": 3,
+        "vspace_cm": 2.5,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\\\\\\\\\n\\noindent \\dotfill \\\\\\\\\\n\\noindent \\dotfill",
+        "markscheme": [
+          "Enlargement [B1]",
+          "Scale factor $-2$ [B1]",
+          "Centre $(0, 1)$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps Shape $U$ onto Shape $T$.",
+        "marks": 2,
+        "vspace_cm": 2.5,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\\\\\\\\\n\\noindent \\dotfill",
+        "markscheme": [
+          "Enlargement scale factor $-\\dfrac{1}{2}$ [B1]",
+          "Centre $(0, 1)$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Shape $T$ is translated by the vector $\\begin{pmatrix} -3 \\\\ 1 \\end{pmatrix}$ to give Shape $V$.\\nShape $V$ is then reflected in the line $y = x$ to give Shape $W$.\\n\\nFind the coordinates of the three vertices of Shape $W$.",
+        "marks": 3,
+        "vspace_cm": 4.5,
+        "answer_type": "long_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Translating Shape $T$ gives at least two correct coordinates of $V$: $(-2, 3)$, $(-1, 3)$, $(-1, 5)$ [M1]",
+          "Recognising reflection in $y = x$ swaps coordinates $(x, y) \\rightarrow (y, x)$ [M1]",
+          "Final coordinates: $(3, -2)$, $(3, -1)$, $(5, -1)$ [A1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:09:23"
+  },
+  {
+    "id": "T8V1E2A4",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Easy",
+    "total_marks": 4,
+    "intro_text": "The grid shows triangle $A$.",
+    "intro_diagram_tikz": "\\fill[gray!20] (1,1) -- (3,1) -- (3,4) -- cycle;\\n\\draw[step=1, gray!70, thin] (-6,-6) grid (6,6);\\n\\draw[thick, ->] (-6.5,0) -- (6.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-6.5) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-6,-4,-2,2,4,6} \\draw[thick] (\\x,0.1) -- (\\x,-0.1) node[below] {\\small $\\x$};\\n\\foreach \\y in {-6,-4,-2,2,4,6} \\draw[thick] (0.1,\\y) -- (-0.1,\\y) node[left] {\\small $\\y$};\\n\\draw[thick] (1,1) -- (3,1) -- (3,4) -- cycle;\\n\\node at (2.3, 1.8) {$A$};",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, draw the image of triangle $A$ after a translation by the vector $\\begin{pmatrix} -4 \\\\ 2 \\end{pmatrix}$.\\nLabel the image $B$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct triangle $B$ with vertices at $(-3, 3), (-1, 3), (-1, 6)$ [B2]",
+          "Translation by vector $\\begin{pmatrix} -4 \\\\ k \\end{pmatrix}$ or $\\begin{pmatrix} k \\\\ 2 \\end{pmatrix}$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, draw the image of triangle $A$ after a reflection in the line $x = -1$.\\nLabel the image $C$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct triangle $C$ with vertices at $(-3, 1), (-5, 1), (-5, 4)$ [B2]",
+          "Reflection in $y = -1$ or correct orientation but wrong position [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:13:00"
+  },
+  {
+    "id": "e81t4a9d",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Easy",
+    "total_marks": 4,
+    "intro_text": "The diagram shows two triangles, $A$ and $B$, plotted on a coordinate grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.6]\\n\\draw[step=1, gray!70, thin] (-6,-6) grid (6,6);\\n\\draw[thick, ->] (-6.2,0) -- (6.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-6.2) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (\\x,-0.1) -- (\\x,0.1) node[below=4pt] {\\footnotesize $\\x$};\\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (-0.1,\\y) -- (0.1,\\y) node[left=4pt] {\\footnotesize $\\y$};\\n\\node at (-0.3,-0.3) {\\footnotesize $0$};\\n\\draw[thick, fill=gray!20] (1,1) -- (3,1) -- (3,4) -- cycle;\\n\\node at (2.2, 1.8) {$A$};\\n\\draw[thick, fill=gray!20] (-1,1) -- (-3,1) -- (-3,4) -- cycle;\\n\\node at (-2.2, 1.8) {$B$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, draw the image of triangle $A$ after a translation by the vector $\\begin{pmatrix} -4 \\\\ 2 \\end{pmatrix}$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct triangle with vertices at $(-3, 3), (-1, 3)$ and $(-1, 6)$ [B2]",
+          "Translation by correct vector but incorrect shape/orientation OR correct size, shape and orientation but wrong translation [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps triangle $A$ onto triangle $B$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\n\\noindent \\dotfill \\n\\noindent \\dotfill",
+        "markscheme": [
+          "Reflection [B1]",
+          "in the $y$-axis OR $x = 0$ [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:32:55"
+  },
+  {
+    "id": "t9v2f7m1",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Medium",
+    "total_marks": 4,
+    "intro_text": "The diagram shows a shape $P$ plotted on a coordinate grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.55]\\n\\draw[step=1, gray!70, thin] (-8,-8) grid (8,6);\\n\\draw[thick, ->] (-8.2,0) -- (8.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-8.2) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-8,-6,-4,-2,2,4,6,8} \\draw (\\x,-0.15) -- (\\x,0.15) node[below=4pt] {\\footnotesize $\\x$};\\n\\foreach \\y in {-8,-6,-4,-2,2,4,6} \\draw (-0.15,\\y) -- (0.15,\\y) node[left=4pt] {\\footnotesize $\\y$};\\n\\node at (-0.4,-0.4) {\\footnotesize $0$};\\n\\draw[thick, fill=gray!20] (1,2) -- (3,2) -- (3,3) -- (2,3) -- (2,4) -- (1,4) -- cycle;\\n\\node at (1.8, 2.7) {$P$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, draw the image of shape $P$ after an enlargement, scale factor $-2$, centre $(0, 0)$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct shape with vertices at $(-2, -4), (-6, -4), (-6, -6), (-4, -6), (-4, -8)$ and $(-2, -8)$ [B2]",
+          "Enlargement, scale factor $2$ centre $(0,0)$ OR correct scale factor and orientation but wrong centre [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, draw the image of shape $P$ after a rotation of $90^\\circ$ clockwise about the point $(1, -1)$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct shape with vertices at $(4, -1), (4, -3), (5, -3), (5, -2), (6, -2)$ and $(6, -1)$ [B2]",
+          "Rotation of $90^\\circ$ clockwise about the wrong centre OR rotation of $90^\\circ$ anti-clockwise about $(1, -1)$ [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:32:55"
+  },
+  {
     "id": "C7E5F8A2",
     "topic": "Number",
     "subtopic": "E1.1",
@@ -16796,5 +17242,242 @@
     ],
     "generated_by_model": "3.1 Pro",
     "generated_at": "2026-11-08 07:27:10"
+  },
+  {
+    "id": "e81tf02m",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 4 (Calculator)",
+    "difficulty": "Medium",
+    "total_marks": 9,
+    "intro_text": "The diagram shows triangles $P$ and $Q$ on a coordinate grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.6]\\n\\fill[black!12] (2,2) -- (6,2) -- (6,4) -- cycle;\\n\\fill[black!12] (-1,-1) -- (-3,-1) -- (-3,-2) -- cycle;\\n\\draw[step=1, gray!70, thin] (-8,-6) grid (8,6);\\n\\draw[thick, ->] (-8.5,0) -- (8.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-6.5) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-8,-6,-4,-2,2,4,6,8} {\\n    \\draw (\\x, 0.15) -- (\\x, -0.15) node[below] {\\small $\\x$};\\n}\\n\\foreach \\y in {-6,-4,-2,2,4,6} {\\n    \\draw (0.15, \\y) -- (-0.15, \\y) node[left] {\\small $\\y$};\\n}\\n\\node[below left] at (0,0) {\\small $0$};\\n\\draw[thick] (2,2) -- (6,2) -- (6,4) -- cycle;\\n\\node at (4.7, 2.7) {$P$};\\n\\draw[thick] (-1,-1) -- (-3,-1) -- (-3,-2) -- cycle;\\n\\node at (-2.3, -1.3) {$Q$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps shape $P$ onto shape $Q$.",
+        "marks": 3,
+        "vspace_cm": 3.0,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\n\\noindent \\dotfill \\n\\noindent \\dotfill",
+        "markscheme": [
+          "Enlargement [B1]",
+          "Centre $(0,0)$ or origin [B1]",
+          "Scale factor $-\\dfrac{1}{2}$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, enlarge shape $P$ by scale factor $\\dfrac{1}{2}$ with centre $(0,4)$. Label the image $R$.",
+        "marks": 3,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Image $R$ drawn correctly at $(1,3), (3,3), (3,4)$ [B3]",
+          "If incorrect, 2 marks for correct size and orientation but wrong position [M2]",
+          "1 mark for correct centre used but wrong scale factor [M1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps shape $R$ onto shape $Q$.",
+        "marks": 3,
+        "vspace_cm": 3.0,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\n\\noindent \\dotfill \\n\\noindent \\dotfill",
+        "markscheme": [
+          "Rotation [B1]",
+          "$180^\\circ$ [B1]",
+          "Centre $(0,1)$ [B1]",
+          "OR Enlargement [B1], Scale factor $-1$ [B1], Centre $(0,1)$ [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:02:53"
+  },
+  {
+    "id": "T8V2M5B7",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 4 (Calculator)",
+    "difficulty": "Medium",
+    "total_marks": 5,
+    "intro_text": "The grid shows shapes $P$ and $Q$.",
+    "intro_diagram_tikz": "\\fill[gray!20] (2,2) -- (4,2) -- (4,4) -- (3,4) -- (3,3) -- (2,3) -- cycle;\\n\\fill[gray!20] (-2,2) -- (-2,4) -- (-4,4) -- (-4,3) -- (-3,3) -- (-3,2) -- cycle;\\n\\draw[step=1, gray!70, thin] (-8,-8) grid (8,8);\\n\\draw[thick, ->] (-8.5,0) -- (8.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-8.5) -- (0,8.5) node[above] {$y$};\\n\\foreach \\x in {-8,-6,-4,-2,2,4,6,8} \\draw[thick] (\\x,0.1) -- (\\x,-0.1) node[below] {\\small $\\x$};\\n\\foreach \\y in {-8,-6,-4,-2,2,4,6,8} \\draw[thick] (0.1,\\y) -- (-0.1,\\y) node[left] {\\small $\\y$};\\n\\draw[thick] (2,2) -- (4,2) -- (4,4) -- (3,4) -- (3,3) -- (2,3) -- cycle;\\n\\node at (2.8, 2.7) {$P$};\\n\\draw[thick] (-2,2) -- (-2,4) -- (-4,4) -- (-4,3) -- (-3,3) -- (-3,2) -- cycle;\\n\\node at (-2.8, 3.3) {$Q$};",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps shape $P$ onto shape $Q$.",
+        "marks": 3,
+        "vspace_cm": 3.0,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\\\\\n\\noindent \\dotfill \\\\\\n\\noindent \\dotfill",
+        "markscheme": [
+          "Rotation [B1]",
+          "$90^\\circ$ anticlockwise OR $270^\\circ$ clockwise [B1]",
+          "Centre $(0, 0)$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "On the grid, enlarge shape $P$ by scale factor $\\dfrac{1}{2}$, centre $(6,6)$.\\nLabel the image $R$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct shape $R$ with vertices at $(4, 4), (5, 4), (5, 5), (4.5, 5), (4.5, 4.5), (4, 4.5)$ [B2]",
+          "Any enlargement scale factor $\\dfrac{1}{2}$ OR correct centre $(6,6)$ with incorrect scale factor [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:13:00"
+  },
+  {
+    "id": "T8V3H6C9",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 4 (Calculator)",
+    "difficulty": "Hard",
+    "total_marks": 5,
+    "intro_text": "The grid shows triangles $T$ and $U$.",
+    "intro_diagram_tikz": "\\fill[gray!20] (2,2) -- (6,2) -- (6,4) -- cycle;\\n\\fill[gray!20] (-1,-1) -- (-3,-1) -- (-3,-2) -- cycle;\\n\\draw[step=1, gray!70, thin] (-8,-8) grid (8,8);\\n\\draw[thick, ->] (-8.5,0) -- (8.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-8.5) -- (0,8.5) node[above] {$y$};\\n\\foreach \\x in {-8,-6,-4,-2,2,4,6,8} \\draw[thick] (\\x,0.1) -- (\\x,-0.1) node[below] {\\small $\\x$};\\n\\foreach \\y in {-8,-6,-4,-2,2,4,6,8} \\draw[thick] (0.1,\\y) -- (-0.1,\\y) node[left] {\\small $\\y$};\\n\\draw[thick] (2,2) -- (6,2) -- (6,4) -- cycle;\\n\\node at (4.5, 2.6) {$T$};\\n\\draw[thick] (-1,-1) -- (-3,-1) -- (-3,-2) -- cycle;\\n\\node at (-2.2, -1.3) {$U$};",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps triangle $T$ onto triangle $U$.",
+        "marks": 3,
+        "vspace_cm": 3.0,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\\\\\n\\noindent \\dotfill \\\\\\n\\noindent \\dotfill",
+        "markscheme": [
+          "Enlargement [B1]",
+          "Scale factor $-\\dfrac{1}{2}$ [B1]",
+          "Centre $(0, 0)$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Triangle $T$ is reflected in the line $y = x$ to give triangle $V$.\\nTriangle $V$ is then rotated $90^\\circ$ clockwise about the origin to give triangle $W$.\\n\\nDescribe fully the single transformation that maps triangle $T$ onto triangle $W$.",
+        "marks": 2,
+        "vspace_cm": 2.5,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\\\\\n\\noindent \\dotfill \\\\\\n\\noindent \\dotfill",
+        "markscheme": [
+          "Reflection [B1]",
+          "in the $x$-axis OR $y = 0$ [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:13:00"
+  },
+  {
+    "id": "v3c8x9p5",
+    "topic": "Transformations and vectors",
+    "subtopic": "E8.1",
+    "tier": "Extended",
+    "paper_type": "Paper 4 (Calculator)",
+    "difficulty": "Hard",
+    "total_marks": 7,
+    "intro_text": "The diagram shows triangle $T$ plotted on a coordinate grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.6]\\n\\draw[step=1, gray!70, thin] (-2,-5) grid (8,6);\\n\\draw[thick, ->] (-2.2,0) -- (8.5,0) node[right] {$x$};\\n\\draw[thick, ->] (0,-5.2) -- (0,6.5) node[above] {$y$};\\n\\foreach \\x in {-2,-1,1,2,3,4,5,6,7,8} \\draw (\\x,-0.1) -- (\\x,0.1) node[below=4pt] {\\footnotesize $\\x$};\\n\\foreach \\y in {-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (-0.1,\\y) -- (0.1,\\y) node[left=4pt] {\\footnotesize $\\y$};\\n\\node at (-0.3,-0.3) {\\footnotesize $0$};\\n\\draw[thick, fill=gray!20] (2,0) -- (6,0) -- (6,-4) -- cycle;\\n\\node at (4.5, -1) {$T$};\\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Triangle $T$ is mapped onto triangle $U$ by an enlargement, scale factor $\\dfrac{1}{2}$, centre $(0, 4)$.\\nOn the grid, draw triangle $U$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct triangle $U$ with vertices at $(1, 2), (3, 2)$ and $(3, 0)$ [B2]",
+          "Enlargement scale factor $\\dfrac{1}{2}$ from wrong centre OR ray lines drawn from $(0,4)$ but scale factor incorrect [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Triangle $U$ is mapped onto triangle $V$ by a reflection in the line $y = x$.\\nOn the grid, draw triangle $V$.",
+        "marks": 2,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Correct triangle $V$ with vertices at $(2, 1), (2, 3)$ and $(0, 3)$ [B2]",
+          "Reflection of $U$ in the line $y = -x$ OR reflection of $T$ in the line $y = x$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Describe fully the single transformation that maps triangle $U$ back onto triangle $T$.",
+        "marks": 3,
+        "vspace_cm": 0.0,
+        "answer_type": "multi_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "\\noindent \\dotfill \\n\\noindent \\dotfill \\n\\noindent \\dotfill",
+        "markscheme": [
+          "Enlargement [B1]",
+          "Scale factor $2$ [B1]",
+          "Centre $(0, 4)$ [B1]"
+        ],
+        "subparts": []
+      }
+    ],
+    "generated_by_model": "3.1 Pro",
+    "generated_at": "2026-11-08 11:32:55"
   }
 ]

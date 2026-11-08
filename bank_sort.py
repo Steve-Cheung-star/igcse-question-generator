@@ -1,34 +1,62 @@
 import json
 import re
+from typing import List, Dict, Any, Tuple
 
+DIFFICULTY_RANK = {
+    "Easy": 1,
+    "Medium": 2,
+    "Hard": 3
+}
 
-def natural_key(text):
-  """Splits text into chunks of digits and non-digits to enable natural numerical sorting
+def parse_subtopic(subtopic_str: str) -> Tuple[int, ...]:
+    """
+    Extracts numerical segments from subtopic strings.
+    Example: "E1.10" -> (1, 10), ensuring E1.2 sorts before E1.10.
+    """
+    if not isinstance(subtopic_str, str):
+        return (0, 0)
+    matches = re.findall(r'\d+', subtopic_str)
+    return tuple(int(n) for n in matches) if matches else (0, 0)
 
-  (e.g., E1.2 comes before E1.10 instead of standard alphabetical order).
-  """
-  return [
-      int(part) if part.isdigit() else part.lower()
-      for part in re.split(r'(\d+)', str(text))
-  ]
+def sort_question_bank(data: List[Dict[str, Any]], deduplicate: bool = False) -> List[Dict[str, Any]]:
+    """
+    Sorts master bank by Paper Type -> Topic -> Subtopic (natural) -> Difficulty -> Total Marks -> ID.
+    """
+    items_to_sort = data
 
+    if deduplicate:
+        seen = set()
+        unique_data = []
+        for item in data:
+            item_id = item.get("id")
+            if item_id not in seen:
+                seen.add(item_id)
+                unique_data.append(item)
+        items_to_sort = unique_data
 
-def sort_master_bank(input_file, output_file):
-  with open(input_file, 'r', encoding='utf-8') as f:
-    data = json.load(f)
+    return sorted(
+        items_to_sort,
+        key=lambda item: (
+            item.get("paper_type", ""),
+            item.get("topic", ""),
+            parse_subtopic(item.get("subtopic", "")),
+            DIFFICULTY_RANK.get(item.get("difficulty", ""), 99),
+            item.get("total_marks", 0),
+            item.get("id", "")
+        )
+    )
 
-  # Sort by paper_type first, then by subtopic in natural order
-  sorted_data = sorted(
-      data,
-      key=lambda x: (
-          natural_key(x.get('paper_type', '')),
-          natural_key(x.get('subtopic', '')),
-      ),
-  )
+# File processing workflow
+if __name__ == "__main__":
+    input_filepath = "master_bank.json"
+    output_filepath = "master_bank_sorted.json"
 
-  with open(output_file, 'w', encoding='utf-8') as f:
-    json.dump(sorted_data, f, indent=2, ensure_ascii=False)
+    with open(input_filepath, "r", encoding="utf-8") as f:
+        bank_data = json.load(f)
 
+    sorted_bank = sort_question_bank(bank_data, deduplicate=False)
 
-if __name__ == '__main__':
-  sort_master_bank('master_bank.json', 'sorted_master_bank.json')
+    with open(output_filepath, "w", encoding="utf-8") as f:
+        json.dump(sorted_bank, f, indent=2)
+
+    print(f"Successfully sorted {len(sorted_bank)} items and saved to {output_filepath}")
