@@ -1,0 +1,973 @@
+{
+  "syllabus_info": {
+    "qualification": "Cambridge IGCSE",
+    "subject": "International Mathematics",
+    "code": "0607",
+    "tier": "Extended",
+    "years": ["2025", "2026", "2027"]
+  },
+  "topics": [
+    {
+      "topic_number": 1,
+      "topic_name": "Number",
+      "subtopics": [
+        {
+          "code": "E1.1",
+          "title": "Types of number",
+          "objectives": [
+            "Identify and use natural numbers (0, 1, 2, ...)",
+            "Identify and use integers (positive, zero and negative)",
+            "Identify and use prime numbers",
+            "Identify and use square numbers",
+            "Identify and use cube numbers",
+            "Identify and use triangle numbers",
+            "Identify and use common factors",
+            "Identify and use common multiples",
+            "Identify and use rational and irrational numbers",
+            "Identify and use reciprocals"
+          ],
+          "notes_and_examples": {
+            "text": "Example tasks include: convert between numbers and words, e.g. six billion is 6000000000, 10007 is ten thousand and seven; express 72 as a product of its prime factors; find the highest common factor (HCF) of two numbers; find the lowest common multiple (LCM) of two numbers.",
+            "latex_expressions": ["6000000000", "72"]
+          }
+        },
+        {
+          "code": "E1.2",
+          "title": "Sets",
+          "objectives": [
+            "Understand and use set language, notation and Venn diagrams to describe sets and represent relationships between sets."
+          ],
+          "notes_and_examples": {
+            "text": "Venn diagrams are limited to two or three sets.\nSet notation used:\n- Number of elements in set A: $n(A)$\n- Element of: $\\in$\n- Not an element of: $\\notin$\n- Complement of set A: $A'$\n- The empty set: $\\emptyset$\n- Universal set: $\\mathcal{U}$\n- Subset: $A \\subseteq B$\n- Not a subset: $A \\nsubseteq B$\n- Union: $A \\cup B$\n- Intersection: $A \\cap B$\nExample definition of sets:\n$A = \\{x | x \\text{ is a natural number}\\}$\n$B = \\{(x,y) | y = mx+c\\}$\n$C = \\{x | a \\le x \\le b\\}$\n$D = \\{a, b, c, ...\\}$",
+            "latex_expressions": [
+              "n(A)", "\\in", "\\notin", "A'", "\\emptyset", "\\mathcal{U}",
+              "A \\subseteq B", "A \\nsubseteq B", "A \\cup B", "A \\cap B",
+              "A=\\{x|x \\text{ is a natural number}\\}", "B=\\{(x,y)|y=mx+c\\}",
+              "C=\\{x|a\\le x\\le b\\}", "D=\\{a,b,c,...\\}"
+            ]
+          }
+        },
+        {
+          "code": "E1.3",
+          "title": "Powers and roots",
+          "objectives": [
+            "Calculate with squares, square roots, cubes, cube roots, and other powers and roots of numbers."
+          ],
+          "notes_and_examples": {
+            "text": "Includes recall of squares and their corresponding roots from 1 to 15, and recall of cubes and their corresponding roots of 1, 2, 3, 4, 5 and 10.\nExamples: Write down the value of $\\sqrt{169}$. Work out $5^2 \\times \\sqrt[3]{8}$.",
+            "latex_expressions": ["\\sqrt{169}", "5^2 \\times \\sqrt[3]{8}"]
+          }
+        },
+        {
+          "code": "E1.4",
+          "title": "Fractions, decimals and percentages",
+          "objectives": [
+            "Use the language and notation of proper fractions, improper fractions, mixed numbers, decimals, and percentages in appropriate contexts.",
+            "Recognise equivalence and convert between these forms."
+          ],
+          "notes_and_examples": {
+            "text": "Candidates are expected to be able to write fractions in their simplest form.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E1.5",
+          "title": "Ordering",
+          "objectives": [
+            "Order quantities by magnitude and demonstrate familiarity with the symbols =, \\neq, >, <, \\ge, and \\le."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": ["=", "\\neq", ">", "<", "\\ge", "\\le"]
+          }
+        },
+        {
+          "code": "E1.6",
+          "title": "The four operations",
+          "objectives": [
+            "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations and use of brackets."
+          ],
+          "notes_and_examples": {
+            "text": "Includes negative numbers, improper fractions, mixed numbers, practical situations (e.g. temperature changes).",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E1.7",
+          "title": "Indices I",
+          "objectives": [
+            "Understand and use indices (positive, zero, negative and fractional).",
+            "Understand and use the rules of indices."
+          ],
+          "notes_and_examples": {
+            "text": "Examples include:\n$6^{\\frac{1}{2}}=\\sqrt{6}$, $16^{\\frac{1}{4}}=\\sqrt[4]{16}$\nFind the value of $7^{-2}$, $81^{\\frac{1}{2}}$, $8^{-\\frac{2}{3}}$\nFind the value of $2^{-3}\\times 2^4$, $(2^3)^2$, $(2^3 \\div 2^4)$.",
+            "latex_expressions": [
+              "6^{\\frac{1}{2}}=\\sqrt{6}", "16^{\\frac{1}{4}}=\\sqrt[4]{16}",
+              "7^{-2}", "81^{\\frac{1}{2}}", "8^{-\\frac{2}{3}}",
+              "2^{-3}\\times 2^4", "(2^3)^2", "(2^3 \\div 2^4)"
+            ]
+          }
+        },
+        {
+          "code": "E1.8",
+          "title": "Standard form",
+          "objectives": [
+            "Use the standard form $A \\times 10^n$ where $n$ is a positive or negative integer and $1 \\le A < 10$.",
+            "Convert numbers into and out of standard form.",
+            "Calculate with values in standard form."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": ["A \\times 10^n", "1 \\le A < 10"]
+          }
+        },
+        {
+          "code": "E1.9",
+          "title": "Estimation",
+          "objectives": [
+            "Round values to a specified degree of accuracy.",
+            "Make estimates for calculations involving numbers, quantities and measurements.",
+            "Round answers to a reasonable degree of accuracy in the context of a given problem."
+          ],
+          "notes_and_examples": {
+            "text": "Includes decimal places and significant figures.\ne.g. Write 5764 correct to the nearest thousand.\ne.g. By writing each number correct to 1 significant figure, estimate the value of $\\frac{41.3}{9.79 \\times 0.765}$.",
+            "latex_expressions": ["\\frac{41.3}{9.79 \\times 0.765}"]
+          }
+        },
+        {
+          "code": "E1.10",
+          "title": "Ratio and proportion",
+          "objectives": [
+            "Understand and use ratio and proportion to: give ratios in their simplest form; divide a quantity in a given ratio; use proportional reasoning and ratios in context."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. 20:30:40 in its simplest form is 2:3:4.\ne.g. adapt recipes; use map scales; determine best value.",
+            "latex_expressions": ["20:30:40", "2:3:4"]
+          }
+        },
+        {
+          "code": "E1.11",
+          "title": "Rates",
+          "objectives": [
+            "Use common measures of rate.",
+            "Solve problems involving average speed."
+          ],
+          "notes_and_examples": {
+            "text": "Calculate with hourly rates of pay, exchange rates, flow rates, fuel consumption.\nKnowledge of speed/distance/time formula is required.\ne.g. A cyclist travels 45 km in 3 hours 45 minutes. What is their average speed?\nNotation used: $m/s$, $g/cm^3$.",
+            "latex_expressions": ["m/s", "g/cm^3"]
+          }
+        },
+        {
+          "code": "E1.12",
+          "title": "Percentages",
+          "objectives": [
+            "Calculate a given percentage of a quantity.",
+            "Express one quantity as a percentage of another.",
+            "Calculate percentage increase or decrease.",
+            "Calculate with simple and compound interest.",
+            "Calculate using reverse percentages."
+          ],
+          "notes_and_examples": {
+            "text": "Problems may include repeated percentage change. Formulas are not given.\ne.g. find the cost price given the selling price and the percentage profit.\nPercentage calculations may include: deposit, discount, profit and loss (as amount or percentage), earnings, percentages over 100%.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E1.13",
+          "title": "Using a calculator",
+          "objectives": [
+            "Use a calculator efficiently.",
+            "Enter values appropriately on a calculator.",
+            "Interpret the calculator display appropriately."
+          ],
+          "notes_and_examples": {
+            "text": "Know not to round values within a calculation and to only round the final answer.\ne.g. enter 2 hours 30 minutes as 2.5 hours or $2^\\circ 30' 0''$.\ne.g. in money 4.8 means $4.80; in time 3.25 means 3 hours 15 minutes.",
+            "latex_expressions": ["2^\\circ 30' 0''"]
+          }
+        },
+        {
+          "code": "E1.14",
+          "title": "Time",
+          "objectives": [
+            "Calculate with time: seconds (s), minutes (min), hours (h), days, weeks, months, years, including the relationship between units.",
+            "Calculate times in terms of the 24-hour and 12-hour clock.",
+            "Read clocks and timetables."
+          ],
+          "notes_and_examples": {
+            "text": "1 year = 365 days.\n24-hour clock: 3.15 a.m. is 03 15 and 3.15 p.m. is 15 15.\nIncludes problems involving time zones, local times and time differences.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E1.15",
+          "title": "Money",
+          "objectives": [
+            "Calculate with money.",
+            "Convert from one currency to another."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E1.16",
+          "title": "Exponential growth and decay",
+          "objectives": [
+            "Use exponential growth and decay."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. depreciation, population change. Knowledge of e is not required.",
+            "latex_expressions": ["e"]
+          }
+        },
+        {
+          "code": "E1.17",
+          "title": "Surds",
+          "objectives": [
+            "Understand and use surds, including simplifying expressions.",
+            "Rationalise the denominator."
+          ],
+          "notes_and_examples": {
+            "text": "Examples include:\n$\\sqrt{20} = 2\\sqrt{5}$\n$\\sqrt{200} - \\sqrt{32} = 6\\sqrt{2}$\n$\\frac{10}{\\sqrt{5}} = 2\\sqrt{5}$\n$\\frac{1}{-1+\\sqrt{3}} = \\frac{1+\\sqrt{3}}{2}$",
+            "latex_expressions": [
+              "\\sqrt{20}=2\\sqrt{5}", "\\sqrt{200}-\\sqrt{32}=6\\sqrt{2}",
+              "\\frac{10}{\\sqrt{5}}=2\\sqrt{5}", "\\frac{1}{-1+\\sqrt{3}}=\\frac{1+\\sqrt{3}}{2}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 2,
+      "topic_name": "Algebra",
+      "subtopics": [
+        {
+          "code": "E2.1",
+          "title": "Introduction to algebra",
+          "objectives": [
+            "Know that letters can be used to represent generalised numbers.",
+            "Substitute numbers into expressions and formulas."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E2.2",
+          "title": "Algebraic manipulation",
+          "objectives": [
+            "Simplify expressions by collecting like terms.",
+            "Expand products of algebraic expressions.",
+            "Factorise by extracting common factors.",
+            "Factorise expressions of specified forms."
+          ],
+          "notes_and_examples": {
+            "text": "Forms to factorise: $ax+bx+kay+kby$, $a^2x^2-b^2y^2$, $a^2+2ab+b^2$, $ax^2+bx+c$, $ax^3+bx^2+cx$.\nSimplify means simplest form, e.g. $2a^2+3ab-1+5a^2-9ab+4 = 7a^2-6ab+3$.\nExpand e.g. $3x(2x-4y)$, $(3x+y)(x-4y)$, $(3x+4)^2$, $(x-2)(x+3)(2x+1)$.\nFactorise fully e.g. $9x^2+15xy = 3x(3x+5y)$.",
+            "latex_expressions": [
+              "ax+bx+kay+kby", "a^2x^2-b^2y^2", "a^2+2ab+b^2", "ax^2+bx+c", "ax^3+bx^2+cx",
+              "2a^2+3ab-1+5a^2-9ab+4=7a^2-6ab+3", "3x(2x-4y)", "(3x+y)(x-4y)", "(3x+4)^2",
+              "(x-2)(x+3)(2x+1)", "9x^2+15xy=3x(3x+5y)"
+            ]
+          }
+        },
+        {
+          "code": "E2.3",
+          "title": "Algebraic fractions",
+          "objectives": [
+            "Manipulate algebraic fractions.",
+            "Factorise and simplify rational expressions."
+          ],
+          "notes_and_examples": {
+            "text": "Examples include:\n$\\frac{x}{3}+\\frac{x-4}{2}$, $\\frac{2x}{3}-\\frac{3(x-5)}{2}$, $\\frac{3a}{4}\\times\\frac{9a}{10}$, $\\frac{3a}{4}\\div\\frac{9a}{10}$, $\\frac{1}{x-2}+\\frac{x+1}{x-3}$, $\\frac{x^2-2x}{x^2-5x+6}$.",
+            "latex_expressions": [
+              "\\frac{x}{3}+\\frac{x-4}{2}", "\\frac{2x}{3}-\\frac{3(x-5)}{2}",
+              "\\frac{3a}{4}\\times\\frac{9a}{10}", "\\frac{3a}{4}\\div\\frac{9a}{10}",
+              "\\frac{1}{x-2}+\\frac{x+1}{x-3}", "\\frac{x^2-2x}{x^2-5x+6}"
+            ]
+          }
+        },
+        {
+          "code": "E2.4",
+          "title": "Indices II",
+          "objectives": [
+            "Understand and use indices (positive, zero, negative and fractional).",
+            "Understand and use the rules of indices."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. solve $32^x=2$, $5^{x+1}=25^x$.\ne.g. simplify $3x^{-4} \\times \\frac{2}{3}x^{\\frac{1}{2}}$, $\\frac{2}{5}x^{\\frac{1}{2}} \\div 2x^{-2}$, $(\\frac{2x^5}{3})^3$.",
+            "latex_expressions": [
+              "32^x=2", "5^{x+1}=25^x", "3x^{-4}\\times\\frac{2}{3}x^{\\frac{1}{2}}",
+              "\\frac{2}{5}x^{\\frac{1}{2}}\\div 2x^{-2}", "(\\frac{2x^5}{3})^3"
+            ]
+          }
+        },
+        {
+          "code": "E2.5",
+          "title": "Equations",
+          "objectives": [
+            "Construct expressions, equations and formulas.",
+            "Solve linear equations in one unknown.",
+            "Solve fractional equations with numerical and linear algebraic denominators.",
+            "Solve simultaneous linear equations in two unknowns.",
+            "Solve quadratic equations by factorisation, using a graphic display calculator and by use of the quadratic formula.",
+            "Change the subject of formulas.",
+            "Use a graphic display calculator to solve equations, including those which may be unfamiliar."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. write expression for product of two consecutive even numbers.\nIncludes constructing simultaneous equations.\ne.g. $3x+4=10$, $5-2x=3(x+7)$.\nFractional e.g. $\\frac{x}{2x+1}=4$, $\\frac{2}{x+2}+\\frac{3}{2x-1}=1$, $\\frac{x}{x+2}=\\frac{3}{x-6}$.\nCandidates may be expected to give solutions in surd form. Quadratic formula is given.\nChange subject where subject appears twice or contains power/root.\nGDC e.g. $2x-1 = \\frac{1}{x^3}$.",
+            "latex_expressions": [
+              "3x+4=10", "5-2x=3(x+7)", "\\frac{x}{2x+1}=4",
+              "\\frac{2}{x+2}+\\frac{3}{2x-1}=1", "\\frac{x}{x+2}=\\frac{3}{x-6}",
+              "2x-1=\\frac{1}{x^3}"
+            ]
+          }
+        },
+        {
+          "code": "E2.6",
+          "title": "Inequalities",
+          "objectives": [
+            "Represent and interpret inequalities, including on a number line.",
+            "Construct, solve and interpret linear inequalities.",
+            "Solve inequalities using a graphic display calculator.",
+            "Represent and interpret linear inequalities in two variables graphically.",
+            "List inequalities that define a given region."
+          ],
+          "notes_and_examples": {
+            "text": "Number line: open circles for strict (<, >), closed circles for inclusive (<=, >=), e.g. $-3 \\le x < 1$.\nLinear examples: $3x < 2x+4$, $-3 \\le 3x-2 < 7$.\nGraphical conventions: broken lines for strict (<, >), solid lines for inclusive (<=, >=), shading for unwanted regions.",
+            "latex_expressions": ["-3 \\le x < 1", "3x < 2x+4", "-3 \\le 3x-2 < 7", "x<1", "y \\ge 1"]
+          }
+        },
+        {
+          "code": "E2.7",
+          "title": "Sequences",
+          "objectives": [
+            "Continue a given number sequence or pattern.",
+            "Recognise patterns in sequences, including the term-to-term rule, and relationships between different sequences.",
+            "Find and use the nth term of sequences."
+          ],
+          "notes_and_examples": {
+            "text": "Subscript notation may be used, e.g. $T_n$ is the nth term of sequence T.\nIncludes linear, quadratic, cubic and exponential sequences and simple combinations of these.\nIncludes use of a difference method to find the nth term for a linear, quadratic or cubic sequence.",
+            "latex_expressions": ["T_n"]
+          }
+        },
+        {
+          "code": "E2.8",
+          "title": "Proportion",
+          "objectives": [
+            "Express direct and inverse proportion in algebraic terms and use this form of expression to find unknown quantities.",
+            "Identify the best variation model for given data."
+          ],
+          "notes_and_examples": {
+            "text": "Includes linear, square, square root and cube proportion.\nKnowledge of proportional symbol ($\\propto$) is required.",
+            "latex_expressions": ["\\propto"]
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 3,
+      "topic_name": "Functions",
+      "subtopics": [
+        {
+          "code": "E3.1",
+          "title": "Graphs of functions",
+          "objectives": [
+            "Recognise function types from graph shapes: linear $f(x)=ax+b$, quadratic $f(x)=ax^2+bx+c$, cubic $f(x)=ax^3+bx^2+cx+d$, reciprocal $f(x)=\\frac{a}{x}$, exponential $f(x)=a^x$ ($0<a<1$ or $a>1$), trigonometric $f(x)=a\\sin(bx)$, $a\\cos(bx)$, $\\tan x$.",
+            "Determine one or two of a, b, c or d for the graphs above.",
+            "Determine values in a function from its graph."
+          ],
+          "notes_and_examples": {
+            "text": "Includes recognising symmetry, period, and amplitude. Some coefficients may be 0.",
+            "latex_expressions": [
+              "f(x)=ax+b", "f(x)=ax^2+bx+c", "f(x)=ax^3+bx^2+cx+d",
+              "f(x)=\\frac{a}{x}", "f(x)=a^x", "f(x)=a\\sin(bx)", "a\\cos(bx)", "\\tan x"
+            ]
+          }
+        },
+        {
+          "code": "E3.2",
+          "title": "Sketching graphs on a calculator",
+          "objectives": [
+            "Use a graphic display calculator to: sketch the graph of a function, produce a table of values, plot points, find zeros, local maxima or local minima, find the intersection of the graphs of functions, find the vertex of a quadratic."
+          ],
+          "notes_and_examples": {
+            "text": "Includes unfamiliar functions not mentioned explicitly in the syllabus.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E3.3",
+          "title": "Functions",
+          "objectives": [
+            "Understand functions, domain and range and use function notation.",
+            "Understand and find inverse functions $f^{-1}(x)$.",
+            "Form composite functions as defined by $gf(x) = g(f(x))$."
+          ],
+          "notes_and_examples": {
+            "text": "Examples: $f(x)=3x-5$, $g(x)=\\frac{3(x+4)}{5}$, $h(x)=2x^2+3$.\ne.g. $f(x)=\\frac{3}{x+2}$ and $g(x)=(3x+5)^2$. Find $fg(x)$. Give answer as fraction in simplest form.\nCandidates are not expected to find domain and range of composite functions. May include mapping diagrams.",
+            "latex_expressions": [
+              "f^{-1}(x)", "gf(x)=g(f(x))", "f(x)=3x-5", "g(x)=\\frac{3(x+4)}{5}",
+              "h(x)=2x^2+3", "f(x)=\\frac{3}{x+2}", "g(x)=(3x+5)^2", "fg(x)"
+            ]
+          }
+        },
+        {
+          "code": "E3.4",
+          "title": "Finding a quadratic function using given information",
+          "objectives": [
+            "Find a quadratic function given: vertex and another point; x-intercepts and a point; vertex or x-intercepts in the case where $a=1$."
+          ],
+          "notes_and_examples": {
+            "text": "$y = a(x-h)^2 + k$ has a vertex of $(h, k)$.",
+            "latex_expressions": ["y=a(x-h)^2+k", "(h,k)", "a=1"]
+          }
+        },
+        {
+          "code": "E3.5",
+          "title": "Asymptotes",
+          "objectives": [
+            "Understand the concept of asymptotes and identify simple examples parallel to the axes on a graph."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. $f(x)=\\tan x$ has asymptotes at $90^\\circ, 270^\\circ, ...$\nExcludes algebraic derivation of asymptotes.",
+            "latex_expressions": ["f(x)=\\tan x", "90^\\circ", "270^\\circ"]
+          }
+        },
+        {
+          "code": "E3.6",
+          "title": "Transforming graphs of functions",
+          "objectives": [
+            "Describe and identify transformations to a graph of $y=f(x)$ when $y=f(x)+k$ or $y=f(x+k)$."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. graph $y=f(x)$ mapped onto $y=g(x)$ by translation with vector. Find $g(x)$ in terms of $x$, where $k$ is an integer.",
+            "latex_expressions": ["y=f(x)", "y=f(x)+k", "y=f(x+k)", "y=g(x)", "g(x)", "k"]
+          }
+        },
+        {
+          "code": "E3.7",
+          "title": "The logarithmic function",
+          "objectives": [
+            "Understand and use the logarithmic function as the inverse of the exponential function.",
+            "Understand $y=a^x$ as equivalent to $x=\\log_a y$.",
+            "Understand the solution to $a^x=b$ as $x=\\frac{\\log b}{\\log a}$."
+          ],
+          "notes_and_examples": {
+            "text": "All logs will be base 10 unless otherwise stated.\ne.g. solve log equations in context of compound interest or exponential growth/decay.\ne.g. solve a log equation from a graph or otherwise.",
+            "latex_expressions": ["y=a^x", "x=\\log_a y", "a^x=b", "x=\\frac{\\log b}{\\log a}"]
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 4,
+      "topic_name": "Coordinate geometry",
+      "subtopics": [
+        {
+          "code": "E4.1",
+          "title": "Coordinates",
+          "objectives": [
+            "Use and interpret Cartesian coordinates in two dimensions."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E4.2",
+          "title": "Gradient of linear graphs",
+          "objectives": [
+            "Find the gradient of a straight line.",
+            "Calculate the gradient of a straight line from the coordinates of two points on it."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E4.3",
+          "title": "Length and midpoint",
+          "objectives": [
+            "Calculate the length of a line segment.",
+            "Find the coordinates of the midpoint of a line segment."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E4.4",
+          "title": "Equations of linear graphs",
+          "objectives": [
+            "Interpret and obtain the equation of a straight-line graph."
+          ],
+          "notes_and_examples": {
+            "text": "Forms include: $ax+by=c$, $y=mx+c$, $x=k$.\nInvolve finding equation given graph, or finding gradient/y-intercept from equation e.g. find gradient & y-intercept of $5x+4y=8$.\nEquations must be given in fully simplified form.",
+            "latex_expressions": ["ax+by=c", "y=mx+c", "x=k", "5x+4y=8"]
+          }
+        },
+        {
+          "code": "E4.5",
+          "title": "Parallel lines",
+          "objectives": [
+            "Find the gradient and equation of a straight line parallel to a given line."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. find equation of line parallel to $y=4x-1$ passing through $(1, -3)$.",
+            "latex_expressions": ["y=4x-1", "(1,-3)"]
+          }
+        },
+        {
+          "code": "E4.6",
+          "title": "Perpendicular lines",
+          "objectives": [
+            "Find the gradient and equation of a straight line perpendicular to a given line."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. find gradient of line perpendicular to $2y=3x+1$.\ne.g. find equation of perpendicular bisector of line joining $(-3, 8)$ and $(9, -2)$.",
+            "latex_expressions": ["2y=3x+1", "(-3,8)", "(9,-2)"]
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 5,
+      "topic_name": "Geometry",
+      "subtopics": [
+        {
+          "code": "E5.1",
+          "title": "Geometrical terms",
+          "objectives": [
+            "Use and interpret geometrical terms: point, vertex, line, plane, parallel, perpendicular, perpendicular bisector, bearing, right angle, acute, obtuse, reflex angles, interior and exterior angles, similar, congruent, scale factor.",
+            "Use and interpret vocabulary of triangles (equilateral, isosceles, scalene, right-angled), quadrilaterals (square, rectangle, kite, rhombus, parallelogram, trapezium), polygons (regular/irregular, pentagon, hexagon, octagon, decagon), solids (cube, cuboid, prism, cylinder, pyramid, tetrahedron, cone, sphere, hemisphere, frustum, face, surface, edge).",
+            "Use and interpret vocabulary of a circle: centre, radius/radii, diameter, circumference, semicircle, chord, tangent, major/minor arc, sector, segment."
+          ],
+          "notes_and_examples": {
+            "text": "Candidates are not expected to show that two shapes are congruent.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E5.2",
+          "title": "Angle measurement in degrees",
+          "objectives": [
+            "Measure and draw lines and angles.",
+            "Use and interpret three-figure bearings."
+          ],
+          "notes_and_examples": {
+            "text": "Ruler must be used for straight edges.\nBearings measured clockwise from north ($000^\\circ$ to $360^\\circ$).\ne.g. find bearing of A from B if bearing of B from A is $025^\\circ$.\nUnderstanding of cardinal directions e.g. point D is due east of point C.",
+            "latex_expressions": ["000^\\circ", "360^\\circ", "025^\\circ"]
+          }
+        },
+        {
+          "code": "E5.3",
+          "title": "Similarity",
+          "objectives": [
+            "Calculate lengths of similar shapes.",
+            "Use relationships between lengths, areas, surface areas, and volumes of similar shapes/solids: $\\frac{\\text{Volume A}}{\\text{Volume B}} = \\frac{(\\text{Length A})^3}{(\\text{Length B})^3}$.",
+            "Solve problems and give simple explanations involving similarity."
+          ],
+          "notes_and_examples": {
+            "text": "Includes showing two triangles are similar using geometric reasons.",
+            "latex_expressions": ["\\frac{\\text{Volume A}}{\\text{Volume B}} = \\frac{(\\text{Length A})^3}{(\\text{Length B})^3}"]
+          }
+        },
+        {
+          "code": "E5.4",
+          "title": "Symmetry",
+          "objectives": [
+            "Recognise line symmetry and order of rotational symmetry in two dimensions.",
+            "Recognise symmetry properties of prisms, cylinders, pyramids and cones."
+          ],
+          "notes_and_examples": {
+            "text": "Includes properties of triangles, quadrilaterals and polygons directly related to symmetries.\ne.g. identify planes and axes of symmetry.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E5.5",
+          "title": "Angles",
+          "objectives": [
+            "Calculate unknown angles and give simple explanations using geometrical properties: sum at point = $360^\\circ$, sum on line = $180^\\circ$, vertically opposite, triangle sum = $180^\\circ$, quadrilateral sum = $360^\\circ$.",
+            "Calculate unknown angles and give geometric explanations for parallel lines: corresponding angles equal, alternate angles equal, co-interior angles sum to $180^\\circ$.",
+            "Know and use angle properties of regular and irregular polygons."
+          ],
+          "notes_and_examples": {
+            "text": "Knowledge of three-letter notation required (e.g. angle $ABC$). Correct terminology expected.\nIncludes exterior and interior angles, and angle sum.",
+            "latex_expressions": ["360^\\circ", "180^\\circ", "ABC"]
+          }
+        },
+        {
+          "code": "E5.6",
+          "title": "Circle theorems I",
+          "objectives": [
+            "Calculate unknown angles and give explanations using circle properties: angle in semicircle = $90^\\circ$, tangent to radius = $90^\\circ$, angle at centre is twice angle at circumference, angles in same segment equal, opposite angles of cyclic quadrilateral sum to $180^\\circ$, alternate segment theorem."
+          ],
+          "notes_and_examples": {
+            "text": "Candidates expected to use listed geometrical properties when giving reasons.",
+            "latex_expressions": ["90^\\circ", "180^\\circ"]
+          }
+        },
+        {
+          "code": "E5.7",
+          "title": "Circle theorems II",
+          "objectives": [
+            "Use symmetry properties of circles: equal chords are equidistant from centre, perpendicular bisector of chord passes through centre, tangents from external point equal in length."
+          ],
+          "notes_and_examples": {
+            "text": "Candidates expected to use listed geometrical properties when giving reasons.",
+            "latex_expressions": []
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 6,
+      "topic_name": "Mensuration",
+      "subtopics": [
+        {
+          "code": "E6.1",
+          "title": "Units of measure",
+          "objectives": [
+            "Use metric units of mass, length, area, volume and capacity in practical situations and convert quantities into larger or smaller units."
+          ],
+          "notes_and_examples": {
+            "text": "Units: mm, cm, m, km, mm^2, cm^2, m^2, km^2, mm^3, cm^3, m^3, ml, l, g, kg.\nConversions include area ($cm^2 \\leftrightarrow m^2$) and volume/capacity ($m^3 \\leftrightarrow \\text{litres}$).",
+            "latex_expressions": ["cm^2 \\leftrightarrow m^2", "m^3 \\leftrightarrow \\text{litres}"]
+          }
+        },
+        {
+          "code": "E6.2",
+          "title": "Area and perimeter",
+          "objectives": [
+            "Carry out calculations involving perimeter and area of rectangle, triangle, parallelogram and trapezium."
+          ],
+          "notes_and_examples": {
+            "text": "Except for area of triangle, formulas are not given.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E6.3",
+          "title": "Circles, arcs and sectors",
+          "objectives": [
+            "Carry out calculations involving circumference and area of a circle.",
+            "Carry out calculations involving arc length and sector area as fractions of circumference and area."
+          ],
+          "notes_and_examples": {
+            "text": "Answers may be asked in terms of $\\pi$. Formulas are given. Includes minor and major sectors.",
+            "latex_expressions": ["\\pi"]
+          }
+        },
+        {
+          "code": "E6.4",
+          "title": "Surface area and volume",
+          "objectives": [
+            "Carry out calculations and solve problems involving surface area and volume of: cuboid, prism, cylinder, sphere, pyramid, cone."
+          ],
+          "notes_and_examples": {
+            "text": "Answers may be asked in terms of $\\pi$.\nFormulas given: curved surface area of cylinder/cone, surface area of sphere, volume of prism/pyramid/cylinder/cone/sphere.\nPrism refers to any solid with uniform cross-section (e.g. cylindrical sector).",
+            "latex_expressions": ["\\pi"]
+          }
+        },
+        {
+          "code": "E6.5",
+          "title": "Compound shapes and parts of shapes",
+          "objectives": [
+            "Carry out calculations and solve problems involving perimeters and areas of compound shapes and parts of shapes.",
+            "Carry out calculations and solve problems involving surface areas and volumes of compound solids and parts of solids."
+          ],
+          "notes_and_examples": {
+            "text": "Answers may be asked in terms of $\\pi$.\ne.g. find surface area and volume of a frustum.",
+            "latex_expressions": ["\\pi"]
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 7,
+      "topic_name": "Trigonometry",
+      "subtopics": [
+        {
+          "code": "E7.1",
+          "title": "Pythagoras' theorem",
+          "objectives": [
+            "Know and use Pythagoras' theorem."
+          ],
+          "notes_and_examples": {
+            "text": "Includes finding length of chord, distance of chord from centre of circle, distance between two points given on a grid.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E7.2",
+          "title": "Right-angled triangles",
+          "objectives": [
+            "Know and use sine, cosine and tangent ratios for acute angles in calculations involving sides and angles of a right-angled triangle.",
+            "Solve problems in two dimensions using Pythagoras' theorem and trigonometry.",
+            "Know that perpendicular distance from a point to a line is the shortest distance.",
+            "Carry out calculations involving angles of elevation and depression."
+          ],
+          "notes_and_examples": {
+            "text": "Angles given in degrees, answers in degrees correct to 1 d.p. Knowledge of bearings may be required.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E7.3",
+          "title": "Exact trigonometric values",
+          "objectives": [
+            "Know exact values of $\\sin x$ and $\\cos x$ for $x = 0^\\circ, 30^\\circ, 45^\\circ, 60^\\circ, 90^\\circ$.",
+            "Know exact values of \\tan x for $x = 0^\\circ, 30^\\circ, 45^\\circ, 60^\\circ$."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": [
+              "\\sin x", "\\cos x", "x=0^\\circ, 30^\\circ, 45^\\circ, 60^\\circ, 90^\\circ",
+              "\\tan x", "x=0^\\circ, 30^\\circ, 45^\\circ, 60^\\circ"
+            ]
+          }
+        },
+        {
+          "code": "E7.4",
+          "title": "Trigonometric functions",
+          "objectives": [
+            "Recognise, sketch and interpret graphs for $0^\\circ \\le x \\le 360^\\circ$: $y=\\sin x$, $y=\\cos x$, $y=\\tan x$.",
+            "Solve trigonometric equations involving $\\sin x$, $\\cos x$ or $\\tan x$ for $0^\\circ \\le x \\le 360^\\circ$."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. solve $\\sin x = \\frac{\\sqrt{3}}{2}$ for $0^\\circ \\le x \\le 360^\\circ$.\ne.g. solve $2\\cos x + 1 = 0$ for $0^\\circ \\le x \\le 360^\\circ$.",
+            "latex_expressions": [
+              "0^\\circ \\le x \\le 360^\\circ", "y=\\sin x", "y=\\cos x", "y=\\tan x",
+              "\\sin x = \\frac{\\sqrt{3}}{2}", "2\\cos x + 1 = 0"
+            ]
+          }
+        },
+        {
+          "code": "E7.5",
+          "title": "Non-right-angled triangles",
+          "objectives": [
+            "Use sine and cosine rules in calculations involving lengths and angles for any triangle.",
+            "Use formula $\\text{Area} = \\frac{1}{2}ab\\sin C$."
+          ],
+          "notes_and_examples": {
+            "text": "Includes obtuse angles and ambiguous case. Sine/cosine rules and area formula are given.",
+            "latex_expressions": ["\\text{Area}=\\frac{1}{2}ab\\sin C"]
+          }
+        },
+        {
+          "code": "E7.6",
+          "title": "Pythagoras' theorem and trigonometry in 3D",
+          "objectives": [
+            "Carry out calculations and solve problems in 3D using Pythagoras' theorem and trigonometry, including calculating the angle between a line and a plane."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 8,
+      "topic_name": "Transformations and vectors",
+      "subtopics": [
+        {
+          "code": "E8.1",
+          "title": "Transformations",
+          "objectives": [
+            "Recognise, describe and draw reflection in a straight line.",
+            "Recognise, describe and draw rotation about a centre through multiples of $90^\\circ$.",
+            "Recognise, describe and draw enlargement from a centre by a scale factor.",
+            "Recognise, describe and draw translation by a vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$."
+          ],
+          "notes_and_examples": {
+            "text": "Questions may involve combinations of transformations or reverse transformations.\nRuler must be used. Positive, fractional and negative scale factors may be used.",
+            "latex_expressions": ["\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "90^\\circ"]
+          }
+        },
+        {
+          "code": "E8.2",
+          "title": "Vectors in two dimensions",
+          "objectives": [
+            "Describe a translation using a vector represented by $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$, $\\vec{AB}$ or $\\mathbf{a}$.",
+            "Add and subtract vectors.",
+            "Multiply a vector by a scalar."
+          ],
+          "notes_and_examples": {
+            "text": "Vectors printed as $\\vec{AB}$ or $\\mathbf{a}$.",
+            "latex_expressions": ["\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "\\vec{AB}", "\\mathbf{a}"]
+          }
+        },
+        {
+          "code": "E8.3",
+          "title": "Magnitude of a vector",
+          "objectives": [
+            "Calculate the magnitude of a vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ as $\\sqrt{x^2+y^2}$."
+          ],
+          "notes_and_examples": {
+            "text": "Magnitudes denoted by modulus signs: $|\\mathbf{a}|$ is magnitude of $\\mathbf{a}$, $|\\vec{AB}|$ is magnitude of $\\vec{AB}$.",
+            "latex_expressions": [
+              "\\begin{pmatrix} x \\\\ y \\end{pmatrix}", "\\sqrt{x^2+y^2}",
+              "|\\mathbf{a}|", "|\\vec{AB}|"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 9,
+      "topic_name": "Probability",
+      "subtopics": [
+        {
+          "code": "E9.1",
+          "title": "Introduction to probability",
+          "objectives": [
+            "Understand and use probability scale from 0 to 1.",
+            "Understand and use probability notation: $P(A)$, $P(A')$.",
+            "Calculate probability of a single event.",
+            "Understand that $P(\\text{event not occurring}) = 1 - P(\\text{event occurring})$."
+          ],
+          "notes_and_examples": {
+            "text": "Probabilities as fraction, decimal or percentage.\nMay require information from tables, graphs or Venn diagrams.\ne.g. $P(B)=0.8$, find $P(B')$.",
+            "latex_expressions": ["P(A)", "P(A')", "P(B)=0.8", "P(B')"]
+          }
+        },
+        {
+          "code": "E9.2",
+          "title": "Relative and expected frequencies",
+          "objectives": [
+            "Understand relative frequency as an estimate of probability.",
+            "Calculate expected frequencies."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. use results of spinner experiment to estimate probability.\ne.g. use probability to estimate expected value from population.\nIncludes understanding fair, bias and random.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E9.3",
+          "title": "Probability of combined events",
+          "objectives": [
+            "Calculate probability of combined events using sample space diagrams, Venn diagrams, tree diagrams."
+          ],
+          "notes_and_examples": {
+            "text": "Combined events with or without replacement.\nNotation $P(A \\cap B)$ and $P(A \\cup B)$ in Venn diagrams.\nTree diagrams: outcomes at end of branches, probabilities on sides.\n$P(A \\text{ or } B) = P(A) + P(B)$ for mutually exclusive.\n$P(A \\text{ and } B) = P(A) \\times P(B)$ for independent.",
+            "latex_expressions": [
+              "P(A \\cap B)", "P(A \\cup B)",
+              "P(A \\text{ or } B) = P(A) + P(B)",
+              "P(A \\text{ and } B) = P(A) \\times P(B)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_number": 10,
+      "topic_name": "Statistics",
+      "subtopics": [
+        {
+          "code": "E10.1",
+          "title": "Classifying statistical data",
+          "objectives": [
+            "Classify and tabulate statistical data."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. tally tables, two-way tables.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E10.2",
+          "title": "Interpreting statistical data",
+          "objectives": [
+            "Read, interpret and draw inferences from tables and statistical diagrams.",
+            "Compare sets of data using tables, graphs and statistical measures.",
+            "Appreciate restrictions on drawing conclusions from given data."
+          ],
+          "notes_and_examples": {
+            "text": "e.g. compare averages and measures of spread between two data sets.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E10.3",
+          "title": "Discrete and continuous data",
+          "objectives": [
+            "Distinguish between discrete and continuous data."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E10.4",
+          "title": "Averages and measures of spread",
+          "objectives": [
+            "Calculate mean, median, mode, quartiles, range and interquartile range for individual data and distinguish between purposes.",
+            "Calculate an estimate of the mean for grouped discrete or grouped continuous data.",
+            "Identify the modal class from a grouped frequency distribution."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E10.5",
+          "title": "Averages on a calculator",
+          "objectives": [
+            "Use a graphic display calculator to calculate: mean, median and quartiles for discrete data; mean for grouped data."
+          ],
+          "notes_and_examples": {
+            "text": "",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E10.6",
+          "title": "Statistical charts and diagrams",
+          "objectives": [
+            "Draw and interpret: bar charts (composite/stacked, dual/side-by-side), pie charts, pictograms, stem-and-leaf diagrams, simple frequency distributions."
+          ],
+          "notes_and_examples": {
+            "text": "Stem-and-leaf diagrams should have ordered data with a key.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E10.7",
+          "title": "Scatter diagrams",
+          "objectives": [
+            "Draw and interpret scatter diagrams.",
+            "Understand positive, negative and zero correlation.",
+            "Draw by eye, interpret and use a straight line of best fit.",
+            "Use a graphic display calculator to find and use the equation of linear regression."
+          ],
+          "notes_and_examples": {
+            "text": "Points marked clearly as small crosses (x).\nLine of best fit: single ruled line through mean point, extends across full data set, roughly even distribution of points either side.",
+            "latex_expressions": []
+          }
+        },
+        {
+          "code": "E10.8",
+          "title": "Cumulative frequency diagrams",
+          "objectives": [
+            "Draw and interpret cumulative frequency tables and diagrams.",
+            "Estimate and interpret median, percentiles, quartiles and interquartile range from cumulative frequency diagrams."
+          ],
+          "notes_and_examples": {
+            "text": "Points marked clearly as small crosses (x) and joined with a smooth curve.",
+            "latex_expressions": []
+          }
+        }
+      ]
+    }
+  ]
+}
