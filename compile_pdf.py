@@ -5,12 +5,16 @@ import re
 import shutil
 import subprocess
 import tempfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 MASTER_BANK_FILE = "master_bank.json"
 SYLLABUS_FILE = "syllabus.json"
 EXPORTS_DIR = "exports"
 
 os.makedirs(EXPORTS_DIR, exist_ok=True)
+
+# Guard pattern for LaTeX/TikZ macros starting with \n while unescaping literal \n string breaks
+LATEX_N_CMD_PATTERN = r"\\n(?!(?:ode|odepart|odes|ote|ull|eq|ne|nu|otin|oindent|abla|ewline|ewpage|ew\w*|ormalsize|ormalfont|ormalcolor|umber|numexpr|obreak|obreakspace|olimits|atural|subseteq|supseteq|geq|leq|less|gtr|exists|leftarrow|rightarrow|Leftarrow|Rightarrow|leftrightarrow|Leftrightarrow|parallel|mid|approx|cong|prec|succ|vdash|Vdash|vDash|VDash|earrow|warrow)\b)"
 
 # ==============================================================================
 # LATEX PREAMBLE TEMPLATE
@@ -121,6 +125,16 @@ def load_syllabus_map(syllabus_path=SYLLABUS_FILE):
         print(f"⚠️ Warning: Could not load `{syllabus_path}`: {e}")
 
     return s_map
+
+
+def sanitize_filename(name: str) -> str:
+    """Sanitizes strings for OS-safe file naming."""
+    if not name:
+        return "Untitled"
+    clean = re.sub(r"\$([^$]+)\$", r"\1", name)
+    clean = re.sub(r"\\[a-zA-Z]+", "", clean)
+    clean = re.sub(r'[\\/*?:"<>|]', "", clean)
+    return re.sub(r"\s+", " ", clean).strip()
 
 
 def parse_index_ranges(range_str: str, total_count: int):
@@ -259,11 +273,7 @@ def sanitize_latex_text(text_str: str) -> str:
 
     s = str(text_str).strip()
 
-    s = re.sub(
-        r"\\n(?!(?:eq|ne|nu|otin|oindent|abla|ewline|ewpage|ew|ormal|umber|nobreak|nolimits|natural|nsubseteq|parallel|mid)\b)",
-        "\n",
-        s,
-    )
+    s = re.sub(LATEX_N_CMD_PATTERN, "\n", s)
 
     s = convert_markdown_lists_to_latex(s)
     s = re.sub(r"(?<!\\)\\\[(\s*[\d\.]+\s*(?:cm|mm|pt|em|ex|in)\])", r"\\\\[\1", s)
@@ -290,7 +300,6 @@ def sanitize_latex_text(text_str: str) -> str:
     s = re.sub(r"(?<!\\)%", r"\\%", s)
     s = apply_auto_displaystyle(s)
 
-    # FIXED: Corrected inline math pattern from \$[^\$]+?|\$ to \$[^\$]+?\$
     combined_pattern = re.compile(
         r"(\$\$.*?\$\$|\$[^\$]+?\$|\\\[.*?\\\]|\\\([^\)]+?\\\)|\\begin\{(?:tabular|array|align|matrix|tikzpicture|bmatrix|pmatrix|vmatrix|itemize)\}.*?\\end\{(?:tabular|array|align|matrix|tikzpicture|bmatrix|pmatrix|vmatrix|itemize)\})",
         re.DOTALL,
@@ -497,9 +506,14 @@ def strip_redundant_label(text_str: str, label_1: str, label_2: str = "") -> str
 
     def make_pattern(c1, c2=None):
         if c2:
-            return rf"^\s*\(?\s*{re.escape(c1)}\s*[\)\.:]?\s*\(?\s*{re.escape(c2)}\s*[\)\.:]?(?!\w)\s*"
+            d1 = r"[\)\.:]?"
+            d2 = r"[\)\.:]" if len(c2) == 1 else r"[\)\.:]?"
+            return rf"^\s*\(?\s*{re.escape(c1)}\s*{d1}\s*\(?\s*{re.escape(c2)}\s*{d2}(?!\w)\s*"
         else:
-            return rf"^\s*\(?\s*{re.escape(c1)}\s*[\)\.:]?(?!\w)\s*"
+            if len(c1) == 1:
+                return rf"^\s*(?:\(\s*{re.escape(c1)}\s*\)|{re.escape(c1)}\s*[\)\.:])(?!\w)\s*"
+            else:
+                return rf"^\s*\(?\s*{re.escape(c1)}\s*[\)\.:]?(?!\w)\s*"
 
     if clean_1 and clean_2:
         comb_pattern = make_pattern(clean_1, clean_2)
@@ -508,11 +522,13 @@ def strip_redundant_label(text_str: str, label_1: str, label_2: str = "") -> str
 
     if clean_1:
         p1 = make_pattern(clean_1)
-        s = re.sub(p1, "", s, count=1, flags=re.IGNORECASE).strip()
+        if re.search(p1, s, flags=re.IGNORECASE):
+            s = re.sub(p1, "", s, count=1, flags=re.IGNORECASE).strip()
 
     if clean_2:
         p2 = make_pattern(clean_2)
-        s = re.sub(p2, "", s, count=1, flags=re.IGNORECASE).strip()
+        if re.search(p2, s, flags=re.IGNORECASE):
+            s = re.sub(p2, "", s, count=1, flags=re.IGNORECASE).strip()
 
     return s
 
@@ -693,7 +709,7 @@ def build_cover_page_latex(
 def clean_tikz_code(tikz_str: str) -> str:
     if not tikz_str:
         return ""
-    clean_code = re.sub(r"\\n(?![a-zA-Z])", "\n", tikz_str.strip())
+    clean_code = re.sub(LATEX_N_CMD_PATTERN, "\n", tikz_str.strip())
     if "\\begin{tikzpicture}" not in clean_code:
         clean_code = f"\\begin{{tikzpicture}}\n{clean_code}\n\\end{{tikzpicture}}"
     return clean_code
@@ -720,11 +736,7 @@ def parse_format_str_to_lines(fmt_str: str) -> list:
     if not fmt_str:
         return []
     s = str(fmt_str).strip()
-    s = re.sub(
-        r"\\n(?!(?:eq|ne|nu|otin|oindent|abla|ewline|ewpage|ew|ormal|umber|nobreak|nolimits|natural|nsubseteq|parallel|mid)\b)",
-        "\n",
-        s,
-    )
+    s = re.sub(LATEX_N_CMD_PATTERN, "\n", s)
     s = re.sub(r"\\\\(?:\s*\[[^\]]+\])?", "\n", s)
     return [line.strip() for line in s.split("\n") if line.strip()]
 
@@ -840,6 +852,13 @@ def format_answer_slot_latex(
             return f"\\par\\vspace{{{v_space:.2f}cm}}\\leavevmode\\hspace*{{\\fill}} {mark_tag}"
         return f"\\leavevmode\\hspace*{{\\fill}} {mark_tag}"
 
+    elif ans_t in ["vector", "matrix", "column_vector", "column", "vector_2d"]:
+        return (
+            f"{space_tex}\\leavevmode\\hspace*{{\\fill}}"
+            f" {prefix_tex}$\\begin{{pmatrix}} \\makebox[1cm]{{}}"
+            f" \\\\[1em] \\makebox[1cm]{{}} \\end{{pmatrix}}${suffix_tex} \\quad {mark_tag}"
+        )
+
     elif ans_t in ["multi_field", "inline_fields", "multiple_fields", "two_fields", "dual_slot"]:
         box_w = "2.5cm"
         if format_str and str(format_str).strip():
@@ -863,7 +882,7 @@ def format_answer_slot_latex(
                 f" {s_str}\\makebox[{box_w}]{{\\dotfill}} \\quad {mark_tag}"
             )
 
-    if format_str and str(format_str).strip():
+    elif format_str and str(format_str).strip():
         fmt_latex, num_lines = format_custom_str_to_latex(format_str, marks_tag=mark_tag)
         if num_lines > 1:
             return (
@@ -875,14 +894,6 @@ def format_answer_slot_latex(
                 f"{space_tex}\\leavevmode\\hspace*{{\\fill}}"
                 f" {prefix_tex}{fmt_latex}{suffix_tex} \\quad {mark_tag}"
             )
-
-    elif ans_t in ["vector", "matrix", "column_vector"]:
-        return (
-            f"{space_tex}\\leavevmode\\hspace*{{\\fill}}"
-            f" {prefix_tex}$\\left( \\begin{{array}}{{c}} \\makebox[1.5cm]{{}}"
-            f" \\\\[1.8em] \\makebox[1.5cm]{{}} \\end{{array}}"
-            f" \\right)${suffix_tex} \\quad {mark_tag}"
-        )
 
     elif ans_t in ["multi_line", "multiple", "asymptotes", "two_lines"]:
         return (
@@ -1526,6 +1537,17 @@ if __name__ == "__main__":
     )
     parser.add_argument("--combined", action="store_true", help="Combined PDF export mode.")
     parser.add_argument("--include-markscheme", action="store_true", help="Include markscheme in PDF output.")
+    parser.add_argument(
+        "--bytopic",
+        action="store_true",
+        help="Group questions by subtopic and compile qp, ms, and combined PDFs into exports/bytopic/ folder in parallel."
+    )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=os.cpu_count() or 4,
+        help="Max worker threads to use for parallel compilation (defaults to CPU count)."
+    )
 
     args = parser.parse_args()
 
@@ -1568,7 +1590,87 @@ if __name__ == "__main__":
     paper_author = args.author or ""
     paper_prefix = paper_title.replace(" ", "_")
 
-    if args.output:
+    if args.bytopic:
+        bytopic_dir = os.path.join(EXPORTS_DIR, "bytopic")
+        os.makedirs(bytopic_dir, exist_ok=True)
+
+        subtopic_groups = {}
+        for q in target_questions:
+            code = normalize_subtopic_code(str(q.get("subtopic", "E1.1")))
+            subtopic_groups.setdefault(code, []).append(q)
+
+        sorted_codes = sorted(subtopic_groups.keys(), key=natural_sort_key)
+        print(f"📁 Processing {len(sorted_codes)} subtopics concurrently ({args.workers} worker threads) into `{bytopic_dir}`...\n")
+
+        def compile_subtopic_files(sub_code):
+            sub_qs = subtopic_groups[sub_code]
+            raw_title = (
+                syllabus_map.get(sub_code)
+                or sub_qs[0].get("subtopic_title")
+                or sub_qs[0].get("topic")
+                or ""
+            )
+            base_file_name = f"{sub_code} {raw_title}".strip() if raw_title else sub_code
+            safe_base_name = sanitize_filename(base_file_name)
+            full_sub_title = f"{paper_title} — {sub_code}" if sub_code else paper_title
+
+            # 1. Question Paper (QP)
+            qp_filename = os.path.join(bytopic_dir, f"{safe_base_name} QP.pdf")
+            qp_tex = build_question_paper_latex(
+                sub_qs,
+                syllabus_map,
+                title_name=full_sub_title,
+                subtitle_name=raw_title,
+                exam_date=paper_date,
+                author_name=paper_author,
+                total_marks_val=None,
+                remove_nav=args.remove_nav,
+                clean_header=args.clean_header,
+                needspace=args.needspace,
+            )
+            compile_pdflatex(qp_tex, qp_filename, num_questions=len(sub_qs))
+
+            # 2. Markscheme (MS)
+            ms_filename = os.path.join(bytopic_dir, f"{safe_base_name} MS.pdf")
+            ms_tex = build_markscheme_latex(
+                sub_qs,
+                syllabus_map,
+                title_name=full_sub_title,
+                subtitle_name=raw_title,
+                exam_date=paper_date,
+                author_name=paper_author,
+                total_marks_val=None,
+                remove_nav=args.remove_nav,
+                clean_header=args.clean_header,
+                needspace=args.needspace,
+            )
+            compile_pdflatex(ms_tex, ms_filename, num_questions=len(sub_qs))
+
+            # 3. Combined
+            combined_filename = os.path.join(bytopic_dir, f"{safe_base_name} Combined.pdf")
+            combined_tex = build_combined_latex(
+                sub_qs,
+                syllabus_map,
+                title_name=full_sub_title,
+                subtitle_name=raw_title,
+                exam_date=paper_date,
+                author_name=paper_author,
+                total_marks_val=None,
+                remove_nav=args.remove_nav,
+                clean_header=args.clean_header,
+                needspace=args.needspace,
+            )
+            compile_pdflatex(combined_tex, combined_filename, num_questions=len(sub_qs))
+
+        with ThreadPoolExecutor(max_workers=args.workers) as executor:
+            futures = [executor.submit(compile_subtopic_files, code) for code in sorted_codes]
+            for future in as_completed(futures):
+                try:
+                    future.result()
+                except Exception as e:
+                    print(f"❌ Error during subtopic compilation: {e}")
+
+    elif args.output:
         if args.mode == "combined" or args.combined:
             tex_content = build_combined_latex(
                 target_questions,
@@ -1612,6 +1714,7 @@ if __name__ == "__main__":
         compile_pdflatex(tex_content, args.output, num_questions=len(target_questions))
     else:
         target_mode = args.mode or ("combined" if args.combined else "all")
+        tasks = []
 
         if target_mode in ["all", "qp"]:
             qp_filename = os.path.join(EXPORTS_DIR, f"{paper_prefix}_qp.pdf")
@@ -1627,7 +1730,7 @@ if __name__ == "__main__":
                 clean_header=args.clean_header,
                 needspace=args.needspace,
             )
-            compile_pdflatex(qp_tex, qp_filename, num_questions=len(target_questions))
+            tasks.append((qp_tex, qp_filename))
 
         if target_mode in ["all", "ms"]:
             ms_filename = os.path.join(EXPORTS_DIR, f"{paper_prefix}_ms.pdf")
@@ -1643,7 +1746,7 @@ if __name__ == "__main__":
                 clean_header=args.clean_header,
                 needspace=args.needspace,
             )
-            compile_pdflatex(ms_tex, ms_filename, num_questions=len(target_questions))
+            tasks.append((ms_tex, ms_filename))
 
         if target_mode in ["all", "combined"]:
             combined_filename = os.path.join(EXPORTS_DIR, f"{paper_prefix}_combined.pdf")
@@ -1659,4 +1762,18 @@ if __name__ == "__main__":
                 clean_header=args.clean_header,
                 needspace=args.needspace,
             )
-            compile_pdflatex(combined_tex, combined_filename, num_questions=len(target_questions))
+            tasks.append((combined_tex, combined_filename))
+
+        # Parallelize compilation across standard target outputs
+        num_workers = min(len(tasks), args.workers) if tasks else 1
+        print(f"🚀 Compiling {len(tasks)} standard PDF targets in parallel ({num_workers} worker threads)...\n")
+        with ThreadPoolExecutor(max_workers=num_workers) as executor:
+            futures = [
+                executor.submit(compile_pdflatex, tex, path, len(target_questions))
+                for tex, path in tasks
+            ]
+            for future in as_completed(futures):
+                try:
+                    future.result()
+                except Exception as e:
+                    print(f"❌ Error during PDF compilation: {e}")

@@ -20,7 +20,7 @@ def parse_subtopic(subtopic_str: str) -> Tuple[int, ...]:
 
 def sort_question_bank(data: List[Dict[str, Any]], deduplicate: bool = False) -> List[Dict[str, Any]]:
     """
-    Sorts master bank by Paper Type -> Topic -> Subtopic (natural) -> Difficulty -> Total Marks -> ID.
+    Sorts master bank by Subtopic (natural) -> Paper Type -> Topic -> Difficulty -> Total Marks -> ID.
     """
     items_to_sort = data
 
@@ -37,26 +37,27 @@ def sort_question_bank(data: List[Dict[str, Any]], deduplicate: bool = False) ->
     return sorted(
         items_to_sort,
         key=lambda item: (
+            parse_subtopic(item.get("subtopic", "")),
             item.get("paper_type", ""),
             item.get("topic", ""),
-            parse_subtopic(item.get("subtopic", "")),
             DIFFICULTY_RANK.get(item.get("difficulty", ""), 99),
             item.get("total_marks", 0),
             item.get("id", "")
         )
     )
 
-# File processing workflow
 if __name__ == "__main__":
-    input_filepath = "master_bank.json"
-    output_filepath = "master_bank_sorted.json"
+    filepath = "master_bank.json"
 
-    with open(input_filepath, "r", encoding="utf-8") as f:
+    # Read existing question bank
+    with open(filepath, "r", encoding="utf-8") as f:
         bank_data = json.load(f)
 
+    # Sort question bank
     sorted_bank = sort_question_bank(bank_data, deduplicate=False)
 
-    with open(output_filepath, "w", encoding="utf-8") as f:
+    # Overwrite original file directly
+    with open(filepath, "w", encoding="utf-8") as f:
         json.dump(sorted_bank, f, indent=2)
 
-    print(f"Successfully sorted {len(sorted_bank)} items and saved to {output_filepath}")
+    print(f"Successfully sorted {len(sorted_bank)} items and updated {filepath}")
