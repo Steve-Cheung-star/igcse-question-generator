@@ -10,8 +10,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 MASTER_BANK_FILE = "master_bank.json"
 SYLLABUS_FILE = "syllabus.json"
 EXPORTS_DIR = "exports"
+SHARED_DIR = "shared"
 
 os.makedirs(EXPORTS_DIR, exist_ok=True)
+os.makedirs(SHARED_DIR, exist_ok=True)
 
 # Guard pattern for LaTeX/TikZ macros starting with \n while unescaping literal \n string breaks
 LATEX_N_CMD_PATTERN = r"\\n(?!(?:ode|odepart|odes|ote|ull|eq|ne|nu|otin|oindent|abla|ewline|ewpage|ew\w*|ormalsize|ormalfont|ormalcolor|umber|numexpr|obreak|obreakspace|olimits|atural|subseteq|supseteq|geq|leq|less|gtr|exists|leftarrow|rightarrow|Leftarrow|Rightarrow|leftrightarrow|Leftrightarrow|parallel|mid|approx|cong|prec|succ|vdash|Vdash|vDash|VDash|earrow|warrow)\b)"
@@ -1540,7 +1542,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--bytopic",
         action="store_true",
-        help="Group questions by subtopic and compile qp, ms, and combined PDFs into exports/bytopic/ folder in parallel."
+        help="Group questions by subtopic and compile qp, ms, and combined PDFs into shared/bytopic/ folder in parallel."
     )
     parser.add_argument(
         "--workers",
@@ -1591,7 +1593,7 @@ if __name__ == "__main__":
     paper_prefix = paper_title.replace(" ", "_")
 
     if args.bytopic:
-        bytopic_dir = os.path.join(EXPORTS_DIR, "bytopic")
+        bytopic_dir = os.path.join(SHARED_DIR, "bytopic")
         os.makedirs(bytopic_dir, exist_ok=True)
 
         subtopic_groups = {}
@@ -1600,7 +1602,38 @@ if __name__ == "__main__":
             subtopic_groups.setdefault(code, []).append(q)
 
         sorted_codes = sorted(subtopic_groups.keys(), key=natural_sort_key)
-        print(f"📁 Processing {len(sorted_codes)} subtopics concurrently ({args.workers} worker threads) into `{bytopic_dir}`...\n")
+        print(f"📁 Processing full paper & {len(sorted_codes)} subtopics concurrently ({args.workers} worker threads) into `{SHARED_DIR}`...\n")
+
+        # Compile main full paper QP, MS, and Combined into shared/
+        main_tasks = [
+            (
+                build_question_paper_latex(
+                    target_questions, syllabus_map, title_name=paper_title,
+                    subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                    total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                    clean_header=args.clean_header, needspace=args.needspace
+                ),
+                os.path.join(SHARED_DIR, f"{paper_prefix}_qp.pdf")
+            ),
+            (
+                build_markscheme_latex(
+                    target_questions, syllabus_map, title_name=paper_title,
+                    subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                    total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                    clean_header=args.clean_header, needspace=args.needspace
+                ),
+                os.path.join(SHARED_DIR, f"{paper_prefix}_ms.pdf")
+            ),
+            (
+                build_combined_latex(
+                    target_questions, syllabus_map, title_name=paper_title,
+                    subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                    total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                    clean_header=args.clean_header, needspace=args.needspace
+                ),
+                os.path.join(SHARED_DIR, f"{paper_prefix}_combined.pdf")
+            ),
+        ]
 
         def compile_subtopic_files(sub_code):
             sub_qs = subtopic_groups[sub_code]
@@ -1617,154 +1650,99 @@ if __name__ == "__main__":
             # 1. Question Paper (QP)
             qp_filename = os.path.join(bytopic_dir, f"{safe_base_name} QP.pdf")
             qp_tex = build_question_paper_latex(
-                sub_qs,
-                syllabus_map,
-                title_name=full_sub_title,
-                subtitle_name=raw_title,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=None,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                sub_qs, syllabus_map, title_name=full_sub_title, subtitle_name=raw_title,
+                exam_date=paper_date, author_name=paper_author, total_marks_val=None,
+                remove_nav=args.remove_nav, clean_header=args.clean_header, needspace=args.needspace
             )
             compile_pdflatex(qp_tex, qp_filename, num_questions=len(sub_qs))
 
             # 2. Markscheme (MS)
             ms_filename = os.path.join(bytopic_dir, f"{safe_base_name} MS.pdf")
             ms_tex = build_markscheme_latex(
-                sub_qs,
-                syllabus_map,
-                title_name=full_sub_title,
-                subtitle_name=raw_title,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=None,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                sub_qs, syllabus_map, title_name=full_sub_title, subtitle_name=raw_title,
+                exam_date=paper_date, author_name=paper_author, total_marks_val=None,
+                remove_nav=args.remove_nav, clean_header=args.clean_header, needspace=args.needspace
             )
             compile_pdflatex(ms_tex, ms_filename, num_questions=len(sub_qs))
 
             # 3. Combined
             combined_filename = os.path.join(bytopic_dir, f"{safe_base_name} Combined.pdf")
             combined_tex = build_combined_latex(
-                sub_qs,
-                syllabus_map,
-                title_name=full_sub_title,
-                subtitle_name=raw_title,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=None,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                sub_qs, syllabus_map, title_name=full_sub_title, subtitle_name=raw_title,
+                exam_date=paper_date, author_name=paper_author, total_marks_val=None,
+                remove_nav=args.remove_nav, clean_header=args.clean_header, needspace=args.needspace
             )
             compile_pdflatex(combined_tex, combined_filename, num_questions=len(sub_qs))
 
         with ThreadPoolExecutor(max_workers=args.workers) as executor:
-            futures = [executor.submit(compile_subtopic_files, code) for code in sorted_codes]
-            for future in as_completed(futures):
+            main_futures = [executor.submit(compile_pdflatex, tex, path, len(target_questions)) for tex, path in main_tasks]
+            sub_futures = [executor.submit(compile_subtopic_files, code) for code in sorted_codes]
+
+            for future in as_completed(main_futures + sub_futures):
                 try:
                     future.result()
                 except Exception as e:
-                    print(f"❌ Error during subtopic compilation: {e}")
+                    print(f"❌ Error during compilation: {e}")
 
     elif args.output:
         if args.mode == "combined" or args.combined:
             tex_content = build_combined_latex(
-                target_questions,
-                syllabus_map,
-                title_name=paper_title,
-                subtitle_name=paper_subtitle,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=args.total_marks,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                target_questions, syllabus_map, title_name=paper_title,
+                subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                clean_header=args.clean_header, needspace=args.needspace,
             )
         elif args.mode == "ms":
             tex_content = build_markscheme_latex(
-                target_questions,
-                syllabus_map,
-                title_name=paper_title,
-                subtitle_name=paper_subtitle,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=args.total_marks,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                target_questions, syllabus_map, title_name=paper_title,
+                subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                clean_header=args.clean_header, needspace=args.needspace,
             )
         else:
             tex_content = build_question_paper_latex(
-                target_questions,
-                syllabus_map,
-                title_name=paper_title,
-                subtitle_name=paper_subtitle,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=args.total_marks,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                target_questions, syllabus_map, title_name=paper_title,
+                subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                clean_header=args.clean_header, needspace=args.needspace,
             )
 
         compile_pdflatex(tex_content, args.output, num_questions=len(target_questions))
+
     else:
         target_mode = args.mode or ("combined" if args.combined else "all")
         tasks = []
 
         if target_mode in ["all", "qp"]:
-            qp_filename = os.path.join(EXPORTS_DIR, f"{paper_prefix}_qp.pdf")
+            qp_filename = os.path.join(SHARED_DIR, f"{paper_prefix}_qp.pdf")
             qp_tex = build_question_paper_latex(
-                target_questions,
-                syllabus_map,
-                title_name=paper_title,
-                subtitle_name=paper_subtitle,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=args.total_marks,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                target_questions, syllabus_map, title_name=paper_title,
+                subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                clean_header=args.clean_header, needspace=args.needspace,
             )
             tasks.append((qp_tex, qp_filename))
 
         if target_mode in ["all", "ms"]:
-            ms_filename = os.path.join(EXPORTS_DIR, f"{paper_prefix}_ms.pdf")
+            ms_filename = os.path.join(SHARED_DIR, f"{paper_prefix}_ms.pdf")
             ms_tex = build_markscheme_latex(
-                target_questions,
-                syllabus_map,
-                title_name=paper_title,
-                subtitle_name=paper_subtitle,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=args.total_marks,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                target_questions, syllabus_map, title_name=paper_title,
+                subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                clean_header=args.clean_header, needspace=args.needspace,
             )
             tasks.append((ms_tex, ms_filename))
 
         if target_mode in ["all", "combined"]:
-            combined_filename = os.path.join(EXPORTS_DIR, f"{paper_prefix}_combined.pdf")
+            combined_filename = os.path.join(SHARED_DIR, f"{paper_prefix}_combined.pdf")
             combined_tex = build_combined_latex(
-                target_questions,
-                syllabus_map,
-                title_name=paper_title,
-                subtitle_name=paper_subtitle,
-                exam_date=paper_date,
-                author_name=paper_author,
-                total_marks_val=args.total_marks,
-                remove_nav=args.remove_nav,
-                clean_header=args.clean_header,
-                needspace=args.needspace,
+                target_questions, syllabus_map, title_name=paper_title,
+                subtitle_name=paper_subtitle, exam_date=paper_date, author_name=paper_author,
+                total_marks_val=args.total_marks, remove_nav=args.remove_nav,
+                clean_header=args.clean_header, needspace=args.needspace,
             )
             tasks.append((combined_tex, combined_filename))
 
-        # Parallelize compilation across standard target outputs
         num_workers = min(len(tasks), args.workers) if tasks else 1
         print(f"🚀 Compiling {len(tasks)} standard PDF targets in parallel ({num_workers} worker threads)...\n")
         with ThreadPoolExecutor(max_workers=num_workers) as executor:
