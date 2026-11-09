@@ -217,7 +217,6 @@ def compile_tikz_to_png_bytes(tikz_code: str) -> bytes:
     if "\\begin{tikzpicture}" not in code:
         code = "\\begin{tikzpicture}\n" + code + "\n\\end{tikzpicture}"
 
-    # Persistent disk cache lookup via MD5 hash
     code_hash = hashlib.md5(code.encode("utf-8")).hexdigest()
     cache_path = os.path.join(TIKZ_CACHE_DIR, f"{code_hash}.png")
 
@@ -324,7 +323,7 @@ for key, val in defaults.items():
         st.session_state[key] = val
 
 # =============================================================================
-# Isolated Question Card Fragment (Prevents Screen Fading)
+# Isolated Question Card Fragment
 # =============================================================================
 
 @st.fragment
@@ -415,6 +414,10 @@ def render_question_card(q: dict, subtopic_map: dict):
 # =============================================================================
 st.sidebar.title("⚙️ Controls & Filters")
 
+# Direct Navigation Link to Standalone Viewer Page
+st.sidebar.page_link("pages/viewer.py", label="📚 Open PDF Viewer Page", icon="📄")
+st.sidebar.markdown("---")
+
 if st.session_state.master_bank:
     st.sidebar.caption(f"🟢 **{len(st.session_state.master_bank)}** questions loaded from bank.")
 else:
@@ -427,7 +430,6 @@ all_topics = sorted(list({q.get("topic") for q in st.session_state.master_bank i
 sel_topics = st.sidebar.multiselect("Topic", options=all_topics, key="filter_topics")
 
 def natural_sort_key(s: str):
-    """Sort key function for natural sorting (e.g. E1.1, E1.2, E1.10)."""
     return [int(text) if text.isdigit() else text.lower() for text in re.split(r"(\d+)", str(s))]
 
 all_subtopics = sorted(
@@ -436,7 +438,6 @@ all_subtopics = sorted(
 )
 
 def format_subtopic(code: str) -> str:
-    """Formats subtopic display with code and title from syllabus.json."""
     sub_info = subtopic_map.get(str(code).strip())
     if sub_info and sub_info.get("title"):
         return f"{code} - {sub_info['title']}"
@@ -455,7 +456,6 @@ sel_diff = st.sidebar.multiselect("Difficulty", options=all_diff, key="filter_di
 all_papers = sorted(list({q.get("paper_type") for q in st.session_state.master_bank if q.get("paper_type")}))
 sel_papers = st.sidebar.multiselect("Paper Type", options=all_papers, key="filter_papers")
 
-# Reset visible count whenever filters change
 filter_state_key = (tuple(sel_topics), tuple(sel_subtopics), tuple(sel_diff), tuple(sel_papers))
 if "prev_filter_state" not in st.session_state or st.session_state.prev_filter_state != filter_state_key:
     st.session_state.visible_count = 9
@@ -609,7 +609,6 @@ st.sidebar.markdown("---")
 st.session_state.remove_nav = st.sidebar.checkbox("Remove Cover Navigation Page (--remove-nav)", value=st.session_state.remove_nav)
 st.session_state.clean_header = st.sidebar.checkbox("Clean Running Header (Page # Only)", value=st.session_state.clean_header)
 
-# Optional \needspace Parameter UI Controls
 st.session_state.use_needspace = st.sidebar.checkbox("Continuous Layout (--needspace)", value=st.session_state.use_needspace)
 if st.session_state.use_needspace:
     st.session_state.needspace_val = st.sidebar.number_input(
@@ -736,7 +735,7 @@ if st.session_state.compiled_files:
         )
 
 # =============================================================================
-# MAIN CONTENT AREA WITH AUTO-POPULATING INFINITE SCROLL
+# MAIN CONTENT AREA
 # =============================================================================
 st.title("📝 Math Question Bank & Paper Builder")
 
@@ -758,7 +757,7 @@ else:
         with cols[idx % 3]:
             render_question_card(q, subtopic_map)
 
-    # Auto-populate / Infinite Scroll section at the bottom
+    # Auto-populate / Infinite Scroll section
     if visible_count < total_items:
         st.markdown("---")
         lm_col1, lm_col2, lm_col3 = st.columns([1, 2, 1])
@@ -767,7 +766,6 @@ else:
                 st.session_state.visible_count += 9
                 st.rerun()
 
-        # JavaScript IntersectionObserver: triggers "Load More" click automatically on scroll
         components.html(
             """
             <div id="scroll-sentinel" style="height: 10px;"></div>
