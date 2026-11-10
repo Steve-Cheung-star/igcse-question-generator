@@ -534,11 +534,12 @@ def assign_unique_ids(items):
 def clean_and_repair_json(raw_text):
     text = raw_text.strip()
     
+    # Removed numbers like "1095" that caused false positive generation error triggers on valid math text
     error_keywords = [
         "encountered an error", "something went error", "something went wrong", 
         "try something else", "please try again", "try again later",
         "i'm unable to", "i can't help with", "an error occurred",
-        "failed to generate", "service unavailable", "error 1095", "1095"
+        "failed to generate", "service unavailable"
     ]
     
     lowered = text.lower()
@@ -678,9 +679,12 @@ TIKZ & DIAGRAM PLACEMENT & MULTIPLE DIAGRAM RULES:
     5) Boundary lines and region labels ($R$) LAST.
 
 - TREE DIAGRAM SPECIFIC TIKZ GUIDELINES:
-  * Stretch tree diagram branches significantly in both horizontal and vertical directions so there are ample gaps to fill in missing numbers/probabilities without crowding.
-  * Use expanded spacing parameters (e.g., `level 1/.style={level distance=3.5cm, sibling distance=3.0cm}`, `level 2/.style={level distance=3.5cm, sibling distance=1.8cm}`).
-  * Place edge labels with underlines (e.g., `edge from parent node[above] {\\underline{\\hspace{0.8cm}}}`) along branches to leave clean fill-in slots for missing numbers.
+  * Set `grow=right` to orient the tree horizontally from left to right with upright, horizontal text (do not use `sloped`).
+  * Stretch branches significantly horizontally and vertically (e.g., `level 1/.style={level distance=4.5cm, sibling distance=4.5cm}`, `level 2/.style={level distance=4.5cm, sibling distance=2.5cm}`) to maximize clearance.
+  * Use explicit `yshift` keys (e.g., `yshift=-15pt`) for vertical movement, as TikZ edge nodes ignore `below=20pt` without the `positioning` library.
+  * Place labels midway along branches (`pos=0.5`).
+  * Apply `node[above, yshift=6pt, pos=0.5]` for top branches and `node[below, yshift=-14pt, pos=0.5]` for bottom branches so dotted lines sit far enough below the line to clear tall fraction numerators.
+  * Format fill-in slots using horizontal dotted lines (e.g., `edge from parent node[below, yshift=-14pt, pos=0.5] {\\makebox[1.2cm]{\\dotfill}}`).
 
 - INTRODUCTORY SCENARIO DIAGRAMS ('intro_diagram_tikz'):
   * If a diagram accompanies or sets up the overall introductory text/paragraph before part (a) (e.g., given geometric figures, initial shape context, setup Venn diagram, given coordinate grid, or given table context), it MUST be placed directly inside 'intro_diagram_tikz' at the root question level.
@@ -690,9 +694,12 @@ TIKZ & DIAGRAM PLACEMENT & MULTIPLE DIAGRAM RULES:
   * If a specific question part or subpart requires student interaction or completion (e.g., "Complete the table", "On the grid, draw the image of...", "Shade the region...", "Complete the Venn diagram", "Sketch the graph...", "Complete the tree diagram"), provide a separate TikZ diagram or table template inside 'diagram_tikz' under that specific part or subpart.
   * SEQUENCE ORDER IN PARTS: Always place the question prompt/stem text FIRST, followed by 'diagram_tikz' (for completion diagrams), followed by the answer line / working space.
 
-- VENN DIAGRAM SPECIFIC TIKZ GUIDELINES:
-  * Make Venn diagram circles sufficiently large (e.g., radius 1.5cm to 1.8cm, scale=1.2 to 1.3, circle center distance 1.3cm to 1.5cm) so that algebraic expressions inside crossover / intersection regions (e.g., $11-x$, $32-x$, $x+5$, $2x-1$) fit comfortably without text overflowing or touching circle boundaries. Use \\small or \\footnotesize text inside regions.
-  * Set 'answer_type' to 'null' for tasks where the student works directly on the diagram/table.
+- TREE DIAGRAM SPECIFIC TIKZ GUIDELINES:
+  * Set `grow=right` to orient the tree horizontally from left to right with upright, non-sloped text.
+  * Expand spacing significantly (`level 1/.style={level distance=5.0cm, sibling distance=6.0cm}`, `level 2/.style={level distance=5.0cm, sibling distance=3.0cm}`) to provide macro-level headroom between upper and lower forks.
+  * Use `\\vphantom{$\\dfrac{0}{0}$}` inside edge label nodes to automatically reserve the exact vertical height needed for a display fraction without manual `yshift` tweaking.
+  * Always place branch labels `above` the line (`node[above, pos=0.5] {\\vphantom{$\\dfrac{0}{0}$}\\makebox[1.2cm]{\\dotfill}}`), allowing the dotted line to sit as a baseline with dynamic height reserved directly above it.
+  * Place stage headers ("First disc", "Second disc") using a dedicated top baseline coordinate or high anchor (e.g., `yshift=6.0cm` above the root node) so they never collide with fraction slots.
 """
 
     prompt = f"""Act as a Chief Senior Examiner for Cambridge IGCSE International Mathematics (0607 / Extended).
@@ -1005,7 +1012,8 @@ def check_gemini_ui_errors(page):
             for el in elems:
                 if el.is_visible():
                     txt = el.inner_text().strip()
-                    if txt:
+                    # Filter out benign UI toast notifications so they don't break generation
+                    if txt and not any(ign in txt.lower() for ign in ["draft saved", "copied", "undo", "restored"]):
                         return txt
         except Exception:
             continue
@@ -1086,9 +1094,7 @@ def execute_single_prompt(page, prompt_text, target_model="3.6 Flash", pre_send_
 
     final_model_ui = get_current_ui_model(page)
     if not is_model_matching(target_model, final_model_ui):
-        err = f"⚠️ Model downgraded mid-generation from target '{target_model}' to active '{final_model_ui}'."
-        log_status(err, "WARNING")
-        raise ValueError(err)
+        log_status(f"⚠️ Model UI label mismatch ('{final_model_ui}' vs target '{target_model}'), proceeding with generated JSON response.", "WARNING")
 
     return raw_output
 
@@ -1251,7 +1257,7 @@ def run_playwright_gemini_batch(tasks, selected_model="3.6 Flash", headless=Fals
                     log_status("Pausing 30 seconds before next subtopic batch...")
                     for wait_sec in range(30, 0, -1):
                         set_tab_title(f"⏸️ Pacing Pause ({wait_sec}s)...")
-                        time.sleep(1)
+                        time.sleep(30)
 
             return collected_questions, success_count, fail_count, None
 

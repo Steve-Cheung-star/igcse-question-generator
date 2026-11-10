@@ -6,7 +6,7 @@ import shutil
 import subprocess
 import tempfile
 
-MASTER_BANK_FILE = "master_bank.json"
+MASTER_BANK_FILE = "igcse_bank.json"
 SYLLABUS_FILE = "syllabus.json"
 EXPORTS_DIR = "exports"
 

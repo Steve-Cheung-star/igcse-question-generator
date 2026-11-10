@@ -1,0 +1,512 @@
+[
+  {
+    "id": "a3f7c2e9",
+    "topic": "Number",
+    "subtopic": "E1.17",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Easy",
+    "total_marks": 2,
+    "intro_text": "",
+    "intro_diagram_tikz": "",
+    "parts": [
+      {
+        "label": "",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Simplify fully.\\n\\[0.15cm] \\hspace*{0.8cm} $\\sqrt{50} + \\sqrt{18}$",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "$5\\sqrt{2} + 3\\sqrt{2}$ (simplifying each surd) [M1]",
+          "$8\\sqrt{2}$ [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "b8d41f6a",
+    "topic": "Statistics",
+    "subtopic": "E10.4",
+    "tier": "Extended",
+    "paper_type": "Paper 4 (Calculator)",
+    "difficulty": "Easy",
+    "total_marks": 3,
+    "intro_text": "The times, in minutes, taken by $8$ students to complete a task are shown.\\n\\[0.15cm] \\begin{center} $6 \\qquad 7 \\qquad 8 \\qquad 9 \\qquad 10 \\qquad 12 \\qquad 14 \\qquad 15$ \\end{center}",
+    "intro_diagram_tikz": "",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the median time.",
+        "marks": 1,
+        "vspace_cm": 1.5,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "minutes",
+        "answer_format": "",
+        "markscheme": [
+          "$9.5$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the mean time, giving your answer to $1$ decimal place.",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "minutes",
+        "answer_format": "",
+        "markscheme": [
+          "$\\dfrac{6 + 7 + 8 + 9 + 10 + 12 + 14 + 15}{8}$ or $\\dfrac{81}{8}$ [M1]",
+          "$10.1$ (from $10.125$, to $1$ d.p.) [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "c5e92b7d",
+    "topic": "Algebra",
+    "subtopic": "E2.2",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Easy",
+    "total_marks": 2,
+    "intro_text": "",
+    "intro_diagram_tikz": "",
+    "parts": [
+      {
+        "label": "",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Expand and simplify.\\n\\[0.15cm] \\hspace*{0.8cm} $(2x + 3)(x - 4)$",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "$2x^2 - 8x + 3x - 12$ (at least $3$ of the $4$ terms correct) [M1]",
+          "$2x^2 - 5x - 12$ [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "d1a63f8c",
+    "topic": "Geometry",
+    "subtopic": "E5.6",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Medium",
+    "total_marks": 4,
+    "intro_text": "In the diagram, $AB$ is a diameter of the circle with centre $O$. The tangent at $B$ meets $AC$ produced at $D$. Angle $CAB = 34^\\circ$.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}\n  \\draw (0,0) circle (2cm);\n  \\coordinate (A) at (-2,0);\n  \\coordinate (B) at (2,0);\n  \\coordinate (C) at ({2*cos(68)},{2*sin(68)});\n  \\coordinate (D) at ({2},{4*tan(34)});\n  \\draw (A) -- (B);\n  \\draw[thin] (0,0) -- (B);\n  \\draw (A) -- (D);\n  \\draw (B) -- (C);\n  \\draw ({2},{-0.6}) -- ({2},{4*tan(34)+0.5});\n  \\draw (A) ++(0.8,0) arc (0:34:0.8);\n  \\node[footnotesize] at ({-2+1.05*cos(17)},{1.05*sin(17)}) {$34^\\circ$};\n  \\node[below left] at (A) {$A$};\n  \\node[below right] at (B) {$B$};\n  \\node[above right] at (C) {$C$};\n  \\node[right] at (D) {$D$};\n  \\node[below right] at (0,0) {$O$};\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the size of angle $ACB$.",
+        "marks": 1,
+        "vspace_cm": 1.5,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "$^\\circ$",
+        "answer_format": "",
+        "markscheme": [
+          "$90^\\circ$ (angle in a semicircle) [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the size of angle $ABC$.",
+        "marks": 1,
+        "vspace_cm": 2.0,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "$^\\circ$",
+        "answer_format": "",
+        "markscheme": [
+          "$90^\\circ - 34^\\circ = 56^\\circ$ (angle sum in triangle $ABC$) [A1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the size of angle $DBC$, giving a reason.",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "line",
+        "answer_prefix": "",
+        "answer_suffix": "$^\\circ$",
+        "answer_format": "",
+        "markscheme": [
+          "$34^\\circ$ [B1]",
+          "Reason: angle in the alternate segment (angle between tangent and chord equals angle subtended by the chord) [B1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "e7b24a9f",
+    "topic": "Algebra",
+    "subtopic": "E2.5",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Medium",
+    "total_marks": 3,
+    "intro_text": "",
+    "intro_diagram_tikz": "",
+    "parts": [
+      {
+        "label": "",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Solve the equation.\\n\\[0.15cm] \\hspace*{0.8cm} $2x^2 - 5x - 3 = 0$",
+        "marks": 3,
+        "vspace_cm": 4.5,
+        "answer_type": "multi_field",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "$x =$, $x =$",
+        "markscheme": [
+          "$(2x + 1)(x - 3) = 0$ (factorising, or correct use of the quadratic formula) [M1]",
+          "$x = 3$ [A1]",
+          "$x = -\\dfrac{1}{2}$ [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "f4c85d1e",
+    "topic": "Probability",
+    "subtopic": "E9.3",
+    "tier": "Extended",
+    "paper_type": "Paper 4 (Calculator)",
+    "difficulty": "Medium",
+    "total_marks": 7,
+    "intro_text": "A bag contains $3$ red balls and $2$ blue balls. Two balls are drawn from the bag, one after the other, without replacement.",
+    "intro_diagram_tikz": "",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "\\begin{tikzpicture}[level distance=3.5cm, level 1/.style={sibling distance=3.0cm}, level 2/.style={level distance=3.5cm, sibling distance=1.8cm}]\n  \\node (root) {}\n    child { node {$R$}\n      edge from parent node[above] {\\footnotesize $\\dfrac{3}{5}$}\n      child { node {$R$} edge from parent node[above] {\\footnotesize $\\underline{\\hspace{0.8cm}}$} }\n      child { node {$B$} edge from parent node[above] {\\footnotesize $\\dfrac{1}{2}$} }\n    }\n    child { node {$B$}\n      edge from parent node[above] {\\footnotesize $\\underline{\\hspace{0.8cm}}$}\n      child { node {$R$} edge from parent node[above] {\\footnotesize $\\dfrac{3}{5}$} }\n      child { node {$B$} edge from parent node[above] {\\footnotesize $\\underline{\\hspace{0.8cm}}$} }\n    };\n\\end{tikzpicture}",
+        "prompt": "Complete the tree diagram.",
+        "marks": 3,
+        "vspace_cm": 0.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "First draw: $B = \\dfrac{2}{5}$ [B1]",
+          "$R$ then $R$: $\\dfrac{2}{4}$ or $\\dfrac{1}{2}$ [B1]",
+          "$B$ then $B$: $\\dfrac{1}{4}$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the probability that both balls are red.",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "$\\dfrac{3}{5} \\times \\dfrac{2}{4}$ (product of probabilities along the $RR$ path) [M1]",
+          "$\\dfrac{3}{10}$ (or $\\dfrac{6}{20}$) [A1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the probability that exactly one ball is red.",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "$\\dfrac{3}{5} \\times \\dfrac{2}{4} + \\dfrac{2}{5} \\times \\dfrac{3}{5}$ (sum of the $RB$ and $BR$ paths) [M1]",
+          "$\\dfrac{27}{50}$ (or $0.54$) [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "0a9d6e2b",
+    "topic": "Functions",
+    "subtopic": "E3.3",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Medium",
+    "total_marks": 8,
+    "intro_text": "$f(x) = 3x - 1$, $g(x) = x^2 + 2$.",
+    "intro_diagram_tikz": "",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the value of $gf(2)$.",
+        "marks": 2,
+        "vspace_cm": 2.5,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "$f(2) = 3(2) - 1 = 5$ [M1]",
+          "$g(5) = 5^2 + 2 = 27$ [A1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find $fg(x)$ in its simplest form.",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "$f(g(x)) = 3(x^2 + 2) - 1$ [M1]",
+          "$3x^2 + 5$ [A1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the values of $x$ for which $gf(x) = 19$.",
+        "marks": 4,
+        "vspace_cm": 6.0,
+        "answer_type": "multi_field",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "$x =$, $x =$",
+        "markscheme": [
+          "$(3x - 1)^2 + 2 = 19$ [M1]",
+          "$3x - 1 = \\pm 4$ (from $(3x - 1)^2 = 16$) [M1]",
+          "$x = -1$ [A1]",
+          "$x = \\dfrac{5}{3}$ [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "1c3f7a4d",
+    "topic": "Algebra",
+    "subtopic": "E2.5",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Hard",
+    "total_marks": 8,
+    "intro_text": "$f(x) = x^3 - 6x^2 + 11x - 6$.",
+    "intro_diagram_tikz": "",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Show that $(x - 2)$ is a factor of $f(x)$.",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "null",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "$f(2) = 2^3 - 6(2)^2 + 11(2) - 6$ (correct substitution) [M1]",
+          "$f(2) = 8 - 24 + 22 - 6 = 0$ [A1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Factorise $f(x)$ completely.",
+        "marks": 3,
+        "vspace_cm": 4.5,
+        "answer_type": "line",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "Divides $f(x)$ by $(x - 2)$ to obtain $x^2 - 4x + 3$ [M1]",
+          "Factorises $x^2 - 4x + 3$ as $(x - 1)(x - 3)$ [M1]",
+          "$f(x) = (x - 2)(x - 1)(x - 3)$ [A1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Solve the equation $f(x) = 0$.",
+        "marks": 3,
+        "vspace_cm": 1.5,
+        "answer_type": "multi_field",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "$x =$, $x =$, $x =$",
+        "markscheme": [
+          "$x = 1$ [A1]",
+          "$x = 2$ [A1]",
+          "$x = 3$ [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "2e5b8c6f",
+    "topic": "Trigonometry",
+    "subtopic": "E7.2",
+    "tier": "Extended",
+    "paper_type": "Paper 4 (Calculator)",
+    "difficulty": "Hard",
+    "total_marks": 8,
+    "intro_text": "A ship sails from port $P$ on a bearing of $065^\\circ$ for $18$ km to reach point $Q$. It then sails on a bearing of $155^\\circ$ for $24$ km to reach point $R$. The diagram shows the route of the ship.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}\n  \\coordinate (P) at (0,0);\n  \\coordinate (Q) at ({3*cos(25)},{3*sin(25)});\n  \\coordinate (R) at ({3*cos(25)+4*cos(-65)},{3*sin(25)+4*sin(-65)});\n  \\draw[->] (P) -- ++(0,2.8) node[right, pos=0.95] {$N$};\n  \\draw[->] (Q) -- ++(0,2.8) node[right, pos=0.95] {$N$};\n  \\draw[thick] (P) -- node[sloped, above] {$18$ km} (Q);\n  \\draw[thick] (Q) -- node[sloped, above] {$24$ km} (R);\n  \\node[below left] at (P) {$P$};\n  \\node[right] at (Q) {$Q$};\n  \\node[below right] at (R) {$R$};\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the bearing of $P$ from $Q$, giving a reason.",
+        "marks": 2,
+        "vspace_cm": 2.0,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "$^\\circ$",
+        "answer_format": "",
+        "markscheme": [
+          "$065^\\circ + 180^\\circ = 245^\\circ$ [B1]",
+          "Reason: back bearing (add $180^\\circ$ to the forward bearing) [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the distance $PR$.",
+        "marks": 3,
+        "vspace_cm": 4.5,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "km",
+        "answer_format": "",
+        "markscheme": [
+          "Angle $PQR = 245^\\circ - 155^\\circ = 90^\\circ$ [M1]",
+          "$PR = \\sqrt{18^2 + 24^2}$ (Pythagoras' theorem) [M1]",
+          "$30$ km [A1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(c)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the bearing of $R$ from $P$, giving your answer to the nearest degree.",
+        "marks": 3,
+        "vspace_cm": 4.5,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "$^\\circ$",
+        "answer_format": "",
+        "markscheme": [
+          "Angle $QPR = \\tan^{-1}\\left(\\dfrac{24}{18}\\right) \\approx 53.1^\\circ$ [M1]",
+          "Bearing $= 065^\\circ + 53.1^\\circ$ [M1]",
+          "$118^\\circ$ (to the nearest degree) [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  },
+  {
+    "id": "3d7a9e1b",
+    "topic": "Algebra",
+    "subtopic": "E2.6",
+    "tier": "Extended",
+    "paper_type": "Paper 2 (Non-Calculator)",
+    "difficulty": "Hard",
+    "total_marks": 5,
+    "intro_text": "The diagram shows a region $R$ on the coordinate grid.",
+    "intro_diagram_tikz": "\\begin{tikzpicture}[scale=0.9]\n  \\fill[black!12] (-1,-1) rectangle (6,5);\n  \\fill[white] (3,2) -- (5,4) -- (1,4) -- cycle;\n  \\draw[step=1, gray!70, thin] (-1,-1) grid (6,5);\n  \\draw[->] (-1,0) -- (6.4,0) node[right] {$x$};\n  \\draw[->] (0,-1) -- (0,5.4) node[above] {$y$};\n  \\foreach \\x in {1,2,3,4,5} {\\draw (\\x,-0.08) -- ++(0,0.16);}\n  \\foreach \\y in {1,2,3,4} {\\draw (-0.08,\\y) -- ++(0.16,0);}\n  \\draw[thick] (0,-1) -- (5,4);\n  \\draw[thick] (0,5) -- (5,0);\n  \\draw[thick] (-1,4) -- (6,4);\n  \\node at (3,3.2) {$R$};\n\\end{tikzpicture}",
+    "parts": [
+      {
+        "label": "(a)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Write down the three inequalities that define region $R$.",
+        "marks": 3,
+        "vspace_cm": 1.0,
+        "answer_type": "inequality_region",
+        "answer_prefix": "",
+        "answer_suffix": "",
+        "answer_format": "",
+        "markscheme": [
+          "$y \\ge x - 1$ [B1]",
+          "$y \\ge -x + 5$ [B1]",
+          "$y \\le 4$ [B1]"
+        ],
+        "subparts": []
+      },
+      {
+        "label": "(b)",
+        "context": "",
+        "diagram_tikz": "",
+        "prompt": "Find the area of region $R$.",
+        "marks": 2,
+        "vspace_cm": 3.0,
+        "answer_type": "short_line",
+        "answer_prefix": "",
+        "answer_suffix": "$cm^2$",
+        "answer_format": "",
+        "markscheme": [
+          "Base $= 4$, height $= 2$ (or $\\dfrac{1}{2} \\times 4 \\times 2$) [M1]",
+          "$4$ [A1]"
+        ],
+        "subparts": []
+      }
+    ]
+  }
+]
