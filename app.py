@@ -668,6 +668,18 @@ def build_igcse_prompt(
         tikz_instr = """
 TIKZ & DIAGRAM PLACEMENT & MULTIPLE DIAGRAM RULES:
 - Generate clean, accurate LaTeX TikZ diagrams for figures (e.g. geometric shapes, Venn diagrams, statistical graphs, function sketches, frequency curves, tables, tree diagrams).
+- STRICT GREYSCALE ONLY (NO COLOURS):
+- DO NOT use colours under any circumstances (e.g., no `blue`, `red`, `green`, `orange`, `cyan`).
+- Use ONLY black, white, and shades of grey (e.g., `black`, `white`, `gray`, `gray!70`, `black!12`, `black!25`, `black!50`).
+
+- GRAPH, LINE & CURVE CROPPING RULE (PREVENT OUT-OF-BOUNDS):
+- ALL function curves, lines, secants, tangents, grid lines, and vectors MUST be strictly cropped to stay inside the axes or canvas boundary.
+- Always insert a bounding clip command `\\clip (x_min,y_min) rectangle (x_max,y_max);` immediately after setting up the canvas, or enforce strict domain restrictions (e.g., `domain=x_min:x_max`) on function plots so lines never protrude past grid edges.
+
+- CIRCLE THEOREMS & ANGLE GEOMETRY DIAGRAM RULES:
+- When generating circle theorem or geometric angle figures, ensure accurate geometric representations of relevant properties (e.g. angle at centre, angles in same segment, cyclic quadrilaterals, alternate segment theorem, tangent-radius angles).
+- DYNAMIC ORIENTATION VARIATION: NEVER render circle theorem diagrams in standard horizontal or upright orientations. Dynamically vary and rotate shapes, chords, tangents, radii, and vertex placements by non-standard angles (e.g., 25°, 70°, 115°, 210°) so figures do not always rely on horizontal baselines or top-facing centres.
+- Clearly label circle center ($O$), vertices ($A, B, C, D$), tangent contact points ($T, P$), right-angle indicators, and parallel mark arrows where applicable.
 
 - INEQUALITY REGION SHADING RULE (DRAW SHADING FIRST BEFORE AXES & GRID):
   * ALWAYS draw all grey area fill/shading FIRST at the top of the TikZ code before drawing grid lines, coordinate axes, tick marks, boundary lines, or text labels.
@@ -1257,7 +1269,7 @@ def run_playwright_gemini_batch(tasks, selected_model="3.6 Flash", headless=Fals
                     log_status("Pausing 30 seconds before next subtopic batch...")
                     for wait_sec in range(30, 0, -1):
                         set_tab_title(f"⏸️ Pacing Pause ({wait_sec}s)...")
-                        time.sleep(30)
+                        time.sleep(2)
 
             return collected_questions, success_count, fail_count, None
 
