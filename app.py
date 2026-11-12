@@ -629,11 +629,11 @@ def build_igcse_prompt(
     total_q = easy_count + med_count + hard_count
 
     calc_instr = (
-        "CALCULATOR POLICY (PAPER 2 - NON-CALCULATOR):\n- Questions must be solvable without a calculator. Use exact values (fractions, integers, pi, surds).\n- Set 'paper_type' to 'Paper 2 (Non-Calculator)'."
+        "CALCULATOR POLICY (PAPER 2 - NON-CALCULATOR):\nQuestions must be solvable without a calculator. Use exact values (fractions, integers, pi, surds).\nSet 'paper_type' to 'Paper 2 (Non-Calculator)'."
         if calculator_mode == "Paper 2 (Non-Calculator)" else
-        "CALCULATOR POLICY (PAPER 4 - CALCULATOR REQUIRED):\n- Requires or allows calculator steps (degree rounding to 1 dp, numbers to 3 sf).\n- Set 'paper_type' to 'Paper 4 (Calculator)'."
+        "CALCULATOR POLICY (PAPER 4 - CALCULATOR REQUIRED):\nRequires or allows calculator steps (degree rounding to 1 dp, numbers to 3 sf).\nSet 'paper_type' to 'Paper 4 (Calculator)'."
         if calculator_mode == "Paper 4 (Calculator)" else
-        "CALCULATOR POLICY (MIXED):\n- Assign 'paper_type' as either 'Paper 2 (Non-Calculator)' or 'Paper 4 (Calculator)' per question."
+        "CALCULATOR POLICY (MIXED):\nAssign 'paper_type' as either 'Paper 2 (Non-Calculator)' or 'Paper 4 (Calculator)' per question."
     )
 
     if isinstance(primary_sub_obj, dict):
@@ -672,18 +672,22 @@ TIKZ & DIAGRAM PLACEMENT & MULTIPLE DIAGRAM RULES:
 - DO NOT use colours under any circumstances (e.g., no `blue`, `red`, `green`, `orange`, `cyan`).
 - Use ONLY black, white, and shades of grey (e.g., `black`, `white`, `gray`, `gray!70`, `black!12`, `black!25`, `black!50`).
 
-- GRAPH, LINE & CURVE CROPPING RULE (PREVENT OUT-OF-BOUNDS):
-- ALL function curves, lines, secants, tangents, grid lines, and vectors MUST be strictly cropped to stay inside the axes or canvas boundary.
-- Always insert a bounding clip command `\\clip (x_min,y_min) rectangle (x_max,y_max);` immediately after setting up the canvas, or enforce strict domain restrictions (e.g., `domain=x_min:x_max`) on function plots so lines never protrude past grid edges.
+- FUNCTION LINE & CURVE CLIPPING RULE (GRID BOUNDARY ONLY):
+- ONLY plotted function curves and function lines (e.g., `\\draw[samples=...] plot (...)`, linear lines, parabolas, hyperbolas, etc.) MUST be clipped so they do not extend beyond the grid boundaries (`(x_min,y_min)` to `(x_max,y_max)`).
+- Wrap ONLY the function drawing commands inside a local scope with a bounding clip:
+  \\begin{scope}
+    \\clip (x_min,y_min) rectangle (x_max,y_max);
+    \\draw[samples=100, ...] plot (\\x, {...});
+  \\end{scope}
 
-- CIRCLE THEOREMS & ANGLE GEOMETRY DIAGRAM RULES:
-- When generating circle theorem or geometric angle figures, ensure accurate geometric representations of relevant properties (e.g. angle at centre, angles in same segment, cyclic quadrilaterals, alternate segment theorem, tangent-radius angles).
-- DYNAMIC ORIENTATION VARIATION: NEVER render circle theorem diagrams in standard horizontal or upright orientations. Dynamically vary and rotate shapes, chords, tangents, radii, and vertex placements by non-standard angles (e.g., 25°, 70°, 115°, 210°) so figures do not always rely on horizontal baselines or top-facing centres.
+- CIRCLE THEOREMS & ANGLES DIAGRAM RULES:
+- When generating circle theorem or angle-finding geometry figures, ensure accurate geometric representations of relevant properties (e.g., angle at centre, angles in same segment, cyclic quadrilaterals, alternate segment theorem, tangent-radius angles, parallel-line angles).
+- DYNAMIC ORIENTATION VARIATION (CIRCLE THEOREMS & ANGLES ONLY): Apply dynamic orientation variation ONLY to circle theorems and angles questions—do NOT apply it to any other topic or diagram type (such as coordinate graphs, general polygons, mensuration, trigonometry, or transformations). For circle theorems and angles questions, avoid defaulting to standard horizontal baselines or upright orientations; dynamically vary and rotate shapes, chords, tangents, radii, and vertex placements by non-standard angles (e.g., 25°, 70°, 115°, 210°).
 - Clearly label circle center ($O$), vertices ($A, B, C, D$), tangent contact points ($T, P$), right-angle indicators, and parallel mark arrows where applicable.
 
 - INEQUALITY REGION SHADING RULE (DRAW SHADING FIRST BEFORE AXES & GRID):
-  * ALWAYS draw all grey area fill/shading FIRST at the top of the TikZ code before drawing grid lines, coordinate axes, tick marks, boundary lines, or text labels.
-  * Structure TikZ code in this strict layer order:
+- ALWAYS draw all grey area fill/shading FIRST at the top of the TikZ code before drawing grid lines, coordinate axes, tick marks, boundary lines, or text labels.
+- Structure TikZ code in this strict layer order:
     1) Background grey fill/shading FIRST: `\\fill[black!12] (x_min,y_min) rectangle (x_max,y_max);` (use soft light grey `black!12` or `gray!20`).
     2) Target allowed region $R$ in pure white SECOND: `\\fill[white] (x1,y1) -- (x2,y2) -- (x3,y3) -- cycle;`
     3) Grid lines THIRD: `\\draw[step=1, gray!70, thin] (x_min,y_min) grid (x_max,y_max);` so grid lines remain sharp, crisp, and prominent over shaded areas.
@@ -691,27 +695,19 @@ TIKZ & DIAGRAM PLACEMENT & MULTIPLE DIAGRAM RULES:
     5) Boundary lines and region labels ($R$) LAST.
 
 - TREE DIAGRAM SPECIFIC TIKZ GUIDELINES:
-  * Set `grow=right` to orient the tree horizontally from left to right with upright, horizontal text (do not use `sloped`).
-  * Stretch branches significantly horizontally and vertically (e.g., `level 1/.style={level distance=4.5cm, sibling distance=4.5cm}`, `level 2/.style={level distance=4.5cm, sibling distance=2.5cm}`) to maximize clearance.
-  * Use explicit `yshift` keys (e.g., `yshift=-15pt`) for vertical movement, as TikZ edge nodes ignore `below=20pt` without the `positioning` library.
-  * Place labels midway along branches (`pos=0.5`).
-  * Apply `node[above, yshift=6pt, pos=0.5]` for top branches and `node[below, yshift=-14pt, pos=0.5]` for bottom branches so dotted lines sit far enough below the line to clear tall fraction numerators.
-  * Format fill-in slots using horizontal dotted lines (e.g., `edge from parent node[below, yshift=-14pt, pos=0.5] {\\makebox[1.2cm]{\\dotfill}}`).
+- Set `grow=right` to orient the tree horizontally from left to right with upright, non-sloped text.
+- Expand spacing significantly (`level 1/.style={level distance=5.0cm, sibling distance=6.0cm}`, `level 2/.style={level distance=5.0cm, sibling distance=3.0cm}`) to provide macro-level headroom between upper and lower forks.
+- Use `\\vphantom{$\\dfrac{0}{0}$}` inside edge label nodes to automatically reserve the exact vertical height needed for a display fraction without manual `yshift` tweaking.
+- Always place branch labels `above` the line (`node[above, pos=0.5] {\\vphantom{$\\dfrac{0}{0}$}\\makebox[1.2cm]{\\dotfill}}`), allowing the dotted line to sit as a baseline with dynamic height reserved directly above it.
+- Place stage headers ("First disc", "Second disc") using a dedicated top baseline coordinate or high anchor (e.g., `yshift=6.0cm` above the root node) so they never collide with fraction slots.
 
 - INTRODUCTORY SCENARIO DIAGRAMS ('intro_diagram_tikz'):
-  * If a diagram accompanies or sets up the overall introductory text/paragraph before part (a) (e.g., given geometric figures, initial shape context, setup Venn diagram, given coordinate grid, or given table context), it MUST be placed directly inside 'intro_diagram_tikz' at the root question level.
-  * DO NOT push introductory setup diagrams down into part (a)'s 'diagram_tikz'.
+- If a diagram accompanies or sets up the overall introductory text/paragraph before part (a) (e.g., given geometric figures, initial shape context, setup Venn diagram, given coordinate grid, or given table context), it MUST be placed directly inside 'intro_diagram_tikz' at the root question level.
+- DO NOT push introductory setup diagrams down into part (a)'s 'diagram_tikz'.
 
 - PART-SPECIFIC & COMPLETION DIAGRAMS ('diagram_tikz' inside parts/subparts):
-  * If a specific question part or subpart requires student interaction or completion (e.g., "Complete the table", "On the grid, draw the image of...", "Shade the region...", "Complete the Venn diagram", "Sketch the graph...", "Complete the tree diagram"), provide a separate TikZ diagram or table template inside 'diagram_tikz' under that specific part or subpart.
-  * SEQUENCE ORDER IN PARTS: Always place the question prompt/stem text FIRST, followed by 'diagram_tikz' (for completion diagrams), followed by the answer line / working space.
-
-- TREE DIAGRAM SPECIFIC TIKZ GUIDELINES:
-  * Set `grow=right` to orient the tree horizontally from left to right with upright, non-sloped text.
-  * Expand spacing significantly (`level 1/.style={level distance=5.0cm, sibling distance=6.0cm}`, `level 2/.style={level distance=5.0cm, sibling distance=3.0cm}`) to provide macro-level headroom between upper and lower forks.
-  * Use `\\vphantom{$\\dfrac{0}{0}$}` inside edge label nodes to automatically reserve the exact vertical height needed for a display fraction without manual `yshift` tweaking.
-  * Always place branch labels `above` the line (`node[above, pos=0.5] {\\vphantom{$\\dfrac{0}{0}$}\\makebox[1.2cm]{\\dotfill}}`), allowing the dotted line to sit as a baseline with dynamic height reserved directly above it.
-  * Place stage headers ("First disc", "Second disc") using a dedicated top baseline coordinate or high anchor (e.g., `yshift=6.0cm` above the root node) so they never collide with fraction slots.
+- If a specific question part or subpart requires student interaction or completion (e.g., "Complete the table", "On the grid, draw the image of...", "Shade the region...", "Complete the Venn diagram", "Sketch the graph...", "Complete the tree diagram"), provide a separate TikZ diagram or table template inside 'diagram_tikz' under that specific part or subpart.
+- SEQUENCE ORDER IN PARTS: Always place the question prompt/stem text FIRST, followed by 'diagram_tikz' (for completion diagrams), followed by the answer line / working space.
 """
 
     prompt = f"""Act as a Chief Senior Examiner for Cambridge IGCSE International Mathematics (0607 / Extended).
@@ -733,10 +729,10 @@ Primary Topic & Subtopic Details:
 QUESTION STRUCTURE & SUBPARTS HIERARCHY RULES:
 1. STANDALONE QUESTIONS: If a question is a single self-contained task without subparts (e.g., a single 2-mark factorisation or 3-mark equation), set `parts: [{{"label": "", "prompt": "...", "subparts": []}}]`.
 2. NESTED SUBPARTS HIERARCHY: When a main part (e.g. part "(a)") contains sub-questions (e.g. "(i)", "(ii)"), YOU MUST populate the `subparts` array inside that part!
-   - Main Part `(a)`: Set `label: "(a)"`. Place shared heading/context (e.g., "Factorise completely:") or overall stem prompt in `prompt` or `context`. Set `subparts` to an array containing each subpart object.
-   - Subpart Objects inside `subparts`: Each subpart MUST be an individual object containing its own `label` (e.g. `"(i)"`, `"(ii)"`), `prompt`, `marks`, `vspace_cm`, `answer_type`, `answer_prefix`, `answer_suffix`, `answer_format`, and `markscheme`.
-   - DELEGATED METRICS: When `subparts` is non-empty, set `marks: 0`, `vspace_cm: 0.0`, and `markscheme: []` on the parent part. The individual marks, working space, and markscheme steps MUST be defined on each subpart object.
-   - DO NOT list subparts like `(i)` and `(ii)` as flat items in the root `parts` array. They MUST be nested inside the parent part's `subparts` array.
+- Main Part `(a)`: Set `label: "(a)"`. Place shared heading/context (e.g., "Factorise completely:") or overall stem prompt in `prompt` or `context`. Set `subparts` to an array containing each subpart object.
+- Subpart Objects inside `subparts`: Each subpart MUST be an individual object containing its own `label` (e.g. `"(i)"`, `"(ii)"`), `prompt`, `marks`, `vspace_cm`, `answer_type`, `answer_prefix`, `answer_suffix`, `answer_format`, and `markscheme`.
+- DELEGATED METRICS: When `subparts` is non-empty, set `marks: 0`, `vspace_cm: 0.0`, and `markscheme: []` on the parent part. The individual marks, working space, and markscheme steps MUST be defined on each subpart object.
+- DO NOT list subparts like `(i)` and `(ii)` as flat items in the root `parts` array. They MUST be nested inside the parent part's `subparts` array.
 
 OFFICIAL CAMBRIDGE IGCSE COMMAND WORDS DICTIONARY:
 - Calculate: work out from given facts, figures or information.
@@ -756,45 +752,45 @@ OFFICIAL CAMBRIDGE IGCSE COMMAND WORDS DICTIONARY:
 - Write down: give an answer without significant working.
 
 STRICT MATH & PREFIX FORMATTING RULES:
-1. EVERY mathematical expression, fraction (\\dfrac), root (\\sqrt), exponent (^), or variable MUST be enclosed in inline math mode ($...$).
-   - FRACTION RULE: ALWAYS use \\dfrac instead of \\frac for all fractions (e.g., $\\dfrac{{a}}{{b}}$).
-   - UNIVERSAL SET SYMBOL: ALWAYS use $\\mathsf{{U}}$ for the universal set in set notation and Venn diagrams (e.g., $\\mathsf{{U}} = \\{{x : 1 \\le x \\le 20\\}}$).
-   - Correct: "Work out the value of\\\\[0.15cm] \\hspace*{{0.8cm}} $\\dfrac{{\\sqrt[3]{{64}} + 12^2}}{{5^2}}$"
-   - DO NOT USE \\text{{}} inside math mode or LaTeX expressions under any circumstances. Avoid \\text{{}} entirely.
+1. EVERY mathematical expression, fraction (`\\dfrac` or `\\frac`), root (`\\sqrt`), exponent (`^`), or variable MUST be enclosed in inline math mode (`$...$`).
+- FRACTION RULE: ALWAYS use `\\dfrac` instead of `\\frac` for standard fractions (e.g., `$\\dfrac{{a}}{{b}}$`). However, for fractional exponents/powers, ALWAYS use `\\frac` instead of `\\dfrac` (e.g., `$x^{{\\frac{{1}}{{2}}}}$, `$8^{{\\frac{{2}}{{3}}}}$`).
+- UNIVERSAL SET SYMBOL: ALWAYS use `$\\mathsf{{U}}$` for the universal set in set notation and Venn diagrams (e.g., `$\\mathsf{{U}} = \\{{x : 1 \\le x \\le 20\\}}$`).
+- Correct: "Work out the value of \\\\[0.15cm] \\hspace*{{0.8cm}} $\\dfrac{{\\sqrt[3]{{64}} + 12^2}}{{5^2}}$"
+- DO NOT USE `\\text{{}}` inside math mode or LaTeX expressions under any circumstances. Avoid `\\text{{}}` entirely.
 
 2. ANSWER PREFIX & SUFFIX FORMATTING:
-   - If `answer_prefix` or `answer_suffix` is in LaTeX or contains mathematical expressions, variables, symbols, or math units (e.g., `$x =$`, `$k =$`, `$cm^2$`, `$cm^3$`, `$m/s$`, `$^\\circ$`), specifically enclose the LaTeX/math part in inline math mode (`$ ... $`). DO NOT use \\text{{}} inside math mode or LaTeX expressions.
-   - Plain text word descriptions without math symbols (e.g. `answer_prefix: "Area ="`, `answer_prefix: "Volume ="`, `answer_suffix: "hours"`, `answer_suffix: "minutes"`) must remain plain text without `$`.
+- If `answer_prefix` or `answer_suffix` is in LaTeX or contains mathematical expressions, variables, symbols, or math units (e.g., `$x =$`, `$k =$`, `$cm^2$`, `$cm^3$`, `$m/s$`, `$^\\circ$`), specifically enclose the LaTeX/math part in inline math mode (`$ ... $`). DO NOT use `\\text{{}}` inside math mode or LaTeX expressions.
+- Plain text word descriptions without math symbols (e.g. `answer_prefix: "Area ="`, `answer_prefix: "Volume ="`, `answer_suffix: "hours"`, `answer_suffix: "minutes"`) must remain plain text without `$`.
 
 3. DATA & CONTEXT LAYOUT RULES:
-   - RAW DATA / NUMBER LISTS (CENTERED): Place raw data sets or lists of numbers on a NEW LINE below the prompt text, CENTERED horizontally across the page, separated by \\qquad between elements inside math mode (commas can be dropped): `\\\\[0.15cm] \\begin{{center}} $3 \\qquad 7 \\qquad 12 \\qquad 15 \\qquad 22$ \\end{{center}}`. Do NOT format lists of numbers using bullet points.
-   - FUNCTION DEFINITIONS: Present multiple functions inline on the same line separated by commas (e.g., "$f(x) = 2x + 3$, $g(x) = x^2 - 1$, $h(x) = \\dfrac{{1}}{{x}}$").
-   - STRUCTURED SET CONDITIONS & VENN DIAGRAM INFORMATION: For multi-statement conditions or set definitions where separating items by line improves readability (e.g., set element descriptions, Venn diagram region counts, or multi-line system conditions), format each condition on a clean separate line or indented list (`\\n- ...`).
+- RAW DATA / NUMBER LISTS (CENTERED): Place raw data sets or lists of numbers on a NEW LINE below the prompt text, CENTERED horizontally across the page, separated by `\\qquad` between elements inside math mode (commas can be dropped): `\\\\[0.15cm] \\begin{{center}} $3 \\qquad 7 \\qquad 12 \\qquad 15 \\qquad 22$ \\end{{center}}`. Do NOT format lists of numbers using bullet points.
+- FUNCTION DEFINITIONS: Present multiple functions inline on the same line separated by commas (e.g., "$f(x) = 2x + 3$, $g(x) = x^2 - 1$, $h(x) = \\dfrac{{1}}{{x}}$").
+- STRUCTURED SET CONDITIONS & VENN DIAGRAM INFORMATION: For multi-statement conditions or set definitions where separating items by line improves readability (e.g., set element descriptions, Venn diagram region counts, or multi-line system conditions), format each condition on a clean separate line or indented list (`\\n- ...`).
 
 4. SHAPE TRANSFORMATION ANSWER LINES ("Describe fully..."):
-    - For questions asking to "Describe fully...", keep `answer_prompt` strictly as plain text (or `null`/empty string if no text label is required).
-    - DO NOT place LaTeX dotted lines (`\dotfill`) inside `answer_prompt`.
-    - Output the 3 full-width left-aligned dotted lines exclusively in the dedicated `answer_format` JSON key:
-        \noindent \dotfill \\
-        \noindent \dotfill \\
-        \noindent \dotfill
+- For questions asking to "Describe fully...", keep `answer_prefix` strictly as plain text (or empty string `""` if no text label is required).
+- DO NOT place LaTeX dotted lines (`\\dotfill`) inside `answer_prefix`.
+- Output the 3 full-width left-aligned dotted lines exclusively in the dedicated `answer_format` JSON key:
+        \\noindent \\dotfill \\\\
+        \\noindent \\dotfill \\\\
+        \\noindent \\dotfill
 
 5. COLUMN VECTOR ANSWER FORMATTING:
-   - For column vectors (2x1), format answer space using a pmatrix with custom vertical padding and empty space inside components: `\\begin{{pmatrix}} \\hspace{{1.5cm}} \\\\[2em] \\hspace{{1.5cm}} \\end{{pmatrix}}`. DO NOT put dotted lines inside vector components.
+- For column vectors (2x1), format answer space using a pmatrix with custom vertical padding and empty space inside components: `\\begin{{pmatrix}} \\hspace{{1.5cm}} \\\\[2em] \\hspace{{1.5cm}} \\end{{pmatrix}}`. DO NOT put dotted lines inside vector components.
 
 ONE-LINER COMMAND WORD FORMATTING RULE (Expand, Factorise, Solve, Simplify, Express):
 - For single-line algebraic or arithmetic tasks (e.g. Expand and simplify, Factorise fully, Solve the equation, Simplify), place ONLY the mathematical expression/equation on a NEW LINE below the command word and INDENT IT: `\\\\[0.15cm] \\hspace*{{0.8cm}} $...$`.
 - STRICT INDENTATION RULE: ONLY indent standalone mathematical expressions, equations, or formulas (e.g. `$6x^2 - 7x - 20$`, `$3x + 4 = 19$`).
-- DO NOT INDENT text sentences, word problems, explanations, or multi-word command phrases (e.g. "Show that...", "Explain why...", "Calculate the area of...", "Work out the value of..."). Text sentences MUST ALWAYS start flush left without `\\hspace*` or `\\quad`.
+- DO NOT INDENT text sentences, word problems, explanations, or multi-word command phrases (e.g. "Show that...", "Explain why...", "Calculate the area of..."). Text sentences MUST ALWAYS start flush left without `\\hspace*` or `\\quad`.
 
 ANSWER TYPE & LINE LENGTH SELECTION GUIDELINES:
 Assign 'answer_type' appropriately based on the required response:
 - "null": MUST be used whenever the student writes/draws directly on paper/diagram/table, for proof/multi-step show tasks, OR for questions where answer slots/lines are provided directly inside the prompt text itself (e.g. writing down or inserting the correct symbol for set notations like $A \\dots B$, completing inequality symbols $<, >, =, \\le, \\ge$ between expressions, filling symbols in set theory/logic, etc. - no separate final answer line is needed).
 - "multi_field": MUST be used for questions requiring 2 or more inline answer slots on the same line (e.g. "Gradient = ....., $y$-intercept = ....." or "$a = ....., b = ....., c = .....$"). Specify all field labels as a comma-separated list in 'answer_format' (e.g., "answer_format": "Gradient =, $y$-intercept =" OR "answer_format": "$a =$, $b =$, $c =$").
 - "inequality_region" / "multi_line": MUST be used when asking for multiple inequalities or multi-line tabular responses (e.g., "Write down the three inequalities that define region R").
-  * ALWAYS structure multiline answers in stacked multi-row / tabular format (stacked lines on separate rows).
-  * DO NOT use single-line comma-separated (`....., ....., .....`) formats.
-  * Set `answer_type: "inequality_region"` or `"multi_line"` with empty `answer_format` or multi-line newline (`\\n`) separated row templates.
+- ALWAYS structure multiline answers in stacked multi-row / tabular format (stacked lines on separate rows).
+- DO NOT use single-line comma-separated (`....., ....., .....`) formats.
+- Set `answer_type: "inequality_region"` or `"multi_line"` with empty `answer_format` or multi-line newline (`\\n`) separated row templates.
 - "short_line": For single numerical values, integers, simple fractions, degree measurements, or single variable answers.
 - "line": Standard single-line answer format.
 - "long_line": For putting numbers/fractions in order, expanded algebraic expressions, or long mathematical sentences.
