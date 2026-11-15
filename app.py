@@ -301,7 +301,7 @@ def sanitize_slot_label(label_str: str) -> str:
     return s
 
 def render_answer_slot_preview(ans_type, prefix="", suffix="", format_str="", marks=0, vspace_cm=3.0, prompt_text=""):
-    """Displays answer line / slot UI preview with dynamic lengths, tabular multiline formatting, time unit spacing, and automatic 'no line' detection."""
+    """Displays answer line / slot UI preview with dynamic lengths, hybrid templates, compound units, and 'no line' detection."""
     prefix_clean = sanitize_slot_label(prefix)
     suffix_clean = sanitize_slot_label(suffix)
     prefix_str = f"{prefix_clean} " if prefix_clean else ""
@@ -311,6 +311,7 @@ def render_answer_slot_preview(ans_type, prefix="", suffix="", format_str="", ma
 
     ans_t = str(ans_type).lower().strip()
     prompt_lower = str(prompt_text).lower()
+    fmt_raw = str(format_str or "").strip()
 
     no_answer_line_keywords = [
         "show that", "sketch", "complete the table", "complete the diagram", 
@@ -323,31 +324,69 @@ def render_answer_slot_preview(ans_type, prefix="", suffix="", format_str="", ma
         and any(w in prompt_lower for w in ["write down", "insert", "complete", "fill", "choose", "place"])
     )
     is_no_line_prompt = any(kw in prompt_lower for kw in no_answer_line_keywords) or is_symbol_prompt
-    is_describe_fully = "describe fully" in prompt_lower
+    is_describe_fully = (
+        ans_t == "describe_fully"
+        or any(phrase in prompt_lower for phrase in ["describe fully", "describe completely", "give a full description"])
+    )
 
-    # Standardized lengthened dot placeholders
-    LINE_SHORT = "..................................."                          # 35 dots
-    LINE_MEDIUM = ".........................................................................................." # 90 dots
+    # Standardized dot placeholders
+    LINE_SHORT = "..................................."                                                                      # 35 dots
+    LINE_MEDIUM = ".........................................................................................."               # 90 dots
     LINE_LONG = "........................................................................................................................" # 120 dots
 
+    def render_template_line(line_str: str) -> str:
+        """Replaces runs of 3+ dots (.....) in a template line with appropriately sized dot slots."""
+        cleaned = re.sub(r"\\noindent\s*", "", line_str)
+        cleaned = re.sub(r"\\dotfill", ".....", cleaned).strip()
+        slot_matches = list(re.finditer(r"\.{3,}", cleaned))
+        if not slot_matches:
+            return cleaned
+        if len(slot_matches) >= 2:
+            slot_token = f"`{LINE_SHORT}`"
+        elif cleaned == slot_matches[0].group(0):
+            slot_token = f"`{LINE_LONG}`"
+        else:
+            slot_token = f"`{LINE_MEDIUM}`"
+        return re.sub(r"\.{3,}", slot_token, cleaned)
+
     if is_describe_fully:
-        st.markdown(f"**Answer Lines (Describe fully...):**\n`{LINE_LONG}`\n`{LINE_LONG}`\n`{LINE_LONG}` {space_label} \\hfill {marks_tag}")
+        st.markdown(
+            f"**Answer Lines (Describe fully...):**\n\n"
+            f"`{LINE_LONG}`\n\n"
+            f"`{LINE_LONG}`\n\n"
+            f"`{LINE_LONG}` {space_label} \\hfill {marks_tag}"
+        )
     elif ans_t in ["null", "none"] or is_no_line_prompt:
         st.caption(f"*(No answer line — Student works/draws/fills directly on prompt/diagram/paper/table)* {space_label} {marks_tag}")
-    elif ans_t in ["compound", "time"] or ("hour" in f"{prefix_clean} {suffix_clean} {format_str}".lower() and "minute" in f"{prefix_clean} {suffix_clean} {format_str}".lower()):
-        st.markdown(f"**Answer Line (Time/Compound):** `{LINE_SHORT}` hours `{LINE_SHORT}` minutes {space_label} \\hfill {marks_tag}")
-    elif ans_t in ["custom", "inequality_region", "region", "multi_line", "multiple", "asymptotes", "two_lines"]:
-        if format_str and ("\\n" in format_str or "\n" in format_str):
-            formatted_lines = format_str.replace("\\n", "\n")
-            st.markdown(f"**Answer Lines (Tabular / Multi-Row):**\n{formatted_lines} {space_label} \\hfill {marks_tag}")
-        elif format_str and "," in format_str:
-            parts = [p.strip() for p in format_str.split(",") if p.strip()]
-            stacked_lines = "\n".join([f"- Line {i+1}: `{p}`" for i, p in enumerate(parts)])
-            st.markdown(f"**Answer Lines (Tabular / Multi-Row):**\n{stacked_lines} {space_label} \\hfill {marks_tag}")
-        elif format_str:
-            st.markdown(f"**Answer Slot (Custom Tabular):** `{format_str}` {space_label} \\hfill {marks_tag}")
+    elif ans_t in ["compound", "time"] or ("hour" in f"{prefix_clean} {suffix_clean} {fmt_raw}".lower() and "minute" in f"{prefix_clean} {suffix_clean} {fmt_raw}".lower()):
+        if fmt_raw and re.search(r"\.{3,}", fmt_raw):
+            rendered_compound = render_template_line(fmt_raw)
+            st.markdown(f"**Answer Line (Compound Units):** {rendered_compound} {space_label} \\hfill {marks_tag}")
         else:
-            st.markdown(f"**Answer Lines (Tabular / Multi-Row):**\n- Line 1: {prefix_str}`{LINE_MEDIUM}` {suffix_str}\n- Line 2: {prefix_str}`{LINE_MEDIUM}` {suffix_str}\n- Line 3: {prefix_str}`{LINE_MEDIUM}` {suffix_str} {space_label} \\hfill {marks_tag}")
+            st.markdown(f"**Answer Line (Time/Compound):** `{LINE_SHORT}` hours `{LINE_SHORT}` minutes {space_label} \\hfill {marks_tag}")
+    elif fmt_raw and (re.search(r"\.{3,}", fmt_raw) or "\\n" in fmt_raw or "\n" in fmt_raw):
+        normalized_fmt = fmt_raw.replace("\\n", "\n")
+        raw_lines = [ln.strip() for ln in normalized_fmt.split("\n") if ln.strip()]
+        rendered_lines = "\n\n".join([render_template_line(ln) for ln in raw_lines])
+        st.markdown(f"**Answer Lines (Custom / Multi-Field):**\n\n{rendered_lines} {space_label} \\hfill {marks_tag}")
+    elif ans_t in ["multi_field", "custom", "custom_template", "inequality_region", "region", "multi_line", "multiple", "asymptotes", "two_lines"]:
+        if fmt_raw and "," in fmt_raw:
+            parts = [p.strip() for p in fmt_raw.split(",") if p.strip()]
+            if ans_t == "multi_field":
+                inline_fields = " , ".join([f"{p} `{LINE_SHORT}`" for p in parts])
+                st.markdown(f"**Answer Line (Multi-Field):** {inline_fields} {space_label} \\hfill {marks_tag}")
+            else:
+                stacked_lines = "\n\n".join([f"{p} `{LINE_MEDIUM}`" for p in parts])
+                st.markdown(f"**Answer Lines (Multi-Row):**\n\n{stacked_lines} {space_label} \\hfill {marks_tag}")
+        elif fmt_raw:
+            st.markdown(f"**Answer Slot (Custom):** {render_template_line(fmt_raw)} {space_label} \\hfill {marks_tag}")
+        else:
+            st.markdown(
+                f"**Answer Lines (Multi-Row):**\n\n"
+                f"{prefix_str}`{LINE_MEDIUM}` {suffix_str}\n\n"
+                f"{prefix_str}`{LINE_MEDIUM}` {suffix_str}\n\n"
+                f"{prefix_str}`{LINE_MEDIUM}` {suffix_str} {space_label} \\hfill {marks_tag}"
+            )
     elif ans_t == "vector":
         st.markdown(f"**Answer Slot (Column Vector):** {prefix_str} $\\begin{{pmatrix}} \\hspace{{1.5cm}} \\\\[2em] \\hspace{{1.5cm}} \\end{{pmatrix}}$ {suffix_str} {space_label} \\hfill {marks_tag}")
     elif ans_t == "coordinate":
@@ -357,7 +396,7 @@ def render_answer_slot_preview(ans_type, prefix="", suffix="", format_str="", ma
     elif ans_t in ["long", "long_line", "ordering", "list"]:
         st.markdown(f"**Answer Line (Long):** {prefix_str} `{LINE_LONG}` {suffix_str} {space_label} \\hfill {marks_tag}")
     else:
-        combined = f"{prefix_clean} {suffix_clean} {format_str}"
+        combined = f"{prefix_clean} {suffix_clean} {fmt_raw}"
         if re.search(r"hour.*min", combined, re.IGNORECASE):
             st.markdown(f"**Answer Line (Time):** `{LINE_SHORT}` hours `{LINE_SHORT}` minutes {space_label} \\hfill {marks_tag}")
         elif "minute" in suffix_clean.lower() and (".." in suffix_clean or "." in suffix_clean):
@@ -408,7 +447,7 @@ def render_tikz_pdflatex(tikz_code: str, caption: str = "Diagram"):
             st.error(f"❌ Error compiling TikZ: {e}")
 
 # ==============================================================================
-# 3. FILE I/O HELPERS & DEDUPLICATION FINGERPRINTING
+# 3. FILE I/O HELPERS, VALIDATION & DEDUPLICATION FINGERPRINTING
 # ==============================================================================
 def load_syllabus():
     if not os.path.exists(SYLLABUS_FILE):
@@ -534,7 +573,6 @@ def assign_unique_ids(items):
 def clean_and_repair_json(raw_text):
     text = raw_text.strip()
     
-    # Removed numbers like "1095" that caused false positive generation error triggers on valid math text
     error_keywords = [
         "encountered an error", "something went error", "something went wrong", 
         "try something else", "please try again", "try again later",
@@ -612,6 +650,85 @@ def clean_and_repair_json(raw_text):
             i += 1
 
     return "".join(res)
+
+def validate_generated_questions(items):
+    """
+    Validates parsed question JSON objects and raises ValueError if Gemini returned
+    corrupted Unicode/control characters, token-collapse newline loops, concatenated digits,
+    or broken structure — allowing the batch runner to reject and retry automatically.
+    """
+    if isinstance(items, dict):
+        items = [items]
+    if not isinstance(items, list) or len(items) == 0:
+        raise ValueError("Rejected output: Empty or non-list question JSON.")
+
+    def check_text_field(val, field_path: str):
+        if not val:
+            return
+        s = str(val)
+
+        # 1. Reject zero-width spaces, BOM, Unicode replacement chars, or literal \u200b escapes
+        if re.search(r"[\u200b\u200c\u200d\ufeff\u2060\ufffd]|\\u200[bcd]", s):
+            raise ValueError(f"Rejected corrupted output ({field_path}): Contains zero-width or invalid Unicode escape characters.")
+
+        # 2. Reject raw ASCII control characters (\x00-\x08, \t=\x09, \x0b, \x0c, \x0e-\x1f) or literal \t escapes
+        if re.search(r"[\x00-\x09\x0b\x0c\x0e-\x1f]|(?<!\\)\\t(?![a-zA-Z])", s):
+            raise ValueError(f"Rejected corrupted output ({field_path}): Contains raw tab or unescaped control characters.")
+
+        # 3. Reject vertical newline-spam loops (5+ consecutive lines containing only numbers)
+        if re.search(r"(?:\n\s*\d+(?:\.\d+)?\s*){5,}", s):
+            raise ValueError(f"Rejected corrupted output ({field_path}): Degenerate vertical newline number loop detected.")
+
+        # 4. Reject collapsed/concatenated number lists inside \begin{center}...\end{center}
+        for center_match in re.finditer(r"\\begin\{center\}(.*?)\\end\{center\}", s, re.DOTALL):
+            inner = center_match.group(1)
+            if inner.count("\n") >= 4 or re.search(r"\b\d{8,}\b", inner):
+                raise ValueError(f"Rejected corrupted output ({field_path}): Malformed or concatenated number list inside \\begin{{center}}.")
+
+        # 5. Reject consecutive identical non-empty lines repeated 4+ times
+        lines = [ln.strip() for ln in s.splitlines() if ln.strip() and ln.strip() not in [r"\hline", r"\\"]]
+        for i in range(len(lines) - 3):
+            if len(lines[i]) >= 2 and lines[i] == lines[i+1] == lines[i+2] == lines[i+3]:
+                raise ValueError(f"Rejected corrupted output ({field_path}): Token repetition loop detected ('{lines[i]}').")
+
+        # 6. Reject unbalanced $ math delimiters
+        unmasked = re.sub(r"\\\$", "", s)
+        if unmasked.count("$") % 2 != 0:
+            raise ValueError(f"Rejected corrupted output ({field_path}): Unbalanced '$' math delimiters.")
+
+    for q_idx, q in enumerate(items):
+        if not isinstance(q, dict):
+            raise ValueError(f"Rejected output: Question #{q_idx+1} is not a JSON object.")
+
+        check_text_field(q.get("intro_text", ""), f"Q{q_idx+1}.intro_text")
+        check_text_field(q.get("intro_diagram_tikz", ""), f"Q{q_idx+1}.intro_diagram_tikz")
+
+        parts = q.get("parts", [])
+        if not isinstance(parts, list) or len(parts) == 0:
+            raise ValueError(f"Rejected output: Question #{q_idx+1} has no 'parts'.")
+
+        for p_idx, p in enumerate(parts):
+            if not isinstance(p, dict):
+                raise ValueError(f"Rejected output: Q{q_idx+1} part #{p_idx+1} is invalid.")
+
+            for fld in ["context", "prompt", "diagram_tikz", "answer_prefix", "answer_suffix", "answer_format"]:
+                check_text_field(p.get(fld, ""), f"Q{q_idx+1}.parts[{p_idx}].{fld}")
+
+            for m_idx, step in enumerate(p.get("markscheme", [])):
+                check_text_field(step, f"Q{q_idx+1}.parts[{p_idx}].markscheme[{m_idx}]")
+
+            subparts = p.get("subparts", [])
+            if subparts:
+                for sp_idx, sp in enumerate(subparts):
+                    if not isinstance(sp, dict) or not str(sp.get("prompt", "")).strip():
+                        raise ValueError(f"Rejected output: Q{q_idx+1}.parts[{p_idx}].subparts[{sp_idx}] has an empty prompt.")
+                    for fld in ["context", "prompt", "diagram_tikz", "answer_prefix", "answer_suffix", "answer_format"]:
+                        check_text_field(sp.get(fld, ""), f"Q{q_idx+1}.parts[{p_idx}].subparts[{sp_idx}].{fld}")
+                    for m_idx, step in enumerate(sp.get("markscheme", [])):
+                        check_text_field(step, f"Q{q_idx+1}.parts[{p_idx}].subparts[{sp_idx}].markscheme[{m_idx}]")
+            else:
+                if not str(p.get("prompt", "")).strip():
+                    raise ValueError(f"Rejected output: Q{q_idx+1}.parts[{p_idx}] has an empty prompt.")
 
 # ==============================================================================
 # 4. IGCSE PROMPT BUILDER WITH VERTICAL MARKSCHEMES & COMMAND WORDS
@@ -694,6 +811,54 @@ TIKZ & DIAGRAM PLACEMENT & MULTIPLE DIAGRAM RULES:
     4) Coordinate axes ($x$ and $y$), axis arrowheads, and tick marks FOURTH.
     5) Boundary lines and region labels ($R$) LAST.
 
+- BAR CHARTS, HISTOGRAMS & STATISTICAL GRAPH SUBGRID RULES:
+- MANDATORY MINOR HORIZONTAL SUBGRID LINES: Whenever drawing bar charts, compound/stacked bar charts, dual bar charts, or frequency graphs, you MUST draw BOTH minor horizontal subgrid lines and major horizontal grid lines so every bar height can be read accurately without guesswork.
+- SUBGRID STEP ALIGNMENT: Divide each major vertical interval into 5 equal minor subdivisions (standard IGCSE grid style, e.g., major grid lines every 10 units with minor horizontal subgrids every 2 units, or major grid lines every 5 units with minor subgrids every 1 unit) or 2 equal subdivisions (e.g., minor subgrids every 5 units for major intervals of 10). Always choose the minor subgrid interval so that EVERY bar height and stacked segment boundary lands directly on a horizontal grid or subgrid line—never leave a bar top floating between subgrid lines.
+- STRICT LAYER ORDER FOR BAR CHARTS:
+    1) Minor horizontal subgrid lines FIRST: `\\draw[very thin, gray!35] (0,0) grid[xstep=<cat_width>, ystep=<minor_step>] (x_max, y_max);` (or horizontal lines across the plot width at every minor step).
+    2) Major horizontal grid lines (and vertical category dividers) SECOND: `\\draw[thin, gray!75] (0,0) grid[xstep=<cat_width>, ystep=<major_step>] (x_max, y_max);` so major intervals stand out clearly over the subgrids.
+    3) Bars THIRD: Draw bars using greyscale fills (`\\filldraw[fill=black!20, draw=black, thick] ...` and `fill=black!65` for second series/stacked segments) so bar borders remain crisp over the grid.
+    4) Axes, tick marks, category labels, and legend LAST.
+
+- TIKZ TABLE ORIENTATION & DYNAMIC SIZING RULES:
+- TABLE ORIENTATION:
+  - Use a **horizontal layout** (rows = variables, columns = data entries) ONLY when there are **8 or fewer data columns** AND every data cell contains a **short value** (single numbers, single variables, or short coordinates—never inequalities or multi-word labels).
+  - Use a **vertical layout** (rows = items/intervals, columns = fields) whenever there are **more than 8 data entries**, **any continuous class intervals** (e.g. $10 < t \\le 20$, even in a 2-column frequency table), or **multi-word text categories**.
+- CONTENT-DRIVEN CELL SIZING (NO HARD CAPS):
+  - Never cap column widths or row heights to fixed ranges; treat sizing values as **minimums** and expand any column or row as needed so text never touches a border.
+  - **Horizontal clearance**: Every column must be at least `0.6cm` wider than its widest text/math string (`0.3cm` breathing room on each side). For multi-word labels, set `text width` to `column_width - 0.5cm` with `align=center`.
+  - **Vertical clearance**: Size each row dynamically from its tallest wrapped cell (`0.45cm` per line of text + at least `0.4cm` total vertical padding, minimum `0.8cm` row height; at least `1.0cm` for blank student-completion cells).
+- PREFERRED CONSTRUCTION:
+  - Do NOT use TikZ `\\matrix`. Prefer a LaTeX `tabular` inside a single `\\node` so cells auto-expand around their content, or draw standard `\\draw` grid lines with centered `\\node` elements sized according to the clearance rules above.
+  
+- DIAGRAM SIZING & STUDENT RESPONSE SCALING RULES:
+- Match diagram dimensions to diagram complexity and purpose—do NOT inflate simple schematic diagrams to full page width. Never shrink diagrams using `scale=<1` (e.g., avoid `scale=0.7` or `scale=0.8`); instead, choose appropriate coordinate dimensions directly.
+- COMPACT SCHEMATIC DIAGRAMS (Venn diagrams, small geometric figures, tree diagrams):
+- Read-only (`intro_diagram_tikz`): Target **`5.5cm` to `7.5cm` wide** by **`3.8cm` to `5.5cm` tall**.
+- Student completion (`diagram_tikz` where students fill in values/regions): Target **`7.5cm` to `9.0cm` wide** by **`5.0cm` to `6.5cm` tall**.
+- COORDINATE GRIDS, GRAPHS & TRANSFORMATIONS:
+- Read-only (`intro_diagram_tikz`): Target **`6.5cm` to `8.5cm` wide** by **`5.0cm` to `6.5cm` tall**.
+- Student plotting/drawing/shading (`diagram_tikz` where students plot points, draw lines/shapes, or shade regions): Target **`8.5cm` to `11.0cm` wide** by **`6.5cm` to `8.5cm` tall** (with `0.5cm` to `0.7cm` per grid square so hand-drawn work is accurate).
+
+- ANTI-BLEED TEXT & LABEL PLACEMENT RULES (ALL DIAGRAMS):
+- Use `\\small` for diagram region/edge labels (and `\\footnotesize` for multi-term algebraic expressions inside tight 3-set Venn regions) with `inner sep=1.5pt` so text never touches lines, borders, or arcs.
+- Place vertex labels (`$A, B, C$`), side lengths, and set names outside boundaries using explicit offsets or `label={{[label distance=2pt]<angle>:...}}`—never directly on top of a line or arc.
+
+- VENN DIAGRAM SPECIFIC TIKZ GUIDELINES:
+- Keep Venn diagrams compact while placing text at the **visual centroid** of each region (NOT at circle centers):
+  1) **2-Set Venn Diagram (Read-Only `intro_diagram_tikz` — `6.8cm x 4.4cm`)**:
+- Universal set box: `\\draw (0,0) rectangle (6.8,4.4);` with `\\node[left] at (-0.1,4.1) {$\\mathsf{U}$};`.
+- Circles: `\\draw (2.55,2.2) circle (1.6cm);` and `\\draw (4.25,2.2) circle (1.6cm);`.
+- Region centroids (use `\\small`): Left crescent at `(1.80, 2.2)`, center intersection at `(3.40, 2.2)`, right crescent at `(5.00, 2.2)`, complement at `(6.15, 0.55)`.
+- Set labels outside upper arcs (inside box): `$A$` at `(1.45, 3.85)`, `$B$` at `(5.35, 3.85)`.
+  2) **2-Set Venn Diagram (Student Completion `diagram_tikz` — `8.4cm x 5.4cm`)**:
+- Rectangle `\\draw (0,0) rectangle (8.4,5.4);` with circles at `(3.1,2.7)` and `(5.3,2.7)`, `radius=1.9cm`, leaving region interiors completely blank for handwriting.
+  3) **3-Set Venn Diagram (Read-Only `intro_diagram_tikz` — `7.8cm x 6.2cm`)**:
+- Universal set box: `\\draw (0,0) rectangle (7.8,6.2);` with `\\node[left] at (-0.1,5.9) {$\\mathsf{U}$};`.
+- Circles: $A$ at `(3.15,3.75)`, $B$ at `(4.65,3.75)`, $C$ at `(3.90,2.45)`, each `radius=1.55cm`.
+- Region centroids (use `\\footnotesize` for algebraic expressions): Only $A$ `(2.35, 4.15)`, Only $B$ `(5.45, 4.15)`, Only $C$ `(3.90, 1.45)`, $A \\cap B \\setminus C$ `(3.90, 4.35)`, $A \\cap C \\setminus B$ `(3.00, 2.85)`, $B \\cap C \\setminus A$ `(4.80, 2.85)`, Triple $A \\cap B \\cap C$ `(3.90, 3.32)`, Complement `(7.05, 0.55)`.
+- Set labels: `$A$` at `(1.85, 5.25)`, `$B$` at `(5.95, 5.25)`, `$C$` at `(5.35, 1.35)`.
+
 - TREE DIAGRAM SPECIFIC TIKZ GUIDELINES:
 - Set `grow=right` to orient the tree horizontally from left to right with upright, non-sloped text.
 - Expand spacing significantly (`level 1/.style={level distance=5.0cm, sibling distance=6.0cm}`, `level 2/.style={level distance=5.0cm, sibling distance=3.0cm}`) to provide macro-level headroom between upper and lower forks.
@@ -706,19 +871,24 @@ TIKZ & DIAGRAM PLACEMENT & MULTIPLE DIAGRAM RULES:
 - DO NOT push introductory setup diagrams down into part (a)'s 'diagram_tikz'.
 
 - PART-SPECIFIC & COMPLETION DIAGRAMS ('diagram_tikz' inside parts/subparts):
-- If a specific question part or subpart requires student interaction or completion (e.g., "Complete the table", "On the grid, draw the image of...", "Shade the region...", "Complete the Venn diagram", "Sketch the graph...", "Complete the tree diagram"), provide a separate TikZ diagram or table template inside 'diagram_tikz' under that specific part or subpart.
+- If a specific question part or subpart requires student interaction or completion (e.g., "Complete the table", "On the grid, draw the image of...", "Shade the region...", "Complete the Venn diagram", "Sketch the graph...", "Complete the tree diagram"), provide a separate, enlarged TikZ diagram or table template inside 'diagram_tikz' under that specific part or subpart.
+- Ensure any blank regions, grid squares (minimum `0.6cm` to `0.8cm` per grid unit when plotting), or table cells inside `diagram_tikz` are oversized for handwritten student responses.
 - SEQUENCE ORDER IN PARTS: Always place the question prompt/stem text FIRST, followed by 'diagram_tikz' (for completion diagrams), followed by the answer line / working space.
 """
 
     prompt = f"""Act as a Chief Senior Examiner for Cambridge IGCSE International Mathematics (0607 / Extended).
 
 Generate exactly {total_q} exam-style IGCSE practice question(s) distributed by difficulty:
-- Easy: {easy_count} | Medium: {med_count} | Hard: {hard_count}
+- Easy: 
+{easy_count} | Medium: {med_count} | Hard: {hard_count}
 
 Primary Topic & Subtopic Details:
-- Topic: {primary_topic}
-- Subtopic Code: {sub_code}
-- Subtopic Title: {sub_title}
+- Topic: 
+{primary_topic}
+- Subtopic Code: 
+{sub_code}
+- Subtopic Title: 
+{sub_title}
 - Detailed Syllabus Specifics:
 {guidance_combined}
 
@@ -726,8 +896,12 @@ Primary Topic & Subtopic Details:
 {calc_instr}
 {tikz_instr}
 
+JSON ESCAPING RULE:
+- Inside JSON strings, always double-escape LaTeX backslashes (`\\quad`, `\\dfrac`, `\\begin{{center}}`, `\\end{{center}}`, and `\\\\[0.15cm]` for line breaks) so JSON parsing never corrupts commands into tabs or control characters.
+
 QUESTION STRUCTURE & SUBPARTS HIERARCHY RULES:
-1. STANDALONE QUESTIONS: If a question is a single self-contained task without subparts (e.g., a single 2-mark factorisation or 3-mark equation), set `parts: [{{"label": "", "prompt": "...", "subparts": []}}]`.
+1. STANDALONE QUESTIONS: If a question is a single self-contained task without subparts (e.g., a single 2-mark factorisation or 3-mark equation), set `parts: [
+{{"label": "", "prompt": "...", "subparts": []}}]`.
 2. NESTED SUBPARTS HIERARCHY: When a main part (e.g. part "(a)") contains sub-questions (e.g. "(i)", "(ii)"), YOU MUST populate the `subparts` array inside that part!
 - Main Part `(a)`: Set `label: "(a)"`. Place shared heading/context (e.g., "Factorise completely:") or overall stem prompt in `prompt` or `context`. Set `subparts` to an array containing each subpart object.
 - Subpart Objects inside `subparts`: Each subpart MUST be an individual object containing its own `label` (e.g. `"(i)"`, `"(ii)"`), `prompt`, `marks`, `vspace_cm`, `answer_type`, `answer_prefix`, `answer_suffix`, `answer_format`, and `markscheme`.
@@ -753,7 +927,7 @@ OFFICIAL CAMBRIDGE IGCSE COMMAND WORDS DICTIONARY:
 
 STRICT MATH & PREFIX FORMATTING RULES:
 1. EVERY mathematical expression, fraction (`\\dfrac` or `\\frac`), root (`\\sqrt`), exponent (`^`), or variable MUST be enclosed in inline math mode (`$...$`).
-- FRACTION RULE: ALWAYS use `\\dfrac` instead of `\\frac` for standard fractions (e.g., `$\\dfrac{{a}}{{b}}$`). However, for fractional exponents/powers, ALWAYS use `\\frac` instead of `\\dfrac` (e.g., `$x^{{\\frac{{1}}{{2}}}}$, `$8^{{\\frac{{2}}{{3}}}}$`).
+- FRACTION RULE: ALWAYS use `\\dfrac` instead of `\\frac` for standard fractions (e.g., `$\\dfrac{{a}}{{b}}$`). However, for fractional exponents/powers, ALWAYS use `\\frac` instead of `\\dfrac` (e.g., `$x^{{\\frac{{1}}{{2}}}}$`, `$8^{{\\frac{{2}}{{3}}}}$`).
 - UNIVERSAL SET SYMBOL: ALWAYS use `$\\mathsf{{U}}$` for the universal set in set notation and Venn diagrams (e.g., `$\\mathsf{{U}} = \\{{x : 1 \\le x \\le 20\\}}$`).
 - Correct: "Work out the value of \\\\[0.15cm] \\hspace*{{0.8cm}} $\\dfrac{{\\sqrt[3]{{64}} + 12^2}}{{5^2}}$"
 - DO NOT USE `\\text{{}}` inside math mode or LaTeX expressions under any circumstances. Avoid `\\text{{}}` entirely.
@@ -763,20 +937,40 @@ STRICT MATH & PREFIX FORMATTING RULES:
 - Plain text word descriptions without math symbols (e.g. `answer_prefix: "Area ="`, `answer_prefix: "Volume ="`, `answer_suffix: "hours"`, `answer_suffix: "minutes"`) must remain plain text without `$`.
 
 3. DATA & CONTEXT LAYOUT RULES:
-- RAW DATA / NUMBER LISTS (CENTERED): Place raw data sets or lists of numbers on a NEW LINE below the prompt text, CENTERED horizontally across the page, separated by `\\qquad` between elements inside math mode (commas can be dropped): `\\\\[0.15cm] \\begin{{center}} $3 \\qquad 7 \\qquad 12 \\qquad 15 \\qquad 22$ \\end{{center}}`. Do NOT format lists of numbers using bullet points.
-- FUNCTION DEFINITIONS: Present multiple functions inline on the same line separated by commas (e.g., "$f(x) = 2x + 3$, $g(x) = x^2 - 1$, $h(x) = \\dfrac{{1}}{{x}}$").
+- RAW DATA / NUMBER LISTS (CENTERED, MAX 8 ITEMS PER LINE): Place raw data sets or lists of numbers on a NEW LINE below the prompt text, CENTERED horizontally across the page inside `\\begin{{center}} ... \\end{{center}}`, with each number wrapped in `$ ... $` and separated by `\\quad` (NEVER `\\qquad` and NEVER put all numbers inside a single `$ ... $` block). Do NOT format lists of numbers using bullet points.
+  - For **8 or fewer numbers**, use 1 centered row:
+    `"Consider the following list of numbers. \\\\[0.15cm] \\begin{{center}} $3$ \\quad $7$ \\quad $12$ \\quad $15$ \\quad $22$ \\end{{center}}"`
+  - For **9 or more numbers** (e.g., 10–20 values), split them evenly into **2 or 3 balanced centered rows** (max 7–8 values per row), separated by `\\\\[0.15cm]`:
+    `"The reaction times, in milliseconds, of 15 athletes are recorded below. \\\\[0.15cm] \\begin{{center}} $154$ \\quad $162$ \\quad $148$ \\quad $171$ \\quad $159$ \\quad $145$ \\quad $162$ \\quad $151$ \\\\[0.15cm] $168$ \\quad $149$ \\quad $157$ \\quad $162$ \\quad $174$ \\quad $153$ \\quad $160$ \\end{{center}}"`
+- FUNCTION DEFINITIONS: Present multiple functions inline on the same line separated by commas (e.g., `"$f(x) = 2x + 3$, $g(x) = x^2 - 1$, $h(x) = \\dfrac{{1}}{{x}}$"`).
 - STRUCTURED SET CONDITIONS & VENN DIAGRAM INFORMATION: For multi-statement conditions or set definitions where separating items by line improves readability (e.g., set element descriptions, Venn diagram region counts, or multi-line system conditions), format each condition on a clean separate line or indented list (`\\n- ...`).
 
 4. SHAPE TRANSFORMATION ANSWER LINES ("Describe fully..."):
-- For questions asking to "Describe fully...", keep `answer_prefix` strictly as plain text (or empty string `""` if no text label is required).
-- DO NOT place LaTeX dotted lines (`\\dotfill`) inside `answer_prefix`.
-- Output the 3 full-width left-aligned dotted lines exclusively in the dedicated `answer_format` JSON key:
-        \\noindent \\dotfill \\\\
-        \\noindent \\dotfill \\\\
-        \\noindent \\dotfill
+- For any question asking to "Describe fully..." (or "Describe completely..."), ALWAYS set `"answer_type": "describe_fully"` and leave `answer_prefix`, `answer_suffix`, and `answer_format` as empty strings `""`.
+- DO NOT put raw LaTeX `\\dotfill` or `\\noindent` commands in any JSON field.
 
 5. COLUMN VECTOR ANSWER FORMATTING:
-- For column vectors (2x1), format answer space using a pmatrix with custom vertical padding and empty space inside components: `\\begin{{pmatrix}} \\hspace{{1.5cm}} \\\\[2em] \\hspace{{1.5cm}} \\end{{pmatrix}}`. DO NOT put dotted lines inside vector components.
+- For column vectors (2x1), set `"answer_type": "vector"` and leave `answer_format` empty. DO NOT put dotted lines inside vector components.
+
+ANSWER TYPE & TEMPLATE SELECTION GUIDELINES:
+Use `"....."` (five dots) inside `answer_format` whenever an answer requires explicit blank-slot positioning:
+- "describe_fully": For transformation descriptions ("Describe fully..."). Automatically renders 3 full-width answer lines. Leave `answer_prefix`, `answer_suffix`, and `answer_format` as `""`.
+- "compound": MUST be used for multi-unit answers where numbers precede units (e.g., time, length, mass). Put the exact slot-and-unit template in `answer_format` using `.....` BEFORE each unit, with NO commas:
+- Example: `"answer_type": "compound"`, `"answer_format": "..... hours ..... minutes"`
+- Example: `"answer_type": "compound"`, `"answer_format": "..... m ..... cm"`
+- "multi_field": Use for 2 or more labeled slots on the SAME line. Put `.....` where each blank belongs in `answer_format`:
+- Example: `"answer_type": "multi_field"`, `"answer_format": "Gradient = ..... , $y$-intercept = ....."`
+- Example: `"answer_type": "multi_field"`, `"answer_format": "$a =$ ..... , $b =$ ..... , $c =$ ....."`
+- "custom_template": Use for hybrid answers that combine labeled inline slots with continuation lines or mixed rows (such as angle + geometrical reason, or multi-step statements). Separate rows with `\\n` and use `.....` for each blank:
+- Example (Angle + Reason with continuation line): `"answer_type": "custom_template"`, `"answer_format": "Angle = ..... , reason = .....\\n....."`
+- Example (Specific angle variable + Reason): `"answer_type": "custom_template"`, `"answer_format": "$x =$ ..... , reason = .....\\n....."`
+- "inequality_region" / "multi_line": Use for stacked multi-row answers (e.g., defining a shaded region $R$ with 3 inequalities). Use `\\n`-separated rows in `answer_format` (e.g., `".....\\n.....\\n....."`) and NEVER comma-separate them on one line.
+- "null": Use when the student writes/draws directly on a diagram, table, or graph, for "Show that..." proofs, or when blanks/symbols are embedded directly inside `prompt`.
+- "short_line": Single numerical value, integer, simple fraction, angle, or single variable.
+- "line": Standard single-line answer.
+- "long_line": Ordering numbers/fractions, expanded algebraic expressions, or single-sentence explanations.
+- "coordinate": Coordinate pairs $(x, y)$.
+- "vector": 2x1 column vectors.
 
 ONE-LINER COMMAND WORD FORMATTING RULE (Expand, Factorise, Solve, Simplify, Express):
 - For single-line algebraic or arithmetic tasks (e.g. Expand and simplify, Factorise fully, Solve the equation, Simplify), place ONLY the mathematical expression/equation on a NEW LINE below the command word and INDENT IT: `\\\\[0.15cm] \\hspace*{{0.8cm}} $...$`.
@@ -849,8 +1043,8 @@ JSON Schema:
 # 5. PLAYWRIGHT AUTOMATION ENGINE
 # ==============================================================================
 MODEL_KEYWORD_MAP = {
-    "3.6 Flash": ["3.6 Flash", "3.6-flash", "flash 3.6", "flash"],
-    "3.6 Thinking": ["3.6 Thinking", "3.6-thinking", "thinking 3.6", "thinking"],
+    "4 Hydrogen": ["4 Hydrogen", "4-hydrogen", "hydrogen 4", "hydrogen"],
+    "4 Hydrogen Thinking": ["4 Hydrogen Thinking", "4-hydrogen-thinking", "hydrogen thinking", "thinking"],
     "3.1 Pro": ["3.1 Pro", "3.1-pro", "pro 3.1", "pro"]
 }
 
@@ -866,6 +1060,8 @@ def is_model_matching(target_model: str, current_ui_text: str) -> str:
 
     for kw in target_kws:
         norm_kw = normalize_model_str(kw)
+        if ("thinking" in norm_ui) != ("thinking" in norm_kw):
+            continue
         if norm_kw in norm_ui or norm_ui in norm_kw:
             return True
 
@@ -884,12 +1080,12 @@ def get_current_ui_model(page) -> str:
             for btn in elems:
                 if btn.is_visible():
                     txt = btn.inner_text().strip()
-                    if any(kw.lower() in txt.lower() for kw in ["flash", "thinking", "pro"]):
+                    if any(kw.lower() in txt.lower() for kw in ["hydrogen", "thinking", "pro"]):
                         return txt
         except Exception:
             continue
 
-    for kw in ["Thinking", "Flash", "Pro"]:
+    for kw in ["Thinking", "Hydrogen", "Pro"]:
         candidates = page.locator(f"button:has-text('{kw}'), div[role='button']:has-text('{kw}')").all()
         for btn in reversed(candidates):
             try:
@@ -936,7 +1132,7 @@ def ensure_selected_model(page, target_model_name):
             break
 
     if not picker_button:
-        for kw in ["Thinking", "Flash", "Pro"]:
+        for kw in ["Thinking", "Hydrogen", "Pro"]:
             candidates = page.locator(f"button:has-text('{kw}'), div[role='button']:has-text('{kw}')").all()
             for btn in reversed(candidates):
                 try:
@@ -972,6 +1168,9 @@ def ensure_selected_model(page, target_model_name):
         for el in page.get_by_text(term, exact=False).all():
             try:
                 if el.is_visible() and el != picker_button:
+                    el_txt = el.inner_text().strip().lower()
+                    if ("thinking" in target_model_name.lower()) != ("thinking" in el_txt):
+                        continue
                     visible_option = el
                     break
             except Exception:
@@ -1020,14 +1219,13 @@ def check_gemini_ui_errors(page):
             for el in elems:
                 if el.is_visible():
                     txt = el.inner_text().strip()
-                    # Filter out benign UI toast notifications so they don't break generation
                     if txt and not any(ign in txt.lower() for ign in ["draft saved", "copied", "undo", "restored"]):
                         return txt
         except Exception:
             continue
     return None
 
-def execute_single_prompt(page, prompt_text, target_model="3.6 Flash", pre_send_delay=6.0, post_gen_delay=4.0):
+def execute_single_prompt(page, prompt_text, target_model="4 Hydrogen", pre_send_delay=6.0, post_gen_delay=4.0):
     ensure_selected_model(page, target_model)
 
     msg_selector = "message-content, .model-response-text, .response-container"
@@ -1106,8 +1304,9 @@ def execute_single_prompt(page, prompt_text, target_model="3.6 Flash", pre_send_
 
     return raw_output
 
-def run_playwright_gemini_batch(tasks, selected_model="3.6 Flash", headless=False, auto_approve=False, max_retries=3, progress_bar=None, status_box=None):
+def run_playwright_gemini_batch(tasks, selected_model="4 Hydrogen", headless=False, auto_approve=False, max_retries=3, progress_bar=None, status_box=None):
     collected_questions = []
+    failed_tasks = []
     success_count = 0
     fail_count = 0
 
@@ -1201,6 +1400,15 @@ def run_playwright_gemini_batch(tasks, selected_model="3.6 Flash", headless=Fals
                         progress_bar.progress((idx + (attempt - 1) / max_retries) / total_tasks)
                     set_tab_title(f"⏳ ({idx+1}/{total_tasks}) {sub_label}{retry_label}...")
 
+                    # Open a fresh Gemini chat on retries so a corrupted response does not poison the chat context
+                    if attempt > 1:
+                        try:
+                            log_status(f"Opening fresh Gemini chat thread for retry attempt {attempt}...")
+                            page.goto("https://gemini.google.com/app", wait_until="domcontentloaded")
+                            time.sleep(2.5)
+                        except Exception as nav_err:
+                            log_status(f"Fresh chat reload warning: {nav_err}", "WARNING")
+
                     prompt = build_igcse_prompt(
                         topic_name,
                         task["subtopic_obj"],
@@ -1219,8 +1427,8 @@ def run_playwright_gemini_batch(tasks, selected_model="3.6 Flash", headless=Fals
                         
                         parsed_items = json.loads(repaired_text, strict=False)
 
-                        if not isinstance(parsed_items, list) or len(parsed_items) == 0:
-                            raise ValueError("Gemini returned empty or invalid question JSON structure.")
+                        # Reject corrupted/degenerate outputs (e.g. \u200b, \t, newline loops, concatenated digits)
+                        validate_generated_questions(parsed_items)
 
                         parsed_items = assign_unique_ids(parsed_items)
 
@@ -1230,7 +1438,7 @@ def run_playwright_gemini_batch(tasks, selected_model="3.6 Flash", headless=Fals
                                 item["generated_by_model"] = selected_model
                                 item["generated_at"] = now_stamp
 
-                        log_status(f"✅ Subtopic {sub_label} parsed successfully! ({len(parsed_items)} question(s))")
+                        log_status(f"✅ Subtopic {sub_label} validated & parsed successfully! ({len(parsed_items)} question(s))")
 
                         if auto_approve and parsed_items:
                             current_master = load_master_bank()
@@ -1248,30 +1456,31 @@ def run_playwright_gemini_batch(tasks, selected_model="3.6 Flash", headless=Fals
                         log_status(f"Execution halted: {stop_err}", "ERROR")
                         if status_box:
                             status_box.error(f"{stop_err}")
-                        return collected_questions, success_count, fail_count, str(stop_err)
+                        return collected_questions, success_count, fail_count, failed_tasks, str(stop_err)
 
                     except Exception as err:
                         err_tb = traceback.format_exc()
-                        log_status(f"Subtopic {sub_label} attempt {attempt} failed: {err}", "WARNING")
+                        log_status(f"Subtopic {sub_label} attempt {attempt} rejected/failed: {err}", "WARNING")
                         log_status(f"Traceback snippet: {err_tb[-300:]}", "DEBUG")
                         if attempt < max_retries:
                             log_status("Pausing 6 seconds before retrying...")
                             time.sleep(6)
                         else:
                             fail_count += 1
+                            failed_tasks.append(task)
                             log_status(f"❌ Subtopic {sub_label} permanently failed after {max_retries} attempts.", "ERROR")
 
                 if idx < total_tasks - 1:
                     log_status("Pausing 30 seconds before next subtopic batch...")
                     for wait_sec in range(30, 0, -1):
                         set_tab_title(f"⏸️ Pacing Pause ({wait_sec}s)...")
-                        time.sleep(2)
+                        time.sleep(1)
 
-            return collected_questions, success_count, fail_count, None
+            return collected_questions, success_count, fail_count, failed_tasks, None
 
     except Exception as global_err:
         log_status(f"Global batch execution error: {global_err}", "ERROR")
-        return collected_questions, success_count, fail_count, str(global_err)
+        return collected_questions, success_count, fail_count, failed_tasks, str(global_err)
 
 # ==============================================================================
 # 6. STREAMLIT UI SETUP & SESSION STATE MANAGEMENT
@@ -1290,6 +1499,8 @@ if "hard_count" not in st.session_state:
     st.session_state.hard_count = 1
 if "status_logs" not in st.session_state:
     st.session_state.status_logs = []
+if "failed_batch_tasks" not in st.session_state:
+    st.session_state.failed_batch_tasks = []
 
 def sync_from_master():
     total = st.session_state.master_count
@@ -1322,12 +1533,12 @@ else:
             horizontal=True
         )
 
-        selected_model = "3.6 Flash"
+        selected_model = "4 Hydrogen"
         
         if workflow_mode == "🔄 Automated Batch Run":
             selected_model = st.selectbox(
                 "Web UI Model Choice:",
-                options=["3.6 Flash", "3.6 Thinking", "3.1 Pro"],
+                options=["4 Hydrogen", "4 Hydrogen Thinking", "3.1 Pro"],
                 index=0,
                 help="Execution halts automatically if target model is disabled on your account."
             )
@@ -1456,7 +1667,40 @@ else:
                 show_batch_browser = st.checkbox("🖥️ Visible Browser Window", value=True, key="batch_browser_toggle")
             with col_batch_cfg2:
                 batch_max_retries = st.number_input("Max Auto-Retries Per Failed Subtopic", min_value=1, max_value=5, value=3, key="batch_retries")
-            
+
+            def execute_batch_tasks(tasks_to_run):
+                p_bar = st.progress(0.0)
+                s_box = st.empty()
+                set_tab_title(f"⏳ Batch Running (0/{len(tasks_to_run)})...")
+                
+                items, succ, fail, remaining_failed, global_err = run_playwright_gemini_batch(
+                    tasks_to_run, 
+                    selected_model=selected_model,
+                    headless=not show_batch_browser, 
+                    auto_approve=auto_approve_toggle,
+                    max_retries=batch_max_retries,
+                    progress_bar=p_bar,
+                    status_box=s_box
+                )
+                st.session_state["failed_batch_tasks"] = remaining_failed
+                
+                if global_err:
+                    st.error(f"❌ Batch Engine Stopped: {global_err}")
+                    set_tab_title("❌ Batch Error")
+                else:
+                    if fail > 0:
+                        st.warning(f"⚠️ Batch Finished with {fail} rejected/failed subtopic(s). Successful: {succ}/{len(tasks_to_run)} | Total Questions: {len(items)}")
+                        set_tab_title(f"⚠️ Batch Done ({fail} Failed)")
+                    else:
+                        st.success(f"🎉 Batch Finished! Successful Subtopics: {succ}/{len(tasks_to_run)} | Total Questions: {len(items)}")
+                        set_tab_title("✅ Batch Complete!")
+                    
+                    if not auto_approve_toggle and items:
+                        items = assign_unique_ids(items)
+                        existing = st.session_state.get("parsed_questions_list") or []
+                        st.session_state["parsed_questions_list"] = existing + items
+                        st.session_state["json_error_details"] = None
+
             if st.button("🚀 Start Automated Batch Queue Run", use_container_width=True):
                 if not selected_batch_items:
                     st.warning("Please select at least one subtopic for the batch queue.")
@@ -1473,32 +1717,13 @@ else:
                             "tier": "Extended",
                             "include_tikz": include_tikz
                         })
-                    
-                    p_bar = st.progress(0.0)
-                    s_box = st.empty()
-                    set_tab_title(f"⏳ Batch Running (0/{len(batch_tasks)})...")
-                    
-                    items, succ, fail, global_err = run_playwright_gemini_batch(
-                        batch_tasks, 
-                        selected_model=selected_model,
-                        headless=not show_batch_browser, 
-                        auto_approve=auto_approve_toggle,
-                        max_retries=batch_max_retries,
-                        progress_bar=p_bar,
-                        status_box=s_box
-                    )
-                    
-                    if global_err:
-                        st.error(f"❌ Batch Engine Stopped: {global_err}")
-                        set_tab_title("❌ Batch Error")
-                    else:
-                        st.success(f"🎉 Batch Finished! Successful Subtopics: {succ}/{len(batch_tasks)} | Total Questions: {len(items)}")
-                        set_tab_title("✅ Batch Complete!")
-                        
-                        if not auto_approve_toggle and items:
-                            items = assign_unique_ids(items)
-                            st.session_state["parsed_questions_list"] = items
-                            st.session_state["json_error_details"] = None
+                    execute_batch_tasks(batch_tasks)
+
+            if st.session_state.get("failed_batch_tasks"):
+                failed_labels = [get_subtopic_label(t["subtopic_obj"]) for t in st.session_state["failed_batch_tasks"]]
+                st.warning(f"**Rejected / Failed Subtopics ({len(failed_labels)}):** {', '.join(failed_labels)}")
+                if st.button(f"🔁 Re-run Failed Subtopics Only ({len(failed_labels)})", use_container_width=True, key="btn_rerun_failed"):
+                    execute_batch_tasks(list(st.session_state["failed_batch_tasks"]))
 
     # --- RIGHT COLUMN: BATCH VIEWER & REVIEW BUFFER ---
     with col2:
@@ -1516,6 +1741,7 @@ else:
                     try:
                         repaired_text = clean_and_repair_json(raw_pasted_text)
                         parsed_json = json.loads(repaired_text, strict=False)
+                        validate_generated_questions(parsed_json)
                         parsed_json = assign_unique_ids(parsed_json)
                         
                         now_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -1530,7 +1756,7 @@ else:
                         st.success(f"Parsed {len(parsed_json)} question(s) successfully!")
                         set_tab_title("✅ Parsing Complete!")
                     except (json.JSONDecodeError, ValueError) as err:
-                        log_status(f"Manual parse error: {err}", "ERROR")
+                        log_status(f"Manual parse/validation error: {err}", "ERROR")
                         st.session_state["parsed_questions_list"] = None
                         st.session_state["json_error_details"] = {
                             "error": err,

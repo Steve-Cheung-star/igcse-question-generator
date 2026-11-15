@@ -16,7 +16,34 @@ os.makedirs(EXPORTS_DIR, exist_ok=True)
 os.makedirs(SHARED_DIR, exist_ok=True)
 
 # Guard pattern for LaTeX/TikZ macros starting with \n while unescaping literal \n string breaks
-LATEX_N_CMD_PATTERN = r"\\n(?!(?:ode|odepart|odes|ote|ull|eq|ne|nu|otin|oindent|abla|ewline|ewpage|ew\w*|ormalsize|ormalfont|ormalcolor|umber|numexpr|obreak|obreakspace|olimits|atural|subseteq|supseteq|geq|leq|less|gtr|exists|leftarrow|rightarrow|Leftarrow|Rightarrow|leftrightarrow|Leftrightarrow|parallel|mid|approx|cong|prec|succ|vdash|Vdash|vDash|VDash|earrow|warrow)\b)"
+LATEX_N_CMD_PATTERN = re.compile(
+    r"(?<!\\)\\n(?!(?:ode|odepart|odes|ote|ull|eq|ne|neg|nu|otin|oindent|abla|ewline|ewpage|ew[a-zA-Z]*|ormalsize|ormalfont|ormalcolor|umber|numexpr|obreak|obreakspace|olimits|atural|subseteqq?|supseteqq?|geq|leq|less|gtr|sim|shortmid|shortparallel|triangleleft(?:eq)?|triangleright(?:eq)?|exists|leftarrow|rightarrow|Leftarrow|Rightarrow|leftrightarrow|Leftrightarrow|parallel|mid|approx|cong|prec|succ|vdash|Vdash|vDash|VDash|earrow|warrow|oint|limits)(?![a-zA-Z]))"
+)
+INLINE_MATH_RE = r"(?:(?<!\\)|(?<=\\\\))\$(?:\\.|[^\\\$])+?(?:(?<!\\)|(?<=\\\\))\$"
+MATH_SPAN_RE = re.compile(
+    rf"(\$\$.*?\$\$|{INLINE_MATH_RE}|\\\[.*?\\\]|\\\([^\)]+?\\\))",
+    re.DOTALL,
+)
+
+
+def normalize_latex_newlines(text_str: str) -> str:
+    if not text_str:
+        return ""
+
+    def fix_math_segment(seg: str) -> str:
+        seg = re.sub(r"\n[ \t]*(eq(?![a-zA-Z])|e(?![a-zA-Z\^_]))", r"\\n\1", seg)
+        seg = re.sub(r"\\\\(neq?(?![a-zA-Z]))", r"\\\1", seg)
+        return seg
+
+    parts = MATH_SPAN_RE.split(str(text_str))
+    for i, part in enumerate(parts):
+        if i % 2 == 1:
+            parts[i] = fix_math_segment(part)
+        else:
+            parts[i] = LATEX_N_CMD_PATTERN.sub("\n", part)
+
+    return "".join(parts)
+
 
 # ==============================================================================
 # LATEX PREAMBLE TEMPLATE
@@ -25,6 +52,7 @@ LATEX_PREAMBLE = r"""\documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=2cm]{geometry}
 \usepackage{amsmath, amssymb, amsfonts}
+\usepackage{array}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, angles, quotes, calc, positioning, patterns, backgrounds}
 \usepackage{fancyhdr}
@@ -206,7 +234,7 @@ def convert_markdown_lists_to_latex(text_str: str) -> str:
             item_content = m.group(1)
             if not in_list:
                 in_list = True
-                res.append(r"\begin{itemize}[leftmargin=0.8cm, itemsep=0.1em, topsep=0.2em]")
+                res.append(r"\begin{itemize}[leftmargin=\dimexpr\leftskip+0.65cm\relax, itemsep=0.1em, topsep=0.2em]")
             res.append(f"  \\item {item_content}")
         else:
             if in_list:
@@ -228,17 +256,18 @@ def apply_auto_displaystyle(text_str: str) -> str:
         r"\\(sum|binom|int|iint|iiint|oint|prod|coprod|lim|limsup|liminf|bigcup|bigcap|bigoplus|bigotimes|bigvee|bigwedge)\b"
     )
 
-    pattern = re.compile(r"\$\$(.*?)\$\$|\$([^\$]+?)\$", re.DOTALL)
+    pattern = re.compile(rf"\$\$(.*?)\$\$|({INLINE_MATH_RE})", re.DOTALL)
 
     def math_replacer(m):
         if m.group(1) is not None:
             return f"$${m.group(1)}$$"
 
-        content = m.group(2)
+        full = m.group(2)
+        content = full[1:-1]
         stripped = content.strip()
         if not stripped.startswith(r"\displaystyle") and triggers.search(content):
             return f"$\\displaystyle {content}$"
-        return f"${content}$"
+        return full
 
     return pattern.sub(math_replacer, text_str)
 
@@ -275,7 +304,7 @@ def sanitize_latex_text(text_str: str) -> str:
 
     s = str(text_str).strip()
 
-    s = re.sub(LATEX_N_CMD_PATTERN, "\n", s)
+    s = normalize_latex_newlines(s)
 
     s = convert_markdown_lists_to_latex(s)
     s = re.sub(r"(?<!\\)\\\[(\s*[\d\.]+\s*(?:cm|mm|pt|em|ex|in)\])", r"\\\\[\1", s)
@@ -303,7 +332,7 @@ def sanitize_latex_text(text_str: str) -> str:
     s = apply_auto_displaystyle(s)
 
     combined_pattern = re.compile(
-        r"(\$\$.*?\$\$|\$[^\$]+?\$|\\\[.*?\\\]|\\\([^\)]+?\\\)|\\begin\{(?:tabular|array|align|matrix|tikzpicture|bmatrix|pmatrix|vmatrix|itemize)\}.*?\\end\{(?:tabular|array|align|matrix|tikzpicture|bmatrix|pmatrix|vmatrix|itemize)\})",
+        rf"(\$\$.*?\$\$|{INLINE_MATH_RE}|\\\[.*?\\\]|\\\([^\)]+?\\\)|\\begin\{{(?:tabular|array|align|matrix|tikzpicture|bmatrix|pmatrix|vmatrix|itemize)\}}.*?\\end\{{(?:tabular|array|align|matrix|tikzpicture|bmatrix|pmatrix|vmatrix|itemize)\}})",
         re.DOTALL,
     )
 
@@ -437,7 +466,7 @@ def split_latex_sentences(text_str: str) -> str:
         math_blocks.append(m.group(0))
         return f"__MATH_{len(math_blocks)-1}__"
 
-    masked = re.sub(r"\$\$.*?\$\$|\$[^\$]+?\$", mask_math, masked, flags=re.DOTALL)
+    masked = re.sub(rf"\$\$.*?\$\$|{INLINE_MATH_RE}", mask_math, masked, flags=re.DOTALL)
 
     abbrev_dict = {}
 
@@ -475,7 +504,7 @@ def split_latex_sentences(text_str: str) -> str:
         punct = m.group(1)
         return f"{punct}\\\\ "
 
-    sentence_end_pattern = re.compile(r"([\.\!\?]|:(?=\s*__NUMLIST_))\s+(?=[A-Z\\[]|__MATH_|__NUMLIST_)")
+    sentence_end_pattern = re.compile(r"((?<!\.)\.|[\!\?]|:(?=\s*__NUMLIST_))\s+(?=[A-Z\\[]|__MATH_|__NUMLIST_)")
     masked = sentence_end_pattern.sub(break_sentence, masked)
 
     for key, val in num_list_dict.items():
@@ -711,8 +740,9 @@ def build_cover_page_latex(
 def clean_tikz_code(tikz_str: str) -> str:
     if not tikz_str:
         return ""
-    clean_code = re.sub(LATEX_N_CMD_PATTERN, "\n", tikz_str.strip())
-    if "\\begin{tikzpicture}" not in clean_code:
+    clean_code = normalize_latex_newlines(tikz_str.strip())
+    is_table_env = bool(re.search(r"\\begin\{(?:tabular\*?|tabularx|longtable|array)\}", clean_code))
+    if "\\begin{tikzpicture}" not in clean_code and not is_table_env:
         clean_code = f"\\begin{{tikzpicture}}\n{clean_code}\n\\end{{tikzpicture}}"
     return clean_code
 
@@ -738,7 +768,7 @@ def parse_format_str_to_lines(fmt_str: str) -> list:
     if not fmt_str:
         return []
     s = str(fmt_str).strip()
-    s = re.sub(LATEX_N_CMD_PATTERN, "\n", s)
+    s = normalize_latex_newlines(s)
     s = re.sub(r"\\\\(?:\s*\[[^\]]+\])?", "\n", s)
     return [line.strip() for line in s.split("\n") if line.strip()]
 
@@ -754,18 +784,23 @@ def format_custom_str_to_latex(
     processed_lines = []
 
     for line in lines:
-        if r"\makebox" in line:
-            line_tex = line
-        elif re.search(r"\.{3,}", line):
-            line_tex = re.sub(r"\.{3,}", lambda m: f"\\makebox[{default_box_w}]{{\\dotfill}}", line)
-        elif r"\dotfill" in line:
-            line_tex = re.sub(r"(?:\\noindent\s*)?\\dotfill", lambda m: f"\\makebox[{default_box_w}]{{\\dotfill}}", line)
-        elif r"\dots" in line:
-            line_tex = re.sub(r"(?:\\dots)+", lambda m: f"\\makebox[{default_box_w}]{{\\dotfill}}", line)
-        else:
-            line_tex = line
+        # Normalize legacy \dotfill / \dots tokens to ..... before sanitizing
+        norm_line = re.sub(r"(?:\\noindent\s*)?\\dotfill", ".....", line)
+        norm_line = re.sub(r"(?:\\dots)+", ".....", norm_line)
+        sanitized = sanitize_latex_text(norm_line)
 
-        processed_lines.append(sanitize_latex_text(line_tex))
+        if r"\makebox" in sanitized:
+            line_tex = sanitized
+        elif re.search(r"\.{3,}", sanitized):
+            slot_count = len(re.findall(r"\.{3,}", sanitized))
+            box_w = "2.5cm" if slot_count >= 2 else default_box_w
+            line_tex = re.sub(
+                r"\.{3,}", lambda m: f"\\makebox[{box_w}]{{\\dotfill}}", sanitized
+            )
+        else:
+            line_tex = sanitized
+
+        processed_lines.append(line_tex)
 
     if num_lines == 1:
         return processed_lines[0], 1
@@ -791,6 +826,7 @@ def format_answer_slot_latex(
 
     ans_t = str(ans_type).lower().strip()
     prompt_lower = str(prompt_text).lower()
+    fmt_raw = str(format_str or "").strip()
 
     no_answer_line_patterns = [
         r"\bshow\s+that\b",
@@ -816,22 +852,29 @@ def format_answer_slot_latex(
         or is_symbol_prompt
     )
 
-    fmt_lines = parse_format_str_to_lines(format_str if format_str else "")
-    is_pure_multiline_dots = len(fmt_lines) > 1 and all(
-        re.fullmatch(r"(?:\\noindent\s*)?(?:\\dotfill|\\dots+|\.{3,})\s*", line)
-        for line in fmt_lines
+    is_describe_fully = (
+        ans_t == "describe_fully"
+        or any(
+            phrase in prompt_lower
+            for phrase in ["describe fully", "describe completely", "give a full description"]
+        )
     )
 
-    if is_pure_multiline_dots:
-        num_lines = len(fmt_lines)
+    fmt_lines = parse_format_str_to_lines(fmt_raw)
+    pure_dot_regex = re.compile(r"^(?:\\noindent\s*)?(?:\\dotfill|\\dots+|\.{3,})\s*$")
+    is_pure_multiline_dots = len(fmt_lines) > 1 and all(
+        pure_dot_regex.fullmatch(line) for line in fmt_lines
+    )
+
+    # 1. Transformation ("Describe fully...") -> 3 full-width dotted lines
+    if is_describe_fully or is_pure_multiline_dots:
+        num_lines = len(fmt_lines) if is_pure_multiline_dots else 3
         lines_tex = []
         for i in range(num_lines):
-            is_last = (i == num_lines - 1)
-            if is_last:
-                lines_tex.append(f"\\makebox[\\dimexpr\\linewidth-1.5cm\\relax]{{\\dotfill}} \\hfill {mark_tag}")
-            else:
-                lines_tex.append("\\makebox[\\dimexpr\\linewidth-1.5cm\\relax]{{\\dotfill}}")
-
+            tail_mark = f" \\hfill {mark_tag}" if (i == num_lines - 1 and mark_tag) else ""
+            lines_tex.append(
+                f"\\makebox[\\dimexpr\\linewidth-\\leftskip-1.3cm\\relax]{{\\dotfill}}{tail_mark}"
+            )
         return "\\par\\vspace{\\baselineskip}\n" + " \\\\[0.45cm]\n".join(lines_tex)
 
     if vspace_cm is not None and float(vspace_cm) >= 0:
@@ -849,11 +892,13 @@ def format_answer_slot_latex(
         else "\\par\\vspace{0.15cm}\n"
     )
 
+    # 2. No answer line (diagrams, tables, proofs, embedded symbol slots)
     if ans_t in ["null", "none"] or is_no_line_prompt:
         if v_space > 0:
             return f"\\par\\vspace{{{v_space:.2f}cm}}\\leavevmode\\hspace*{{\\fill}} {mark_tag}"
         return f"\\leavevmode\\hspace*{{\\fill}} {mark_tag}"
 
+    # 3. Column vector (2x1)
     elif ans_t in ["vector", "matrix", "column_vector", "column", "vector_2d"]:
         return (
             f"{space_tex}\\leavevmode\\hspace*{{\\fill}}"
@@ -861,15 +906,76 @@ def format_answer_slot_latex(
             f" \\\\[1em] \\makebox[1cm]{{}} \\end{{pmatrix}}${suffix_tex} \\quad {mark_tag}"
         )
 
+    # 4. Compound multi-unit answers (e.g., "..... hours ..... minutes", "..... m ..... cm")
+    elif ans_t in ["compound", "time"] or (
+        "hour" in f"{prefix_clean} {suffix_clean} {fmt_raw}".lower()
+        and "minute" in f"{prefix_clean} {suffix_clean} {fmt_raw}".lower()
+    ):
+        if fmt_raw and re.search(r"\.{3,}", fmt_raw):
+            fmt_latex, _ = format_custom_str_to_latex(fmt_raw, default_box_w="2.5cm")
+            return f"{space_tex}\\leavevmode\\hspace*{{\\fill}} {fmt_latex} \\quad {mark_tag}"
+        return (
+            f"{space_tex}\\leavevmode\\hspace*{{\\fill}}"
+            f" \\makebox[2.5cm]{{\\dotfill}} hours"
+            f" \\makebox[2.5cm]{{\\dotfill}} minutes \\quad {mark_tag}"
+        )
+
+    # 5. Hybrid templates with full-width continuation lines (e.g., "Angle = ..... , reason = .....\n.....")
+    elif len(fmt_lines) > 1 and any(pure_dot_regex.fullmatch(ln) for ln in fmt_lines):
+        rendered_rows = []
+        for i, raw_ln in enumerate(fmt_lines):
+            is_last = i == len(fmt_lines) - 1
+            tail_mark = f" \\hfill {mark_tag}" if (is_last and mark_tag) else ""
+
+            if pure_dot_regex.fullmatch(raw_ln):
+                rendered_rows.append(
+                    f"\\makebox[\\dimexpr\\linewidth-\\leftskip-1.3cm\\relax]{{\\dotfill}}{tail_mark}"
+                )
+            else:
+                norm_ln = re.sub(r"(?:\\noindent\s*)?\\dotfill", ".....", raw_ln)
+                norm_ln = re.sub(r"(?:\\dots)+", ".....", norm_ln)
+                sanitized_ln = sanitize_latex_text(norm_ln)
+
+                # Stretch trailing ..... to fill the remaining width up to the mark column
+                if re.search(r"\.{3,}\s*$", sanitized_ln):
+                    head_part = re.sub(r"\.{3,}\s*$", "", sanitized_ln)
+                    head_part = re.sub(
+                        r"\.{3,}", r"\\makebox[2.5cm]{\\dotfill}", head_part
+                    )
+                    rendered_rows.append(
+                        f"\\makebox[\\dimexpr\\linewidth-\\leftskip-1.3cm\\relax][s]{{{head_part}\\dotfill}}{tail_mark}"
+                    )
+                else:
+                    slot_cnt = len(re.findall(r"\.{3,}", sanitized_ln))
+                    box_w = "2.5cm" if slot_cnt >= 2 else "4.0cm"
+                    filled_ln = re.sub(
+                        r"\.{3,}",
+                        lambda m: f"\\makebox[{box_w}]{{\\dotfill}}",
+                        sanitized_ln,
+                    )
+                    rendered_rows.append(
+                        f"\\makebox[\\dimexpr\\linewidth-\\leftskip-1.3cm\\relax][l]{{{filled_ln}}}{tail_mark}"
+                    )
+
+        return space_tex + " \\\\[0.45cm]\n".join(rendered_rows)
+
+    # 6. Single-line multi-field (supports both "Gradient = ..... , $y$-intercept = ....." and legacy "Gradient =, $y$-intercept =")
     elif ans_t in ["multi_field", "inline_fields", "multiple_fields", "two_fields", "dual_slot"]:
         box_w = "2.5cm"
-        if format_str and str(format_str).strip():
-            raw_parts = [p.strip() for p in format_str.split(",") if p.strip()]
+        if fmt_raw:
+            if re.search(r"\.{3,}", fmt_raw):
+                fmt_latex, _ = format_custom_str_to_latex(fmt_raw, default_box_w=box_w)
+                return f"{space_tex}\\leavevmode\\hspace*{{\\fill}} {fmt_latex} \\quad {mark_tag}"
+            raw_parts = [p.strip() for p in fmt_raw.split(",") if p.strip()]
             formatted_parts = []
             for part in raw_parts:
                 clean_p = sanitize_slot_label(part)
                 if ".." in clean_p or r"\dots" in clean_p or r"\dotfill" in clean_p:
-                    expanded = re.sub(r"(?:\.{2,}|\\dots+|\\dotfill)", lambda m: f"\\makebox[{box_w}]{{\\dotfill}}", clean_p)
+                    expanded = re.sub(
+                        r"(?:\.{2,}|\\dots+|\\dotfill)",
+                        lambda m: f"\\makebox[{box_w}]{{\\dotfill}}",
+                        clean_p,
+                    )
                     formatted_parts.append(expanded)
                 else:
                     formatted_parts.append(f"{clean_p} \\makebox[{box_w}]{{\\dotfill}}")
@@ -884,8 +990,9 @@ def format_answer_slot_latex(
                 f" {s_str}\\makebox[{box_w}]{{\\dotfill}} \\quad {mark_tag}"
             )
 
-    elif format_str and str(format_str).strip():
-        fmt_latex, num_lines = format_custom_str_to_latex(format_str, marks_tag=mark_tag)
+    # 7. General custom_template / multi-row tabular format
+    elif fmt_raw:
+        fmt_latex, num_lines = format_custom_str_to_latex(fmt_raw, marks_tag=mark_tag)
         if num_lines > 1:
             return (
                 f"{space_tex}\\leavevmode\\hspace*{{\\fill}}\\begin{{tabular}}[b]{{@{{}}r@{{}}}}\n{fmt_latex}\n\\end{{tabular}}"
@@ -910,13 +1017,6 @@ def format_answer_slot_latex(
             f"{space_tex}\\leavevmode\\hspace*{{\\fill}}"
             f" {prefix_tex}(\\makebox[1.5cm]{{\\dotfill}} \\, , \\,"
             f" \\makebox[1.5cm]{{\\dotfill}}){suffix_tex} \\quad {mark_tag}"
-        )
-
-    elif ans_t in ["compound", "time"]:
-        return (
-            f"{space_tex}\\leavevmode\\hspace*{{\\fill}}"
-            f" \\makebox[2.5cm]{{\\dotfill}} \\text{{ hours }}"
-            f" \\makebox[2.5cm]{{\\dotfill}} \\text{{ minutes}} \\quad {mark_tag}"
         )
 
     elif ans_t in ["custom", "inequality_region", "region"]:
